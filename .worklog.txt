@@ -70,19 +70,21 @@ Completed:
 - UI DONE: app.tsx/index.html copied + 8 substitutions, Rule 7 verified,
   diff reviewed (20+7 hunks, all mapped), client tests re-appended
   (111/111 green), real-Chromium browser check passed, 0 console errors.
+- README DONE (pinned base + truthful subs, headings/controls verified).
+- Full 49-fund run DONE: EXIT=0, 0 failures, re-run 288/288 identical.
 
 Remaining:
 1. DONE: package.json, bun.lock, scripts/update-data.ts, scripts/update-data.test.ts.
 2. DONE: bun test 96/96 + bun build + type-safety review.
 3. DONE: mandatory live acceptance (3-ticker run + byte-identical re-run).
 4. DONE: app.tsx/index.html + substitutions + regression tests + browser check.
-5. NEXT: README + full 49-fund api run + repo metadata (topics/description).
+5. NEXT: repo metadata (topics/description); then PR + sibling README PRs.
 6. Commit/push checkpoints throughout; open PR; sibling README PRs; final report.
 
 Blockers: none.
 
-Last confirmed pushed SHA: 2abc8e1 on origin/init-northern-trust (main is d2709c5).
-Next action: commit UI + client tests + this worklog update, push; then README + full 49-fund run + repo metadata.
+Last confirmed pushed SHA: e2a47f1 on origin/init-northern-trust (main is d2709c5).
+Next action: commit README + full api/ + this worklog update, push; then repo metadata + open PR.
 
 JOURNAL
 ======
@@ -272,6 +274,36 @@ counts (Holdings 162, History 2767, Distributions 44, Watchlist 1715), narrow
 390px layout stacks correctly, ZERO console errors. Screenshots inspected
 (/tmp/browtest/*.png, session-only). Committed: app.tsx + index.html + client
 tests.
+
+[2026-09-27] README: from pinned JPMorgan README @54338eaf (126 lines) with
+brand/repo/API + truthful-fact substitutions only: title, intro (api path +
+funds-list/downloads source clause, generic sentences verbatim), degit command,
+Pages honestly marked PENDING (never claimed live), updater commands verbatim,
+workflow name, 5-row Data sources table (funds-list JSON catalog, -all.csv
+facts/returns/yields with QLC example link, -holdings.csv + monthly fallback,
+_pricing.json + distributions CSV, SEC+Yahoo fallback row), metrics bullets
+kept (shared columns), controls table with 3 truth fixes (cursor path;
+REQUEST_SLEEP default 0 = observed unset behavior since Number('') is 0, not
+the fallback constant 1; CONCURRENCY spacing is per pacing lane, not global --
+verified against the lane pacer), TICKERS examples -> QLC SKOR TIPA TXCA,
+TypeScript verbatim, Brands + Siblings tables + Northern Trust rows after NEOS
+(alphabetical, existing formats), trademark notice adapted (Northern Trust /
+FlexShares marks), License verbatim. Verified: 10/10 headings identical after
+brand substitution (fences ignored); all 13 documented controls/examples exist
+in update-data.ts (12 also as workflow inputs; SEC_UA is updater-env-only, same
+as sibling); diff = 33 lines, all within the permitted set. No committed README
+regression test: the pinned sibling suite has no such test, so the guard is
+this recorded comparison (suite parity wins over a novel test).
+
+[2026-09-27] FULL RUN (no filters): EXIT=0 in 33s -- 49/49 funds, 0 failures,
+24,400 holdings rows / 79,617 history rows, api/ = 16MB / 288 JSON files. QLC/
+SKOR/TIPA reported `unchanged` with counts identical to the acceptance run
+(4th idempotency confirmation). Edges: TXCA/TXNY (incepted 2026-09-22, 5 days
+old) -> history=3, divs=0, all return/yield cells null with '---' text;
+TIPA secYield -2.14 verbatim-official. Re-run EXIT=0 in 16s, 288/288 files
+BYTE-IDENTICAL. No fund needed the N-PORT fallback (all 49 publish an official
+holdings sheet), so that path stays verbatim-sibling + unit-tested. Committed:
+README + full api/.
 
 DECISIONS
 =========

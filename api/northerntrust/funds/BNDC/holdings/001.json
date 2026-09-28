@@ -1,0 +1,195 @@
+{
+ "ticker": "BNDC",
+ "page": 1,
+ "pageSize": 250,
+ "totalRows": 16,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "NORTHERN TRUST CREDIT-SCORED US CORPORATE BOND ETF",
+   "Ticker": "SKOR",
+   "Identifier": "33939L761",
+   "Weight": "21.503",
+   "Market Value": "41591337.9",
+   "Shares Held": "885020",
+   "Asset Category": "Other",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "ISHARES 1-5 YEAR INVESTMENT GRADE CORPORATE BOND",
+   "Ticker": "IGSB",
+   "Identifier": "464288646",
+   "Weight": "21.0659",
+   "Market Value": "40745924.56",
+   "Shares Held": "793958",
+   "Asset Category": "Other",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "NORTHERN TRUST ULTRA-SHORT FIXED INCOME ETF ETP",
+   "Ticker": "RAVI",
+   "Identifier": "33939L886",
+   "Weight": "16.7118",
+   "Market Value": "32324139.94",
+   "Shares Held": "429840",
+   "Asset Category": "Other",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "NORTHERN TRUST DISCIPLINED DURATION MBS ETF INDEX",
+   "Ticker": "MBSD",
+   "Identifier": "33939L779",
+   "Weight": "10.8132",
+   "Market Value": "20914915.22",
+   "Shares Held": "1047107",
+   "Asset Category": "Other",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "ISHARES MBS ETF ETP USD",
+   "Ticker": "MBB",
+   "Identifier": "464288588",
+   "Weight": "10.8014",
+   "Market Value": "20892209.08",
+   "Shares Held": "231262",
+   "Asset Category": "Other",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "US LONG BOND(CBT) BOND 21/DEC/2026 USZ6 COMDTY",
+   "Ticker": "USZ6",
+   "Identifier": "-",
+   "Weight": "6.4871",
+   "Market Value": "12547500",
+   "Shares Held": "120",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": "Dec 21 2026"
+  },
+  {
+   "Name": "US ULTRA BOND CBT BOND 21/DEC/2026 WNZ6 COMDTY",
+   "Ticker": "WNZ6",
+   "Identifier": "-",
+   "Weight": "4.2645",
+   "Market Value": "8248500",
+   "Shares Held": "78",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": "Dec 21 2026"
+  },
+  {
+   "Name": "US 10YR ULTRA FUT BOND 21/DEC/2026 UXYZ6 COMDTY",
+   "Ticker": "UXYZ6",
+   "Identifier": "-",
+   "Weight": "4.1066",
+   "Market Value": "7942968.75",
+   "Shares Held": "75",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": "Dec 21 2026"
+  },
+  {
+   "Name": "NORTHERN TRUST CREDIT-SCORED US LONG CORPORATE",
+   "Ticker": "LKOR",
+   "Identifier": "33939L753",
+   "Weight": "3.5902",
+   "Market Value": "6944287.2",
+   "Shares Held": "179042",
+   "Asset Category": "Other",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "US 10YR NOTE (CBT) BOND 21/DEC/2026 TYZ6 COMDTY",
+   "Ticker": "TYZ6",
+   "Identifier": "-",
+   "Weight": "1.5722",
+   "Market Value": "3040921.88",
+   "Shares Held": "29",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": "Dec 21 2026"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA BILL ZERO CPN 15/OCT/2026",
+   "Ticker": "-",
+   "Identifier": "912797UK1",
+   "Weight": "0.7478",
+   "Market Value": "1446352.13",
+   "Shares Held": "1449000",
+   "Asset Category": "Cash/and or Derivatives",
+   "Coupon": "0",
+   "Maturity": "Oct 15 2026"
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "USD_CCASH",
+   "Weight": "0.7078",
+   "Market Value": "1369015.85",
+   "Shares Held": "1369016",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "US 5YR NOTE (CBT) BOND 31/DEC/2026 FVZ6 COMDTY",
+   "Ticker": "FVZ6",
+   "Identifier": "-",
+   "Weight": "0.5894",
+   "Market Value": "1139960.94",
+   "Shares Held": "11",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": "Dec 31 2026"
+  },
+  {
+   "Name": "ISHARES U.S. TREASURY BOND ETF ETP USD",
+   "Ticker": "GOVT",
+   "Identifier": "46429B267",
+   "Weight": "0.4346",
+   "Market Value": "840603.12",
+   "Shares Held": "38244",
+   "Asset Category": "Other",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "U.S. DOLLAR FOR FUTURES",
+   "Ticker": "-",
+   "Identifier": "-",
+   "Weight": "0.3906",
+   "Market Value": "755532.64",
+   "Shares Held": "755533",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "US 2YR NOTE (CBT) BOND 31/DEC/2026 TUZ6 COMDTY",
+   "Ticker": "TUZ6",
+   "Identifier": "-",
+   "Weight": "-3.7861",
+   "Market Value": "-7323187.54",
+   "Shares Held": "-36",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": "Dec 31 2026"
+  }
+ ]
+}

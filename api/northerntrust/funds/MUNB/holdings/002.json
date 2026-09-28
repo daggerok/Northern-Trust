@@ -1,0 +1,96 @@
+{
+ "ticker": "MUNB",
+ "page": 2,
+ "pageSize": 250,
+ "totalRows": 257,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "RHODE IS HEALTH & EDL BLDG CORP PUB SCHS REV FING",
+   "Ticker": "-",
+   "Identifier": "76219MFL7",
+   "Weight": "0.0774",
+   "Market Value": "10503.15",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "May 15 2035"
+  },
+  {
+   "Name": "LUBBOCK TEX WTR & WASTEWATER SYS REV BDS 2021",
+   "Ticker": "-",
+   "Identifier": "549233EM2",
+   "Weight": "0.0771",
+   "Market Value": "10463.23",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 15 2031"
+  },
+  {
+   "Name": "PROSPER TEX GO REF IMPT BDS 2023 15/AUG/2023",
+   "Ticker": "-",
+   "Identifier": "743596XZ6",
+   "Weight": "0.0769",
+   "Market Value": "10439.04",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 15 2031"
+  },
+  {
+   "Name": "GREATER CLARK BLDG CORP IND AD VALOREM PPTY TAX",
+   "Ticker": "-",
+   "Identifier": "39167GQG9",
+   "Weight": "0.0762",
+   "Market Value": "10344.66",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jan 15 2035"
+  },
+  {
+   "Name": "SNOHOMISH & ISLAND CNTYS WASH SCH DIST NO 401",
+   "Ticker": "-",
+   "Identifier": "833068NE5",
+   "Weight": "0.0739",
+   "Market Value": "10032.56",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 15 2026"
+  },
+  {
+   "Name": "DODGE CNTY NEB SCH DIST NO 001 FREMONT GO BDS 2023",
+   "Ticker": "-",
+   "Identifier": "256435KY3",
+   "Weight": "0.0739",
+   "Market Value": "10026.67",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 15 2026"
+  },
+  {
+   "Name": "KANSAS CITY MO WTR REV BDS 2023A 02/FEB/2023",
+   "Ticker": "-",
+   "Identifier": "485116B48",
+   "Weight": "0.0392",
+   "Market Value": "5322.11",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 01 2033"
+  }
+ ]
+}

@@ -1,0 +1,307 @@
+{
+ "ticker": "TLTE",
+ "name": "Northern Trust Morningstar Emerging Markets Factor Tilt ETF",
+ "category": "Equity",
+ "categoryPath": "Equity / MEMMFT",
+ "source": {
+  "fundPage": "https://etfs.ntam.northerntrust.com/us/en/individual/funds/tlte",
+  "productData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/tlte/tlte-all.csv",
+  "historicalData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/tlte/tlte_pricing.json",
+  "holdingsDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/tlte/tlte-holdings.csv",
+  "pricesDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/tlte/tlte_pricing.json",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/TLTE",
+  "holdingsSource": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)",
+  "historySource": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)",
+  "provider": "Northern Trust public ETF data (funds-list JSON + per-fund CSV/JSON downloads) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "33939L308",
+  "isin": null,
+  "indexTicker": "MEMMFT"
+ },
+ "inception": {
+  "fundInceptionDate": "2012-09-25",
+  "shareClassInceptionDate": null,
+  "exchange": "NYSE Arca"
+ },
+ "expenseRatio": {
+  "display": "0.58%",
+  "value": 0.58,
+  "gross": 0.58,
+  "net": 0.57
+ },
+ "nav": {
+  "display": "$77.14",
+  "value": 77.14,
+  "asOfDate": "Sep 25 2026"
+ },
+ "marketPrice": {
+  "display": "$77.06",
+  "value": 77.06,
+  "asOfDate": "Sep 25 2026"
+ },
+ "premiumDiscount": {
+  "display": "-0.11%",
+  "value": -0.1064
+ },
+ "aum": {
+  "display": "$354.85 M",
+  "value": 354852422.35,
+  "asOfDate": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
+ },
+ "yields": {
+  "dividendYield": 3.24,
+  "dividendYieldText": "3.24%",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "distributionRate": null,
+  "secYield": 2.04,
+  "secYieldText": "2.04%",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "unsubsidizedSecYield": 2.03
+ },
+ "returns": {
+  "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 4.22,
+   "mo1Text": "4.22%",
+   "qtd": 1.55,
+   "qtdText": "1.55%",
+   "ytd": 21.12,
+   "ytdText": "21.12%",
+   "yr1": 32.32,
+   "yr1Text": "32.32%",
+   "yr3": 20.21,
+   "yr3Text": "20.21%",
+   "yr5": 8.19,
+   "yr5Text": "8.19%",
+   "yr10": 8.47,
+   "yr10Text": "8.47%",
+   "sinceInception": 5.99,
+   "sinceInceptionText": "5.99%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 20,
+   "yr1": 35.57,
+   "yr3": 20.69,
+   "yr5": 7.33,
+   "yr10": 9.19,
+   "sinceInception": 6
+  }
+ },
+ "distributions": {
+  "frequency": "Quarterly",
+  "paymentsPerYear": 4,
+  "frequencyCode": null,
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "12/27/2012",
+    "0.05195"
+   ],
+   [
+    "12/27/2013",
+    "0.430062"
+   ],
+   [
+    "12/29/2014",
+    "1.000546"
+   ],
+   [
+    "12/23/2015",
+    "0.835386"
+   ],
+   [
+    "03/21/2016",
+    "0.042217"
+   ],
+   [
+    "06/20/2016",
+    "0.256979"
+   ],
+   [
+    "09/19/2016",
+    "0.437103"
+   ],
+   [
+    "12/22/2016",
+    "0.318916"
+   ],
+   [
+    "06/19/2017",
+    "0.216146"
+   ],
+   [
+    "09/18/2017",
+    "0.684733"
+   ],
+   [
+    "12/21/2017",
+    "0.36256"
+   ],
+   [
+    "03/19/2018",
+    "0.092413"
+   ],
+   [
+    "06/18/2018",
+    "0.374172"
+   ],
+   [
+    "09/24/2018",
+    "0.753667"
+   ],
+   [
+    "12/21/2018",
+    "0.226752"
+   ],
+   [
+    "03/15/2019",
+    "0.02828"
+   ],
+   [
+    "06/21/2019",
+    "0.489127"
+   ],
+   [
+    "09/20/2019",
+    "0.710495"
+   ],
+   [
+    "12/20/2019",
+    "0.485672"
+   ],
+   [
+    "03/20/2020",
+    "0.067572"
+   ],
+   [
+    "06/19/2020",
+    "0.406638"
+   ],
+   [
+    "09/18/2020",
+    "0.459823"
+   ],
+   [
+    "12/18/2020",
+    "0.198288"
+   ],
+   [
+    "03/19/2021",
+    "0.099037"
+   ],
+   [
+    "06/18/2021",
+    "0.348239"
+   ],
+   [
+    "09/17/2021",
+    "0.520511"
+   ],
+   [
+    "12/17/2021",
+    "0.929113"
+   ],
+   [
+    "03/18/2022",
+    "0.058855"
+   ],
+   [
+    "06/17/2022",
+    "0.553655"
+   ],
+   [
+    "09/16/2022",
+    "0.823736"
+   ],
+   [
+    "12/16/2022",
+    "0.631211"
+   ],
+   [
+    "06/16/2023",
+    "0.273268"
+   ],
+   [
+    "09/15/2023",
+    "0.582079"
+   ],
+   [
+    "12/15/2023",
+    "1.201268"
+   ],
+   [
+    "06/21/2024",
+    "0.064721"
+   ],
+   [
+    "09/20/2024",
+    "0.215535"
+   ],
+   [
+    "12/20/2024",
+    "1.621259"
+   ],
+   [
+    "06/20/2025",
+    "0.184924"
+   ],
+   [
+    "09/19/2025",
+    "0.572862"
+   ],
+   [
+    "12/19/2025",
+    "1.641409"
+   ],
+   [
+    "06/18/2026",
+    "0.276712"
+   ],
+   [
+    "09/18/2026",
+    "0.583392"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json",
+   "holdings/002.json",
+   "holdings/003.json",
+   "holdings/004.json",
+   "holdings/005.json",
+   "holdings/006.json",
+   "holdings/007.json",
+   "holdings/008.json",
+   "holdings/009.json",
+   "holdings/010.json",
+   "holdings/011.json",
+   "holdings/012.json",
+   "holdings/013.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 3037,
+  "asOfDate": "2026-09-25",
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json",
+   "history/002.json",
+   "history/003.json",
+   "history/004.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 3517,
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
+ }
+}

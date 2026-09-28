@@ -1,0 +1,32 @@
+{
+ "ticker": "TXNY",
+ "page": 1,
+ "pageSize": 1000,
+ "totalRows": 3,
+ "headers": [
+  "Date",
+  "NAV",
+  "Market Price",
+  "Premium/Discount"
+ ],
+ "rows": [
+  {
+   "Date": "Sep 23 2026",
+   "NAV": "49.79",
+   "Market Price": "49.82",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Sep 24 2026",
+   "NAV": "49.53",
+   "Market Price": "49.59",
+   "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Sep 25 2026",
+   "NAV": "49.32",
+   "Market Price": "49.36",
+   "Premium/Discount": "0.04"
+  }
+ ]
+}

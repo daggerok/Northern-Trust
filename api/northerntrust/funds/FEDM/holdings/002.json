@@ -1,0 +1,41 @@
+{
+ "ticker": "FEDM",
+ "page": 2,
+ "pageSize": 250,
+ "totalRows": 252,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "U.S. DOLLAR",
+   "Ticker": "-",
+   "Identifier": "-",
+   "Weight": "-0.1463",
+   "Market Value": "-121949.72",
+   "Shares Held": "-106606",
+   "Asset Category": "Cash/and or Derivatives",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "U.S. DOLLAR",
+   "Ticker": "-",
+   "Identifier": "-",
+   "Weight": "-0.1956",
+   "Market Value": "-163086.91",
+   "Shares Held": "-133857",
+   "Asset Category": "Cash/and or Derivatives",
+   "Coupon": "0",
+   "Maturity": ""
+  }
+ ]
+}
