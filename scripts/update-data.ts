@@ -2533,8 +2533,8 @@ async function processFund(
             ? inferDistributionFrequency(dividends)
             : { frequency: String((previous.distributions as JsonRecord)?.frequency || '—'), paymentsPerYear: null };
 
-  // Official returns: product-data month-end "At NAV" (also carries 1-month)
-  // backed by the fund explorer block; quarter-end from historicalData.
+  // Official returns: full-data CSV month-end "At NAV" (also carries 1-month)
+  // backed by the funds-list JSON block; quarter-end from the full-data CSV.
   const inception = product?.inception ?? fund.inception ?? null;
   const returnsAsOfDate = product?.monthEnd.asOfDate ?? fund.returnsAsOfDate ?? null;
   const official = mergeOfficial(product?.monthEnd ?? null, fund.returns);

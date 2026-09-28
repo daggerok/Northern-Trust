@@ -67,20 +67,22 @@ Completed:
 - Committed: 9655da7 "test: adapt updater unit tests to Northern Trust".
 - Live acceptance PASSED: 3-ticker run EXIT=0/0 failures, re-run byte-identical
   (21/21), SKIP fail-safe + EDGAR reachability verified live.
+- UI DONE: app.tsx/index.html copied + 8 substitutions, Rule 7 verified,
+  diff reviewed (20+7 hunks, all mapped), client tests re-appended
+  (111/111 green), real-Chromium browser check passed, 0 console errors.
 
 Remaining:
 1. DONE: package.json, bun.lock, scripts/update-data.ts, scripts/update-data.test.ts.
 2. DONE: bun test 96/96 + bun build + type-safety review.
 3. DONE: mandatory live acceptance (3-ticker run + byte-identical re-run).
-4. Copy app.tsx/index.html from JPMorgan + 8 substitutions + header/frequency
-   rules + regression tests + browser check.
-5. PARTIAL (workflow/dependabot/favicon done): README + repo metadata.
+4. DONE: app.tsx/index.html + substitutions + regression tests + browser check.
+5. NEXT: README + full 49-fund api run + repo metadata (topics/description).
 6. Commit/push checkpoints throughout; open PR; sibling README PRs; final report.
 
 Blockers: none.
 
-Last confirmed pushed SHA: ecb4c60 on origin/init-northern-trust (main is d2709c5).
-Next action: commit api/ 3-fund data + import fix + this worklog update, push; then app.tsx/index.html copy + 8 substitutions.
+Last confirmed pushed SHA: 2abc8e1 on origin/init-northern-trust (main is d2709c5).
+Next action: commit UI + client tests + this worklog update, push; then README + full 49-fund run + repo metadata.
 
 JOURNAL
 ======
@@ -226,6 +228,50 @@ N-PORT fallback code path stays verbatim-sibling + unit-tested; a live N-PORT
 exercise needs a fund without official holdings -- the full 49-fund run (due
 before PR) will show whether such a fund exists. Committed: import fix + 3-fund
 api/ (1.2MB) + .gitignore (node_modules/).
+
+[2026-09-27] UI: copied pinned JPMorgan app.tsx (2410 lines) + index.html (346
+lines) @54338eaf, applied ONLY the 8 enumerated substitutions (S1 header, S2 x8
+localStorage keys, S3 api/northerntrust x9+paths, S4 export prefix, S5 status/
+subtitle/attribution strings, S6 columnHelp provenance sentences, S7 one row
+fallback string; S8 Trust/CIK = no-op, no such strings in either file).
+Judgment calls de-risked against live daggerok/Schwab app.tsx: Category tooltip
+uses the real vocabulary (Equity, Fixed Income, Real Assets -- only 3 values
+exist in the funds-list JSON) + "plus objective" (categoryPath = class /
+objective tag, no benchmark); SEC Yield drops the inapplicable month-end
+explorer + money-market clauses (Northern has neither); Frequency cites the
+published income-distribution frequency words (Monthly/Quarterly/Semi-annually/
+Annually, verified against the updater chain: official words -> schedule
+inference -> previous, no Yahoo leg); SI Ann. young-fund clause rewritten
+(Northern publishes "--", nothing at all); frequency "00 - None" rule already
+present in the pinned sibling, kept verbatim. Also fixed 2 stale sibling
+comments in update-data.ts (product-data/fund-explorer/historicalData wording ->
+full-data CSV/funds-list JSON; quarter-end truly comes from the full-data CSV
+via product.quarterEnd -- caught + corrected a wrong first attempt). Zero
+jpmorgan/MDEC/fund-explorer/product-data refs remain in app.tsx/index.html.
+
+[2026-09-27] UI verification: (a) Rule 7 -- all 43 overview rows keep the same
+set/order; every fund.*/meta.* path checked against live api/ output (3 funds):
+zero missing keys except fund.dividendYield/fund.secYield, which the row code
+explicitly guards (undefined-safe, meta.yields is the primary branch); nulls
+(ISIN everywhere, TIPA yr3+ grid cells, TIPA indexTicker) render as blank per
+the structural '---' collapse. No row changes needed -- schema identical by
+construction. (b) Diff review -- 20 hunks in app.tsx + 7 in index.html, every
+hunk maps to exactly one substitution category, nothing touches logic/JSX
+structure. (c) Client tests -- re-appended the T14-truncated sections from the
+pinned test file (212 lines: APP_SOURCE extraction, formatDividendFrequency x6,
+00-None label test, withTickerChain queue x4, header popover x4) with the
+single brand adaptation (MDEC/QDEC/SDEC/YDEC codes -> Monthly/Quarterly/
+Semi-annually/Annually words, which the first-letter decoder accepts) +
+readFileSync import: 111 pass / 0 fail / 423 expects. (d) Browser check --
+real Chromium (playwright 1.63, headless shell, OS deps via sudo apt): title
+"Northern Trust ETFs", badge "3 ETFs", QLC/SKOR/TIPA rows with correct
+figures, select-all -> "3 selected: QLC, SKOR, TIPA", hover badge -> panel
+visible with retained api/northerntrust/index.json + etfs.ntam.northerntrust.com
+links and 3/1718/6028 counts, Escape hides, fund tabs show exact updater
+counts (Holdings 162, History 2767, Distributions 44, Watchlist 1715), narrow
+390px layout stacks correctly, ZERO console errors. Screenshots inspected
+(/tmp/browtest/*.png, session-only). Committed: app.tsx + index.html + client
+tests.
 
 DECISIONS
 =========

@@ -1,5 +1,6 @@
 /// <reference types="bun" />
 import { describe, expect, test } from 'bun:test';
+import { readFileSync } from 'node:fs';
 import {
   parseRange,
   parseAumRange,
@@ -1220,3 +1221,216 @@ describe('etfs.ntam.northerntrust.com URL builders', () => {
 // NOTE: the app.tsx client-section regression tests (extracted
 // formatDividendFrequency, frequency labels, per-ticker queue, header summary)
 // are appended verbatim from the pinned sibling once app.tsx/index.html land.
+
+// Client-side catalog helpers (app.tsx)
+//
+// app.tsx is compiled in the browser by Babel standalone and calls init() at
+// module scope, so it cannot be imported here. The catalog's frequency column
+// is nevertheless a pure function of the published data and its coded labels
+// are what the column sorts on, so its source is extracted and exercised
+// directly instead of being left untested.
+// ---------------------------------------------------------------------------
+
+const APP_SOURCE = readFileSync(new URL('../app.tsx', import.meta.url), 'utf8');
+
+function extractClientFunction(name: string): (...args: any[]) => any {
+  const match = new RegExp(`\\nfunction ${name}\\(([^)]*)\\)[^{]*\\{([\\s\\S]*?)\\n\\}`).exec(APP_SOURCE);
+  if (!match) throw new Error(`${name} not found in app.tsx`);
+  const parameters = match[1]
+    .split(',')
+    .map(parameter => parameter.split(':')[0].split('=')[0].trim())
+    .filter(Boolean)
+    .join(', ');
+  return new Function(parameters, match[2]) as (...args: any[]) => any;
+}
+
+const formatDividendFrequency = extractClientFunction('formatDividendFrequency');
+
+describe('formatDividendFrequency (catalog Frequency column)', () => {
+  test('codes the published cadences with a sortable two-digit prefix', () => {
+    expect(formatDividendFrequency('Monthly')).toBe('01 - Monthly');
+    expect(formatDividendFrequency('Quarterly')).toBe('04 - Quarterly');
+    expect(formatDividendFrequency('Semi-annually')).toBe('06 - Semi-annually');
+    expect(formatDividendFrequency('Annually')).toBe('12 - Annually');
+    expect(formatDividendFrequency('None')).toBe('00 - None');
+    expect(formatDividendFrequency('Unknown')).toBe('00 - Unknown');
+    expect(formatDividendFrequency('Irregular')).toBe('99 - Irregular');
+  });
+
+  test('accepts the hyphenated spellings and is case-insensitive', () => {
+    expect(formatDividendFrequency('semi-annually')).toBe('06 - Semi-annually');
+    expect(formatDividendFrequency('Semi-Annual')).toBe('06 - Semi-annually');
+    expect(formatDividendFrequency('semiannual')).toBe('06 - Semi-annually');
+    expect(formatDividendFrequency('annual')).toBe('12 - Annually');
+    expect(formatDividendFrequency('monthly')).toBe('01 - Monthly');
+  });
+
+  test('treats missing data as "00 - None" instead of dropping the cell', () => {
+    expect(formatDividendFrequency(undefined)).toBe('00 - None');
+    expect(formatDividendFrequency(null)).toBe('00 - None');
+    expect(formatDividendFrequency('')).toBe('00 - None');
+    expect(formatDividendFrequency('  ')).toBe('00 - None');
+    expect(formatDividendFrequency('-')).toBe('00 - None');
+  });
+
+  test('passes an unknown published value through unchanged', () => {
+    expect(formatDividendFrequency('Weekly')).toBe('Weekly');
+    expect(formatDividendFrequency('Daily')).toBe('Daily');
+  });
+
+  test('the updater emits the spellings the column codes (decodeDividendFrequency + inferDistributionFrequency)', () => {
+    for (const word of ['Monthly', 'Quarterly', 'Semi-annually', 'Annually']) {
+      expect(formatDividendFrequency(decodeDividendFrequency(word)!.frequency)).toMatch(/^\d\d - /);
+    }
+    const semiannual = inferDistributionFrequency([
+      { epoch: isoToEpoch('2025-06-20')!, amount: 1 },
+      { epoch: isoToEpoch('2025-12-20')!, amount: 1 },
+      { epoch: isoToEpoch('2026-06-20')!, amount: 1 },
+    ]);
+    expect(semiannual).toEqual({ frequency: 'Semi-annually', paymentsPerYear: 2 });
+    expect(formatDividendFrequency(semiannual.frequency)).toBe('06 - Semi-annually');
+  });
+
+  test('coded labels sort in descending cadence order without extra comparators', () => {
+    const codes = ['Monthly', 'Quarterly', 'Semi-annually', 'Annually', 'None', 'Irregular']
+      .map(formatDividendFrequency)
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+    expect(codes).toEqual(['00 - None', '01 - Monthly', '04 - Quarterly', '06 - Semi-annually', '12 - Annually', '99 - Irregular']);
+  });
+});
+
+
+import { test as frequencyLabelTest, expect as frequencyLabelExpect } from 'bun:test';
+frequencyLabelTest('Frequency placeholders display None and existing cadence labels stay unchanged', async () => {
+  const text = await Bun.file(new URL('../app.tsx', import.meta.url)).text();
+  const start = /^([ \t]*)function (formatDividendFrequency|formatDistributionFrequency)\(/m.exec(text);
+  frequencyLabelExpect(start).not.toBeNull();
+  const tail = text.slice(start!.index);
+  const end = new RegExp('^' + start![1] + '\u007d', 'm').exec(tail);
+  frequencyLabelExpect(end).not.toBeNull();
+  const js = new Bun.Transpiler({ loader: 'ts' }).transformSync(tail.slice(0, end!.index + end![0].length));
+  const format = new Function(js + '; return ' + start![2] + ';')();
+  for (const value of [null, undefined, '', '  ', '-', '‐', '‑', '‒', '–', '—', ' — ']) {
+    frequencyLabelExpect(format(value)).toBe('00 - None');
+  }
+  for (const [input, expected] of [
+    ['None', '00 - None'], ['Unknown', '00 - Unknown'], ['Monthly', '01 - Monthly'],
+    ['Quarterly', '04 - Quarterly'], ['Semi-annually', '06 - Semi-annually'],
+    ['Annually', '12 - Annually'], ['Irregular', '99 - Irregular'],
+  ]) frequencyLabelExpect(format(input)).toBe(expected);
+});
+
+
+import { test as queueTest, describe as queueDescribe, expect as queueExpect } from 'bun:test';
+
+async function tickerChainHarness() {
+ const app=await Bun.file(new URL('../app.tsx',import.meta.url)).text();
+ const source=app.match(/^function withTickerChain<T>\([\s\S]*?^\}/m)?.[0];
+ queueExpect(source).toBeDefined();
+ const javascript=new Bun.Transpiler({loader:'ts'}).transformSync(source!);
+ const chains=new Map<string,Promise<void>>();
+ const enqueue=new Function('holdingsChains',`${javascript}; return withTickerChain;`)(chains) as
+  <T>(ticker:string,fn:()=>Promise<T>)=>Promise<T>;
+ return {chains,enqueue};
+}
+
+queueDescribe('per-ticker queue preserves caller results and stores completion-only promises',()=>{
+ queueTest('successful generic result reaches caller, not the internal queue',async()=>{
+  const {chains,enqueue}=await tickerChainHarness();
+  const value={rows:[['AGEM']]};
+  queueExpect(await enqueue('AGEM',async()=>value)).toBe(value);
+  queueExpect(await chains.get('AGEM')).toBeUndefined();
+ });
+ queueTest('rejection reaches caller without poisoning the next queued task',async()=>{
+  const {chains,enqueue}=await tickerChainHarness();
+  const error=new Error('page failed');
+  const work=enqueue('AGEM',async()=>{throw error;});
+  const observed=work.catch(reason=>reason);
+  const settled=chains.get('AGEM');
+  const next=enqueue('AGEM',async()=>42);
+  queueExpect(await observed).toBe(error);
+  queueExpect(await settled).toBeUndefined();
+  queueExpect(await next).toBe(42);
+  queueExpect(await chains.get('AGEM')).toBeUndefined();
+ });
+ queueTest('synchronous callback throws also leave the queue usable',async()=>{
+  const {chains,enqueue}=await tickerChainHarness();
+  const error=new Error('synchronous failure');
+  queueExpect(await enqueue('AGEM',()=>{throw error;}).catch(reason=>reason)).toBe(error);
+  queueExpect(await chains.get('AGEM')).toBeUndefined();
+  queueExpect(await enqueue('AGEM',async()=>'recovered')).toBe('recovered');
+ });
+ queueTest('same-ticker work stays serial while other tickers run independently',async()=>{
+  const {chains,enqueue}=await tickerChainHarness();
+  let release!:()=>void;
+  const gate=new Promise<void>(resolve=>{release=resolve;});
+  const events:string[]=[];
+  const first=enqueue('AGEM',async()=>{events.push('first');await gate;events.push('done');return 1;});
+  const second=enqueue('AGEM',async()=>{events.push('second');return 2;});
+  try {
+   queueExpect(await enqueue('SGOL',async()=>3)).toBe(3);
+   queueExpect(events).toEqual(['first']);
+  } finally { release(); }
+  queueExpect(await Promise.all([first,second])).toEqual([1,2]);
+  queueExpect(events).toEqual(['first','done','second']);
+  queueExpect(await chains.get('AGEM')).toBeUndefined();
+  queueExpect(await chains.get('SGOL')).toBeUndefined();
+ });
+});
+
+
+import { test as headerTest, expect as headerExpect } from 'bun:test';
+async function headerSummaryHarness() {
+  const source = await Bun.file(new URL('../app.tsx', import.meta.url)).text();
+  const match = /^([ \t]*)function renderHeaderSummary\(/m.exec(source);
+  headerExpect(match).not.toBeNull();
+  const tail = source.slice(match!.index);
+  const end = new RegExp('^' + match![1] + '}', 'm').exec(tail)!;
+  const js = new Bun.Transpiler({ loader: 'ts' }).transformSync(tail.slice(0, end.index + end[0].length));
+  const makeNode = (text = ''): any => {
+    const node: any = { textContent: text, childNodes: [], dataset: {}, listeners: {} };
+    node.replaceChildren = (...children: any[]) => { node.childNodes = children; };
+    node.append = (...children: any[]) => { node.childNodes.push(...children); };
+    node.addEventListener = (name: string, listener: any) => { node.listeners[name] = listener; };
+    return node;
+  };
+  const panel = makeNode(), subtitle = makeNode(), details = makeNode('Data: source link and updated timestamp');
+  subtitle.append(details);
+  const document = { getElementById: () => panel, createTextNode: makeNode, createElement: () => makeNode() };
+  const render = new Function('document', js + '; return renderHeaderSummary;')(document);
+  const text = () => subtitle.childNodes.map((n: any) => n.textContent).join('');
+  return { render, panel, subtitle, details, makeNode, text };
+}
+headerTest('header has no visible subtitle without selection; original details nodes are retained', async () => {
+  const h = await headerSummaryHarness();
+  h.render(h.subtitle, new Set(), null, () => {});
+  headerExpect(h.text()).toBe('');
+  headerExpect(h.panel.childNodes).toEqual([h.details]);
+  headerExpect(h.panel.childNodes[0]).toBe(h.details);
+});
+headerTest('header shows sorted selected tickers only, preserving click activation and highlight', async () => {
+  const h = await headerSummaryHarness(); const activated: string[] = [];
+  h.render(h.subtitle, new Set(['ZZZ', 'AAA']), 'AAA', (ticker: string) => activated.push(ticker));
+  headerExpect(h.text()).toBe('2 selected: AAA, ZZZ');
+  const links = h.subtitle.childNodes.filter((n: any) => n.dataset.headerFund);
+  headerExpect(links[0].className).toContain('underline');
+  links[1].listeners.click({ preventDefault() {} });
+  headerExpect(activated).toEqual(['ZZZ']);
+  headerExpect(h.panel.childNodes[0]).toBe(h.details);
+});
+headerTest('all selected still lists tickers; clear replaces both summary and selection', async () => {
+  const h = await headerSummaryHarness();
+  h.render(h.subtitle, new Set(['CCC','AAA','BBB']), 'BBB', () => {});
+  headerExpect(h.text()).toBe('3 selected: AAA, BBB, CCC');
+  const next = h.makeNode('Fresh detail context'); h.subtitle.replaceChildren(next);
+  h.render(h.subtitle, new Set(), null, () => {});
+  headerExpect(h.text()).toBe(''); headerExpect(h.panel.childNodes).toEqual([next]);
+});
+headerTest('header markup supplies a focusable counter and hidden rich panel with dismissal', async () => {
+  const html = await Bun.file(new URL('../index.html', import.meta.url)).text();
+  headerExpect(html).toMatch(/<button[^>]*aria-controls="app-summary"[^>]*id="ticker-count"/);
+  headerExpect(html).toContain('id="app-summary" role="region" aria-label="ETF catalog information" hidden');
+  headerExpect(html).toContain("event.key !== 'Escape'");
+  headerExpect(html).toContain("trigger.addEventListener('focus', show)");
+  headerExpect(html).toContain("trigger.addEventListener('pointerenter'");
+});
