@@ -72,19 +72,23 @@ Completed:
   (111/111 green), real-Chromium browser check passed, 0 console errors.
 - README DONE (pinned base + truthful subs, headings/controls verified).
 - Full 49-fund run DONE: EXIT=0, 0 failures, re-run 288/288 identical.
+- Metadata DONE (description/homepage/20 topics, verified via GET).
+- PR DONE: daggerok/Northern-Trust#1 open (not merged, unauthorized).
+- Sibling README PRs DONE: all 16 opened (doc-only, 2-line inserts).
 
 Remaining:
 1. DONE: package.json, bun.lock, scripts/update-data.ts, scripts/update-data.test.ts.
 2. DONE: bun test 96/96 + bun build + type-safety review.
 3. DONE: mandatory live acceptance (3-ticker run + byte-identical re-run).
 4. DONE: app.tsx/index.html + substitutions + regression tests + browser check.
-5. NEXT: repo metadata (topics/description); then PR + sibling README PRs.
-6. Commit/push checkpoints throughout; open PR; sibling README PRs; final report.
+5. DONE: metadata, PR #1, 16 sibling README PRs.
+6. DONE except: merge decisions + Pages enablement (need user -- not authorized
+   to merge). Final report delivered this session.
 
 Blockers: none.
 
-Last confirmed pushed SHA: e2a47f1 on origin/init-northern-trust (main is d2709c5).
-Next action: commit README + full api/ + this worklog update, push; then repo metadata + open PR.
+Last confirmed pushed SHA: 25f26b1 on origin/init-northern-trust (main is d2709c5).
+Next action: commit this final worklog update, push; then deliver the final report. Await user for merge/Pages.
 
 JOURNAL
 ======
@@ -304,6 +308,47 @@ TIPA secYield -2.14 verbatim-official. Re-run EXIT=0 in 16s, 288/288 files
 BYTE-IDENTICAL. No fund needed the N-PORT fallback (all 49 publish an official
 holdings sheet), so that path stays verbatim-sibling + unit-tested. Committed:
 README + full api/.
+
+[2026-09-27] Repo metadata (section 11): BEFORE description/homepage empty,
+topics []. AFTER (verified via GET): description "Northern Trust ETF. A
+single-file client-side tool reading ./api/northerntrust (Northern Trust funds
+list and per-fund CSV/JSON downloads, SEC EDGAR and Yahoo Finance fallbacks)
+into a searchable ETF/asset-class catalog with per-fund tabs, watchlist,
+CSV/TXT export. TailwindCSS, dark mode, Bun updater." (303 chars);
+homepage https://daggerok.github.io/Northern-Trust/; 20 topics = 18 shared
+(css csv dark-mode edgar etf finance github-pages holdings html json nport
+single-file static-api tailwindcss txt typescript watchlist yahoo-finance) +
+northerntrust + northerntrust-etfs. Applied via REST (no gh); sibling
+JPMorgan values used as reference. No Linguist overrides, no branch changes.
+
+[2026-09-27] Opened PR https://github.com/daggerok/Northern-Trust/pull/1
+(feat: add Northern Trust ETF holdings-to-watchlist app, init-northern-trust
+-> main, state open). NOT merged (no merge authorization). Then opened all 16
+authorized doc-only sibling README PRs (branch docs/add-northern-trust-row,
+2-line insert after the NEOS rows in Brands + Siblings tables, alphabetical
+position verified per repo): aberdeen#3, Amplify#47, Fidelity#22, Franklin#21,
+Global-X#8, Goldman-Sachs#17, Invesco#23, iShares#48, JPMorgan#20, Neos#18,
+ProShares#20, Schwab#16, SPDR#33, VanEck#19, Vanguard#29, WisdomTree#29. Mid-run
+hiccup: /tmp (1GB tmpfs) filled after 9 shallow clones; moved scratch to
+/home/user/.sib-work (deleted afterwards), reran the remaining 7 green.
+
+[2026-09-27] REPORT-BACK (plan section 12): closest examples -- updater output
+helpers/UI/README/workflow = JPMorgan@54338eaf; request pacing = WisdomTree
+lanes; UI tooltip-phrasing precedent for non-JPMorgan brands = live Schwab
+app.tsx. Site behavior vs assumptions: NO WAF/blocking at all (plain curl,
+200s, full 49-fund run in 33s) -- the brand plan's single-gate caution was
+rejected by evidence; catalog is server-rendered HTML with embedded JSON
+("49 TOTAL FUNDS SHOWN", 2 more than the 47 tickers a naive link-grep found);
+every fund incl. 5-day-old TXCA/TXNY has -all.csv + _pricing.json; SKOR-class
+bond funds lack daily -holdings.csv but HAVE -monthly-holdings.csv (the
+fallback triggers in production); official CSV publishes a NEGATIVE SEC yield
+for TIPA (-2.14%, reproduced verbatim); dual registrants confirmed (FlexShares
+Trust 0001491978 + Northern Funds 0000916620, 9 tickers mapped). Truth fixes vs
+sibling template: REQUEST_SLEEP documents 0 (observed unset behavior,
+Number('')===0) not 1; CONCURRENCY spacing is per-lane not global; S8
+Trust/CIK substitution = no-op (no such strings in UI files); README guard =
+recorded comparison, no novel test (sibling suite has none). Pending (needs
+user): merge PR #1, enable GitHub Pages, merge/wait sibling PRs.
 
 DECISIONS
 =========
