@@ -87,8 +87,8 @@ Remaining:
 
 Blockers: none.
 
-Last confirmed pushed SHA: 25f26b1 on origin/init-northern-trust (main is d2709c5).
-Next action: commit this final worklog update, push; then deliver the final report. Await user for merge/Pages.
+Last confirmed pushed SHA: d486b71 on origin/init-northern-trust (main is d2709c5; PR #1 still open).
+Next action: commit this worklog update, push. Remaining with user: merge Northern-Trust#1, enable Pages, delete 16 stale sibling docs branches (optional).
 
 JOURNAL
 ======
@@ -364,6 +364,19 @@ after. Verified: 111/111 tests, bun build clean, git diff --check clean.
 Sandbox note: new turn = fresh sandbox; ~/.bun/bin/bun lost its exec bit
 (chmod +x fixed, 1.4.2) and ~/.git-credentials was wiped (excluded from
 snapshots) -- pushes/merges need the runtime PAT re-provided.
+
+[2026-09-28] User pushed 8b0236b "gitignore" (.DS_Store + .idea/) to
+init-northern-trust from their side; rebased local fix commit onto it (no
+conflicts, no force-push) and pushed: origin/init-northern-trust = d486b71.
+[2026-09-28] User authorized sibling merges (Northern-Trust#1 stays open --
+merge of the main PR was NOT authorized). Assigned all 16 doc-only README PRs
+to daggerok and merged all 16 via squash (merge commits are disabled on those
+repos; first merge-commit attempt 405'd, retried with each repo's allowed
+method): aberdeen#3, Amplify#47, Fidelity#22, Franklin#21, Global-X#8,
+Goldman-Sachs#17, Invesco#23, iShares#48, JPMorgan#20, Neos#18, ProShares#20,
+Schwab#16, SPDR#33, VanEck#19, Vanguard#29, WisdomTree#29. Verified via GET:
+merged=true + assignee daggerok on all 16. Stale docs/add-northern-trust-row
+branches left in place (cleanup not requested).
 
 DECISIONS
 =========
