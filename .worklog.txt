@@ -60,21 +60,26 @@ Completed:
 - SEC CIKs confirmed: FlexShares Trust 0001491978; Northern Funds 0000916620.
 - User decisions recorded: push+open-PR (no merge), UI brand "Northern Trust",
   sibling doc-only README PRs allowed.
+- scripts/update-data.ts fully adapted (config/CIKs/Northern parsers/stages/
+  metrics/previous-data/export); bun build green, zero brand leftovers.
+- scripts/update-data.test.ts adapted; bun test 96/96 green (bun 1.4.2).
+- package.json + bun.lock + CI workflow + dependabot.yml + favicon.ico done.
+- Committed: 9655da7 "test: adapt updater unit tests to Northern Trust".
 
 Remaining:
-1. Scaffold repo: package.json, bun.lock, scripts/update-data.ts,
-   scripts/update-data.test.ts (TDD for parsers/metrics/pagination).
-2. bun test + bun build + type-safety review.
-3. Mandatory live acceptance (3 tickers: QLC equity, SKOR bond, TIPA ladder).
+1. DONE: package.json, bun.lock, scripts/update-data.ts, scripts/update-data.test.ts.
+2. DONE: bun test 96/96 + bun build + type-safety review.
+3. NEXT: mandatory live acceptance (TICKERS="QLC SKOR TIPA" VERBOSE=1, counts,
+   re-run byte-identical).
 4. Copy app.tsx/index.html from JPMorgan + 8 substitutions + header/frequency
    rules + regression tests + browser check.
-5. CI workflow + dependabot.yml + favicon.ico + README + repo metadata.
+5. PARTIAL (workflow/dependabot/favicon done): README + repo metadata.
 6. Commit/push checkpoints throughout; open PR; sibling README PRs; final report.
 
 Blockers: none.
 
-Last confirmed pushed SHA: (none yet on init-northern-trust; main is d2709c5).
-Next action: commit this .worklog.txt checkpoint on init-northern-trust and push.
+Last confirmed pushed SHA: 945aa60 on origin/init-northern-trust (main is d2709c5).
+Next action: commit this worklog update, push (9655da7 + worklog commit), then mandatory live acceptance run.
 
 JOURNAL
 ======
@@ -149,6 +154,48 @@ Created feature branch init-northern-trust.
 [2026-09-27] Asked user 3 questions (ask_user): auth scope -> push + open PR
 (no merge); UI brand -> "Northern Trust"; sibling doc-only README PRs -> yes.
 Recorded in CURRENT STATE above.
+
+[2026-09-27] Updater: copied pinned JPMorgan update-data.ts (3098 lines) to
+scripts/update-data.ts, applied Part A (8 mechanical renames incl. slug,
+SKIP_NORTHERNTRUST, pacedRetireOldRawFiles plural sweep, WisdomTree lane
+pacing verbatim), Part B (17 Northern sections: config/CIKs/catalog
+parser/facts parser/holdings parser/pricing parser/distributions CSV/facts
+list/navigation/etfcharts/category/fetch stages/official stages/pipeline
+assembly/metrics/previous-data/export surface), Part C (official metrics
+append, catalog/CIK/entities/category appends, per-registrant CIK ownership,
+company_tickers fallback to FlexShares Trust, NORTHERN_FUNDS_TICKERS nine).
+Per-fund artifacts read: <t>-all.csv, <t>-holdings.csv + <t>-monthly-holdings.csv
+fallback, <t>_pricing.json, <t>-distributions.csv, <t>_etfcharts.json (asset
+class). Bugs fixed: (a) HttpError anchor drift (A9); (b) C9 slice orphaned
+early-NAV retry block -> `Unexpected }` at line 3001, deleted orphan lines;
+(c) holdings header detection required literal `Market Value` but real CSV has
+only Market Value-Local/Base -> required list now Name+Ticker+Fund Weight.
+Verified: `bun build --target=bun scripts/update-data.ts --outfile=/dev/null`
+exit 0 (104KB bundle), braces 792/792, zero jpmorgan/JPMORGAN refs.
+
+[2026-09-27] Tests: copied pinned JPMorgan update-data.test.ts, applied T1
+(header/imports/catalog fixture incl. QLC+GUNR+TXCA+synthetic TEST/CIK/entities/
+category strips), T2a (facts/holdings/frequency-word strips with live 2026-09-27
+captures), T2b (pricing/distributions strips, Northern metrics strings, URL
+builders, client app.tsx sections truncated for re-append at UI step), T15
+(orphaned FUND_EXPLORER_FIXTURE dropped, generic-test brand text re-skinned,
+preamble test rewritten onto Northern holdings header). Failure found + fixed:
+B2 slice had swallowed the GENERIC isoOrNull helper -> restored verbatim.
+`bun install` (exact pins @types/bun 1.4.2 + @types/node 26.6.2, bun.lock) then
+`bun test scripts/update-data.test.ts`: 96 pass / 0 fail / 340 expects, bun 1.4.2.
+
+[2026-09-27] Scaffold: package.json (exact pinned devDeps, test+update
+scripts), .github/workflows/update-data.yml adapted (Northern Trust name,
+api/northerntrust x4, skip_northerntrust/SKIP_NORTHERNTRUST, sec_yield input +
+SEC_YIELD env, throttle/raw/history/NPORT descriptions; zero jpmorgan refs),
+dependabot.yml copied verbatim (already generic), favicon.ico copied from
+pinned sibling. Type-safety review (plan section 5): no indexed numeric writes
+into mixed-type objects (officialReturns built with explicit fields at all 4
+writes; no header->slot mapper in this sibling family); worker queue awaits
+Promise.all over async(): Promise<void> workers; zero `any` in new code
+(JsonValue/JsonRecord/JsonObject + contextually typed callbacks). No tsc gate
+(Bun-only policy): verification = bun build green + bun test 96/96 + this review.
+Committed as 9655da7 "test: adapt updater unit tests to Northern Trust".
 
 DECISIONS
 =========
