@@ -65,12 +65,13 @@ Completed:
 - scripts/update-data.test.ts adapted; bun test 96/96 green (bun 1.4.2).
 - package.json + bun.lock + CI workflow + dependabot.yml + favicon.ico done.
 - Committed: 9655da7 "test: adapt updater unit tests to Northern Trust".
+- Live acceptance PASSED: 3-ticker run EXIT=0/0 failures, re-run byte-identical
+  (21/21), SKIP fail-safe + EDGAR reachability verified live.
 
 Remaining:
 1. DONE: package.json, bun.lock, scripts/update-data.ts, scripts/update-data.test.ts.
 2. DONE: bun test 96/96 + bun build + type-safety review.
-3. NEXT: mandatory live acceptance (TICKERS="QLC SKOR TIPA" VERBOSE=1, counts,
-   re-run byte-identical).
+3. DONE: mandatory live acceptance (3-ticker run + byte-identical re-run).
 4. Copy app.tsx/index.html from JPMorgan + 8 substitutions + header/frequency
    rules + regression tests + browser check.
 5. PARTIAL (workflow/dependabot/favicon done): README + repo metadata.
@@ -78,8 +79,8 @@ Remaining:
 
 Blockers: none.
 
-Last confirmed pushed SHA: 945aa60 on origin/init-northern-trust (main is d2709c5).
-Next action: commit this worklog update, push (9655da7 + worklog commit), then mandatory live acceptance run.
+Last confirmed pushed SHA: ecb4c60 on origin/init-northern-trust (main is d2709c5).
+Next action: commit api/ 3-fund data + import fix + this worklog update, push; then app.tsx/index.html copy + 8 substitutions.
 
 JOURNAL
 ======
@@ -196,6 +197,35 @@ Promise.all over async(): Promise<void> workers; zero `any` in new code
 (JsonValue/JsonRecord/JsonObject + contextually typed callbacks). No tsc gate
 (Bun-only policy): verification = bun build green + bun test 96/96 + this review.
 Committed as 9655da7 "test: adapt updater unit tests to Northern Trust".
+
+[2026-09-27] Live acceptance RUN 1 (TICKERS="QLC SKOR TIPA" VERBOSE=1, no
+previous data): first attempt failed all 3 funds with `mkdir/writeFile is not
+defined` -- the Part-B import-block replacement had dropped the sibling's main
+fs/promises imports (appendFile, mkdir, readFile, readdir, rm, writeFile);
+restored alongside the output* aliases (single import site, lines 4-7). Second
+attempt EXIT=0 in ~3s: catalog 49/49 funds parsed live; QLC updated
+(history=2767 holdings=162 divs=44 netAssets=$1.1B div=0.95 sec=0.95);
+SKOR updated (history=2983 holdings=1550 divs=142 $901.9M div=4.81 sec=5.05,
+via -monthly-holdings.csv fallback -- no daily file, as probed); TIPA updated
+(history=278 holdings=6 divs=10 $18.6M div=4.25 sec=-2.14, 6 ladder rungs).
+0 failures. Meta shape verified (18 top-level keys, source provenance URLs,
+paginated holdings/history with headers/page/pageSize/rows/ticker/totalRows,
+index.json counts/funds/generatedAt/source). TIPA secYield -2.14 traced to the
+official tipa-all.csv line `SEC Subsidized Yield (as of 09/25/2026),"-2.14"%`
+-- published verbatim per official-first policy (upstream's number, not a
+parser bug). Console contract honored (config/catalog/filter/progress/done/cursor).
+
+[2026-09-27] Live acceptance RUN 2 (same env): EXIT=0, all 21 api/ files
+BYTE-IDENTICAL to run 1 (sha256sum -c 21/21 OK) -- idempotent, no
+timestamp-only churn. Fallback-chain probe: api/ stashed + SKIP_NORTHERNTRUST=1
+with no previous data -> clean early exit ("nothing to do ... index.json is
+empty or missing", verbatim sibling fail-safe: no catalog universe without
+official or previous data); EDGAR ticker table still fetched live (28549
+classes, reachable). api/ restored afterwards, hashes re-verified 21/21 OK.
+N-PORT fallback code path stays verbatim-sibling + unit-tested; a live N-PORT
+exercise needs a fund without official holdings -- the full 49-fund run (due
+before PR) will show whether such a fund exists. Committed: import fix + 3-fund
+api/ (1.2MB) + .gitignore (node_modules/).
 
 DECISIONS
 =========

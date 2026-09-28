@@ -1,0 +1,302 @@
+{
+ "ticker": "QLC",
+ "name": "Northern Trust US Quality Large Cap ETF",
+ "category": "Equity",
+ "categoryPath": "Equity / NTUQVM",
+ "source": {
+  "fundPage": "https://etfs.ntam.northerntrust.com/us/en/individual/funds/qlc",
+  "productData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/qlc/qlc-all.csv",
+  "historicalData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/qlc/qlc_pricing.json",
+  "holdingsDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/qlc/qlc-holdings.csv",
+  "pricesDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/qlc/qlc_pricing.json",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/QLC",
+  "holdingsSource": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)",
+  "historySource": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)",
+  "provider": "Northern Trust public ETF data (funds-list JSON + per-fund CSV/JSON downloads) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "33939L746",
+  "isin": null,
+  "indexTicker": "NTUQVM"
+ },
+ "inception": {
+  "fundInceptionDate": "2015-09-23",
+  "shareClassInceptionDate": null,
+  "exchange": "CBOE"
+ },
+ "expenseRatio": {
+  "display": "0.26%",
+  "value": 0.26,
+  "gross": 0.26,
+  "net": 0.25
+ },
+ "nav": {
+  "display": "$91.99",
+  "value": 91.99,
+  "asOfDate": "Sep 25 2026"
+ },
+ "marketPrice": {
+  "display": "$92.01",
+  "value": 92.01,
+  "asOfDate": "Sep 25 2026"
+ },
+ "premiumDiscount": {
+  "display": "0.02%",
+  "value": 0.0208
+ },
+ "aum": {
+  "display": "$1,129.19 M",
+  "value": 1129188730.6,
+  "asOfDate": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
+ },
+ "yields": {
+  "dividendYield": 0.95,
+  "dividendYieldText": "0.95%",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "distributionRate": null,
+  "secYield": 0.95,
+  "secYieldText": "0.95%",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "unsubsidizedSecYield": 0.94
+ },
+ "returns": {
+  "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 2.01,
+   "mo1Text": "2.01%",
+   "qtd": 2.7,
+   "qtdText": "2.70%",
+   "ytd": 14.5,
+   "ytdText": "14.50%",
+   "yr1": 24.89,
+   "yr1Text": "24.89%",
+   "yr3": 23.97,
+   "yr3Text": "23.97%",
+   "yr5": 14.34,
+   "yr5Text": "14.34%",
+   "yr10": 14.73,
+   "yr10Text": "14.73%",
+   "sinceInception": 14.31,
+   "sinceInceptionText": "14.31%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 11.58,
+   "yr1": 27.77,
+   "yr3": 23.68,
+   "yr5": 15.05,
+   "yr10": 14.91,
+   "sinceInception": 14.28
+  }
+ },
+ "distributions": {
+  "frequency": "Quarterly",
+  "paymentsPerYear": 4,
+  "frequencyCode": null,
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "12/29/2015",
+    "0.165689"
+   ],
+   [
+    "03/21/2016",
+    "0.107155"
+   ],
+   [
+    "06/20/2016",
+    "0.112113"
+   ],
+   [
+    "09/19/2016",
+    "0.112313"
+   ],
+   [
+    "12/22/2016",
+    "0.16936"
+   ],
+   [
+    "03/20/2017",
+    "0.037885"
+   ],
+   [
+    "06/19/2017",
+    "0.125239"
+   ],
+   [
+    "09/18/2017",
+    "0.13034"
+   ],
+   [
+    "12/21/2017",
+    "0.138191"
+   ],
+   [
+    "03/19/2018",
+    "0.09642"
+   ],
+   [
+    "06/18/2018",
+    "0.127675"
+   ],
+   [
+    "09/24/2018",
+    "0.152492"
+   ],
+   [
+    "12/21/2018",
+    "0.172651"
+   ],
+   [
+    "03/15/2019",
+    "0.112981"
+   ],
+   [
+    "06/21/2019",
+    "0.282379"
+   ],
+   [
+    "09/20/2019",
+    "0.149436"
+   ],
+   [
+    "12/20/2019",
+    "0.15816"
+   ],
+   [
+    "03/20/2020",
+    "0.140953"
+   ],
+   [
+    "06/19/2020",
+    "0.142234"
+   ],
+   [
+    "09/18/2020",
+    "0.145214"
+   ],
+   [
+    "12/18/2020",
+    "0.146005"
+   ],
+   [
+    "03/19/2021",
+    "0.104928"
+   ],
+   [
+    "06/18/2021",
+    "0.12779"
+   ],
+   [
+    "09/17/2021",
+    "0.111454"
+   ],
+   [
+    "12/17/2021",
+    "0.157264"
+   ],
+   [
+    "03/18/2022",
+    "0.121378"
+   ],
+   [
+    "06/17/2022",
+    "0.143509"
+   ],
+   [
+    "09/16/2022",
+    "0.16251"
+   ],
+   [
+    "12/16/2022",
+    "0.195241"
+   ],
+   [
+    "03/17/2023",
+    "0.144985"
+   ],
+   [
+    "06/16/2023",
+    "0.167158"
+   ],
+   [
+    "09/15/2023",
+    "0.156354"
+   ],
+   [
+    "12/15/2023",
+    "0.197357"
+   ],
+   [
+    "03/15/2024",
+    "0.129261"
+   ],
+   [
+    "06/21/2024",
+    "0.168762"
+   ],
+   [
+    "09/20/2024",
+    "0.134355"
+   ],
+   [
+    "12/20/2024",
+    "0.252715"
+   ],
+   [
+    "03/21/2025",
+    "0.117935"
+   ],
+   [
+    "06/20/2025",
+    "0.168774"
+   ],
+   [
+    "09/19/2025",
+    "0.195706"
+   ],
+   [
+    "12/19/2025",
+    "0.282433"
+   ],
+   [
+    "03/20/2026",
+    "0.141812"
+   ],
+   [
+    "06/18/2026",
+    "0.2215"
+   ],
+   [
+    "09/18/2026",
+    "0.224696"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 162,
+  "asOfDate": "2026-09-25",
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json",
+   "history/002.json",
+   "history/003.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 2767,
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
+ }
+}

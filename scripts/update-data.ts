@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 // Bun provides Node-compatible fs/promises and process globals for this script.
 /// <reference types="bun" />
-import { readFile as outputReadFile, readdir as outputReadDir } from 'node:fs/promises';
+import { appendFile, mkdir, readFile, readdir, rm, writeFile, readFile as outputReadFile, readdir as outputReadDir } from 'node:fs/promises';
 import { createHash as outputCreateHash } from 'node:crypto';
 import { join as outputJoin } from 'node:path';
 import { fileURLToPath as outputFileURLToPath } from 'node:url';
