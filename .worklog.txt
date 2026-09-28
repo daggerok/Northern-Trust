@@ -350,6 +350,21 @@ Trust/CIK substitution = no-op (no such strings in UI files); README guard =
 recorded comparison, no novel test (sibling suite has none). Pending (needs
 user): merge PR #1, enable GitHub Pages, merge/wait sibling PRs.
 
+[2026-09-28] TS2304 fix (user screenshot): `officialReturnsFrom` (line 1081)
+spread `...fractionReturns(row)` but the B2 brand-block removal had dropped the
+sibling's `fractionReturns` definition -- same bug class as the earlier
+isoOrNull/fs-imports orphans (Bun transpile + tests don't typecheck, so the
+suite stayed green while the IDE flagged it). `officialReturnsFrom` /
+`performanceRow` have zero callers in the Northern pipeline (dead kept code;
+live callers existed only in the replaced JPMorgan stages). Fix: restored
+`fractionReturns` VERBATIM (byte-identical, same position above `isoOrNull`).
+Systematic orphan scan (228 sibling top-level decls vs 224 mine; every dropped
+name grepped for remaining references): exactly 1 orphan before the fix, NONE
+after. Verified: 111/111 tests, bun build clean, git diff --check clean.
+Sandbox note: new turn = fresh sandbox; ~/.bun/bin/bun lost its exec bit
+(chmod +x fixed, 1.4.2) and ~/.git-credentials was wiped (excluded from
+snapshots) -- pushes/merges need the runtime PAT re-provided.
+
 DECISIONS
 =========
 - D1: UI brand "Northern Trust" (user-confirmed). Rationale: 2026 site rebrand

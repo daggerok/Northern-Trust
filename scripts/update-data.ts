@@ -891,6 +891,18 @@ export function normalizeNorthernTrustCategory(raw: unknown): string {
   return text || 'ETF';
 }
 
+function fractionReturns(block: unknown): CatalogReturns {
+  const source = (block && typeof block === 'object' ? block : {}) as JsonRecord;
+  return {
+    ytd: fractionToPercent(source.ytd),
+    yr1: fractionToPercent(source.yr1 ?? source.oneYear),
+    yr3: fractionToPercent(source.yr3 ?? source.threeYears),
+    yr5: fractionToPercent(source.yr5 ?? source.fiveYears),
+    yr10: fractionToPercent(source.yr10 ?? source.tenYears),
+    sinceInception: fractionToPercent(source.inception ?? source.sinceInception),
+  };
+}
+
 function isoOrNull(raw: unknown): string | null {
   const iso = toIsoDate(raw);
   return /^\d{4}-\d{2}-\d{2}$/.test(iso) ? iso : null;
