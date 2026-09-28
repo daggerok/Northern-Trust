@@ -1,0 +1,217 @@
+{
+ "ticker": "TIPC",
+ "page": 1,
+ "pageSize": 250,
+ "totalRows": 18,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "UNITED STATES OF AMERICA BOND FIXED 2.125%",
+   "Ticker": "-",
+   "Identifier": "912810QF8",
+   "Weight": "11.0748",
+   "Market Value": "619901.75",
+   "Shares Held": "445000",
+   "Asset Category": "-",
+   "Coupon": "2.125",
+   "Maturity": "Feb 15 2040"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA BOND FIXED 2.125%",
+   "Ticker": "-",
+   "Identifier": "912810QP6",
+   "Weight": "10.8049",
+   "Market Value": "604791.25",
+   "Shares Held": "445000",
+   "Asset Category": "-",
+   "Coupon": "2.125",
+   "Maturity": "Feb 15 2041"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 1.875%",
+   "Ticker": "-",
+   "Identifier": "91282CNS6",
+   "Weight": "7.6971",
+   "Market Value": "430835.74",
+   "Shares Held": "445000",
+   "Asset Category": "-",
+   "Coupon": "1.875",
+   "Maturity": "Jul 15 2035"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 2.375%",
+   "Ticker": "-",
+   "Identifier": "91282CRE3",
+   "Weight": "7.6456",
+   "Market Value": "427951.09",
+   "Shares Held": "445000",
+   "Asset Category": "-",
+   "Coupon": "2.375",
+   "Maturity": "Jul 15 2036"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 0.125%",
+   "Ticker": "-",
+   "Identifier": "91282CDC2",
+   "Weight": "5.5414",
+   "Market Value": "310172.84",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "0.125",
+   "Maturity": "Oct 15 2026"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 1.625%",
+   "Ticker": "-",
+   "Identifier": "91282CFR7",
+   "Weight": "5.0798",
+   "Market Value": "284335.5",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "1.625",
+   "Maturity": "Oct 15 2027"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 0.125%",
+   "Ticker": "-",
+   "Identifier": "91282CCM1",
+   "Weight": "5.0467",
+   "Market Value": "282484.68",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "0.125",
+   "Maturity": "Jul 15 2031"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 2.375%",
+   "Ticker": "-",
+   "Identifier": "91282CJH5",
+   "Weight": "4.9421",
+   "Market Value": "276628.88",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "2.375",
+   "Maturity": "Oct 15 2028"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA BOND FIXED 1.375%",
+   "Ticker": "-",
+   "Identifier": "912810RF7",
+   "Weight": "4.9245",
+   "Market Value": "275644.99",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "1.375",
+   "Maturity": "Feb 15 2044"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA BOND FIXED 0.75%",
+   "Ticker": "-",
+   "Identifier": "912810QV3",
+   "Weight": "4.7578",
+   "Market Value": "266309.89",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "0.75",
+   "Maturity": "Feb 15 2042"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 1.625%",
+   "Ticker": "-",
+   "Identifier": "91282CLV1",
+   "Weight": "4.6946",
+   "Market Value": "262776.56",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "1.625",
+   "Maturity": "Oct 15 2029"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 0.625%",
+   "Ticker": "-",
+   "Identifier": "91282CEZ0",
+   "Weight": "4.6714",
+   "Market Value": "261475.79",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "0.625",
+   "Maturity": "Jul 15 2032"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 1.375%",
+   "Ticker": "-",
+   "Identifier": "91282CHP9",
+   "Weight": "4.6009",
+   "Market Value": "257528.64",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "1.375",
+   "Maturity": "Jul 15 2033"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 1.875%",
+   "Ticker": "-",
+   "Identifier": "91282CLE9",
+   "Weight": "4.5526",
+   "Market Value": "254825.93",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "1.875",
+   "Maturity": "Jul 15 2034"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA BOND FIXED 0.625%",
+   "Ticker": "-",
+   "Identifier": "912810RA8",
+   "Weight": "4.456",
+   "Market Value": "249421.33",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "0.625",
+   "Maturity": "Feb 15 2043"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA NOTES FIXED 1.125%",
+   "Ticker": "-",
+   "Identifier": "91282CPH8",
+   "Weight": "4.4358",
+   "Market Value": "248290.07",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "1.125",
+   "Maturity": "Oct 15 2030"
+  },
+  {
+   "Name": "UNITED STATES OF AMERICA BOND FIXED 0.75%",
+   "Ticker": "-",
+   "Identifier": "912810RL4",
+   "Weight": "4.2295",
+   "Market Value": "236739.84",
+   "Shares Held": "254000",
+   "Asset Category": "-",
+   "Coupon": "0.75",
+   "Maturity": "Feb 15 2045"
+  },
+  {
+   "Name": "CASH",
+   "Ticker": "-",
+   "Identifier": "USD_CCASH",
+   "Weight": "0.8445",
+   "Market Value": "47269.7",
+   "Shares Held": "47270",
+   "Asset Category": "-",
+   "Coupon": "0",
+   "Maturity": ""
+  }
+ ]
+}

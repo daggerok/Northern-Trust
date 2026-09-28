@@ -1,0 +1,521 @@
+{
+ "ticker": "HYGV",
+ "name": "Northern Trust High Yield Value-Scored Bond ETF",
+ "category": "Fixed Income",
+ "categoryPath": "Fixed Income / NTUHVCB",
+ "source": {
+  "fundPage": "https://etfs.ntam.northerntrust.com/us/en/individual/funds/hygv",
+  "productData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/hygv/hygv-all.csv",
+  "historicalData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/hygv/hygv_pricing.json",
+  "holdingsDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/hygv/hygv-holdings.csv",
+  "pricesDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/hygv/hygv_pricing.json",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/HYGV",
+  "holdingsSource": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)",
+  "historySource": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)",
+  "provider": "Northern Trust public ETF data (funds-list JSON + per-fund CSV/JSON downloads) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "33939L662",
+  "isin": null,
+  "indexTicker": "NTUHVCB"
+ },
+ "inception": {
+  "fundInceptionDate": "2018-07-17",
+  "shareClassInceptionDate": null,
+  "exchange": "NYSE Arca"
+ },
+ "expenseRatio": {
+  "display": "0.38%",
+  "value": 0.38,
+  "gross": 0.38,
+  "net": 0.37
+ },
+ "nav": {
+  "display": "$39.17",
+  "value": 39.17,
+  "asOfDate": "Sep 25 2026"
+ },
+ "marketPrice": {
+  "display": "$39.18",
+  "value": 39.18,
+  "asOfDate": "Sep 25 2026"
+ },
+ "premiumDiscount": {
+  "display": "0.03%",
+  "value": 0.0319
+ },
+ "aum": {
+  "display": "$1,041.86 M",
+  "value": 1041855603.5,
+  "asOfDate": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
+ },
+ "yields": {
+  "dividendYield": 7.55,
+  "dividendYieldText": "7.55%",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "distributionRate": null,
+  "secYield": 7.6,
+  "secYieldText": "7.60%",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "unsubsidizedSecYield": 7.59
+ },
+ "returns": {
+  "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 1.25,
+   "mo1Text": "1.25%",
+   "qtd": -0.85,
+   "qtdText": "-0.85%",
+   "ytd": 3.08,
+   "ytdText": "3.08%",
+   "yr1": 5.48,
+   "yr1Text": "5.48%",
+   "yr3": 7.95,
+   "yr3Text": "7.95%",
+   "yr5": 3.5,
+   "yr5Text": "3.50%",
+   "yr10": null,
+   "yr10Text": "—",
+   "sinceInception": 5.07,
+   "sinceInceptionText": "5.07%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 1.87,
+   "yr1": 5.69,
+   "yr3": 8.33,
+   "yr5": 3.38,
+   "yr10": null,
+   "sinceInception": 5.03
+  }
+ },
+ "distributions": {
+  "frequency": "Monthly",
+  "paymentsPerYear": 12,
+  "frequencyCode": null,
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "08/01/2018",
+    "0.310578"
+   ],
+   [
+    "09/04/2018",
+    "0.472304"
+   ],
+   [
+    "10/01/2018",
+    "0.461264"
+   ],
+   [
+    "11/01/2018",
+    "0.431221"
+   ],
+   [
+    "12/03/2018",
+    "0.455275"
+   ],
+   [
+    "12/21/2018",
+    "0.427675"
+   ],
+   [
+    "02/01/2019",
+    "0.387666"
+   ],
+   [
+    "03/01/2019",
+    "0.300624"
+   ],
+   [
+    "04/01/2019",
+    "0.385182"
+   ],
+   [
+    "05/01/2019",
+    "0.277523"
+   ],
+   [
+    "06/03/2019",
+    "0.29167"
+   ],
+   [
+    "07/01/2019",
+    "0.378664"
+   ],
+   [
+    "08/01/2019",
+    "0.421438"
+   ],
+   [
+    "09/03/2019",
+    "0.330187"
+   ],
+   [
+    "10/01/2019",
+    "0.352204"
+   ],
+   [
+    "11/01/2019",
+    "0.255494"
+   ],
+   [
+    "12/02/2019",
+    "0.227537"
+   ],
+   [
+    "12/20/2019",
+    "0.251288"
+   ],
+   [
+    "02/03/2020",
+    "0.249676"
+   ],
+   [
+    "03/02/2020",
+    "0.226072"
+   ],
+   [
+    "04/01/2020",
+    "0.244744"
+   ],
+   [
+    "05/01/2020",
+    "0.223863"
+   ],
+   [
+    "06/01/2020",
+    "0.219691"
+   ],
+   [
+    "07/01/2020",
+    "0.247342"
+   ],
+   [
+    "08/03/2020",
+    "0.257322"
+   ],
+   [
+    "09/01/2020",
+    "0.287538"
+   ],
+   [
+    "10/01/2020",
+    "0.262134"
+   ],
+   [
+    "11/02/2020",
+    "0.273538"
+   ],
+   [
+    "12/01/2020",
+    "0.266322"
+   ],
+   [
+    "12/18/2020",
+    "0.275159"
+   ],
+   [
+    "02/01/2021",
+    "0.252803"
+   ],
+   [
+    "03/01/2021",
+    "0.209258"
+   ],
+   [
+    "04/01/2021",
+    "0.244319"
+   ],
+   [
+    "05/03/2021",
+    "0.226174"
+   ],
+   [
+    "06/01/2021",
+    "0.22276"
+   ],
+   [
+    "07/01/2021",
+    "0.204837"
+   ],
+   [
+    "08/02/2021",
+    "0.178516"
+   ],
+   [
+    "09/01/2021",
+    "0.206694"
+   ],
+   [
+    "10/01/2021",
+    "0.197269"
+   ],
+   [
+    "11/01/2021",
+    "0.212144"
+   ],
+   [
+    "12/01/2021",
+    "0.215441"
+   ],
+   [
+    "12/17/2021",
+    "0.605588"
+   ],
+   [
+    "02/01/2022",
+    "0.228784"
+   ],
+   [
+    "03/01/2022",
+    "0.208541"
+   ],
+   [
+    "04/01/2022",
+    "0.231143"
+   ],
+   [
+    "05/02/2022",
+    "0.228874"
+   ],
+   [
+    "06/01/2022",
+    "0.253803"
+   ],
+   [
+    "07/01/2022",
+    "0.253075"
+   ],
+   [
+    "08/01/2022",
+    "0.249947"
+   ],
+   [
+    "09/01/2022",
+    "0.261445"
+   ],
+   [
+    "10/03/2022",
+    "0.281507"
+   ],
+   [
+    "11/01/2022",
+    "0.285066"
+   ],
+   [
+    "12/01/2022",
+    "0.28064"
+   ],
+   [
+    "12/16/2022",
+    "0.282139"
+   ],
+   [
+    "02/01/2023",
+    "0.310738"
+   ],
+   [
+    "03/01/2023",
+    "0.272949"
+   ],
+   [
+    "04/03/2023",
+    "0.310601"
+   ],
+   [
+    "05/01/2023",
+    "0.292273"
+   ],
+   [
+    "06/01/2023",
+    "0.299941"
+   ],
+   [
+    "07/03/2023",
+    "0.28634"
+   ],
+   [
+    "08/01/2023",
+    "0.289286"
+   ],
+   [
+    "09/01/2023",
+    "0.30497"
+   ],
+   [
+    "10/02/2023",
+    "0.301868"
+   ],
+   [
+    "11/01/2023",
+    "0.309458"
+   ],
+   [
+    "12/01/2023",
+    "0.287815"
+   ],
+   [
+    "12/15/2023",
+    "0.316567"
+   ],
+   [
+    "02/01/2024",
+    "0.310855"
+   ],
+   [
+    "03/01/2024",
+    "0.281903"
+   ],
+   [
+    "04/01/2024",
+    "0.310087"
+   ],
+   [
+    "05/01/2024",
+    "0.283383"
+   ],
+   [
+    "06/03/2024",
+    "0.28324"
+   ],
+   [
+    "07/01/2024",
+    "0.268245"
+   ],
+   [
+    "08/01/2024",
+    "0.26231"
+   ],
+   [
+    "09/03/2024",
+    "0.286827"
+   ],
+   [
+    "10/01/2024",
+    "0.257954"
+   ],
+   [
+    "11/01/2024",
+    "0.258062"
+   ],
+   [
+    "12/02/2024",
+    "0.264731"
+   ],
+   [
+    "12/20/2024",
+    "0.269399"
+   ],
+   [
+    "02/03/2025",
+    "0.248856"
+   ],
+   [
+    "03/03/2025",
+    "0.258391"
+   ],
+   [
+    "04/01/2025",
+    "0.262633"
+   ],
+   [
+    "05/01/2025",
+    "0.264863"
+   ],
+   [
+    "06/02/2025",
+    "0.27451"
+   ],
+   [
+    "07/01/2025",
+    "0.253114"
+   ],
+   [
+    "08/01/2025",
+    "0.247119"
+   ],
+   [
+    "09/02/2025",
+    "0.253782"
+   ],
+   [
+    "10/01/2025",
+    "0.242514"
+   ],
+   [
+    "11/03/2025",
+    "0.24371"
+   ],
+   [
+    "12/01/2025",
+    "0.295159"
+   ],
+   [
+    "12/19/2025",
+    "0.203082"
+   ],
+   [
+    "02/02/2026",
+    "0.243791"
+   ],
+   [
+    "03/02/2026",
+    "0.226108"
+   ],
+   [
+    "04/01/2026",
+    "0.25353"
+   ],
+   [
+    "05/01/2026",
+    "0.248571"
+   ],
+   [
+    "06/01/2026",
+    "0.257245"
+   ],
+   [
+    "07/01/2026",
+    "0.243614"
+   ],
+   [
+    "08/03/2026",
+    "0.25681"
+   ],
+   [
+    "09/01/2026",
+    "0.241657"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json",
+   "holdings/002.json",
+   "holdings/003.json",
+   "holdings/004.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 966,
+  "asOfDate": "2026-09-25",
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json",
+   "history/002.json",
+   "history/003.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 2059,
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
+ }
+}

@@ -1,0 +1,364 @@
+{
+ "ticker": "FEIG",
+ "name": "Northern Trust ESG & Climate Investment Grade Corporate Core ETF",
+ "category": "Fixed Income",
+ "categoryPath": "Fixed Income / NTUIECBTR",
+ "source": {
+  "fundPage": "https://etfs.ntam.northerntrust.com/us/en/individual/funds/feig",
+  "productData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/feig/feig-all.csv",
+  "historicalData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/feig/feig_pricing.json",
+  "holdingsDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/feig/feig-holdings.csv",
+  "pricesDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/feig/feig_pricing.json",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/FEIG",
+  "holdingsSource": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)",
+  "historySource": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)",
+  "provider": "Northern Trust public ETF data (funds-list JSON + per-fund CSV/JSON downloads) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "33939L571",
+  "isin": null,
+  "indexTicker": "NTUIECBTR"
+ },
+ "inception": {
+  "fundInceptionDate": "2021-09-20",
+  "shareClassInceptionDate": null,
+  "exchange": "NYSE Arca"
+ },
+ "expenseRatio": {
+  "display": "0.13%",
+  "value": 0.13,
+  "gross": 0.13,
+  "net": 0.12
+ },
+ "nav": {
+  "display": "$38.98",
+  "value": 38.98,
+  "asOfDate": "Sep 25 2026"
+ },
+ "marketPrice": {
+  "display": "$38.97",
+  "value": 38.97,
+  "asOfDate": "Sep 25 2026"
+ },
+ "premiumDiscount": {
+  "display": "-0.02%",
+  "value": -0.0223
+ },
+ "aum": {
+  "display": "$50.67 M",
+  "value": 50672344.95,
+  "asOfDate": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
+ },
+ "yields": {
+  "dividendYield": 4.97,
+  "dividendYieldText": "4.97%",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "distributionRate": null,
+  "secYield": 5.24,
+  "secYieldText": "5.24%",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "unsubsidizedSecYield": 5.24
+ },
+ "returns": {
+  "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 0.38,
+   "mo1Text": "0.38%",
+   "qtd": -3.17,
+   "qtdText": "-3.17%",
+   "ytd": -0.72,
+   "ytdText": "-0.72%",
+   "yr1": 1.54,
+   "yr1Text": "1.54%",
+   "yr3": 4.68,
+   "yr3Text": "4.68%",
+   "yr5": null,
+   "yr5Text": "—",
+   "yr10": null,
+   "yr10Text": "—",
+   "sinceInception": -0.5,
+   "sinceInceptionText": "-0.50%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 0.64,
+   "yr1": 4,
+   "yr3": 4.99,
+   "yr5": null,
+   "yr10": null,
+   "sinceInception": -0.23
+  }
+ },
+ "distributions": {
+  "frequency": "Monthly",
+  "paymentsPerYear": 12,
+  "frequencyCode": null,
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "11/01/2021",
+    "0.108223"
+   ],
+   [
+    "12/01/2021",
+    "0.077926"
+   ],
+   [
+    "12/17/2021",
+    "0.082461"
+   ],
+   [
+    "02/01/2022",
+    "0.084038"
+   ],
+   [
+    "03/01/2022",
+    "0.075902"
+   ],
+   [
+    "04/01/2022",
+    "0.086695"
+   ],
+   [
+    "05/02/2022",
+    "0.090799"
+   ],
+   [
+    "06/01/2022",
+    "0.093122"
+   ],
+   [
+    "07/01/2022",
+    "0.093758"
+   ],
+   [
+    "08/01/2022",
+    "0.100165"
+   ],
+   [
+    "09/01/2022",
+    "0.127809"
+   ],
+   [
+    "10/03/2022",
+    "0.125296"
+   ],
+   [
+    "11/01/2022",
+    "0.112835"
+   ],
+   [
+    "12/01/2022",
+    "0.108438"
+   ],
+   [
+    "12/16/2022",
+    "0.096733"
+   ],
+   [
+    "02/01/2023",
+    "0.136303"
+   ],
+   [
+    "03/01/2023",
+    "0.115775"
+   ],
+   [
+    "04/03/2023",
+    "0.127474"
+   ],
+   [
+    "05/01/2023",
+    "0.134301"
+   ],
+   [
+    "06/01/2023",
+    "0.142871"
+   ],
+   [
+    "07/03/2023",
+    "0.139352"
+   ],
+   [
+    "08/01/2023",
+    "0.1476"
+   ],
+   [
+    "09/01/2023",
+    "0.147696"
+   ],
+   [
+    "10/02/2023",
+    "0.213802"
+   ],
+   [
+    "11/01/2023",
+    "0.144515"
+   ],
+   [
+    "12/01/2023",
+    "0.147836"
+   ],
+   [
+    "12/15/2023",
+    "0.15473"
+   ],
+   [
+    "02/01/2024",
+    "0.128843"
+   ],
+   [
+    "03/01/2024",
+    "0.131189"
+   ],
+   [
+    "04/01/2024",
+    "0.162931"
+   ],
+   [
+    "05/01/2024",
+    "0.157276"
+   ],
+   [
+    "06/03/2024",
+    "0.156871"
+   ],
+   [
+    "07/01/2024",
+    "0.161299"
+   ],
+   [
+    "08/01/2024",
+    "0.168333"
+   ],
+   [
+    "09/03/2024",
+    "0.166474"
+   ],
+   [
+    "10/01/2024",
+    "0.161748"
+   ],
+   [
+    "11/01/2024",
+    "0.163906"
+   ],
+   [
+    "12/02/2024",
+    "0.160972"
+   ],
+   [
+    "12/20/2024",
+    "0.160359"
+   ],
+   [
+    "02/03/2025",
+    "0.174922"
+   ],
+   [
+    "03/03/2025",
+    "0.173943"
+   ],
+   [
+    "04/01/2025",
+    "0.165888"
+   ],
+   [
+    "05/01/2025",
+    "0.164415"
+   ],
+   [
+    "06/02/2025",
+    "0.178081"
+   ],
+   [
+    "07/01/2025",
+    "0.163472"
+   ],
+   [
+    "08/01/2025",
+    "0.16692"
+   ],
+   [
+    "09/02/2025",
+    "0.165863"
+   ],
+   [
+    "10/01/2025",
+    "0.162003"
+   ],
+   [
+    "11/03/2025",
+    "0.167659"
+   ],
+   [
+    "12/01/2025",
+    "0.153238"
+   ],
+   [
+    "12/19/2025",
+    "0.165167"
+   ],
+   [
+    "02/02/2026",
+    "0.166125"
+   ],
+   [
+    "03/02/2026",
+    "0.145067"
+   ],
+   [
+    "04/01/2026",
+    "0.162946"
+   ],
+   [
+    "05/01/2026",
+    "0.162239"
+   ],
+   [
+    "06/01/2026",
+    "0.156389"
+   ],
+   [
+    "07/01/2026",
+    "0.155451"
+   ],
+   [
+    "08/03/2026",
+    "0.170885"
+   ],
+   [
+    "09/01/2026",
+    "0.168361"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json",
+   "holdings/002.json",
+   "holdings/003.json",
+   "holdings/004.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 803,
+  "asOfDate": "2026-09-25",
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json",
+   "history/002.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 1259,
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
+ }
+}

@@ -1,0 +1,250 @@
+{
+ "ticker": "RAVI",
+ "page": 2,
+ "pageSize": 250,
+ "totalRows": 271,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "TOYOTA AUTO RECEIVABLES 2023-C OWNER TRUST 2023-C",
+   "Ticker": "-",
+   "Identifier": "89231FAD2",
+   "Weight": "0.0621",
+   "Market Value": "998344.12",
+   "Shares Held": "996635",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "5.16",
+   "Maturity": "Apr 17 2028"
+  },
+  {
+   "Name": "SOCIETE GENERALE SA CALLABLE MEDIUM TERM NOTE",
+   "Ticker": "-",
+   "Identifier": "83368RCS9",
+   "Weight": "0.0614",
+   "Market Value": "986725.92",
+   "Shares Held": "1000000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.857",
+   "Maturity": "Jul 07 2029"
+  },
+  {
+   "Name": "MONDELEZ INTERNATIONAL INC CALLABLE NOTES FIXED",
+   "Ticker": "-",
+   "Identifier": "609207AM7",
+   "Weight": "0.0612",
+   "Market Value": "983508.47",
+   "Shares Held": "1000000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.125",
+   "Maturity": "May 07 2028"
+  },
+  {
+   "Name": "NOVARTIS CAPITAL CORP CALLABLE NOTES FIXED 4.4%",
+   "Ticker": "-",
+   "Identifier": "66989HBG2",
+   "Weight": "0.0597",
+   "Market Value": "960613.7",
+   "Shares Held": "1000000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.4",
+   "Maturity": "Mar 18 2031"
+  },
+  {
+   "Name": "WESTPAC BANKING CORP BOND VARIABLE 01/JUL/2030 USD",
+   "Ticker": "-",
+   "Identifier": "961214GD9",
+   "Weight": "0.0584",
+   "Market Value": "938370.88",
+   "Shares Held": "930000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.734",
+   "Maturity": "Jul 01 2030"
+  },
+  {
+   "Name": "GEORGIA POWER CO CALLABLE NOTES FIXED 4%",
+   "Ticker": "-",
+   "Identifier": "373334LC3",
+   "Weight": "0.0548",
+   "Market Value": "880449.53",
+   "Shares Held": "900000",
+   "Asset Category": "Corporate",
+   "Coupon": "4",
+   "Maturity": "Oct 01 2028"
+  },
+  {
+   "Name": "FERGUSON ENTERPRISES INC CALLABLE NOTES FIXED 4.8%",
+   "Ticker": "-",
+   "Identifier": "31488VAD9",
+   "Weight": "0.0537",
+   "Market Value": "863794.25",
+   "Shares Held": "880000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.8",
+   "Maturity": "Aug 14 2029"
+  },
+  {
+   "Name": "J.P. MORGAN MORTGAGE TRUST 2026-NQM3 2026-NQM3 A1B",
+   "Ticker": "-",
+   "Identifier": "46596KAD0",
+   "Weight": "0.0534",
+   "Market Value": "858453.9",
+   "Shares Held": "875600",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "5.48",
+   "Maturity": "Oct 25 2066"
+  },
+  {
+   "Name": "GE HEALTHCARE TECHNOLOGIES INC CALLABLE NOTES",
+   "Ticker": "-",
+   "Identifier": "36266GAD9",
+   "Weight": "0.0486",
+   "Market Value": "781574.14",
+   "Shares Held": "800000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.15",
+   "Maturity": "Dec 15 2028"
+  },
+  {
+   "Name": "MERCEDES-BENZ AUTO RECEIVABLES TRUST 2023-2 2023-2",
+   "Ticker": "-",
+   "Identifier": "58769FAC9",
+   "Weight": "0.0478",
+   "Market Value": "768783.63",
+   "Shares Held": "764658",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "5.95",
+   "Maturity": "Nov 15 2028"
+  },
+  {
+   "Name": "MARTIN MARIETTA MATERIALS INC CALLABLE NOTES FIXED",
+   "Ticker": "-",
+   "Identifier": "573284BC9",
+   "Weight": "0.0465",
+   "Market Value": "748260.31",
+   "Shares Held": "760000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.85",
+   "Maturity": "Aug 15 2029"
+  },
+  {
+   "Name": "HONDA AUTO RECEIVABLES 2023-3 OWNER TRUST 2023-3",
+   "Ticker": "-",
+   "Identifier": "43815QAC1",
+   "Weight": "0.0443",
+   "Market Value": "711635.6",
+   "Shares Held": "710048",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "5.41",
+   "Maturity": "Feb 18 2028"
+  },
+  {
+   "Name": "SERVICENOW INC CALLABLE NOTES FIXED 4.25%",
+   "Ticker": "-",
+   "Identifier": "81762PAF9",
+   "Weight": "0.0429",
+   "Market Value": "690619.71",
+   "Shares Held": "700000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.25",
+   "Maturity": "May 15 2028"
+  },
+  {
+   "Name": "PAGAYA AI DEBT GRANTOR TRUST 2025-6 2025-6 A2",
+   "Ticker": "-",
+   "Identifier": "69549BAB4",
+   "Weight": "0.0403",
+   "Market Value": "648081.58",
+   "Shares Held": "652873",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "4.497",
+   "Maturity": "Apr 15 2033"
+  },
+  {
+   "Name": "SCHLUMBERGER HOLDINGS CORP CALLABLE NOTES FIXED 5%",
+   "Ticker": "-",
+   "Identifier": "806851AL5",
+   "Weight": "0.0399",
+   "Market Value": "642200.22",
+   "Shares Held": "641000",
+   "Asset Category": "Corporate",
+   "Coupon": "5",
+   "Maturity": "May 29 2027"
+  },
+  {
+   "Name": "HYUNDAI AUTO RECEIVABLES TRUST 2023-B 2023-B A3",
+   "Ticker": "-",
+   "Identifier": "44933XAD9",
+   "Weight": "0.0389",
+   "Market Value": "625534.35",
+   "Shares Held": "624164",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "5.48",
+   "Maturity": "Apr 17 2028"
+  },
+  {
+   "Name": "NAVIENT PRIVATE EDUCATION REFI LOAN TRUST 2020-H",
+   "Ticker": "-",
+   "Identifier": "63942AAA4",
+   "Weight": "0.0321",
+   "Market Value": "516396.84",
+   "Shares Held": "563644",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "1.33",
+   "Maturity": "Apr 15 2069"
+  },
+  {
+   "Name": "UNITEDHEALTH GROUP INC CALLABLE NOTES FIXED 4.4%",
+   "Ticker": "-",
+   "Identifier": "91324PFN7",
+   "Weight": "0.0307",
+   "Market Value": "494416.7",
+   "Shares Held": "500000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.4",
+   "Maturity": "Jun 15 2028"
+  },
+  {
+   "Name": "KUBOTA CREDIT OWNER TRUST 2025-1 2025-1A A2 4.61%",
+   "Ticker": "-",
+   "Identifier": "50117FAB7",
+   "Weight": "0.0266",
+   "Market Value": "428088.11",
+   "Shares Held": "427961",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "4.61",
+   "Maturity": "Dec 15 2027"
+  },
+  {
+   "Name": "CARVANA AUTO RECEIVABLES TRUST 2025-P2 2025-P2 A2",
+   "Ticker": "-",
+   "Identifier": "14688YAB1",
+   "Weight": "0.018",
+   "Market Value": "289786.85",
+   "Shares Held": "289747",
+   "Asset Category": "MBS/ABS",
+   "Coupon": "4.56",
+   "Maturity": "Aug 10 2028"
+  },
+  {
+   "Name": "SOUTH CAROLINA ST PUB SVC AUTH REV OBLIGS 2026 E",
+   "Ticker": "-",
+   "Identifier": "83715BEX1",
+   "Weight": "0.0151",
+   "Market Value": "243470.1",
+   "Shares Held": "250000",
+   "Asset Category": "Corporate",
+   "Coupon": "4.726",
+   "Maturity": "Dec 01 2030"
+  }
+ ]
+}

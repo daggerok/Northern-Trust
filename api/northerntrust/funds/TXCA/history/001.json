@@ -1,0 +1,32 @@
+{
+ "ticker": "TXCA",
+ "page": 1,
+ "pageSize": 1000,
+ "totalRows": 3,
+ "headers": [
+  "Date",
+  "NAV",
+  "Market Price",
+  "Premium/Discount"
+ ],
+ "rows": [
+  {
+   "Date": "Sep 23 2026",
+   "NAV": "49.89",
+   "Market Price": "49.89",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Sep 24 2026",
+   "NAV": "49.69",
+   "Market Price": "49.73",
+   "Premium/Discount": "0.04"
+  },
+  {
+   "Date": "Sep 25 2026",
+   "NAV": "49.46",
+   "Market Price": "49.5",
+   "Premium/Discount": "0.03"
+  }
+ ]
+}

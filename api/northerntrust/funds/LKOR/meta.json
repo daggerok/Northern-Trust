@@ -1,0 +1,653 @@
+{
+ "ticker": "LKOR",
+ "name": "Northern Trust Credit-Scored US Long Corporate Bond ETF",
+ "category": "Fixed Income",
+ "categoryPath": "Fixed Income / NTULQVCBTR",
+ "source": {
+  "fundPage": "https://etfs.ntam.northerntrust.com/us/en/individual/funds/lkor",
+  "productData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/lkor/lkor-all.csv",
+  "historicalData": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/lkor/lkor_pricing.json",
+  "holdingsDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/lkor/lkor-holdings.csv",
+  "pricesDownload": "https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/lkor/lkor_pricing.json",
+  "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/LKOR",
+  "holdingsSource": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)",
+  "historySource": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)",
+  "provider": "Northern Trust public ETF data (funds-list JSON + per-fund CSV/JSON downloads) + SEC EDGAR Form N-PORT-P (fallback) + Yahoo Finance public chart API (fallback)"
+ },
+ "identifiers": {
+  "cusip": "33939L753",
+  "isin": null,
+  "indexTicker": "NTULQVCBTR"
+ },
+ "inception": {
+  "fundInceptionDate": "2015-09-23",
+  "shareClassInceptionDate": null,
+  "exchange": "CBOE"
+ },
+ "expenseRatio": {
+  "display": "0.16%",
+  "value": 0.16,
+  "gross": 0.16,
+  "net": 0.15
+ },
+ "nav": {
+  "display": "$38.72",
+  "value": 38.72,
+  "asOfDate": "Sep 25 2026"
+ },
+ "marketPrice": {
+  "display": "$38.79",
+  "value": 38.79,
+  "asOfDate": "Sep 25 2026"
+ },
+ "premiumDiscount": {
+  "display": "0.16%",
+  "value": 0.1598
+ },
+ "aum": {
+  "display": "$30.98 M",
+  "value": 30979132.4,
+  "asOfDate": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
+ },
+ "yields": {
+  "dividendYield": 6.13,
+  "dividendYieldText": "6.13%",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "distributionRate": null,
+  "secYield": 5.94,
+  "secYieldText": "5.94%",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Sep 25 2026",
+  "unsubsidizedSecYield": 5.92
+ },
+ "returns": {
+  "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
+  "monthEnd": {
+   "asOfDate": "Aug 31 2026",
+   "mo1": 0.7,
+   "mo1Text": "0.70%",
+   "qtd": -5.86,
+   "qtdText": "-5.86%",
+   "ytd": -2.48,
+   "ytdText": "-2.48%",
+   "yr1": 0.52,
+   "yr1Text": "0.52%",
+   "yr3": 3.86,
+   "yr3Text": "3.86%",
+   "yr5": -3.14,
+   "yr5Text": "-3.14%",
+   "yr10": 1.65,
+   "yr10Text": "1.65%",
+   "sinceInception": 2.93,
+   "sinceInceptionText": "2.93%"
+  },
+  "quarterEnd": {
+   "asOfDate": "Jun 30 2026",
+   "ytd": 0.77,
+   "yr1": 4.51,
+   "yr3": 4.38,
+   "yr5": -2.2,
+   "yr10": 2.35,
+   "sinceInception": 3.29
+  }
+ },
+ "distributions": {
+  "frequency": "Monthly",
+  "paymentsPerYear": 12,
+  "frequencyCode": null,
+  "headers": [
+   "Ex-Date",
+   "Amount"
+  ],
+  "rows": [
+   [
+    "11/02/2015",
+    "0.232188"
+   ],
+   [
+    "12/01/2015",
+    "0.182865"
+   ],
+   [
+    "12/29/2015",
+    "0.189509"
+   ],
+   [
+    "02/01/2016",
+    "0.189357"
+   ],
+   [
+    "03/01/2016",
+    "0.170218"
+   ],
+   [
+    "04/01/2016",
+    "0.182404"
+   ],
+   [
+    "05/02/2016",
+    "0.15315"
+   ],
+   [
+    "06/01/2016",
+    "0.186604"
+   ],
+   [
+    "07/01/2016",
+    "0.176608"
+   ],
+   [
+    "08/01/2016",
+    "0.151421"
+   ],
+   [
+    "09/01/2016",
+    "0.17678"
+   ],
+   [
+    "10/03/2016",
+    "0.169987"
+   ],
+   [
+    "11/01/2016",
+    "0.176068"
+   ],
+   [
+    "12/01/2016",
+    "0.17245"
+   ],
+   [
+    "12/22/2016",
+    "0.861058"
+   ],
+   [
+    "02/01/2017",
+    "0.173003"
+   ],
+   [
+    "03/01/2017",
+    "0.161989"
+   ],
+   [
+    "04/03/2017",
+    "0.220624"
+   ],
+   [
+    "05/01/2017",
+    "0.177511"
+   ],
+   [
+    "06/01/2017",
+    "0.160738"
+   ],
+   [
+    "07/03/2017",
+    "0.171572"
+   ],
+   [
+    "08/01/2017",
+    "0.177396"
+   ],
+   [
+    "09/01/2017",
+    "0.147051"
+   ],
+   [
+    "10/02/2017",
+    "0.154682"
+   ],
+   [
+    "11/01/2017",
+    "0.175646"
+   ],
+   [
+    "12/01/2017",
+    "0.170137"
+   ],
+   [
+    "12/21/2017",
+    "0.176389"
+   ],
+   [
+    "02/01/2018",
+    "0.165571"
+   ],
+   [
+    "03/01/2018",
+    "0.158526"
+   ],
+   [
+    "04/02/2018",
+    "0.17612"
+   ],
+   [
+    "05/01/2018",
+    "0.142958"
+   ],
+   [
+    "06/01/2018",
+    "0.175729"
+   ],
+   [
+    "07/02/2018",
+    "0.169809"
+   ],
+   [
+    "08/01/2018",
+    "0.176219"
+   ],
+   [
+    "09/04/2018",
+    "0.176917"
+   ],
+   [
+    "10/01/2018",
+    "0.171763"
+   ],
+   [
+    "11/01/2018",
+    "0.179366"
+   ],
+   [
+    "12/03/2018",
+    "0.173437"
+   ],
+   [
+    "12/21/2018",
+    "0.179998"
+   ],
+   [
+    "02/01/2019",
+    "0.181222"
+   ],
+   [
+    "03/01/2019",
+    "0.164393"
+   ],
+   [
+    "04/01/2019",
+    "0.182132"
+   ],
+   [
+    "05/01/2019",
+    "0.174224"
+   ],
+   [
+    "06/03/2019",
+    "0.238955"
+   ],
+   [
+    "07/01/2019",
+    "0.176429"
+   ],
+   [
+    "08/01/2019",
+    "0.174507"
+   ],
+   [
+    "09/03/2019",
+    "0.203313"
+   ],
+   [
+    "10/01/2019",
+    "0.168137"
+   ],
+   [
+    "11/01/2019",
+    "0.1727"
+   ],
+   [
+    "12/02/2019",
+    "0.141139"
+   ],
+   [
+    "12/20/2019",
+    "0.173243"
+   ],
+   [
+    "02/03/2020",
+    "0.15348"
+   ],
+   [
+    "03/02/2020",
+    "0.155917"
+   ],
+   [
+    "04/01/2020",
+    "0.170754"
+   ],
+   [
+    "05/01/2020",
+    "0.147823"
+   ],
+   [
+    "06/01/2020",
+    "0.15637"
+   ],
+   [
+    "07/01/2020",
+    "0.157554"
+   ],
+   [
+    "08/03/2020",
+    "0.16995"
+   ],
+   [
+    "09/01/2020",
+    "0.157042"
+   ],
+   [
+    "10/01/2020",
+    "0.163523"
+   ],
+   [
+    "11/02/2020",
+    "0.166936"
+   ],
+   [
+    "12/01/2020",
+    "0.152751"
+   ],
+   [
+    "12/18/2020",
+    "2.370184"
+   ],
+   [
+    "02/01/2021",
+    "0.141606"
+   ],
+   [
+    "03/01/2021",
+    "0.146596"
+   ],
+   [
+    "04/01/2021",
+    "0.158947"
+   ],
+   [
+    "05/03/2021",
+    "0.140671"
+   ],
+   [
+    "06/01/2021",
+    "0.160617"
+   ],
+   [
+    "07/01/2021",
+    "0.173558"
+   ],
+   [
+    "08/02/2021",
+    "0.153185"
+   ],
+   [
+    "09/01/2021",
+    "0.159865"
+   ],
+   [
+    "10/01/2021",
+    "0.154911"
+   ],
+   [
+    "11/01/2021",
+    "0.153028"
+   ],
+   [
+    "12/01/2021",
+    "0.153482"
+   ],
+   [
+    "12/17/2021",
+    "1.097181"
+   ],
+   [
+    "02/01/2022",
+    "0.156082"
+   ],
+   [
+    "03/01/2022",
+    "0.144193"
+   ],
+   [
+    "04/01/2022",
+    "0.161163"
+   ],
+   [
+    "05/02/2022",
+    "0.156967"
+   ],
+   [
+    "06/01/2022",
+    "0.165837"
+   ],
+   [
+    "07/01/2022",
+    "0.159675"
+   ],
+   [
+    "08/01/2022",
+    "0.168593"
+   ],
+   [
+    "09/01/2022",
+    "0.168079"
+   ],
+   [
+    "10/03/2022",
+    "0.170191"
+   ],
+   [
+    "11/01/2022",
+    "0.174298"
+   ],
+   [
+    "12/01/2022",
+    "0.179695"
+   ],
+   [
+    "12/16/2022",
+    "0.180485"
+   ],
+   [
+    "02/01/2023",
+    "0.178582"
+   ],
+   [
+    "03/01/2023",
+    "0.158919"
+   ],
+   [
+    "04/03/2023",
+    "0.180395"
+   ],
+   [
+    "05/01/2023",
+    "0.177177"
+   ],
+   [
+    "06/01/2023",
+    "0.188998"
+   ],
+   [
+    "07/03/2023",
+    "0.180612"
+   ],
+   [
+    "08/01/2023",
+    "0.185337"
+   ],
+   [
+    "09/01/2023",
+    "0.184495"
+   ],
+   [
+    "10/02/2023",
+    "0.181162"
+   ],
+   [
+    "11/01/2023",
+    "0.190222"
+   ],
+   [
+    "12/01/2023",
+    "0.188472"
+   ],
+   [
+    "12/15/2023",
+    "0.193326"
+   ],
+   [
+    "02/01/2024",
+    "0.199654"
+   ],
+   [
+    "03/01/2024",
+    "0.185807"
+   ],
+   [
+    "04/01/2024",
+    "0.199905"
+   ],
+   [
+    "05/01/2024",
+    "0.192682"
+   ],
+   [
+    "06/03/2024",
+    "0.16693"
+   ],
+   [
+    "07/01/2024",
+    "0.183067"
+   ],
+   [
+    "08/01/2024",
+    "0.20399"
+   ],
+   [
+    "09/03/2024",
+    "0.202156"
+   ],
+   [
+    "10/01/2024",
+    "0.195477"
+   ],
+   [
+    "11/01/2024",
+    "0.186413"
+   ],
+   [
+    "12/02/2024",
+    "0.197269"
+   ],
+   [
+    "12/20/2024",
+    "0.202549"
+   ],
+   [
+    "02/03/2025",
+    "0.225699"
+   ],
+   [
+    "03/03/2025",
+    "0.184242"
+   ],
+   [
+    "04/01/2025",
+    "0.203964"
+   ],
+   [
+    "05/01/2025",
+    "0.201038"
+   ],
+   [
+    "06/02/2025",
+    "0.203853"
+   ],
+   [
+    "07/01/2025",
+    "0.210009"
+   ],
+   [
+    "08/01/2025",
+    "0.202154"
+   ],
+   [
+    "09/02/2025",
+    "0.17378"
+   ],
+   [
+    "10/01/2025",
+    "0.185909"
+   ],
+   [
+    "11/03/2025",
+    "0.18402"
+   ],
+   [
+    "12/01/2025",
+    "0.185802"
+   ],
+   [
+    "12/19/2025",
+    "0.204325"
+   ],
+   [
+    "02/02/2026",
+    "0.254388"
+   ],
+   [
+    "03/02/2026",
+    "0.174438"
+   ],
+   [
+    "04/01/2026",
+    "0.200754"
+   ],
+   [
+    "05/01/2026",
+    "0.195488"
+   ],
+   [
+    "06/01/2026",
+    "0.21402"
+   ],
+   [
+    "07/01/2026",
+    "0.196795"
+   ],
+   [
+    "08/03/2026",
+    "0.199704"
+   ],
+   [
+    "09/01/2026",
+    "0.176752"
+   ]
+  ]
+ },
+ "holdings": {
+  "pages": [
+   "holdings/001.json",
+   "holdings/002.json",
+   "holdings/003.json",
+   "holdings/004.json"
+  ],
+  "pageSize": 250,
+  "totalRows": 839,
+  "asOfDate": "2026-09-25",
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
+ },
+ "history": {
+  "pages": [
+   "history/001.json",
+   "history/002.json",
+   "history/003.json"
+  ],
+  "pageSize": 1000,
+  "totalRows": 2767,
+  "asOf": "Sep 25 2026",
+  "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
+ }
+}

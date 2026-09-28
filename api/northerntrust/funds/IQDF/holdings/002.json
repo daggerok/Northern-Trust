@@ -1,0 +1,52 @@
+{
+ "ticker": "IQDF",
+ "page": 2,
+ "pageSize": 250,
+ "totalRows": 253,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "U.S. DOLLAR",
+   "Ticker": "-",
+   "Identifier": "-",
+   "Weight": "-0.1067",
+   "Market Value": "-1249522.4",
+   "Shares Held": "-942955",
+   "Asset Category": "Cash/and or Derivatives",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "U.S. DOLLAR",
+   "Ticker": "-",
+   "Identifier": "-",
+   "Weight": "-0.1498",
+   "Market Value": "-1754579.14",
+   "Shares Held": "-1533812",
+   "Asset Category": "Cash/and or Derivatives",
+   "Coupon": "0",
+   "Maturity": ""
+  },
+  {
+   "Name": "U.S. DOLLAR",
+   "Ticker": "-",
+   "Identifier": "-",
+   "Weight": "-0.1696",
+   "Market Value": "-1986384.36",
+   "Shares Held": "-1630364",
+   "Asset Category": "Cash/and or Derivatives",
+   "Coupon": "0",
+   "Maturity": ""
+  }
+ ]
+}
