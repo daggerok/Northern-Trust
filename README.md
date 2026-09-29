@@ -63,6 +63,8 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 
 `TICKERS` combines with AUM, TER, yield filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files.
 
+For GitHub Actions runs, the optional repository variable `STORE_RAW_DOWNLOADS` controls raw-source retention. Set it under **Settings → Secrets and variables → Actions → Variables** (true/yes/on/1 enables it). This avoids spending a manual-dispatch input on a diagnostic-only option and keeps the workflow within GitHub’s 25-input limit.
+
 ### Examples
 
 ```bash
