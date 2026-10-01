@@ -1,15 +1,4 @@
 #!/usr/bin/env bun
-// Checked-in JSON is the runtime default; any nonblank environment value wins.
-import { readFileSync as readUpdaterConfig } from 'node:fs';
-try {
-  const updaterDefaults = JSON.parse(readUpdaterConfig(new URL('./update-data.config.json', import.meta.url), 'utf8')) as Record<string, unknown>;
-  for (const [key, value] of Object.entries(updaterDefaults)) {
-    const current = process.env[key];
-    if ((current === undefined || current.trim() === '') && value !== null && value !== undefined) process.env[key] = String(value);
-  }
-} catch (error) {
-  if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
-}
 // Bun provides Node-compatible fs/promises and process globals for this script.
 /// <reference types="bun" />
 import { appendFile, mkdir, readFile, readdir, rm, writeFile, readFile as outputReadFile, readdir as outputReadDir } from 'node:fs/promises';
@@ -413,6 +402,11 @@ function parsePositiveInt(raw: string, fallback: number): number {
   return Number.isFinite(value) && value > 0 ? value : fallback;
 }
 
+function parseNonNegativeInt(raw: string, fallback: number): number {
+  const value = Number.parseInt(raw, 10);
+  return Number.isFinite(value) && value >= 0 ? value : fallback;
+}
+
 function parseNonNegativeFloat(raw: string, fallback: number): number {
   const value = Number(raw);
   return Number.isFinite(value) && value >= 0 ? value : fallback;
@@ -487,7 +481,7 @@ function parseRanges(env: Record<string, string | undefined>, prefix: 'PERFORMAN
   return ranges;
 }
 
-function readConfig(env: Record<string, string | undefined> = process.env): UpdaterConfig {
+export function readConfig(env: Record<string, string | undefined> = process.env): UpdaterConfig {
   return {
     concurrency: parsePositiveInt(envValue(env, 'CONCURRENCY'), CONCURRENCY_FALLBACK),
     requestSleep: parseNonNegativeFloat(envValue(env, 'REQUEST_SLEEP'), REQUEST_SLEEP_FALLBACK),
@@ -495,7 +489,7 @@ function readConfig(env: Record<string, string | undefined> = process.env): Upda
     holdingsPageSize: parsePositiveInt(envValue(env, 'HOLDINGS_PAGE_SIZE'), HOLDINGS_PAGE_SIZE_FALLBACK),
     historyPageSize: parsePositiveInt(envValue(env, 'HISTORY_PAGE_SIZE', ['HISTORICAL_PAGE_SIZE']), HISTORY_PAGE_SIZE_FALLBACK),
     storeRawDownloads: parseBoolean(envValue(env, 'STORE_RAW_DOWNLOADS', ['NORTHERNTRUST_STORE_RAW_DOWNLOADS']), false),
-    maxRetries: parsePositiveInt(envValue(env, 'MAX_RETRIES'), MAX_RETRIES_FALLBACK),
+    maxRetries: parseNonNegativeInt(envValue(env, 'MAX_RETRIES'), MAX_RETRIES_FALLBACK),
     tickers: envValue(env, 'TICKERS')
       .split(/[\s,;]+/)
       .map(sanitizeTicker)
@@ -551,7 +545,12 @@ Northern Trust ETF static data updater (Bun, no dependencies).
   bun ./scripts/update-data.ts            update ./api/northerntrust from etfs.ntam.northerntrust.com (+ SEC / Yahoo fallbacks)
   ./scripts/update-data.ts -h | --help    print this help
 
-Environment variables (all optional; strict "min:max" ranges; AND logic):
+Defaults live in scripts/update-data.config.json. Precedence: config file <
+advanced JSON (workflow only) < nonblank workflow inputs < environment
+variables (NORTHERNTRUST_<NAME> wins over <NAME>). The CLI and the workflow
+use the same resolver. Strict "min:max" ranges; AND logic.
+
+Controls (environment variables):
 
   MAX_FETCHES          Batch size: continue after the ticker cursor saved in
                        api/northerntrust/update-state.json. Empty or 0 (the default)
@@ -565,7 +564,7 @@ Environment variables (all optional; strict "min:max" ranges; AND logic):
                        10 requests per second, Yahoo throttles hard, keep >= 1.
   CONCURRENCY          Parallel fund workers (default 2). Starts are still
                        globally spaced by REQUEST_SLEEP.
-  MAX_RETRIES          Retries after the initial request (default 2). Only
+  MAX_RETRIES          Retries after the initial request (default 2; 0 disables). Only
                        network errors and HTTP 403/408/425/429/5xx responses
                        are retried with bounded exponential backoff.
   TICKERS              Space-, comma- or semicolon-separated ticker allowlist,
@@ -596,6 +595,7 @@ Environment variables (all optional; strict "min:max" ranges; AND logic):
                        (default on; needs the declared SEC_UA).
   SEC_UA               Override the declared SEC User-Agent (SEC policy
                        requires a declared contact for automated access).
+  VERBOSE              1/true to print per-fund retry and fallback notices.
   SKIP_YAHOO           1/true to never call the Yahoo chart API, even when the
                        official Northern Trust history is unavailable for a fund
                        (previously published history rows are kept instead).
@@ -2844,8 +2844,7 @@ async function resolveNportFiling(
 // Main
 // ---------------------------------------------------------------------------
 
-async function main(): Promise<void> {
-  const config = readConfig();
+async function runUpdater(config: UpdaterConfig): Promise<void> {
   requestSleepMs = Math.max(0, config.requestSleep) * 1000;
   nextRequestAtLanes = new Array(Math.max(1, config.concurrency)).fill(0);
 
@@ -3065,16 +3064,96 @@ function catalogFundFromIndex(ticker: string, row: JsonRecord): CatalogFund {
 }
 
 // ---------------------------------------------------------------------------
-// Entry point (kept at the end: main() relies on the let bindings above)
+// Controls: config file < advanced JSON < nonblank inputs < environment
 // ---------------------------------------------------------------------------
 
-if ((import.meta as { main?: boolean }).main) {
-  if (process.argv.includes('-h') || process.argv.includes('--help')) {
-    console.log(USAGE.trim());
-  } else {
-    await main().catch((error) => {
-      console.error(error instanceof Error ? error.stack : String(error));
-      process.exitCode = 1;
-    });
+// Allowlisted scalar controls only, so GitHub Actions can resolve them without
+// interpolating user input into bash. The CLI and the workflow share
+// resolveControls. Precedence: scripts/update-data.config.json < advanced JSON
+// < nonblank named inputs < environment (`NORTHERNTRUST_<KEY>` wins over `<KEY>`).
+export const CONTROL_NAMES = [
+  'MAX_FETCHES', 'REQUEST_SLEEP', 'CONCURRENCY', 'MAX_RETRIES', 'TICKERS',
+  'AUM', 'TER', 'DIVIDEND_YIELD', 'SEC_YIELD',
+  'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'HISTORY_RANGE',
+  'EDGAR_FALLBACK', 'SKIP_YAHOO', 'SKIP_NORTHERNTRUST', 'STORE_RAW_DOWNLOADS',
+  'SEC_UA', 'CATALOG_URL', 'VERBOSE',
+  ...['PERFORMANCE', 'TOTAL_RETURN'].flatMap((prefix) => ['YTD', '1Y', '3Y', '5Y', '10Y'].map((period) => `${prefix}_${period}`)),
+] as const;
+export type ControlName = (typeof CONTROL_NAMES)[number];
+export const CONFIG_FILE_URL = new URL('./update-data.config.json', import.meta.url);
+
+// Legacy environment spellings that keep working next to `NORTHERNTRUST_<KEY>` and `<KEY>`.
+const CONTROL_ALIASES: Record<string, string[]> = {
+  MAX_FETCHES: ['NORTHERNTRUST_LIMIT'],
+  HISTORY_PAGE_SIZE: ['HISTORICAL_PAGE_SIZE'],
+};
+
+export function resolveControls(
+  file: unknown = {},
+  advanced: unknown = {},
+  inputs: unknown = {},
+  env: Record<string, string | undefined> = {},
+): Record<string, string> {
+  const result: Record<string, string> = {};
+  const known = new Set<string>(CONTROL_NAMES);
+  const apply = (value: unknown, skipEmpty = false): void => {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Configuration must be a JSON object');
+    for (const [key, raw] of Object.entries(value)) {
+      if (!known.has(key)) throw new Error(`Unknown updater control: ${key}`);
+      if (skipEmpty && (raw === '' || raw === undefined || raw === null)) continue;
+      if (!['string', 'number', 'boolean'].includes(typeof raw)) throw new Error(`${key}: expected string, number or boolean`);
+      const text = String(raw);
+      if (/[\r\n\0]/.test(text)) throw new Error(`${key}: multiline/control characters are not allowed`);
+      result[key] = text;
+    }
+  };
+  apply(file);
+  apply(advanced);
+  apply(inputs, true);
+  for (const key of CONTROL_NAMES) {
+    const value = [`NORTHERNTRUST_${key}`, key, ...(CONTROL_ALIASES[key] ?? [])].map((name) => env[name]).find((candidate) => candidate !== undefined);
+    if (value !== undefined) apply({ [key]: value });
   }
+  for (const key of ['MAX_FETCHES', 'CONCURRENCY', 'HOLDINGS_PAGE_SIZE', 'HISTORY_PAGE_SIZE', 'MAX_RETRIES']) {
+    const v = result[key];
+    if (v === undefined || v === '') continue;
+    const min = ['MAX_FETCHES', 'MAX_RETRIES'].includes(key) ? 0 : 1;
+    if (!/^\d+$/.test(v) || !Number.isSafeInteger(Number(v)) || Number(v) < min) throw new Error(`${key}: expected integer >= ${min}`);
+  }
+  if (result.REQUEST_SLEEP && (!Number.isFinite(Number(result.REQUEST_SLEEP)) || Number(result.REQUEST_SLEEP) < 0)) throw new Error('REQUEST_SLEEP: expected nonnegative seconds');
+  for (const key of ['EDGAR_FALLBACK', 'SKIP_YAHOO', 'SKIP_NORTHERNTRUST', 'STORE_RAW_DOWNLOADS', 'VERBOSE']) {
+    if (result[key] && !/^(0|1|true|false|yes|no|y|n|on|off)$/i.test(result[key])) throw new Error(`${key}: expected boolean`);
+  }
+  if (result.CATALOG_URL && !/^https?:\/\//i.test(result.CATALOG_URL)) throw new Error('CATALOG_URL: expected an http(s) URL');
+  readConfig(result); // validate every min:max filter before any request or write
+  return result;
+}
+
+export async function runtimeControls(env: Record<string, string | undefined> = process.env): Promise<Record<string, string>> {
+  let file: unknown = {};
+  try { file = JSON.parse(await readFile(CONFIG_FILE_URL, 'utf8')); }
+  catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+  return resolveControls(file, {}, {}, env);
+}
+
+// ---------------------------------------------------------------------------
+// Entry point (kept at the end: runUpdater() relies on the let bindings above)
+// ---------------------------------------------------------------------------
+
+export async function main(argv: string[] = process.argv.slice(2), env: Record<string, string | undefined> = process.env): Promise<void> {
+  if (argv.some((arg) => arg === '--help' || arg === '-h')) {
+    console.log(USAGE.trim());
+    return;
+  }
+  if (argv.length) throw new Error(`unsupported argument(s): ${argv.join(' ')}. Use --help for usage.`);
+  const controls = await runtimeControls(env);
+  if (controls.VERBOSE !== undefined && env === process.env) process.env.VERBOSE = controls.VERBOSE;
+  await runUpdater(readConfig(controls));
+}
+
+if ((import.meta as { main?: boolean }).main) {
+  await main().catch((error) => {
+    console.error(error instanceof Error ? error.stack : String(error));
+    process.exitCode = 1;
+  });
 }
