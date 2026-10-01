@@ -1939,3 +1939,5 @@ UI, and which "closest example" you used.
 
 --- end file 03-northern-trust-flexshares.txt ---
 --- end ORIGINAL INPUTS ---
+
+--- 2026-10-01: standardized config plumbing (branch chore/standardize-config): shared resolveControls/runtimeControls, 24 inputs + advanced workflow, README controls table, config-docs tests. Provider logic unchanged. ---
