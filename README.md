@@ -1,6 +1,6 @@
 # Northern Trust
 
-One of the app's features lets you select Northern Trust ETFs in the Watchlist and aggregate their holdings to see how often each ticker appears across the selected funds. Repeated holdings make overlapping exposure visible: the more selected funds include a ticker, the greater its potential influence on the portfolio; gains in that holding may help, while declines may hurt, and actual impact also depends on each fund's position size.  Another feature makes it faster and easier to find funds with stronger growth over different periods, higher dividend yields or distributions, greater Total Return (price performance plus dividends), and other key performance metrics. A single-file client-side tool that reads the generated `./api/northerntrust` static feed (etfs.ntam.northerntrust.com funds list and per-fund full-data, holdings, pricing and distributions downloads — official NAV returns, expenses, yields, complete daily holdings and whole-life NAV history — with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist aggregation, ticker copy and CSV/TXT export — the same look, feel, columns and business logic as the sibling applications.
+One of the app's features lets you select Northern Trust ETFs in the Watchlist and aggregate their holdings to see how often each ticker appears across the selected funds. Repeated holdings make overlapping exposure visible: the more selected funds include a ticker, the greater its potential influence on the portfolio; gains in that holding may help, while declines may hurt, and actual impact also depends on each fund's position size.  Another feature makes it faster and easier to find funds with stronger growth over different periods, higher dividend yields or distributions, greater Total Return (price performance plus dividends), and other key performance metrics. A single-file client-side tool that reads the generated `./api/northerntrust` static feed (etfs.ntam.northerntrust.com funds list and per-fund full-data, holdings, pricing and distributions downloads - official NAV returns, expenses, yields, complete daily holdings and whole-life NAV history - with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist aggregation, ticker copy and CSV/TXT export - the same look, feel, columns and business logic as the sibling applications.
 
 ## Using Bun
 
@@ -20,7 +20,7 @@ bun scripts/update-data.ts
 
 Defaults for every supported control live in `scripts/update-data.config.json`. Run `bun scripts/update-data.ts --help` to print each control with its meaning and usage examples. All supplied filters use **AND** logic.
 
-Precedence: file defaults < `advanced` JSON < nonblank inputs < protected Actions variable/env. Locally, the environment variables listed below (or their `NORTHERNTRUST_<NAME>` form, which wins) override the file. The **Update Northern Trust ETF data** GitHub Actions workflow runs weekly with the file defaults and exposes 24 of the controls as manual inputs; a blank input inherits the file value. The `advanced` input takes a JSON object of any other control, for example `{"STORE_RAW_DOWNLOADS": "true", "TOTAL_RETURN_10Y": "10:"}`. The CLI and the workflow share the same resolver, and the output directory is fixed to `api/northerntrust`.
+Precedence: file defaults < `advanced` JSON < nonblank inputs < protected Actions variable/env. Locally, the environment variables listed below (or their `NORTHERNTRUST_<NAME>` form, which wins) override the file, and an explicitly set variable wins even when empty (it clears the control). The **Update Northern Trust ETF data** GitHub Actions workflow runs weekly with the file defaults and exposes 24 of the controls as manual inputs; a blank input inherits the file value. The `advanced` input takes a JSON object of any other control, for example `{"STORE_RAW_DOWNLOADS": "true", "TOTAL_RETURN_10Y": "10:"}`. The CLI and the workflow share the same resolver, and the output directory is fixed to `api/northerntrust`.
 
 ### Data sources
 
@@ -58,7 +58,7 @@ Caveats:
 | `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/northerntrust/update-state.json`; empty or `0` is a full pass, every fund is refreshed in one run. Legacy alias `NORTHERNTRUST_LIMIT` |
 | `REQUEST_SLEEP` | `1` | Minimum delay in seconds between request starts on the same pacing lane, including retries. |
 | `CONCURRENCY` | `2` | Number of parallel fund update workers. Request starts are spaced by `REQUEST_SLEEP` within each pacing lane. |
-| `MAX_RETRIES` | `2` | Retries after the initial request (`0` disables). Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
+| `MAX_RETRIES` | `2` | Retries after the initial request (integer >= 1). Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
 | `TICKERS` | empty (all) | Space-, comma- or semicolon-separated ticker allowlist, e.g. `QLC SKOR TIPA TXCA`. |
 | `AUM` | `:` | Net Assets range. Each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large`. |
 | `TER` | `:` | Expense ratio range in % (strict `min:max`). |
@@ -71,7 +71,7 @@ Caveats:
 | `SKIP_YAHOO` | `false` | Never call the Yahoo chart API; previously published history rows are kept. |
 | `SKIP_NORTHERNTRUST` | `false` | Keep the previously published Northern Trust catalog, holdings and returns; only run the fallbacks. |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the source downloads under `api/northerntrust/raw`. In Actions the optional repository variable `STORE_RAW_DOWNLOADS` overrides it when nonblank. |
-| `SEC_UA` | empty (built-in descriptor) | SEC User-Agent. SEC policy requires a declared contact; set the protected repository variable `SEC_UA` to supply a real one, it wins over every other layer when nonblank. |
+| `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent with the declared contact SEC policy requires; redacted in config logs. The protected repository variable `SEC_UA` wins over every other layer when nonblank. |
 | `CATALOG_URL` | empty (official funds list) | Override the catalog page URL (http or https). |
 | `VERBOSE` | `false` | Print per-fund retry and fallback notices. |
 | `PERFORMANCE_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Annualized return ranges (strict `min:max`). |
@@ -99,8 +99,6 @@ bun build --target=bun scripts/update-data.ts --outfile=/dev/null
 git diff --check
 ```
 
-`bun test` also covers the README controls table, the config file and the workflow (`scripts/config-docs.test.ts`).
-
 ## Brands table
 
 | Brand | Where to get the data |
@@ -124,7 +122,7 @@ git diff --check
 | **ProShares** | [proshares.com](https://www.proshares.com/our-etfs/find-proshares-etfs) \| [ProShares](https://daggerok.github.io/ProShares/) |
 | **Schwab** | [schwabassetmanagement.com](https://www.schwabassetmanagement.com/products) \| [Schwab](https://daggerok.github.io/Schwab/) |
 | **SPDR** | [ssga.com](https://www.ssga.com/us/en/intermediary/etfs/fund-finder) \| [SPDR](https://daggerok.github.io/SPDR/) |
-| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) (deployment pending) |
+| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) |
 | **Tema ETFs** | [temaetfs.com](https://temaetfs.com/funds) \| [Tema](https://daggerok.github.io/Tema/) |
 | **Themes ETFs** | [themesetfs.com/etfs](https://themesetfs.com/etfs) \| [Themes](https://daggerok.github.io/Themes/) |
 | **VanEck** | [vaneck.com](https://www.vaneck.com/us/en/etf-mutual-fund-finder/) \| [VanEck](https://daggerok.github.io/VanEck/) |
