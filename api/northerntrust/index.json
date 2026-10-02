@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-28T01:36:36Z",
+ "generatedAt": "2026-10-02T03:19:56Z",
  "source": {
   "provider": "Northern Trust Asset Management (US ETFs)",
   "market": "us",
@@ -13,7 +13,7 @@
  "counts": {
   "funds": 49,
   "holdings": 24400,
-  "history": 79617
+  "history": 79620
  },
  "funds": [
   {
@@ -1901,17 +1901,17 @@
    "isin": null,
    "ter": "0.26%",
    "terValue": 0.26,
-   "nav": "$91.99",
-   "navValue": 91.99,
-   "aum": "$1,129.19 M",
-   "aumValue": 1129188730.6,
-   "asOfDate": "Sep 25 2026",
+   "nav": "$90.90",
+   "navValue": 90.9,
+   "aum": "$1,124.83 M",
+   "aumValue": 1124828877.35,
+   "asOfDate": "Sep 30 2026",
    "inceptionDate": "Sep 23 2015",
    "exchange": "CBOE",
-   "closePrice": "$92.01",
-   "closePriceValue": 92.01,
-   "premiumDiscount": "0.02%",
-   "premiumDiscountValue": 0.0208,
+   "closePrice": "$90.97",
+   "closePriceValue": 90.97,
+   "premiumDiscount": "0.08%",
+   "premiumDiscountValue": 0.0822,
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/18/2026",
@@ -1922,8 +1922,8 @@
      "asOfDate": "Aug 31 2026",
      "mo1": 2.01,
      "mo1Text": "2.01%",
-     "qtd": 2.7,
-     "qtdText": "2.70%",
+     "qtd": null,
+     "qtdText": "—",
      "ytd": 14.5,
      "ytdText": "14.50%",
      "yr1": 24.89,
@@ -1957,14 +1957,14 @@
     "cagr5y": 14.34,
     "cagr10y": 14.73,
     "siAnn": 14.31,
-    "dividendYield": 0.95,
-    "dividendYieldText": "0.95%",
+    "dividendYield": 0.96,
+    "dividendYieldText": "0.96%",
     "secYield": 0.95,
     "secYieldText": "0.95%",
     "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
    },
    "holdings": 162,
-   "history": 2767
+   "history": 2770
   },
   {
    "ticker": "QLV",
