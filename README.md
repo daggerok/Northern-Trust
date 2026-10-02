@@ -74,6 +74,7 @@ Caveats:
 | `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent with the declared contact SEC policy requires; redacted in config logs. The protected repository variable `SEC_UA` wins over every other layer when nonblank. |
 | `CATALOG_URL` | empty (official funds list) | Override the catalog page URL (http or https). |
 | `VERBOSE` | `false` | Print per-fund retry and fallback notices. |
+| `USE_SYSTEM_CA` | `auto` | TLS trust store: `auto` restarts the updater once with Bun's `--use-system-ca` when a request fails with an untrusted-certificate error; `true` always uses the system CA store; `false` never restarts. Not an individual workflow input: use `advanced`, the config file or the CLI environment. |
 | `PERFORMANCE_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Annualized return ranges (strict `min:max`). |
 | `TOTAL_RETURN_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Cumulative return ranges (strict `min:max`). |
 
