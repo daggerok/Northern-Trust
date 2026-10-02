@@ -10,7 +10,7 @@ bunx serve . -p 1234
 open http://0:1234
 ```
 
-GitHub Pages publishing is pending: the application will be available at <https://daggerok.github.io/Northern-Trust/> once Pages is enabled for the repository.
+The published application is available at <https://daggerok.github.io/Northern-Trust/>.
 
 ## Updating the static Northern Trust data
 
