@@ -42,6 +42,8 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `siAnn` - since-inception annualized -> *SI Ann.*
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price)
 - `secYield` - 30-day SEC yield when published; an unpublished value is shown as unavailable, not as 0
+- `returnsBasis` - mandatory non-empty label of how the returns were computed: official Northern Trust NAV total returns, the same with gaps filled from the daily NAV history, or derived from the NAV history / Yahoo adjusted closes (an estimate)
+- `performanceAsOf` - ISO `YYYY-MM-DD` date the returns are as of: the official month-end performance table date, or the last history date when derived; not the NAV date, `null` only when unknown
 
 Caveats:
 

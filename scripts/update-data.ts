@@ -2017,6 +2017,45 @@ export function lastCompletedQuarterEnd(now = new Date()): Date {
   return new Date(Date.UTC(year, 8, 30)); // Oct-Dec -> Sep 30
 }
 
+/** A strict YYYY-MM-DD calendar date, or null (never an empty string). */
+export function isoDateOrNull(value: string | null | undefined): string | null {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value ? value : null;
+}
+
+/** Honest, never-empty label of how `metrics` returns were computed (STANDARD.md 9a). */
+export function returnsBasisLabel(hasOfficial: boolean): string {
+  return hasOfficial
+    ? 'official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date'
+    : 'derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date';
+}
+
+const MONTH_NUMBER: Record<string, string> = Object.fromEntries(MONTHS.map((name, index) => [name, String(index + 1).padStart(2, '0')]));
+
+/** Parses the published "Aug 31 2026" label back to ISO, or null. */
+export function labelToIsoDate(label: unknown): string | null {
+  const match = /^([A-Za-z]{3}) (\d{2}) (\d{4})$/.exec(String(label ?? ''));
+  const month = match ? MONTH_NUMBER[match[1]] : undefined;
+  return match && month ? isoDateOrNull(`${match[3]}-${month}-${match[2]}`) : null;
+}
+
+/**
+ * Makes a previously published index row satisfy the metrics contract
+ * (STANDARD.md 9a) without refetching: keeps a valid basis and date, otherwise
+ * derives them from the stored returns block. Both fields end up last.
+ */
+export function ensureMetricsContract(row: JsonRecord, lastHistoryDate: string | null = null): JsonRecord {
+  const { returnsBasis, performanceAsOf, ...rest } = ((row.metrics as JsonRecord) || {}) as JsonRecord;
+  const old = typeof returnsBasis === 'string' ? returnsBasis.trim() : '';
+  const official = /^official/.test(old);
+  const derived = /^derived/.test(old);
+  const basis = official || derived ? returnsBasisLabel(official) : old && old !== '-' ? old : 'previously published returns (basis not recorded)';
+  const monthEnd = ((row.returns as JsonRecord)?.monthEnd as JsonRecord) || {};
+  const asOf = isoDateOrNull(performanceAsOf as string | null) ?? (official ? labelToIsoDate(monthEnd.asOfDate) : derived ? isoDateOrNull(lastHistoryDate) : null);
+  return { ...row, metrics: { ...rest, returnsBasis: basis, performanceAsOf: asOf } };
+}
+
 /**
  * Merges the official JPMorgan returns with the ones derived from the adjusted
  * daily series. Official figures win wherever they exist (they are NAV total
@@ -2032,6 +2071,7 @@ export function deriveCatalogMetrics(
   paymentsPerYear: number | null,
   price: number | null,
   officialCumulative: CumulativeReturns | null = null,
+  officialAsOf: string | null = null,
 ): JsonRecord {
   const coalesce = (value: number | null | undefined): number | null => (typeof value === 'number' && Number.isFinite(value) ? value : null);
   const ytd = coalesce(official.ytd) ?? coalesce(derived.ytd);
@@ -2040,6 +2080,7 @@ export function deriveCatalogMetrics(
   const cagr5y = coalesce(official.yr5) ?? coalesce(derived.cagr5y);
   const cagr10y = coalesce(official.yr10) ?? coalesce(derived.cagr10y);
   const siAnn = coalesce(official.sinceInception) ?? coalesce(derived.siAnn);
+  const hasOfficial = Object.values(official).some((value) => value !== null);
   const dividendYield = coalesce(publishedDividendYield) ?? indicatedYield(latestDistribution, paymentsPerYear, price);
   const text = (value: number | null): string | null => (value === null ? null : `${value.toFixed(2)}%`);
   return {
@@ -2056,9 +2097,8 @@ export function deriveCatalogMetrics(
     dividendYieldText: text(dividendYield) ?? '—',
     secYield: coalesce(publishedSecYield),
     secYieldText: text(coalesce(publishedSecYield)) ?? '—',
-    returnsBasis: Object.values(official).some((value) => value !== null)
-      ? 'official Northern Trust NAV total returns (funds-list JSON + full-data CSV)'
-      : 'derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns',
+    returnsBasis: returnsBasisLabel(hasOfficial),
+    performanceAsOf: hasOfficial ? isoDateOrNull(officialAsOf) : isoDateOrNull(derived.asOfDate),
   };
 }
 
@@ -2581,6 +2621,7 @@ async function processFund(
     frequency.paymentsPerYear,
     price,
     product?.cumulative ?? null,
+    returnsAsOfDate,
   );
 
   const historyManifest = await writePages(fundDir, ticker, 'history', historyHeaders, history, config.historyPageSize);
@@ -2966,7 +3007,8 @@ async function runUpdater(config: UpdaterConfig): Promise<void> {
   const keptFromPrevious = universe
     .filter((fund) => !results.some((row) => row.ticker === fund.ticker))
     .map((fund) => previousIndex.get(fund.ticker))
-    .filter(Boolean) as JsonRecord[];
+    .filter(Boolean)
+    .map((row) => ensureMetricsContract(row as JsonRecord)) as JsonRecord[];
   const funds = [...results, ...keptFromPrevious].sort((a, b) => String(a.ticker).localeCompare(String(b.ticker)));
 
   const counts = {
@@ -3044,7 +3086,7 @@ function catalogFundFromIndex(ticker: string, row: JsonRecord): CatalogFund {
       yr10: numberOrNull(monthEnd.yr10),
       sinceInception: numberOrNull(monthEnd.sinceInception),
     },
-    returnsAsOfDate: null,
+    returnsAsOfDate: isoDateOrNull(metrics.performanceAsOf as string | null),
     mo1: numberOrNull(monthEnd.mo1),
     marketReturns: { ...EMPTY_RETURNS },
     quarterEnd: {

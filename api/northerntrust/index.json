@@ -86,7 +86,8 @@
     "dividendYieldText": "4.30%",
     "secYield": 4.31,
     "secYieldText": "4.31%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 16,
    "history": 2474
@@ -161,7 +162,8 @@
     "dividendYieldText": "0.76%",
     "secYield": 0.84,
     "secYieldText": "0.84%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 253,
    "history": 2565
@@ -236,7 +238,8 @@
     "dividendYieldText": "0.79%",
     "secYield": 1.07,
     "secYieldText": "1.07%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 741,
    "history": 2565
@@ -311,7 +314,8 @@
     "dividendYieldText": "2.87%",
     "secYield": 2.42,
     "secYieldText": "2.42%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 252,
    "history": 1259
@@ -386,7 +390,8 @@
     "dividendYieldText": "4.97%",
     "secYield": 5.24,
     "secYieldText": "5.24%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 803,
    "history": 1259
@@ -461,7 +466,8 @@
     "dividendYieldText": "0.98%",
     "secYield": 1.05,
     "secYieldText": "1.05%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 132,
    "history": 1259
@@ -536,7 +542,8 @@
     "dividendYieldText": "4.41%",
     "secYield": 3.33,
     "secYieldText": "3.33%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 197,
    "history": 3240
@@ -611,7 +618,8 @@
     "dividendYieldText": "2.30%",
     "secYield": 2.08,
     "secYieldText": "2.08%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 178,
    "history": 3774
@@ -686,7 +694,8 @@
     "dividendYieldText": "7.55%",
     "secYield": 7.6,
     "secYieldText": "7.60%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 966,
    "history": 2059
@@ -761,7 +770,8 @@
     "dividendYieldText": "3.41%",
     "secYield": 3.81,
     "secYieldText": "3.81%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 253,
    "history": 3383
@@ -836,7 +846,8 @@
     "dividendYieldText": "3.28%",
     "secYield": 3.36,
     "secYieldText": "3.36%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 248,
    "history": 3383
@@ -911,7 +922,8 @@
     "dividendYieldText": "6.13%",
     "secYield": 5.94,
     "secYieldText": "5.94%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 839,
    "history": 2767
@@ -986,7 +998,8 @@
     "dividendYieldText": "4.23%",
     "secYield": 3.35,
     "secYieldText": "3.35%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 486,
    "history": 3033
@@ -1061,7 +1074,8 @@
     "dividendYieldText": "2.24%",
     "secYield": 2.48,
     "secYieldText": "2.48%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 233,
    "history": 278
@@ -1136,7 +1150,8 @@
     "dividendYieldText": "2.43%",
     "secYield": 2.74,
     "secYieldText": "2.74%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 257,
    "history": 278
@@ -1211,7 +1226,8 @@
     "dividendYieldText": "3.39%",
     "secYield": 3.24,
     "secYieldText": "3.24%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 156,
    "history": 278
@@ -1286,7 +1302,8 @@
     "dividendYieldText": "3.96%",
     "secYield": 3.53,
     "secYieldText": "3.53%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 65,
    "history": 278
@@ -1361,7 +1378,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 130,
    "history": 22
@@ -1436,7 +1454,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 183,
    "history": 22
@@ -1511,7 +1530,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 138,
    "history": 22
@@ -1586,7 +1606,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 170,
    "history": 22
@@ -1661,7 +1682,8 @@
     "dividendYieldText": "5.85%",
     "secYield": 2.19,
     "secYieldText": "2.19%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 217,
    "history": 3260
@@ -1736,7 +1758,8 @@
     "dividendYieldText": "0.41%",
     "secYield": 0.94,
     "secYieldText": "0.94%",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 403,
    "history": 130
@@ -1811,7 +1834,8 @@
     "dividendYieldText": "1.58%",
     "secYield": 1.47,
     "secYieldText": "1.47%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 158,
    "history": 3462
@@ -1886,7 +1910,8 @@
     "dividendYieldText": "1.50%",
     "secYield": 1.46,
     "secYieldText": "1.46%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 144,
    "history": 3462
@@ -1961,7 +1986,8 @@
     "dividendYieldText": "0.96%",
     "secYield": 0.95,
     "secYieldText": "0.95%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 162,
    "history": 2770
@@ -2036,7 +2062,8 @@
     "dividendYieldText": "1.49%",
     "secYield": 1.36,
     "secYieldText": "1.36%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 125,
    "history": 1810
@@ -2111,7 +2138,8 @@
     "dividendYieldText": "3.08%",
     "secYield": 2.74,
     "secYieldText": "2.74%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 214,
    "history": 1810
@@ -2186,7 +2214,8 @@
     "dividendYieldText": "2.97%",
     "secYield": 2.27,
     "secYieldText": "2.27%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 166,
    "history": 1810
@@ -2261,7 +2290,8 @@
     "dividendYieldText": "4.26%",
     "secYield": 4.14,
     "secYieldText": "4.14%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 271,
    "history": 3508
@@ -2336,7 +2366,8 @@
     "dividendYieldText": "4.81%",
     "secYield": 5.05,
     "secYieldText": "5.05%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 1550,
    "history": 2983
@@ -2411,7 +2442,8 @@
     "dividendYieldText": "2.74%",
     "secYield": 3.25,
     "secYieldText": "3.25%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 2724,
    "history": 278
@@ -2486,7 +2518,8 @@
     "dividendYieldText": "2.42%",
     "secYield": 2.73,
     "secYieldText": "2.73%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 2031,
    "history": 278
@@ -2561,7 +2594,8 @@
     "dividendYieldText": "3.44%",
     "secYield": 3.66,
     "secYieldText": "3.66%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 1627,
    "history": 278
@@ -2636,7 +2670,8 @@
     "dividendYieldText": "5.49%",
     "secYield": -2.37,
     "secYieldText": "-2.37%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 17,
    "history": 3774
@@ -2711,7 +2746,8 @@
     "dividendYieldText": "5.20%",
     "secYield": -2.18,
     "secYieldText": "-2.18%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 23,
    "history": 3773
@@ -2786,7 +2822,8 @@
     "dividendYieldText": "1.06%",
     "secYield": 1.05,
     "secYieldText": "1.05%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 1916,
    "history": 3774
@@ -2861,7 +2898,8 @@
     "dividendYieldText": "4.25%",
     "secYield": -2.14,
     "secYieldText": "-2.14%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 6,
    "history": 278
@@ -2936,7 +2974,8 @@
     "dividendYieldText": "5.27%",
     "secYield": -2.16,
     "secYieldText": "-2.16%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 11,
    "history": 278
@@ -3011,7 +3050,8 @@
     "dividendYieldText": "6.33%",
     "secYield": -2.11,
     "secYieldText": "-2.11%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 18,
    "history": 278
@@ -3086,7 +3126,8 @@
     "dividendYieldText": "7.73%",
     "secYield": -2.38,
     "secYieldText": "-2.38%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 28,
    "history": 278
@@ -3161,7 +3202,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 6,
    "history": 22
@@ -3236,7 +3278,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 11,
    "history": 22
@@ -3311,7 +3354,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 18,
    "history": 22
@@ -3386,7 +3430,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 28,
    "history": 22
@@ -3461,7 +3506,8 @@
     "dividendYieldText": "3.24%",
     "secYield": 2.43,
     "secYieldText": "2.43%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 2298,
    "history": 3517
@@ -3536,7 +3582,8 @@
     "dividendYieldText": "3.24%",
     "secYield": 2.04,
     "secYieldText": "2.04%",
-    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV)"
+    "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date",
+    "performanceAsOf": "2026-08-31"
    },
    "holdings": 3037,
    "history": 3517
@@ -3611,7 +3658,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 299,
    "history": 3
@@ -3686,7 +3734,8 @@
     "dividendYieldText": "—",
     "secYield": null,
     "secYieldText": "—",
-    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns"
+    "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date",
+    "performanceAsOf": "2026-09-25"
    },
    "holdings": 196,
    "history": 3
