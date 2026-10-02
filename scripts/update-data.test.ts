@@ -3,6 +3,8 @@ import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import {
   CONTROL_NAMES,
+  isCertError,
+  installSystemCa,
   readConfig,
   resolveControls,
   runtimeControls,
@@ -1585,7 +1587,7 @@ test('workflow: protected repository variables win and nothing is dropped from t
   const individual = workflowInputs(text).filter((n) => n !== 'advanced').map((n) => n.toUpperCase());
   // Controls not exposed as an individual input stay reachable through `advanced` and the config file.
   const hidden = CONTROL_NAMES.filter((name) => !individual.includes(name));
-  expect(hidden.sort()).toEqual(['CATALOG_URL', 'SEC_UA', 'STORE_RAW_DOWNLOADS', 'TOTAL_RETURN_10Y', 'VERBOSE']);
+  expect(hidden.sort()).toEqual(['CATALOG_URL', 'SEC_UA', 'STORE_RAW_DOWNLOADS', 'TOTAL_RETURN_10Y', 'USE_SYSTEM_CA', 'VERBOSE']);
   for (const name of hidden) expect(() => resolveControls(file(), { [name]: file()[name] })).not.toThrow();
 });
 
@@ -1608,4 +1610,63 @@ test('README structure and shared sections', () => {
   ]);
   for (const heading of ['### Data sources', '### Metrics and caveats', '### Update controls', '### Examples']) expect(doc).toContain(heading);
   expect(doc).toContain('file defaults < `advanced` JSON < nonblank inputs < protected Actions variable/env');
+});
+
+describe('system CA support', () => {
+  test('USE_SYSTEM_CA resolver: auto/true/false case-insensitive, rejects maybe, default auto', () => {
+    expect(file().USE_SYSTEM_CA).toBe('auto');
+    expect(resolveControls(file()).USE_SYSTEM_CA).toBe('auto');
+    for (const mode of ['auto', 'true', 'false', 'AUTO', 'True', 'FALSE']) {
+      expect(resolveControls(file(), {}, {}, { USE_SYSTEM_CA: mode }).USE_SYSTEM_CA).toBe(mode.toLowerCase());
+    }
+    expect(() => resolveControls(file(), {}, {}, { USE_SYSTEM_CA: 'maybe' })).toThrow();
+    expect(() => resolveControls(file(), { USE_SYSTEM_CA: 'maybe' })).toThrow();
+  });
+
+  test('isCertError matches certificate errors, directly or through cause', () => {
+    expect(isCertError({ code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' })).toBe(true);
+    expect(isCertError(new Error('unable to get local issuer certificate'))).toBe(true);
+    expect(isCertError(new Error('fetch failed', { cause: new Error('unable to get local issuer certificate') }))).toBe(true);
+    expect(isCertError({ code: 'ECONNRESET' })).toBe(false);
+    expect(isCertError(new Error('HTTP 403 Forbidden'))).toBe(false);
+    expect(isCertError(null)).toBe(false);
+  });
+
+  test('installSystemCa wraps fetch only in auto mode and restarts once on certificate errors', async () => {
+    const original = globalThis.fetch;
+    let calls = 0;
+    const reexec = (() => { calls++; return undefined as never; }) as () => never;
+    try {
+      installSystemCa('false', reexec, false);
+      expect(globalThis.fetch).toBe(original);
+      installSystemCa('auto', reexec, true);
+      expect(globalThis.fetch).toBe(original);
+      installSystemCa('true', reexec, true);
+      expect(calls).toBe(0);
+      installSystemCa('true', reexec, false);
+      expect(calls).toBe(1);
+      globalThis.fetch = original; // the real reexec never returns; the stub does and falls through to wrapping
+
+      calls = 0;
+      let next: () => Promise<Response> = async () => new Response('ok');
+      globalThis.fetch = (async () => next()) as unknown as typeof fetch;
+      const stub = globalThis.fetch;
+      installSystemCa('auto', reexec, false);
+      expect(globalThis.fetch).not.toBe(stub);
+      expect(await (await globalThis.fetch('https://example.invalid/')).text()).toBe('ok');
+      expect(calls).toBe(0);
+      next = async () => { throw new Error('ECONNRESET'); };
+      await expect(globalThis.fetch('https://example.invalid/')).rejects.toThrow('ECONNRESET');
+      expect(calls).toBe(0);
+      const originalError = console.error;
+      console.error = () => {};
+      try {
+        next = async () => { throw new Error('fetch failed', { cause: { code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' } }); };
+        await globalThis.fetch('https://example.invalid/');
+      } finally { console.error = originalError; }
+      expect(calls).toBe(1);
+    } finally {
+      globalThis.fetch = original;
+    }
+  });
 });
