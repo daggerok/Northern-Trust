@@ -1,6 +1,6 @@
 # Northern Trust
 
-One of the app's features lets you select Northern Trust ETFs in the Watchlist and aggregate their holdings to see how often each ticker appears across the selected funds. Repeated holdings make overlapping exposure visible: the more selected funds include a ticker, the greater its potential influence on the portfolio; gains in that holding may help, while declines may hurt, and actual impact also depends on each fund's position size.  Another feature makes it faster and easier to find funds with stronger growth over different periods, higher dividend yields or distributions, greater Total Return (price performance plus dividends), and other key performance metrics. A single-file client-side tool that reads the generated `./api/northerntrust` static feed (etfs.ntam.northerntrust.com funds list and per-fund full-data, holdings, pricing and distributions downloads — official NAV returns, expenses, yields, complete daily holdings and whole-life NAV history — with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist aggregation, ticker copy and CSV/TXT export — the same look, feel, columns and business logic as the sibling applications.
+One of the app's features lets you select Northern Trust ETFs in the Watchlist and aggregate their holdings to see how often each ticker appears across the selected funds. Repeated holdings make overlapping exposure visible: the more selected funds include a ticker, the greater its potential influence on the portfolio; gains in that holding may help, while declines may hurt, and actual impact also depends on each fund's position size.  Another feature makes it faster and easier to find funds with stronger growth over different periods, higher dividend yields or distributions, greater Total Return (price performance plus dividends), and other key performance metrics. A single-file client-side tool that reads the generated `./api/northerntrust` static feed (etfs.ntam.northerntrust.com funds list and per-fund full-data, holdings, pricing and distributions downloads - official NAV returns, expenses, yields, complete daily holdings and whole-life NAV history - with SEC EDGAR N-PORT-P and Yahoo Finance as fallbacks) into a searchable ETF/asset-class catalog with per-fund tabs, watchlist aggregation, ticker copy and CSV/TXT export - the same look, feel, columns and business logic as the sibling applications.
 
 ## Using Bun
 
@@ -10,20 +10,17 @@ bunx serve . -p 1234
 open http://0:1234
 ```
 
-GitHub Pages publishing is pending: the application will be available at <https://daggerok.github.io/Northern-Trust/> once Pages is enabled for the repository.
+The published application is available at <https://daggerok.github.io/Northern-Trust/>.
 
 ## Updating the static Northern Trust data
 
-Run the updater with Bun:
-
 ```bash
-bun test scripts/update-data.test.ts
-./scripts/update-data.ts
+bun scripts/update-data.ts
 ```
 
-Run `./scripts/update-data.ts -h` (or `--help`) to print every configuration variable with its default and usage examples.
+Defaults for every supported control live in `scripts/update-data.config.json`. Run `bun scripts/update-data.ts --help` to print each control with its meaning and usage examples. All supplied filters use **AND** logic.
 
-The **Update Northern Trust ETF data** GitHub Actions workflow exposes the same settings as manual inputs. All supplied filters use **AND** logic.
+Precedence: file defaults < `advanced` JSON < nonblank inputs < protected Actions variable/env. Locally, the environment variables listed below (or their `NORTHERNTRUST_<NAME>` form, which wins) override the file, and an explicitly set variable wins even when empty (it clears the control). The **Update Northern Trust ETF data** GitHub Actions workflow runs weekly with the file defaults and exposes 24 of the controls as manual inputs; a blank input inherits the file value. The `advanced` input takes a JSON object of any other control, for example `{"STORE_RAW_DOWNLOADS": "true", "TOTAL_RETURN_10Y": "10:"}`. The CLI and the workflow share the same resolver, and the output directory is fixed to `api/northerntrust`.
 
 ### Data sources
 
@@ -35,103 +32,143 @@ The **Update Northern Trust ETF data** GitHub Actions workflow exposes the same 
 | Daily history, distributions | `https://etfs.ntam.northerntrust.com/content/dam/ntflexshares/fund/<ticker>/<ticker>_pricing.json` (official NAV history) + `.../<ticker>-distributions.csv` (dividend schedule) |
 | Fallback | SEC EDGAR N-PORT-P + Yahoo Finance chart API as fallbacks |
 
+### Metrics and caveats
+
 Each fund carries a derived `metrics` object that powers the catalog columns shared with the sibling sites:
 
-- `ytd` / `tr1y` — official YTD and 1-year returns → *YTD Return*, *TR 1Y*
-- `cagr3y` / `cagr5y` / `cagr10y` — published annualized 3Y/5Y/10Y figures → *CAGR 3Y/5Y/10Y*
-- `tr3y` / `tr5y` / `tr10y` — cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` → *TR 3Y/5Y/10Y*
-- `siAnn` — since-inception annualized → *SI Ann.*
-- `dividendYield` — 12-month trailing yield or indicated yield (latest distribution × frequency ÷ price)
-- `secYield` — 30-day SEC yield when published; `—` otherwise
+- `ytd` / `tr1y` - official YTD and 1-year returns -> *YTD Return*, *TR 1Y*
+- `cagr3y` / `cagr5y` / `cagr10y` - published annualized 3Y/5Y/10Y figures -> *CAGR 3Y/5Y/10Y*
+- `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
+- `siAnn` - since-inception annualized -> *SI Ann.*
+- `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price)
+- `secYield` - 30-day SEC yield when published; an unpublished value is shown as unavailable, not as 0
+
+Caveats:
+
+- Returns, NAV history and distributions come from Northern Trust's own downloads; the Yahoo Finance chart API is used only as a fallback, and values derived from it (including indicated yield and price-based returns) are estimates
+- SEC EDGAR N-PORT-P is used only for funds whose holdings CSV lists no holdings
+- `TICKERS` combines with AUM, TER and yield filters using AND logic; it does not override them
+- Funds not selected for a successful update keep their prior published metadata and data files
+- AUM, TER, yield and return filters are evaluated against the freshly downloaded catalog values (or the previously published catalog) before the heavier per-fund downloads
 
 ### Update controls
 
-| Environment variable | Default | Meaning |
+| Control | Default | Meaning |
 | --- | --: | --- |
-| `MAX_FETCHES` | all | Batch size: with a positive value the updater continues after the committed cursor in `api/northerntrust/update-state.json`; empty or `0` is a full pass — every fund is refreshed in one run. |
-| `REQUEST_SLEEP` | `0` | Minimum delay in seconds between request starts on the same pacing lane, including retries. |
+| `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/northerntrust/update-state.json`; empty or `0` is a full pass, every fund is refreshed in one run. Legacy alias `NORTHERNTRUST_LIMIT` |
+| `REQUEST_SLEEP` | `1` | Minimum delay in seconds between request starts on the same pacing lane, including retries. |
 | `CONCURRENCY` | `2` | Number of parallel fund update workers. Request starts are spaced by `REQUEST_SLEEP` within each pacing lane. |
+| `MAX_RETRIES` | `2` | Retries after the initial request (integer >= 1). Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
+| `TICKERS` | empty (all) | Space-, comma- or semicolon-separated ticker allowlist, e.g. `QLC SKOR TIPA TXCA`. |
 | `AUM` | `:` | Net Assets range. Each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large`. |
 | `TER` | `:` | Expense ratio range in % (strict `min:max`). |
 | `DIVIDEND_YIELD` | `:` | Dividend-yield percentage range. |
-| `TICKERS` | all | Space-, comma- or semicolon-separated ticker allowlist, e.g. `QLC SKOR TIPA TXCA`. |
+| `SEC_YIELD` | `:` | SEC-yield percentage range. |
 | `HOLDINGS_PAGE_SIZE` | `250` | Rows in each generated current-holdings JSON page. |
-| `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page. |
-| `MAX_RETRIES` | `2` | Retries after the initial request. Only network errors and HTTP 408/425/429/5xx are retried with exponential backoff. |
-| `SEC_UA` | declared UA | Override the SEC User-Agent. SEC policy requires automated tools to declare a contact. |
-| `SKIP_YAHOO` | off | Skip Yahoo Finance history updates. |
-
-`TICKERS` combines with AUM, TER, yield filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files.
-
-For GitHub Actions runs, the optional repository variable `STORE_RAW_DOWNLOADS` controls raw-source retention. Set it under **Settings → Secrets and variables → Actions → Variables** (true/yes/on/1 enables it). This avoids spending a manual-dispatch input on a diagnostic-only option and keeps the workflow within GitHub’s 25-input limit.
+| `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page. Legacy alias `HISTORICAL_PAGE_SIZE` |
+| `HISTORY_RANGE` | `max` | Yahoo chart range for the fallback history rows; the official Northern Trust history always covers the fund's whole life. |
+| `EDGAR_FALLBACK` | `true` | SEC EDGAR Form N-PORT-P fallback for funds whose holdings CSV lists no holdings. |
+| `SKIP_YAHOO` | `false` | Never call the Yahoo chart API; previously published history rows are kept. |
+| `SKIP_NORTHERNTRUST` | `false` | Keep the previously published Northern Trust catalog, holdings and returns; only run the fallbacks. |
+| `STORE_RAW_DOWNLOADS` | `false` | Store the source downloads under `api/northerntrust/raw`. In Actions the optional repository variable `STORE_RAW_DOWNLOADS` overrides it when nonblank. |
+| `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent with the declared contact SEC policy requires; redacted in config logs. The protected repository variable `SEC_UA` wins over every other layer when nonblank. |
+| `CATALOG_URL` | empty (official funds list) | Override the catalog page URL (http or https). |
+| `VERBOSE` | `false` | Print per-fund retry and fallback notices. |
+| `PERFORMANCE_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Annualized return ranges (strict `min:max`). |
+| `TOTAL_RETURN_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Cumulative return ranges (strict `min:max`). |
 
 ### Examples
 
 ```bash
-MAX_FETCHES=10 ./scripts/update-data.ts
-TICKERS="QLC SKOR TIPA TXCA" ./scripts/update-data.ts
-AUM="1B:" TER=":0.5" ./scripts/update-data.ts
-PERFORMANCE_1Y="15:" ./scripts/update-data.ts
+MAX_FETCHES=10 bun scripts/update-data.ts
+TICKERS="QLC SKOR TIPA TXCA" bun scripts/update-data.ts
+AUM="1B:" TER=":0.5" bun scripts/update-data.ts
+PERFORMANCE_1Y="15:" bun scripts/update-data.ts
 ```
 
-## TypeScript
+## TypeScript and verification
 
-The browser app is intentionally build-free: `index.html` carries the markup, styles and bootstrap, and `app.tsx` is TypeScript compiled in the browser with Babel standalone — no build step, no bundler, no `tsconfig.json` needed. Bun runs TypeScript out of the box.
+The browser app is intentionally build-free: `index.html` carries the markup, styles and bootstrap, and `app.tsx` is TypeScript compiled in the browser with Babel standalone - no build step, no bundler, no `tsconfig.json` needed. Bun runs TypeScript out of the box.
 
-Verification before every publish: `bun install --frozen-lockfile`, `bun test`, and `git diff --check`.
+Verification before every publish:
+
+```bash
+bun install --frozen-lockfile
+bun test
+bun build --target=bun scripts/update-data.ts --outfile=/dev/null
+git diff --check
+```
 
 ## Brands table
 
 | Brand | Where to get the data |
 | --- | --- |
+| **AAM** | [aamlive.com](https://www.aamlive.com/ETF) \| [AAM](https://daggerok.github.io/AAM/) |
 | **abrdn (Aberdeen)** | [aberdeeninvestments.com](https://www.aberdeeninvestments.com/en-us/investor/funds/etfs) \| [aberdeen](https://daggerok.github.io/aberdeen/) |
 | **Amplify** | [amplifyetfs.com](https://amplifyetfs.com/) \| [Amplify](https://daggerok.github.io/Amplify/) |
+| **ARK Invest** | [ark-funds.com](https://www.ark-funds.com/our-etfs/) \| [ARK](https://daggerok.github.io/ARK/) |
 | **Capital Group** | [capitalgroup.com](https://www.capitalgroup.com/advisor/investments/exchange-traded-funds.html) \| [Capital-Group](https://daggerok.github.io/Capital-Group/) |
 | **Fidelity** | [fidelity.com](https://www.fidelity.com/etfs) \| [Fidelity](https://daggerok.github.io/Fidelity/) |
 | **First Trust** | [ftportfolios.com](https://www.ftportfolios.com/Retail/etf/etflist.aspx) \| [First-Trust](https://daggerok.github.io/First-Trust/) |
 | **Franklin Templeton** | [franklintempleton.com](https://www.franklintempleton.com/investments/options/exchange-traded-funds) \| [Franklin](https://daggerok.github.io/Franklin/) |
-| **Global X** | [globalxetfs.com/explore](https://www.globalxetfs.com/explore) \| [Global X](https://daggerok.github.io/Global-X/) |
+| **Global X** | [globalxetfs.com/explore](https://www.globalxetfs.com/explore) \| [Global-X](https://daggerok.github.io/Global-X/) |
 | **Goldman Sachs** | [am.gs.com](https://am.gs.com/en-us/individual/funds?locale=en-us&audience=individual&sf=funds&filters=funds%7CETF&limit=100) \| [Goldman-Sachs](https://daggerok.github.io/Goldman-Sachs/) |
 | **Invesco** | [invesco.com](https://www.invesco.com/us/en/financial-products/etfs.html) \| [Invesco](https://daggerok.github.io/Invesco/) |
 | **iShares** | [ishares.com](https://www.ishares.com/) \| [iShares](https://daggerok.github.io/iShares/) |
 | **JPMorgan** | [am.jpmorgan.com](https://am.jpmorgan.com/us/en/asset-management/adv/products/fund-explorer/etf) \| [JPMorgan](https://daggerok.github.io/JPMorgan/) |
 | **NEOS** | [neosfunds.com](https://neosfunds.com/#explore-etfs) \| [Neos](https://daggerok.github.io/Neos/) |
 | **Northern Trust** | [etfs.ntam.northerntrust.com](https://etfs.ntam.northerntrust.com/us/en/individual/funds) \| [Northern-Trust](https://daggerok.github.io/Northern-Trust/) |
+| **Pacer ETFs** | [paceretfs.com](https://www.paceretfs.com/products/) \| [Pacer](https://daggerok.github.io/Pacer/) |
+| **Parametric** | [eatonvance.com](https://www.eatonvance.com/products/etfs.html) \| [Parametric](https://daggerok.github.io/Parametric/) |
 | **ProShares** | [proshares.com](https://www.proshares.com/our-etfs/find-proshares-etfs) \| [ProShares](https://daggerok.github.io/ProShares/) |
 | **Schwab** | [schwabassetmanagement.com](https://www.schwabassetmanagement.com/products) \| [Schwab](https://daggerok.github.io/Schwab/) |
+| **SP Funds** | [sp-funds.com](https://www.sp-funds.com/) \| [SP-Funds](https://daggerok.github.io/SP-Funds/) |
 | **SPDR** | [ssga.com](https://www.ssga.com/us/en/intermediary/etfs/fund-finder) \| [SPDR](https://daggerok.github.io/SPDR/) |
+| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) |
+| **Tema ETFs** | [temaetfs.com](https://temaetfs.com/funds) \| [Tema](https://daggerok.github.io/Tema/) |
+| **Themes ETFs** | [themesetfs.com/etfs](https://themesetfs.com/etfs) \| [Themes](https://daggerok.github.io/Themes/) |
 | **VanEck** | [vaneck.com](https://www.vaneck.com/us/en/etf-mutual-fund-finder/) \| [VanEck](https://daggerok.github.io/VanEck/) |
 | **Vanguard** | [investor.vanguard.com](https://investor.vanguard.com/etf/list) \| [Vanguard](https://daggerok.github.io/Vanguard/) |
 | **VictoryShares** | [vcm.com VictoryShares ETFs](https://www.vcm.com/products/victoryshares-etfs/victoryshares-etfs-list) \| [VictoryShares](https://daggerok.github.io/VictoryShares/) |
 | **WisdomTree** | [wisdomtree.com](https://www.wisdomtree.com/investments) \| [WisdomTree](https://daggerok.github.io/WisdomTree/) |
+| **Xtrackers** | [etf.dws.com](https://etf.dws.com/en-us/etf-products/) \| [Xtrackers](https://daggerok.github.io/Xtrackers/) |
 
 ## Sibling applications
 
 | Application | Data provider | Repository |
 | --- | --- | --- |
+| AAM | Official AAM catalog/detail HTML + full holdings XLS + SEC N-PORT holdings fallback + Yahoo market history/dividends | [AAM](https://github.com/daggerok/AAM) |
 | abrdn (Aberdeen) | Official Aberdeen gateway + SEC N-PORT holdings fallback + Yahoo history/dividends | [aberdeen](https://github.com/daggerok/aberdeen) |
 | Amplify | Amplify ETFs (Firestore data feed) | [Amplify](https://github.com/daggerok/Amplify) |
+| ARK Invest | ark-funds.com fund pages + overview/NAV-history/performance JSON + official daily holdings CSV + SEC EDGAR N-PORT-P holdings fallback + Yahoo Finance distributions/history fallback | [ARK](https://github.com/daggerok/ARK) |
 | Capital Group | Official Capital Group fund data + SEC N-PORT holdings fallback + Yahoo history fallback | [Capital-Group](https://github.com/daggerok/Capital-Group) |
 | Fidelity | SEC EDGAR N-PORT-P + Yahoo Finance | [Fidelity](https://github.com/daggerok/Fidelity) |
 | First Trust | ftportfolios.com official ETF list + fund summary, holdings, distribution and price-history export pages + SEC EDGAR N-PORT-P holdings fallback + Yahoo Finance history fallback | [First-Trust](https://github.com/daggerok/First-Trust) |
 | Franklin Templeton | franklintempleton.com ETF listings + product pages + SEC EDGAR N-PORT-P | [Franklin](https://github.com/daggerok/Franklin) |
-| Global X | globalxetfs.com Next.js catalog and fund pages + dated full-holdings CSV | [Global X](https://github.com/daggerok/Global-X) |
+| Global X | globalxetfs.com Next.js catalog and fund pages + dated full-holdings CSV | [Global-X](https://github.com/daggerok/Global-X) |
 | Goldman Sachs | am.gs.com fund finder + detail pages + SEC EDGAR N-PORT-P | [Goldman-Sachs](https://github.com/daggerok/Goldman-Sachs) |
 | Invesco | invesco.com CSV downloads + Yahoo Finance | [Invesco](https://github.com/daggerok/Invesco) |
 | iShares | iShares (BlackRock) product workbooks | [iShares](https://github.com/daggerok/iShares) |
 | JPMorgan | am.jpmorgan.com fund explorer + product-data JSON | [JPMorgan](https://github.com/daggerok/JPMorgan) |
 | NEOS | neosfunds.com lineup table + official fund pages + daily holdings CSV | [Neos](https://github.com/daggerok/Neos) |
 | Northern Trust | etfs.ntam.northerntrust.com funds list + per-fund CSV/JSON downloads | [Northern-Trust](https://github.com/daggerok/Northern-Trust) |
+| Pacer ETFs | paceretfs.com product catalog and fund pages (Cloudflare WAF; r.jina.ai proxy fallback) + SEC EDGAR N-PORT-P (Pacer Funds Trust) + Yahoo Finance history/dividends | [Pacer](https://github.com/daggerok/Pacer) |
+| Parametric | eatonvance.com ETF catalog and Parametric product pages + SEC EDGAR N-PORT-P holdings + Yahoo Finance history/dividends | [Parametric](https://github.com/daggerok/Parametric) |
 | ProShares | proshares.com ETF finder + fund pages + official data host | [ProShares](https://github.com/daggerok/ProShares) |
 | Schwab | schwabassetmanagement.com product pages + CSV exports | [Schwab](https://github.com/daggerok/Schwab) |
+| SP Funds | sp-funds.com homepage catalog, fund pages and daily holdings CSV + SEC EDGAR N-PORT-P holdings fallback + Yahoo Finance history/dividends | [SP-Funds](https://github.com/daggerok/SP-Funds) |
 | SPDR | SSGA / State Street public feeds | [SPDR](https://github.com/daggerok/SPDR) |
+| Sprott ETFs | sprottetfs.com fund pages + SEC EDGAR N-PORT-P (Sprott Funds Trust) + Yahoo Finance history/dividends | [Sprott](https://github.com/daggerok/Sprott) |
+| Tema ETFs | Tema official fund pages + dated daily holdings CSV; SEC EDGAR N-PORT-P holdings fallback only + Yahoo Finance price/history/dividend fallback | [Tema](https://github.com/daggerok/Tema) |
+| Themes ETFs | themesetfs.com catalog + daily holdings CSV + Yahoo Finance history/dividends + SEC N-PORT-P holdings fallback | [Themes](https://github.com/daggerok/Themes) |
 | VanEck | vaneck.com ETF finder + product pages | [VanEck](https://github.com/daggerok/VanEck) |
 | Vanguard | Vanguard product pages + SEC EDGAR N-PORT-P | [Vanguard](https://github.com/daggerok/Vanguard) |
 | VictoryShares | VCM VictoryShares catalog and product JSON + SEC EDGAR N-PORT-P holdings fallback + Yahoo Finance adjusted-market-price history | [VictoryShares](https://github.com/daggerok/VictoryShares) |
 | WisdomTree | WisdomTree product table + SEC EDGAR N-PORT-P + Yahoo Finance | [WisdomTree](https://github.com/daggerok/WisdomTree) |
+| Xtrackers | Official DWS catalog/US sitemap + PDP/XLSX + SEC N-PORT-P holdings fallback + Yahoo Finance daily prices/history/dividends | [Xtrackers](https://github.com/daggerok/Xtrackers) |
 
 ## License
 
-[MIT — same as all sibling ETF repositories.](./LICENSE)
+[MIT - same as all sibling ETF repositories.](./LICENSE)
 
 Northern Trust® and FlexShares® and the fund names/tickers referenced here are trademarks of Northern Trust Corporation. This is an independent, unofficial tool; it is not affiliated with, endorsed by, or sponsored by Northern Trust Corporation. All data is reproduced from Northern Trust's own public fund pages and downloads, public SEC EDGAR filings and Yahoo Finance for research purposes. All other trademarks, including index names, are the property of their respective owners.
