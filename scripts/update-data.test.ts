@@ -1104,7 +1104,7 @@ describe('deriveCatalogMetrics', () => {
     expect(Object.keys(metrics).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
   });
 
-  test('official returns with derived gaps are labelled mixed and keep the official table date', () => {
+  test('official returns with derived gaps keep the official table date', () => {
     const metrics = deriveCatalogMetrics(
       { ytd: 1, yr1: 2, yr3: null, yr5: null, yr10: null, sinceInception: null },
       { asOfDate: '2026-09-25', ytd: 9, yr1: 9, cagr3y: 5, cagr5y: null, cagr10y: null, siAnn: null, mo1: null, qtd: null },
@@ -1117,7 +1117,7 @@ describe('deriveCatalogMetrics', () => {
       '2026-08-31',
     );
     expect(metrics.cagr3y).toBe(5);
-    expect(metrics.returnsBasis).toContain('gaps filled');
+    expect(metrics.returnsBasis).toContain('missing figure filled');
     expect(metrics.performanceAsOf).toBe('2026-08-31');
   });
 
@@ -1141,6 +1141,9 @@ describe('deriveCatalogMetrics', () => {
     const unknown = ensureMetricsContract({ metrics: { returnsBasis: '-' } }).metrics as Record<string, unknown>;
     expect(unknown.returnsBasis).not.toBe('-');
     expect(unknown.performanceAsOf).toBeNull();
+    const derived = ensureMetricsContract({ metrics: { returnsBasis: 'derived from the daily NAV history (old text)' } }, '2026-09-25').metrics as Record<string, unknown>;
+    expect(derived.performanceAsOf).toBe('2026-09-25');
+    expect(String(derived.returnsBasis)).toContain('not official NAV returns');
     expect(labelToIsoDate('Feb 30 2026')).toBeNull();
   });
 

@@ -2025,13 +2025,10 @@ export function isoDateOrNull(value: string | null | undefined): string | null {
 }
 
 /** Honest, never-empty label of how `metrics` returns were computed (STANDARD.md 9a). */
-export function returnsBasisLabel(hasOfficial: boolean, filledFromDerived: boolean): string {
-  if (!hasOfficial) {
-    return 'derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date';
-  }
-  return filledFromDerived
-    ? 'official Northern Trust NAV total returns (funds-list JSON + full-data CSV), gaps filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date'
-    : 'official Northern Trust NAV total returns (funds-list JSON + full-data CSV); performanceAsOf is the official month-end table date';
+export function returnsBasisLabel(hasOfficial: boolean): string {
+  return hasOfficial
+    ? 'official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested; performanceAsOf is the official month-end table date'
+    : 'derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date';
 }
 
 const MONTH_NUMBER: Record<string, string> = Object.fromEntries(MONTHS.map((name, index) => [name, String(index + 1).padStart(2, '0')]));
@@ -2048,12 +2045,14 @@ export function labelToIsoDate(label: unknown): string | null {
  * (STANDARD.md 9a) without refetching: keeps a valid basis and date, otherwise
  * derives them from the stored returns block. Both fields end up last.
  */
-export function ensureMetricsContract(row: JsonRecord): JsonRecord {
+export function ensureMetricsContract(row: JsonRecord, lastHistoryDate: string | null = null): JsonRecord {
   const { returnsBasis, performanceAsOf, ...rest } = ((row.metrics as JsonRecord) || {}) as JsonRecord;
-  const basis = typeof returnsBasis === 'string' && returnsBasis.trim() && returnsBasis.trim() !== '-' ? returnsBasis : 'previously published returns (basis not recorded)';
-  const stored = isoDateOrNull(performanceAsOf as string | null);
+  const old = typeof returnsBasis === 'string' ? returnsBasis.trim() : '';
+  const official = /^official/.test(old);
+  const derived = /^derived/.test(old);
+  const basis = official || derived ? returnsBasisLabel(official) : old && old !== '-' ? old : 'previously published returns (basis not recorded)';
   const monthEnd = ((row.returns as JsonRecord)?.monthEnd as JsonRecord) || {};
-  const asOf = stored ?? (/^official/.test(basis) ? labelToIsoDate(monthEnd.asOfDate) : null);
+  const asOf = isoDateOrNull(performanceAsOf as string | null) ?? (official ? labelToIsoDate(monthEnd.asOfDate) : derived ? isoDateOrNull(lastHistoryDate) : null);
   return { ...row, metrics: { ...rest, returnsBasis: basis, performanceAsOf: asOf } };
 }
 
@@ -2082,18 +2081,6 @@ export function deriveCatalogMetrics(
   const cagr10y = coalesce(official.yr10) ?? coalesce(derived.cagr10y);
   const siAnn = coalesce(official.sinceInception) ?? coalesce(derived.siAnn);
   const hasOfficial = Object.values(official).some((value) => value !== null);
-  const filledFromDerived =
-    hasOfficial &&
-    (
-      [
-        [official.ytd, derived.ytd],
-        [official.yr1, derived.yr1],
-        [official.yr3, derived.cagr3y],
-        [official.yr5, derived.cagr5y],
-        [official.yr10, derived.cagr10y],
-        [official.sinceInception, derived.siAnn],
-      ] as Array<[number | null | undefined, number | null | undefined]>
-    ).some(([o, d]) => coalesce(o) === null && coalesce(d) !== null);
   const dividendYield = coalesce(publishedDividendYield) ?? indicatedYield(latestDistribution, paymentsPerYear, price);
   const text = (value: number | null): string | null => (value === null ? null : `${value.toFixed(2)}%`);
   return {
@@ -2110,7 +2097,7 @@ export function deriveCatalogMetrics(
     dividendYieldText: text(dividendYield) ?? '—',
     secYield: coalesce(publishedSecYield),
     secYieldText: text(coalesce(publishedSecYield)) ?? '—',
-    returnsBasis: returnsBasisLabel(hasOfficial, filledFromDerived),
+    returnsBasis: returnsBasisLabel(hasOfficial),
     performanceAsOf: hasOfficial ? isoDateOrNull(officialAsOf) : isoDateOrNull(derived.asOfDate),
   };
 }
