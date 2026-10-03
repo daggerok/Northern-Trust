@@ -39,17 +39,22 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `ytd` / `tr1y` - official YTD and 1-year returns -> *YTD Return*, *TR 1Y*
 - `cagr3y` / `cagr5y` / `cagr10y` - published annualized 3Y/5Y/10Y figures -> *CAGR 3Y/5Y/10Y*
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
-- `siAnn` - since-inception annualized -> *SI Ann.*
+- `siAnn` - since-inception annualized -> *SI Ann.*; only for funds with at least one year of history, `null` otherwise
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price)
 - `secYield` - 30-day SEC yield when published; an unpublished value is shown as unavailable, not as 0
 - `returnsBasis` - mandatory non-empty label of how the returns were computed: official Northern Trust NAV total returns, the same with gaps filled from the daily NAV history, or derived from the NAV history / Yahoo adjusted closes (an estimate)
-- `performanceAsOf` - ISO `YYYY-MM-DD` date the returns are as of: the official month-end performance table date, or the last history date when derived; not the NAV date, `null` only when unknown
+- `performanceAsOf` - ISO `YYYY-MM-DD` date the returns are as of: the official month-end performance table date, or the last history date when derived; not the NAV date; `null` when unknown and for funds that have no return figure at all (young funds), so a date never travels without numbers
 
 Caveats:
 
+- Expense ratio: `terValue` (index row) and `expenseRatio.value` (meta) are the NET ratio after waivers, `terGrossValue` and `expenseRatio.gross` the GROSS one (`null` when not published). The `TER` filter applies to the net ratio. Rows published before this change keep the gross value in `terValue` until the next refresh of that fund
+- Dates: `returns.monthEnd.asOfDate` is the date of the official month-end table; `returns.monthEnd.priceReturnsAsOf` is the later date up to which `qtd` and every figure Northern Trust does not publish (young funds, filled periods) are computed from the daily NAV history. A fund without any official figure is dated by its NAV history only
+- SEC yield: TIPS funds (TIPA to TIPD, TDTF, TDTT) published negative SEC yields on Sep 25 2026 (about -2.1 to -2.4) and positive ones on Oct 2 2026; the value is kept as the source publishes it for its own date (`yields.secYieldKind` names the date)
+- Fund-level consistency: a fund is computed completely in memory and written once (history and holdings pages first, then `meta.json`, stale pages last; the index is written at the end of the run). If the full-data CSV, the holdings CSV or the pricing JSON fails for a fund that already has a published state (a missing file, HTTP 404, counts as an honest "none", any other error does not), the whole fund keeps its previous state and counts as a failure; the SEC and Yahoo fallbacks apply to new funds only. The Yahoo schema (`Date/Close/Adj Close/Volume`) never replaces a published official NAV history, and an older N-PORT-P filing never replaces fresher published holdings. A fund with a `meta.json` but no index row is rebuilt into the index; a row without `meta.json` has `dataFile: null` and a full `metrics` object of nulls
+- Run behavior: every request has a 45 s timeout (headers and body) and is retried per `MAX_RETRIES`; files are written through a temporary file and renamed; a rerun with identical upstream data writes nothing; the run stops taking new funds after 25 minutes, still writes the full index and saves a cursor so the next run resumes; funds new to the catalog are printed as `NEW FUNDS: A, B` (and added to the step summary); the process exits with an error when every examined fund failed
 - Returns, NAV history and distributions come from Northern Trust's own downloads; the Yahoo Finance chart API is used only as a fallback, and values derived from it (including indicated yield and price-based returns) are estimates
 - SEC EDGAR N-PORT-P is used only for funds whose holdings CSV lists no holdings
-- `TICKERS` combines with AUM, TER and yield filters using AND logic; it does not override them
+- `TICKERS` combines with AUM, TER, yield and return filters using AND logic; it does not override them; a return filter excludes funds whose value for that period is `null`
 - Funds not selected for a successful update keep their prior published metadata and data files
 - AUM, TER, yield and return filters are evaluated against the freshly downloaded catalog values (or the previously published catalog) before the heavier per-fund downloads
 
@@ -57,24 +62,24 @@ Caveats:
 
 | Control | Default | Meaning |
 | --- | --: | --- |
-| `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/northerntrust/update-state.json`; empty or `0` is a full pass, every fund is refreshed in one run. Legacy alias `NORTHERNTRUST_LIMIT` |
+| `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/northerntrust/update-state.json`; empty or `0` is a full pass, every fund is refreshed in one run. Only funds that pass `TICKERS` and the filters count, the cursor wraps around and belongs to one filter set (a cursor saved for other filters is ignored). Legacy alias `NORTHERNTRUST_LIMIT` |
 | `REQUEST_SLEEP` | `1` | Minimum delay in seconds between request starts on the same pacing lane, including retries. |
 | `CONCURRENCY` | `2` | Number of parallel fund update workers. Request starts are spaced by `REQUEST_SLEEP` within each pacing lane. |
 | `MAX_RETRIES` | `2` | Retries after the initial request (integer >= 1). Only network errors and HTTP 403/408/425/429/5xx are retried with exponential backoff. |
 | `TICKERS` | empty (all) | Space-, comma- or semicolon-separated ticker allowlist, e.g. `QLC SKOR TIPA TXCA`. |
-| `AUM` | `:` | Net Assets range. Each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large`. |
-| `TER` | `:` | Expense ratio range in % (strict `min:max`). |
+| `AUM` | `:` | Net Assets range. Each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large`. Anything else (for example `abc:` or two colons) is an error. |
+| `TER` | `:` | NET expense ratio range in % (strict `min:max`). |
 | `DIVIDEND_YIELD` | `:` | Dividend-yield percentage range. |
 | `SEC_YIELD` | `:` | SEC-yield percentage range. |
 | `HOLDINGS_PAGE_SIZE` | `250` | Rows in each generated current-holdings JSON page. |
 | `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page. Legacy alias `HISTORICAL_PAGE_SIZE` |
-| `HISTORY_RANGE` | `max` | Yahoo chart range for the fallback history rows; the official Northern Trust history always covers the fund's whole life. |
+| `HISTORY_RANGE` | `max` | `max` or `Ny` (for example `5y`): how far back the Yahoo fallback history reaches, sent as explicit `period1`/`period2`; anything else is an error. The official Northern Trust history always covers the fund's whole life. |
 | `EDGAR_FALLBACK` | `true` | SEC EDGAR Form N-PORT-P fallback for funds whose holdings CSV lists no holdings. |
 | `SKIP_YAHOO` | `false` | Never call the Yahoo chart API; previously published history rows are kept. |
 | `SKIP_NORTHERNTRUST` | `false` | Keep the previously published Northern Trust catalog, holdings and returns; only run the fallbacks. |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the source downloads under `api/northerntrust/raw`. In Actions the optional repository variable `STORE_RAW_DOWNLOADS` overrides it when nonblank. |
 | `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent with the declared contact SEC policy requires; redacted in config logs. The protected repository variable `SEC_UA` wins over every other layer when nonblank. |
-| `CATALOG_URL` | empty (official funds list) | Override the catalog page URL (http or https). |
+| `CATALOG_URL` | empty (official funds list) | Override the catalog page URL (`https`, or `http` for localhost). |
 | `VERBOSE` | `false` | Print per-fund retry and fallback notices. |
 | `USE_SYSTEM_CA` | `auto` | TLS trust store: `auto` restarts the updater once with Bun's `--use-system-ca` when a request fails with an untrusted-certificate error; `true` always uses the system CA store; `false` never restarts. Not an individual workflow input: use `advanced`, the config file or the CLI environment. |
 | `PERFORMANCE_YTD` / `_1Y` / `_3Y` / `_5Y` / `_10Y` | `:` | Annualized return ranges (strict `min:max`). |
