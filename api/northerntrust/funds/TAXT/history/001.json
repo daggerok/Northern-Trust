@@ -2,7 +2,7 @@
  "ticker": "TAXT",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 278,
+ "totalRows": 283,
  "headers": [
   "Date",
   "NAV",
@@ -1677,6 +1677,36 @@
    "NAV": "48.92",
    "Market Price": "49.06",
    "Premium/Discount": "0.14"
+  },
+  {
+   "Date": "Sep 28 2026",
+   "NAV": "48.55",
+   "Market Price": "48.74",
+   "Premium/Discount": "0.19"
+  },
+  {
+   "Date": "Sep 29 2026",
+   "NAV": "48.45",
+   "Market Price": "48.61",
+   "Premium/Discount": "0.16"
+  },
+  {
+   "Date": "Sep 30 2026",
+   "NAV": "48.85",
+   "Market Price": "49",
+   "Premium/Discount": "0.14"
+  },
+  {
+   "Date": "Oct 01 2026",
+   "NAV": "49.13",
+   "Market Price": "49.22",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Oct 02 2026",
+   "NAV": "49.14",
+   "Market Price": "49.09",
+   "Premium/Discount": "-0.06"
   }
  ]
 }

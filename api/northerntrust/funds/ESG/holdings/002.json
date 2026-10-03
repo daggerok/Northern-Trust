@@ -2,7 +2,7 @@
  "ticker": "ESG",
  "page": 2,
  "pageSize": 250,
- "totalRows": 253,
+ "totalRows": 252,
  "headers": [
   "Name",
   "Ticker",
@@ -16,22 +16,11 @@
  ],
  "rows": [
   {
-   "Name": "FLUTTER ENTERTAINMENT PLC COMMON STOCK USD 0.09",
-   "Ticker": "FLUT",
-   "Identifier": "G3643J108",
-   "Weight": "0.0164",
-   "Market Value": "22472.1",
-   "Shares Held": "270",
-   "Asset Category": "Consumer Discretionary",
-   "Coupon": "0",
-   "Maturity": ""
-  },
-  {
    "Name": "ALCOA CORP COMMON STOCK USD 0.01",
    "Ticker": "AA",
    "Identifier": "013872106",
-   "Weight": "0.014",
-   "Market Value": "19282.5",
+   "Weight": "0.0139",
+   "Market Value": "18877.5",
    "Shares Held": "450",
    "Asset Category": "Materials",
    "Coupon": "0",

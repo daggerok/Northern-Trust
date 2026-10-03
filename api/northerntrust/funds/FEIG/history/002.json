@@ -2,7 +2,7 @@
  "ticker": "FEIG",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1259,
+ "totalRows": 1264,
  "headers": [
   "Date",
   "NAV",
@@ -1563,6 +1563,36 @@
    "NAV": "38.98",
    "Market Price": "38.97",
    "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Sep 28 2026",
+   "NAV": "38.77",
+   "Market Price": "38.72",
+   "Premium/Discount": "-0.05"
+  },
+  {
+   "Date": "Sep 29 2026",
+   "NAV": "38.74",
+   "Market Price": "38.71",
+   "Premium/Discount": "-0.03"
+  },
+  {
+   "Date": "Sep 30 2026",
+   "NAV": "38.71",
+   "Market Price": "38.65",
+   "Premium/Discount": "-0.06"
+  },
+  {
+   "Date": "Oct 01 2026",
+   "NAV": "38.6",
+   "Market Price": "38.59",
+   "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Oct 02 2026",
+   "NAV": "38.54",
+   "Market Price": "38.51",
+   "Premium/Discount": "-0.03"
   }
  ]
 }

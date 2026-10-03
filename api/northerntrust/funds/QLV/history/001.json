@@ -2,7 +2,7 @@
  "ticker": "QLV",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 1810,
+ "totalRows": 1815,
  "headers": [
   "Date",
   "NAV",

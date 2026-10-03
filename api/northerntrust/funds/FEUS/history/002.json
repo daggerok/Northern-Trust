@@ -2,7 +2,7 @@
  "ticker": "FEUS",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1259,
+ "totalRows": 1264,
  "headers": [
   "Date",
   "NAV",
@@ -1563,6 +1563,36 @@
    "NAV": "83.94",
    "Market Price": "83.89",
    "Premium/Discount": "-0.05"
+  },
+  {
+   "Date": "Sep 28 2026",
+   "NAV": "83.21",
+   "Market Price": "83.2",
+   "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Sep 29 2026",
+   "NAV": "82.84",
+   "Market Price": "82.82",
+   "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Sep 30 2026",
+   "NAV": "82.77",
+   "Market Price": "82.86",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Oct 01 2026",
+   "NAV": "82.94",
+   "Market Price": "82.91",
+   "Premium/Discount": "-0.03"
+  },
+  {
+   "Date": "Oct 02 2026",
+   "NAV": "83.62",
+   "Market Price": "83.56",
+   "Premium/Discount": "-0.06"
   }
  ]
 }
