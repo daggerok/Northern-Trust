@@ -56,9 +56,17 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
 - `siAnn` - since-inception annualized -> *SI Ann.*; only for funds with at least one year of history, `null` otherwise
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price)
+- `dividendYieldBasis` - code of the definition behind `dividendYield`, `null` exactly when `dividendYield` is `null`; it always travels with the yield it describes (see the table below)
 - `secYield` - 30-day SEC yield when published; an unpublished value is shown as unavailable, not as 0
 - `returnsBasis` - mandatory non-empty label of how the returns were computed: official Northern Trust NAV total returns, the same with gaps filled from the daily NAV history, or derived from the NAV history / Yahoo adjusted closes (an estimate)
 - `performanceAsOf` - ISO `YYYY-MM-DD` date the returns are as of: the official month-end performance table date, or the last history date when derived; not the NAV date; `null` when unknown and for funds that have no return figure at all (young funds), so a date never travels without numbers
+
+| `dividendYieldBasis` | Meaning for Northern Trust |
+| --- | --- |
+| `official-trailing-12m` | the `12-Month Dividend Yield` of the official full-data CSV |
+| `indicated` | estimate: latest distribution x inferred payments per year / market price, used when Northern Trust publishes no yield (also kept for a retained row that was stored as indicated) |
+| `official-other` | a published yield stored without a known definition (legacy rows only) |
+| `official-distribution-rate`, `computed-trailing-12m` | part of the shared standard, not used by this feed |
 
 Caveats:
 

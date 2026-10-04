@@ -23,6 +23,8 @@ import {
   fetchWithRetry,
   fractionToPercent,
   indexRowFromMeta,
+  withYieldBasis,
+  yieldBasisFromKind,
   indicatedYield,
   inferDistributionFrequency,
   installSystemCa,
@@ -694,7 +696,7 @@ describe('metrics', () => {
   });
 
   test('returnsBasis and performanceAsOf travel together; null, never 0', () => {
-    const keys = ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf'];
+    const keys = ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'dividendYieldText', 'dividendYieldBasis', 'secYield', 'secYieldText', 'returnsBasis', 'performanceAsOf'];
     expect(Object.keys(emptyMetrics())).toEqual(keys);
     expect(Object.values(emptyMetrics()).includes(0)).toBe(false);
     expect(emptyMetrics().returnsBasis).toBeTruthy();
@@ -744,6 +746,31 @@ describe('metrics', () => {
     expect(labelToIsoDate('Feb 30 2026')).toBeNull();
   });
 
+  test('dividendYieldBasis: a code per yield source, null exactly when the yield is null', () => {
+    const basis = (published: number | null, latest: number | null, retained: any = null) =>
+      deriveCatalogMetrics(NO_RETURNS, derivedReturns(), published, null, latest, 12, 41.72, null, null, retained);
+    // official CSV yield
+    expect(basis(0.95, null, 'official-trailing-12m')).toMatchObject({ dividendYield: 0.95, dividendYieldBasis: 'official-trailing-12m' });
+    // no published yield: indicated from the latest distribution
+    expect(basis(null, 0.65)).toMatchObject({ dividendYield: 18.7, dividendYieldBasis: 'indicated' });
+    // a retained indicated yield keeps its code, never the official one
+    expect(basis(18.7, null, 'indicated').dividendYieldBasis).toBe('indicated');
+    // published yield without a known code: provider-published, definition unknown
+    expect(basis(1.2, null).dividendYieldBasis).toBe('official-other');
+    // no yield: null code
+    expect(basis(null, null)).toMatchObject({ dividendYield: null, dividendYieldBasis: null });
+    expect(basis(null, null, 'official-trailing-12m').dividendYieldBasis).toBeNull();
+    // stored kind text -> code
+    expect(yieldBasisFromKind('12-month dividend yield (official Northern Trust full-data CSV), as of Sep 25 2026')).toBe('official-trailing-12m');
+    expect(yieldBasisFromKind('indicated (latest distribution x payments per year / market price)')).toBe('indicated');
+    expect(yieldBasisFromKind('not published: no distributions yet')).toBeNull();
+    // legacy metrics without a code get one from the kind, or null with a null yield
+    const meta = { yields: { dividendYieldKind: 'indicated (latest distribution x payments per year / market price)' } };
+    expect(withYieldBasis({ dividendYield: 3 }, meta).dividendYieldBasis).toBe('indicated');
+    expect(withYieldBasis({ dividendYield: null, dividendYieldBasis: 'indicated' }).dividendYieldBasis).toBeNull();
+    expect(withYieldBasis({ dividendYield: 3, dividendYieldBasis: 'bogus' }).dividendYieldBasis).toBe('official-other');
+  });
+
   test('every index row has the same metrics key set; TER is net with gross beside it; dates stay honest', async () => {
     installMockFetch({ funds: [{ ticker: 'AAA' }, { ticker: 'BBB' }, { ticker: 'CCC', young: true }] });
     await withTempFeed(async (root) => {
@@ -756,6 +783,8 @@ describe('metrics', () => {
         expect(fund.metrics.returnsBasis).toBeTruthy();
       }
       const [seasoned, , young] = funds;
+      // the mock CSV publishes a 12-month yield for every fund: official code, never null next to a yield
+      for (const fund of funds) expect([fund.metrics.dividendYield !== null, fund.metrics.dividendYieldBasis]).toEqual([true, 'official-trailing-12m']);
       expect([seasoned.terValue, seasoned.terGrossValue, seasoned.ter]).toEqual([0.25, 0.26, '0.25%']);
       const meta = await readJson(root, 'funds/AAA/meta.json');
       expect(meta.expenseRatio).toMatchObject({ value: 0.25, gross: 0.26, net: 0.25 });
@@ -855,7 +884,9 @@ describe('pipeline', () => {
     await withTempFeed(async (root) => {
       await runUpdater(pipelineControls());
       const index = await readIndex(root);
-      const trimmed = { ...index, funds: index.funds.filter((fund) => fund.ticker !== 'CCC').concat([{ ticker: 'ZZZ', name: 'Ghost' }]) };
+      // BBB is a legacy row without the code: kept rows get it back from the stored meta kind
+      const legacy = index.funds.map((fund) => (fund.ticker === 'BBB' ? { ...fund, metrics: Object.fromEntries(Object.entries(fund.metrics).filter(([key]) => key !== 'dividendYieldBasis')) } : fund));
+      const trimmed = { ...index, funds: legacy.filter((fund) => fund.ticker !== 'CCC').concat([{ ticker: 'ZZZ', name: 'Ghost' }]) };
       await writeFile(new URL('index.json', root), JSON.stringify(trimmed), 'utf8');
       installMockFetch();
       await runUpdater(pipelineControls({ TICKERS: 'AAA' }));
@@ -864,11 +895,14 @@ describe('pipeline', () => {
       const rebuilt = after.funds.find((fund) => fund.ticker === 'CCC')!;
       expect(rebuilt.dataFile).toBe('./funds/CCC/meta.json');
       expect(rebuilt.metrics.ytd).toBe(14.5);
+      expect(rebuilt.metrics.dividendYieldBasis).toBe('official-trailing-12m');
+      expect(after.funds.find((fund) => fund.ticker === 'BBB')!.metrics.dividendYieldBasis).toBe('official-trailing-12m');
       expect(rebuilt.holdings).toBeGreaterThan(0);
       const ghost = after.funds.find((fund) => fund.ticker === 'ZZZ')!;
       expect(ghost.dataFile).toBeNull();
       expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
       expect(ghost.metrics.returnsBasis).toBeTruthy();
+      expect(ghost.metrics.dividendYieldBasis).toBeNull();
       // the offline rebuild equals the row the updater wrote
       const written = after.funds[0];
       const again = indexRowFromMeta(await readJson(root, 'funds/AAA/meta.json'));
