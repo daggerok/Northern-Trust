@@ -53,6 +53,7 @@
  "yields": {
   "dividendYield": 0.77,
   "dividendYieldText": "0.77%",
+  "dividendYieldBasis": "indicated",
   "dividendYieldKind": "indicated (latest distribution x payments per year / market price)",
   "distributionRate": null,
   "secYield": 0.84,
@@ -301,6 +302,7 @@
   "siAnn": 15.15,
   "dividendYield": 0.77,
   "dividendYieldText": "0.77%",
+  "dividendYieldBasis": "indicated",
   "secYield": 0.84,
   "secYieldText": "0.84%",
   "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested (performanceAsOf is the official month-end table date, filled periods end at returns.monthEnd.priceReturnsAsOf)",

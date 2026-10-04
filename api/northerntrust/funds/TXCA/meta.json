@@ -53,6 +53,7 @@
  "yields": {
   "dividendYield": null,
   "dividendYieldText": "—",
+  "dividendYieldBasis": null,
   "dividendYieldKind": "not published: no distributions yet",
   "distributionRate": null,
   "secYield": null,
@@ -134,6 +135,7 @@
   "siAnn": null,
   "dividendYield": null,
   "dividendYieldText": "—",
+  "dividendYieldBasis": null,
   "secYield": null,
   "secYieldText": "—",
   "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date (null when the fund has no return yet)",

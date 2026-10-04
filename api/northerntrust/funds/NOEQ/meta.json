@@ -53,6 +53,7 @@
  "yields": {
   "dividendYield": 0.41,
   "dividendYieldText": "0.41%",
+  "dividendYieldBasis": "official-trailing-12m",
   "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Oct 02 2026",
   "distributionRate": null,
   "secYield": 0.94,
@@ -143,6 +144,7 @@
   "siAnn": null,
   "dividendYield": 0.41,
   "dividendYieldText": "0.41%",
+  "dividendYieldBasis": "official-trailing-12m",
   "secYield": 0.94,
   "secYieldText": "0.94%",
   "returnsBasis": "derived from the daily NAV history with published distributions reinvested (or Yahoo adjusted closes), not official NAV returns; performanceAsOf is the last history date (null when the fund has no return yet)",
