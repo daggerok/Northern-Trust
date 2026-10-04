@@ -78,6 +78,8 @@ import {
 // ---------------------------------------------------------------------------
 
 const realFetch = globalThis.fetch;
+// test doubles implement only the call signature, not fetch's extra members (preconnect)
+const asFetch = (stub: unknown) => stub as typeof fetch;
 const realLog = console.log;
 const realNow = Date.now;
 const realTz = process.env.TZ;
@@ -396,7 +398,7 @@ describe('parsing', () => {
     expect(() => parseNorthernTrustPricing({ AS_OF_DATE: '01/02/2020' }, 'QLC')).toThrow(/not a daily list/);
     const dividends = parseNorthernTrustDistributionsCsv(DISTRIBUTIONS_CSV, 'QLC');
     expect(dividends.map((entry) => entry.exDate)).toEqual(['2026-06-18', '2026-09-18']);
-    expect(dividends[0]).toEqual({ epoch: isoToEpoch('2026-06-18'), amount: 0.2215, exDate: '2026-06-18', payDate: '2026-06-25', recordDate: '2026-06-18', reinvestNav: null, type: '' });
+    expect(dividends[0]).toEqual({ epoch: isoToEpoch('2026-06-18')!, amount: 0.2215, exDate: '2026-06-18', payDate: '2026-06-25', recordDate: '2026-06-18', reinvestNav: null, type: '' });
     expect(dividends[1].amount).toBe(0.224696);
     expect(() => parseNorthernTrustDistributionsCsv('Fund Name,Price\nX,1', 'QLC')).toThrow(/header row not found/);
   });
@@ -860,7 +862,7 @@ describe('pipeline', () => {
       expect((await readJson(root, 'funds/CCC/meta.json')).ticker).toBe('CCC');
 
       // nothing fresh anywhere: the run fails instead of exiting green and the index stays whole
-      globalThis.fetch = (async () => new Response('', { status: 404 })) as typeof fetch;
+      globalThis.fetch = asFetch(async () => new Response('', { status: 404 }));
       await expect(runUpdater(pipelineControls())).rejects.toThrow(/every examined fund failed/);
       expect((await readIndex(root)).funds.length).toBe(3);
     });
@@ -978,7 +980,7 @@ describe('network', () => {
     expect(calls).toBe(2);
     // a plain 404 is final: one attempt, no retries
     calls = 0;
-    globalThis.fetch = (async () => { calls += 1; return new Response('', { status: 404 }); }) as typeof fetch;
+    globalThis.fetch = asFetch(async () => { calls += 1; return new Response('', { status: 404 }); });
     await expect(fetchWithRetry('https://example.test/x', 't', {}, 5)).rejects.toThrow(/HTTP 404/);
     expect(calls).toBe(1);
   });
