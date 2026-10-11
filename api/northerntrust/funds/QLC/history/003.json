@@ -2,7 +2,7 @@
  "ticker": "QLC",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2772,
+ "totalRows": 2777,
  "headers": [
   "Date",
   "NAV",
@@ -4641,6 +4641,36 @@
    "NAV": "91.65",
    "Market Price": "91.7",
    "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Oct 05 2026",
+   "NAV": "92.15",
+   "Market Price": "92.14",
+   "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Oct 06 2026",
+   "NAV": "92.41",
+   "Market Price": "92.42",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 07 2026",
+   "NAV": "92.34",
+   "Market Price": "92.37",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 08 2026",
+   "NAV": "92.19",
+   "Market Price": "92.2",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 09 2026",
+   "NAV": "92.5",
+   "Market Price": "92.52",
+   "Premium/Discount": "0.02"
   }
  ]
 }

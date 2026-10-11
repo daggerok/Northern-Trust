@@ -2,7 +2,7 @@
  "ticker": "ESG",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 2570,
+ "totalRows": 2575,
  "headers": [
   "Date",
   "NAV",

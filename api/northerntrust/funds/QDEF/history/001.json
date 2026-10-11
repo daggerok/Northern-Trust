@@ -2,7 +2,7 @@
  "ticker": "QDEF",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 3467,
+ "totalRows": 3472,
  "headers": [
   "Date",
   "NAV",

@@ -2,7 +2,7 @@
  "ticker": "NFRA",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3265,
+ "totalRows": 3270,
  "headers": [
   "Date",
   "NAV",
@@ -1599,6 +1599,36 @@
    "NAV": "62.6",
    "Market Price": "62.7",
    "Premium/Discount": "0.1"
+  },
+  {
+   "Date": "Oct 05 2026",
+   "NAV": "62.86",
+   "Market Price": "62.89",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 06 2026",
+   "NAV": "63.32",
+   "Market Price": "63.32",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Oct 07 2026",
+   "NAV": "62.9",
+   "Market Price": "62.91",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 08 2026",
+   "NAV": "62.79",
+   "Market Price": "62.88",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Oct 09 2026",
+   "NAV": "62.55",
+   "Market Price": "62.62",
+   "Premium/Discount": "0.07"
   }
  ]
 }

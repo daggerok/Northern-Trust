@@ -2,7 +2,7 @@
  "ticker": "MUNJ",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 27,
+ "totalRows": 32,
  "headers": [
   "Date",
   "NAV",
@@ -171,6 +171,36 @@
    "NAV": "98.32",
    "Market Price": "98.05",
    "Premium/Discount": "-0.27"
+  },
+  {
+   "Date": "Oct 05 2026",
+   "NAV": "98.26",
+   "Market Price": "98.03",
+   "Premium/Discount": "-0.23"
+  },
+  {
+   "Date": "Oct 06 2026",
+   "NAV": "98.27",
+   "Market Price": "98.06",
+   "Premium/Discount": "-0.21"
+  },
+  {
+   "Date": "Oct 07 2026",
+   "NAV": "98.15",
+   "Market Price": "97.95",
+   "Premium/Discount": "-0.2"
+  },
+  {
+   "Date": "Oct 08 2026",
+   "NAV": "98.19",
+   "Market Price": "98.04",
+   "Premium/Discount": "-0.15"
+  },
+  {
+   "Date": "Oct 09 2026",
+   "NAV": "98.52",
+   "Market Price": "98.36",
+   "Premium/Discount": "-0.17"
   }
  ]
 }

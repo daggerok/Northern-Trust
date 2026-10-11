@@ -2,7 +2,7 @@
  "ticker": "TAXI",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 283,
+ "totalRows": 288,
  "headers": [
   "Date",
   "NAV",
@@ -1707,6 +1707,36 @@
    "NAV": "49.32",
    "Market Price": "49.28",
    "Premium/Discount": "-0.04"
+  },
+  {
+   "Date": "Oct 05 2026",
+   "NAV": "49.26",
+   "Market Price": "49.29",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 06 2026",
+   "NAV": "49.24",
+   "Market Price": "49.29",
+   "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Oct 07 2026",
+   "NAV": "49.09",
+   "Market Price": "49.17",
+   "Premium/Discount": "0.08"
+  },
+  {
+   "Date": "Oct 08 2026",
+   "NAV": "49.11",
+   "Market Price": "49.22",
+   "Premium/Discount": "0.1"
+  },
+  {
+   "Date": "Oct 09 2026",
+   "NAV": "49.37",
+   "Market Price": "49.43",
+   "Premium/Discount": "0.06"
   }
  ]
 }

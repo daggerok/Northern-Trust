@@ -2,7 +2,7 @@
  "ticker": "HYGV",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 2064,
+ "totalRows": 2069,
  "headers": [
   "Date",
   "NAV",

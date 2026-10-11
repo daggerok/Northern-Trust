@@ -2,7 +2,7 @@
  "ticker": "QDEF",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3467,
+ "totalRows": 3472,
  "headers": [
   "Date",
   "NAV",
@@ -2811,6 +2811,36 @@
    "NAV": "89.7",
    "Market Price": "89.69",
    "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Oct 05 2026",
+   "NAV": "90.19",
+   "Market Price": "90.11",
+   "Premium/Discount": "-0.08"
+  },
+  {
+   "Date": "Oct 06 2026",
+   "NAV": "90.49",
+   "Market Price": "90.45",
+   "Premium/Discount": "-0.04"
+  },
+  {
+   "Date": "Oct 07 2026",
+   "NAV": "90.43",
+   "Market Price": "90.38",
+   "Premium/Discount": "-0.05"
+  },
+  {
+   "Date": "Oct 08 2026",
+   "NAV": "90.8",
+   "Market Price": "90.74",
+   "Premium/Discount": "-0.06"
+  },
+  {
+   "Date": "Oct 09 2026",
+   "NAV": "90.9",
+   "Market Price": "90.85",
+   "Premium/Discount": "-0.05"
   }
  ]
 }

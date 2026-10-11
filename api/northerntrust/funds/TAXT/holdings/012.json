@@ -1,0 +1,206 @@
+{
+ "ticker": "TAXT",
+ "page": 12,
+ "pageSize": 250,
+ "totalRows": 2767,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "CHERRY CREEK COLO SCH DIST NO 005 GO REF BDS 2025",
+   "Ticker": "-",
+   "Identifier": "164555EH3",
+   "Weight": "0.0036",
+   "Market Value": "5242.76",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 15 2029"
+  },
+  {
+   "Name": "LOUISIANA ST GRNT ANTIC REV BDS 2023 07/SEP/2023",
+   "Ticker": "-",
+   "Identifier": "54641CBM6",
+   "Weight": "0.0036",
+   "Market Value": "5232.44",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Sep 01 2035"
+  },
+  {
+   "Name": "DELAWARE TRANSN AUTH GRNT ANTIC BDS 2020",
+   "Ticker": "-",
+   "Identifier": "246419BS3",
+   "Weight": "0.0036",
+   "Market Value": "5222.61",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Sep 01 2032"
+  },
+  {
+   "Name": "DISTRICT COLUMBIA REV FEDERAL HWY GRANT ANTIC BDS",
+   "Ticker": "-",
+   "Identifier": "25483VWR1",
+   "Weight": "0.0036",
+   "Market Value": "5221.95",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 01 2029"
+  },
+  {
+   "Name": "IDAHO HSG & FIN ASSN SALES TAX REV TRANSN",
+   "Ticker": "-",
+   "Identifier": "45130ACM5",
+   "Weight": "0.0035",
+   "Market Value": "5097.7",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Aug 15 2041"
+  },
+  {
+   "Name": "INDIANA ST FIN AUTH REV ST REVOLVING FD PROG BDS",
+   "Ticker": "-",
+   "Identifier": "45506DR72",
+   "Weight": "0.0035",
+   "Market Value": "5086.93",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 01 2032"
+  },
+  {
+   "Name": "AUSTIN TEX WTR & WASTEWATER SYS REV REV REF BDS",
+   "Ticker": "-",
+   "Identifier": "052477M94",
+   "Weight": "0.0035",
+   "Market Value": "5082.06",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Nov 15 2028"
+  },
+  {
+   "Name": "LOS ANGELES CALIF DEPT WTR & PWR WTRWKS REV SYS",
+   "Ticker": "-",
+   "Identifier": "544525X94",
+   "Weight": "0.0035",
+   "Market Value": "5066.8",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jul 01 2039"
+  },
+  {
+   "Name": "MASSACHUSETTS ST GEN OBLIG REF BDS 2026A",
+   "Ticker": "-",
+   "Identifier": "57582THW5",
+   "Weight": "0.0035",
+   "Market Value": "5059.83",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jul 01 2027"
+  },
+  {
+   "Name": "OKLAHOMA TRANSN AUTH OK F/K/A OKLAHOMA ST TPK AUTH",
+   "Ticker": "-",
+   "Identifier": "679111E67",
+   "Weight": "0.0035",
+   "Market Value": "5056.36",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5.25",
+   "Maturity": "Jan 01 2046"
+  },
+  {
+   "Name": "SAN ANTONIO TEX GEN IMPT AND REF BDS 2025",
+   "Ticker": "-",
+   "Identifier": "79623PUF0",
+   "Weight": "0.0035",
+   "Market Value": "5051.72",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 01 2043"
+  },
+  {
+   "Name": "LOS ANGELES CALIF DEPT WTR & PWR REV SYS BDS 2022",
+   "Ticker": "-",
+   "Identifier": "544532ES9",
+   "Weight": "0.0035",
+   "Market Value": "5051.67",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jul 01 2039"
+  },
+  {
+   "Name": "BLACK BELT ENERGY GAS DIST ALA GAS PROJ REV BDS",
+   "Ticker": "-",
+   "Identifier": "09182TEM5",
+   "Weight": "0.0035",
+   "Market Value": "5018.68",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Nov 01 2034"
+  },
+  {
+   "Name": "DE KALB CNTY GA WTR & SEW REV BDS 2025A",
+   "Ticker": "-",
+   "Identifier": "240523E30",
+   "Weight": "0.0034",
+   "Market Value": "4955.49",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Oct 01 2046"
+  },
+  {
+   "Name": "OHIO ST SPL OBLIG CAP FACS LEASE APPROPRIATION BDS",
+   "Ticker": "-",
+   "Identifier": "67759HRZ9",
+   "Weight": "0.0034",
+   "Market Value": "4925.9",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Oct 01 2045"
+  },
+  {
+   "Name": "SOUTH CAROLINA ST PUB SVC AUTH REV OBLIGS A",
+   "Ticker": "-",
+   "Identifier": "837151K32",
+   "Weight": "0.0031",
+   "Market Value": "4534.79",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 01 2055"
+  },
+  {
+   "Name": "SALADO TEX INDPT SCH DIST UNLTD TAX BLDG BDS 2024",
+   "Ticker": "-",
+   "Identifier": "793810NS7",
+   "Weight": "0.0029",
+   "Market Value": "4161.07",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4.25",
+   "Maturity": "Feb 15 2054"
+  }
+ ]
+}

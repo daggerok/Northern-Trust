@@ -2,7 +2,7 @@
  "ticker": "RAVI",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 3513,
+ "totalRows": 3518,
  "headers": [
   "Date",
   "NAV",

@@ -2,7 +2,7 @@
  "ticker": "QLVE",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1815,
+ "totalRows": 1820,
  "headers": [
   "Date",
   "NAV",
@@ -4899,6 +4899,36 @@
    "NAV": "33.89",
    "Market Price": "34.07",
    "Premium/Discount": "0.18"
+  },
+  {
+   "Date": "Oct 05 2026",
+   "NAV": "34.42",
+   "Market Price": "34.44",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 06 2026",
+   "NAV": "34.36",
+   "Market Price": "34.21",
+   "Premium/Discount": "-0.14"
+  },
+  {
+   "Date": "Oct 07 2026",
+   "NAV": "34.13",
+   "Market Price": "33.9",
+   "Premium/Discount": "-0.23"
+  },
+  {
+   "Date": "Oct 08 2026",
+   "NAV": "33.76",
+   "Market Price": "33.39",
+   "Premium/Discount": "-0.37"
+  },
+  {
+   "Date": "Oct 09 2026",
+   "NAV": "33.93",
+   "Market Price": "33.66",
+   "Premium/Discount": "-0.26"
   }
  ]
 }
