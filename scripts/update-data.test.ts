@@ -550,7 +550,7 @@ function mockPricing(fund: MockFund): unknown[] {
   return rows;
 }
 
-type MockOptions = { delayMs?: number; failAll?: string[]; failPricing?: string[]; failDistributions?: Record<string, number>; emptyPricing?: string[]; funds?: MockFund[]; yahoo?: boolean; onRequest?: () => void };
+type MockOptions = { delayMs?: number; failAll?: string[]; failPricing?: string[]; failDistributions?: Record<string, number>; emptyPricing?: string[]; funds?: MockFund[]; yahoo?: boolean; adjclose?: number[]; onRequest?: () => void };
 
 function installMockFetch(options: MockOptions = {}): { urls: string[]; peak: () => number } {
   const urls: string[] = [];
@@ -584,7 +584,7 @@ function installMockFetch(options: MockOptions = {}): { urls: string[]; peak: ()
         }
       }
       if (/query1\.finance\.yahoo\.com/.test(url) && options.yahoo) {
-        return ok(JSON.stringify({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 50 }, timestamp: [1780000000, 1780086400], indicators: { quote: [{ close: [50, 51], volume: [1, 2] }], adjclose: [{ adjclose: [50, 51] }] } }] } }), 'application/json');
+        return ok(JSON.stringify({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 50 }, timestamp: [1780000000, 1780086400], indicators: { quote: [{ close: [50, 51], volume: [1, 2] }], adjclose: [{ adjclose: options.adjclose ?? [50, 51] }] } }] } }), 'application/json');
       }
       return new Response('not found', { status: 404 });
     } finally {
@@ -879,6 +879,27 @@ describe('pipeline', () => {
       await runUpdater(pipelineControls({ SKIP_YAHOO: 'false', TICKERS: 'AAA' }));
       expect((await readJson(root, 'funds/AAA/history/001.json')).headers).toEqual(headers);
       expect((await readJson(root, 'funds/AAA/meta.json')).history.source).toBe('previous run');
+    });
+  });
+
+  test('two Yahoo runs on the same source data write zero changes even when the adjusted close jitters across a cent boundary', async () => {
+    // Yahoo float32 noise seen live: SPDV 2024-11-12 came back as 31.544998 and 31.545001 a minute apart
+    const yahoo = (adjclose: number[]) => installMockFetch({ emptyPricing: ['AAA', 'BBB', 'CCC'], yahoo: true, adjclose });
+    const controls = pipelineControls({ SKIP_YAHOO: 'false' });
+    await withTempFeed(async (root) => {
+      yahoo([49.915001, 50.984999]);
+      await runUpdater(controls);
+      const dir = fileURLToPath(root);
+      const first = snapshot(dir);
+      expect((await readJson(root, 'funds/AAA/history/001.json')).rows.map((row: Record<string, string>) => row['Adj Close'])).toEqual(['49.92', '50.98']);
+      await new Promise((resolve) => setTimeout(resolve, 20));
+      yahoo([49.914998, 50.985002]);
+      await runUpdater(controls);
+      expect(snapshot(dir)).toEqual(first);
+      // a real change beyond the noise is still written
+      yahoo([49.9, 50.97]);
+      await runUpdater(controls);
+      expect((await readJson(root, 'funds/AAA/history/001.json')).rows.map((row: Record<string, string>) => row['Adj Close'])).toEqual(['49.9', '50.97']);
     });
   });
 
