@@ -925,8 +925,10 @@ describe('pipeline', () => {
         cursors.push((await readJson(root, 'update-state.json')).cursor);
       }
       expect(cursors).toEqual(['AAA', 'BBB', 'CCC', 'AAA']);
+      // a TICKERS run never reads, writes or deletes the cursor: update-state.json stays byte-identical
+      const stateBefore = readFileSync(new URL('update-state.json', root), 'utf8');
       await runUpdater(pipelineControls({ MAX_FETCHES: '1', TICKERS: 'CCC' }));
-      expect((await readJson(root, 'update-state.json')).cursor).toBe('CCC');
+      expect(readFileSync(new URL('update-state.json', root), 'utf8')).toBe(stateBefore);
       expect((await readIndex(root)).funds.length).toBe(3);
     });
   });
