@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
+  runOrder,
   CONTROL_NAMES,
   DIVIDEND_SCHEDULE_CAP,
   HOLDINGS_HEADERS,
@@ -1051,5 +1052,16 @@ describe('network', () => {
       console.error = realError;
     }
     expect(restarts).toBe(2);
+  });
+});
+
+describe('runOrder', () => {
+  const universe = ['AAA', 'BBB', 'CCC', 'DDD'].map((ticker) => ({ ticker }));
+  test('TICKERS narrows the run before the worker pool', () => {
+    expect(runOrder(universe, ['DDD', 'BBB'], null).map((fund) => fund.ticker)).toEqual(['BBB', 'DDD']);
+  });
+  test('an empty TICKERS walks the whole catalog and the cursor rotates it', () => {
+    expect(runOrder(universe, [], null).map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD']);
+    expect(runOrder(universe, [], 'BBB').map((fund) => fund.ticker)).toEqual(['CCC', 'DDD', 'AAA', 'BBB']);
   });
 });

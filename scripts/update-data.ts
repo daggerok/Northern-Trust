@@ -2347,6 +2347,14 @@ async function readUpdateState(): Promise<UpdateState | null> {
 }
 
 /** The filter set a cursor belongs to: a cursor saved for other filters is never reused. */
+// Funds this run walks: TICKERS narrows the catalog before the worker pool (funds outside it keep
+// their published rows and print no fund line), then the saved cursor rotates the order.
+export function runOrder<T extends { ticker: string }>(universe: T[], tickers: string[], cursor: string | null): T[] {
+  const selected = universe.filter((fund) => !tickers.length || tickers.includes(fund.ticker));
+  const index = cursor ? selected.findIndex((fund) => fund.ticker === cursor) : -1;
+  return index >= 0 ? selected.slice(index + 1).concat(selected.slice(0, index + 1)) : selected.slice();
+}
+
 export function cursorScope(config: UpdaterConfig): string {
   return JSON.stringify([config.tickers, config.aumRange ?? null, config.terRange ?? null, config.dividendYieldRange ?? null, config.secYieldRange ?? null, config.performanceRanges, config.totalReturnRanges]);
 }
@@ -3232,11 +3240,7 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
   // used for the same filter set it was saved for.
   const scope = cursorScope(config);
   const cursor = (config.maxFetches > 0 || state?.partial === true) && state?.scope === scope ? state?.cursor || null : null;
-  const cursorIndex = cursor ? universe.findIndex((fund) => fund.ticker === cursor) : -1;
-  const ordered =
-    cursorIndex >= 0
-      ? universe.slice(cursorIndex + 1).concat(universe.slice(0, cursorIndex + 1))
-      : universe.slice();
+  const ordered = runOrder(universe, config.tickers, cursor);
 
   const queue = ordered.map((fund) => ({ fund }));
   const results: JsonRecord[] = [];
@@ -3248,7 +3252,7 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
   let deadlineHit = false;
   let failures = 0;
 
-  outputPrintFilter(universe.length, universe.length, outputHasOutputFilters(config));
+  outputPrintFilter(ordered.length, universe.length, outputHasOutputFilters({ ...config, tickers: [] }));
   const output = outputCreateReporter(API_ROOT, config.maxFetches > 0 ? Math.min(config.maxFetches, ordered.length) : ordered.length);
   async function worker(): Promise<void> {
     for (;;) {
