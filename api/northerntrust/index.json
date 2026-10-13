@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-11T04:27:46Z",
+ "generatedAt": "2026-10-13T05:15:23Z",
  "source": {
   "provider": "Northern Trust Asset Management (US ETFs)",
   "market": "us",
@@ -13,7 +13,7 @@
  "counts": {
   "funds": 49,
   "holdings": 26158,
-  "history": 80107
+  "history": 80109
  },
  "funds": [
   {
@@ -28,17 +28,17 @@
    "terValue": 0.35,
    "terGross": "0.49%",
    "terGrossValue": 0.49,
-   "nav": "$21.09",
-   "navValue": 21.09,
-   "aum": "$165.02 M",
-   "aumValue": 165020428.09,
-   "asOfDate": "Oct 09 2026",
+   "nav": "$21.10",
+   "navValue": 21.1,
+   "aum": "$165.14 M",
+   "aumValue": 165141024.22,
+   "asOfDate": "Oct 12 2026",
    "inceptionDate": "Nov 18 2016",
    "exchange": "NYSE Arca",
-   "closePrice": "$21.09",
-   "closePriceValue": 21.09,
-   "premiumDiscount": "0.00%",
-   "premiumDiscountValue": 0.0009,
+   "closePrice": "$21.10",
+   "closePriceValue": 21.1,
+   "premiumDiscount": "-0.02%",
+   "premiumDiscountValue": -0.0185,
    "distributions": {
     "frequency": "Monthly",
     "exDate": "10/07/2026",
@@ -47,11 +47,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Sep 30 2026",
-     "priceReturnsAsOf": "Oct 09 2026",
+     "priceReturnsAsOf": "Oct 12 2026",
      "mo1": -2.69,
      "mo1Text": "-2.69%",
-     "qtd": 0.2,
-     "qtdText": "0.20%",
+     "qtd": 0.25,
+     "qtdText": "0.25%",
      "ytd": -3.22,
      "ytdText": "-3.22%",
      "yr1": -2.38,
@@ -94,7 +94,7 @@
     "performanceAsOf": "2026-09-30"
    },
    "holdings": 17,
-   "history": 2484
+   "history": 2485
   },
   {
    "ticker": "ESG",
@@ -188,17 +188,17 @@
    "terValue": 0.42,
    "terGross": "0.45%",
    "terGrossValue": 0.45,
-   "nav": "$239.75",
-   "navValue": 239.75,
-   "aum": "$119.88 M",
-   "aumValue": 119876010.13,
-   "asOfDate": "Oct 09 2026",
+   "nav": "$239.56",
+   "navValue": 239.56,
+   "aum": "$119.78 M",
+   "aumValue": 119778410.22,
+   "asOfDate": "Oct 12 2026",
    "inceptionDate": "Jul 13 2016",
    "exchange": "CBOE",
-   "closePrice": "$240.03",
-   "closePriceValue": 240.03,
-   "premiumDiscount": "0.12%",
-   "premiumDiscountValue": 0.1151,
+   "closePrice": "$239.49",
+   "closePriceValue": 239.49,
+   "premiumDiscount": "-0.03%",
+   "premiumDiscountValue": -0.0277,
    "distributions": {
     "frequency": "Quarterly",
     "exDate": "09/18/2026",
@@ -207,11 +207,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Sep 30 2026",
-     "priceReturnsAsOf": "Oct 09 2026",
+     "priceReturnsAsOf": "Oct 12 2026",
      "mo1": -0.75,
      "mo1Text": "-0.75%",
-     "qtd": 0.93,
-     "qtdText": "0.93%",
+     "qtd": 0.85,
+     "qtdText": "0.85%",
      "ytd": 17.02,
      "ytdText": "17.02%",
      "yr1": 22.16,
@@ -254,7 +254,7 @@
     "performanceAsOf": "2026-09-30"
    },
    "holdings": 745,
-   "history": 2575
+   "history": 2576
   },
   {
    "ticker": "FEDM",

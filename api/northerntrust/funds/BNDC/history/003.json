@@ -2,7 +2,7 @@
  "ticker": "BNDC",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2484,
+ "totalRows": 2485,
  "headers": [
   "Date",
   "NAV",
@@ -2912,6 +2912,12 @@
    "Date": "Oct 09 2026",
    "NAV": "21.09",
    "Market Price": "21.09",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Oct 12 2026",
+   "NAV": "21.1",
+   "Market Price": "21.1",
    "Premium/Discount": "0"
   }
  ]

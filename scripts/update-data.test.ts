@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
+  runOrder,
   CONTROL_NAMES,
   DIVIDEND_SCHEDULE_CAP,
   HOLDINGS_HEADERS,
@@ -924,8 +925,10 @@ describe('pipeline', () => {
         cursors.push((await readJson(root, 'update-state.json')).cursor);
       }
       expect(cursors).toEqual(['AAA', 'BBB', 'CCC', 'AAA']);
+      // a TICKERS run never reads, writes or deletes the cursor: update-state.json stays byte-identical
+      const stateBefore = readFileSync(new URL('update-state.json', root), 'utf8');
       await runUpdater(pipelineControls({ MAX_FETCHES: '1', TICKERS: 'CCC' }));
-      expect((await readJson(root, 'update-state.json')).cursor).toBe('CCC');
+      expect(readFileSync(new URL('update-state.json', root), 'utf8')).toBe(stateBefore);
       expect((await readIndex(root)).funds.length).toBe(3);
     });
   });
@@ -1051,5 +1054,16 @@ describe('network', () => {
       console.error = realError;
     }
     expect(restarts).toBe(2);
+  });
+});
+
+describe('runOrder', () => {
+  const universe = ['AAA', 'BBB', 'CCC', 'DDD'].map((ticker) => ({ ticker }));
+  test('TICKERS narrows the run before the worker pool', () => {
+    expect(runOrder(universe, ['DDD', 'BBB'], null).map((fund) => fund.ticker)).toEqual(['BBB', 'DDD']);
+  });
+  test('an empty TICKERS walks the whole catalog and the cursor rotates it', () => {
+    expect(runOrder(universe, [], null).map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD']);
+    expect(runOrder(universe, [], 'BBB').map((fund) => fund.ticker)).toEqual(['CCC', 'DDD', 'AAA', 'BBB']);
   });
 });
