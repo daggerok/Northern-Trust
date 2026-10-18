@@ -2,7 +2,7 @@
  "ticker": "MUNA",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 288,
+ "totalRows": 293,
  "headers": [
   "Date",
   "NAV",
@@ -1737,6 +1737,36 @@
    "NAV": "98.83",
    "Market Price": "98.9",
    "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Oct 12 2026",
+   "NAV": "98.87",
+   "Market Price": "98.9",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 13 2026",
+   "NAV": "98.96",
+   "Market Price": "99.01",
+   "Premium/Discount": "0.04"
+  },
+  {
+   "Date": "Oct 14 2026",
+   "NAV": "98.99",
+   "Market Price": "98.87",
+   "Premium/Discount": "-0.12"
+  },
+  {
+   "Date": "Oct 15 2026",
+   "NAV": "99.2",
+   "Market Price": "99.55",
+   "Premium/Discount": "0.35"
+  },
+  {
+   "Date": "Oct 16 2026",
+   "NAV": "99.21",
+   "Market Price": "99.34",
+   "Premium/Discount": "0.13"
   }
  ]
 }

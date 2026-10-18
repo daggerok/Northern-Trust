@@ -2,7 +2,7 @@
  "ticker": "MUNC",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 288,
+ "totalRows": 293,
  "headers": [
   "Date",
   "NAV",
@@ -1737,6 +1737,36 @@
    "NAV": "97.05",
    "Market Price": "96.96",
    "Premium/Discount": "-0.09"
+  },
+  {
+   "Date": "Oct 12 2026",
+   "NAV": "97.09",
+   "Market Price": "96.97",
+   "Premium/Discount": "-0.13"
+  },
+  {
+   "Date": "Oct 13 2026",
+   "NAV": "97.49",
+   "Market Price": "97.23",
+   "Premium/Discount": "-0.27"
+  },
+  {
+   "Date": "Oct 14 2026",
+   "NAV": "97.58",
+   "Market Price": "97.47",
+   "Premium/Discount": "-0.11"
+  },
+  {
+   "Date": "Oct 15 2026",
+   "NAV": "98.24",
+   "Market Price": "98.15",
+   "Premium/Discount": "-0.09"
+  },
+  {
+   "Date": "Oct 16 2026",
+   "NAV": "98.23",
+   "Market Price": "98.13",
+   "Premium/Discount": "-0.1"
   }
  ]
 }

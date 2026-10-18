@@ -1,0 +1,162 @@
+{
+ "ticker": "TAXI",
+ "page": 15,
+ "pageSize": 250,
+ "totalRows": 3513,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "WASHINGTON MULTNOMAH & YAMHILLCNTYS ORE SCH DIST",
+   "Ticker": "-",
+   "Identifier": "939307JA3",
+   "Weight": "0.0039",
+   "Market Value": "10077.81",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jun 15 2029"
+  },
+  {
+   "Name": "UNIVERSITY CALIF REVS GEN REV BDS 2017AV",
+   "Ticker": "-",
+   "Identifier": "91412GW92",
+   "Weight": "0.0039",
+   "Market Value": "10075.05",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "May 15 2033"
+  },
+  {
+   "Name": "CLARK CNTY NEV GO LTD TAX BD BK REF BDS 2017",
+   "Ticker": "-",
+   "Identifier": "180848SS3",
+   "Weight": "0.0039",
+   "Market Value": "10069.31",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jun 01 2030"
+  },
+  {
+   "Name": "UNIVERSITY ILL UNIV REVS AUXILIARY FACS SYS REF",
+   "Ticker": "-",
+   "Identifier": "9143536R3",
+   "Weight": "0.0039",
+   "Market Value": "10066.26",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Apr 01 2027"
+  },
+  {
+   "Name": "KANSAS ST DEPT TRANSN HWY REV HWY REV BDS 2017 A",
+   "Ticker": "-",
+   "Identifier": "485424RM9",
+   "Weight": "0.0039",
+   "Market Value": "10057.19",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Sep 01 2034"
+  },
+  {
+   "Name": "CALIFORNIA CMNTY CHOICE FING AUTH CLEAN ENERGY",
+   "Ticker": "-",
+   "Identifier": "13013JEB8",
+   "Weight": "0.0039",
+   "Market Value": "10047.07",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Aug 01 2055"
+  },
+  {
+   "Name": "PENNSYLVANIA ST TPK COMMN TPK REV MTR LICENSE FD",
+   "Ticker": "-",
+   "Identifier": "709224E21",
+   "Weight": "0.0038",
+   "Market Value": "9712.47",
+   "Shares Held": "10000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Dec 01 2036"
+  },
+  {
+   "Name": "WELD CNTY COLO SCH DIST NO RE-4 GO BDS 2023",
+   "Ticker": "-",
+   "Identifier": "949232EV0",
+   "Weight": "0.002",
+   "Market Value": "5212.18",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 01 2038"
+  },
+  {
+   "Name": "JEFFERSON CNTY COLO SCH DIST NO R-001 GO BDS 2018",
+   "Ticker": "-",
+   "Identifier": "4727362V8",
+   "Weight": "0.002",
+   "Market Value": "5188.31",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 15 2033"
+  },
+  {
+   "Name": "JEFFERSON CNTY COLO SCH DIST NO R-001 GO BDS 2018",
+   "Ticker": "-",
+   "Identifier": "4727362Z9",
+   "Weight": "0.002",
+   "Market Value": "5188.31",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Dec 15 2037"
+  },
+  {
+   "Name": "LOS ANGELES CALIF DEPT WTR & PWR REV SYS BDS 2021",
+   "Ticker": "-",
+   "Identifier": "544532CH5",
+   "Weight": "0.002",
+   "Market Value": "5126.89",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jul 01 2037"
+  },
+  {
+   "Name": "UNIVERSITY HOUSTON TEX UNIV REVS CONSOLIDATED REV",
+   "Ticker": "-",
+   "Identifier": "914302CE2",
+   "Weight": "0.002",
+   "Market Value": "5006.23",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 15 2028"
+  },
+  {
+   "Name": "UNIVERSITY HOUSTON TEX UNIV REVS CONSOLIDATED REV",
+   "Ticker": "-",
+   "Identifier": "914302CN2",
+   "Weight": "0.002",
+   "Market Value": "5002.66",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 15 2036"
+  }
+ ]
+}

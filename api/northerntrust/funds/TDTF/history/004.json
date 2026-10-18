@@ -2,7 +2,7 @@
  "ticker": "TDTF",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3784,
+ "totalRows": 3789,
  "headers": [
   "Date",
   "NAV",
@@ -4712,6 +4712,36 @@
    "Date": "Oct 09 2026",
    "NAV": "22.74",
    "Market Price": "22.77",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 12 2026",
+   "NAV": "22.75",
+   "Market Price": "22.81",
+   "Premium/Discount": "0.06"
+  },
+  {
+   "Date": "Oct 13 2026",
+   "NAV": "22.78",
+   "Market Price": "22.81",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 14 2026",
+   "NAV": "22.81",
+   "Market Price": "22.83",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 15 2026",
+   "NAV": "22.89",
+   "Market Price": "22.91",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 16 2026",
+   "NAV": "22.95",
+   "Market Price": "22.98",
    "Premium/Discount": "0.03"
   }
  ]
