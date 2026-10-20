@@ -1320,7 +1320,7 @@
    "Weight": "0.3229",
    "Market Value": "5199998.96",
    "Shares Held": "5200000",
-   "Asset Category": "-",
+   "Asset Category": "MBS/ABS",
    "Coupon": "0",
    "Maturity": "Oct 25 2066"
   },
@@ -1441,7 +1441,7 @@
    "Weight": "0.3105",
    "Market Value": "5000000",
    "Shares Held": "5000000",
-   "Asset Category": "-",
+   "Asset Category": "Corporate",
    "Coupon": "0",
    "Maturity": "Oct 20 2029"
   },

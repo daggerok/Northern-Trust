@@ -22,7 +22,7 @@
    "Weight": "6.7726",
    "Market Value": "31123125",
    "Shares Held": "247500",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -33,7 +33,7 @@
    "Weight": "5.3583",
    "Market Value": "24624022.5",
    "Shares Held": "104850",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -44,7 +44,7 @@
    "Weight": "4.3447",
    "Market Value": "19966095",
    "Shares Held": "20250",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -55,7 +55,7 @@
    "Weight": "3.7351",
    "Market Value": "17164512",
    "Shares Held": "83550",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -66,7 +66,7 @@
    "Weight": "3.4102",
    "Market Value": "15671580",
    "Shares Held": "664050",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -77,7 +77,7 @@
    "Weight": "2.7094",
    "Market Value": "12451095",
    "Shares Held": "203250",
-   "Asset Category": "-",
+   "Asset Category": "Residential REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -88,7 +88,7 @@
    "Weight": "2.32",
    "Market Value": "10661399.86",
    "Shares Held": "780500",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -99,7 +99,7 @@
    "Weight": "2.1493",
    "Market Value": "9876838.5",
    "Shares Held": "412050",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -110,7 +110,7 @@
    "Weight": "2.0235",
    "Market Value": "9299169",
    "Shares Held": "405900",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -132,7 +132,7 @@
    "Weight": "1.9476",
    "Market Value": "8950236",
    "Shares Held": "137400",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -143,7 +143,7 @@
    "Weight": "1.8145",
    "Market Value": "8338428",
    "Shares Held": "182700",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -154,7 +154,7 @@
    "Weight": "1.7063",
    "Market Value": "7841114.37",
    "Shares Held": "415350",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -165,7 +165,7 @@
    "Weight": "1.657",
    "Market Value": "7614597",
    "Shares Held": "41100",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -176,7 +176,7 @@
    "Weight": "1.5802",
    "Market Value": "7261746",
    "Shares Held": "99150",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -187,7 +187,7 @@
    "Weight": "1.5703",
    "Market Value": "7216469.32",
    "Shares Held": "351000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -198,7 +198,7 @@
    "Weight": "1.4351",
    "Market Value": "6595107.6",
    "Shares Held": "65250",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -209,7 +209,7 @@
    "Weight": "1.3588",
    "Market Value": "6244566",
    "Shares Held": "31800",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -220,7 +220,7 @@
    "Weight": "1.298",
    "Market Value": "5965162.65",
    "Shares Held": "1052000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -231,7 +231,7 @@
    "Weight": "1.2865",
    "Market Value": "5911920",
    "Shares Held": "189000",
-   "Asset Category": "-",
+   "Asset Category": "Residential REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -253,7 +253,7 @@
    "Weight": "1.2003",
    "Market Value": "5516110.5",
    "Shares Held": "55950",
-   "Asset Category": "-",
+   "Asset Category": "Residential REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -264,7 +264,7 @@
    "Weight": "1.1225",
    "Market Value": "5158479.85",
    "Shares Held": "128550",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -275,7 +275,7 @@
    "Weight": "1.0713",
    "Market Value": "4923285",
    "Shares Held": "134700",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -286,7 +286,7 @@
    "Weight": "1.0545",
    "Market Value": "4846032",
    "Shares Held": "175200",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -297,7 +297,7 @@
    "Weight": "1.0477",
    "Market Value": "4814621.7",
    "Shares Held": "27300",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -308,7 +308,7 @@
    "Weight": "1.0387",
    "Market Value": "4773153",
    "Shares Held": "578564",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -319,7 +319,7 @@
    "Weight": "1.0373",
    "Market Value": "4766715",
    "Shares Held": "114750",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -330,7 +330,7 @@
    "Weight": "1.0223",
    "Market Value": "4697862",
    "Shares Held": "79950",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -341,7 +341,7 @@
    "Weight": "0.991",
    "Market Value": "4554177",
    "Shares Held": "36150",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -352,7 +352,7 @@
    "Weight": "0.9707",
    "Market Value": "4460839.5",
    "Shares Held": "25350",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -363,7 +363,7 @@
    "Weight": "0.8725",
    "Market Value": "4009377",
    "Shares Held": "111900",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -374,7 +374,7 @@
    "Weight": "0.8698",
    "Market Value": "3997344",
    "Shares Held": "62400",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -385,7 +385,7 @@
    "Weight": "0.8559",
    "Market Value": "3933090",
    "Shares Held": "94500",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -396,7 +396,7 @@
    "Weight": "0.8245",
    "Market Value": "3789105.2",
    "Shares Held": "2314650",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -407,7 +407,7 @@
    "Weight": "0.747",
    "Market Value": "3432855.7",
    "Shares Held": "169900",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -418,7 +418,7 @@
    "Weight": "0.6836",
    "Market Value": "3141522",
    "Shares Held": "95400",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -429,7 +429,7 @@
    "Weight": "0.6549",
    "Market Value": "3009468.74",
    "Shares Held": "2373750",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -440,7 +440,7 @@
    "Weight": "0.6442",
    "Market Value": "2960583",
    "Shares Held": "120300",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -451,7 +451,7 @@
    "Weight": "0.6337",
    "Market Value": "2912199",
    "Shares Held": "2176633",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -462,7 +462,7 @@
    "Weight": "0.6294",
    "Market Value": "2892297",
    "Shares Held": "149550",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -473,7 +473,7 @@
    "Weight": "0.6188",
    "Market Value": "2843487.62",
    "Shares Held": "4318",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -484,7 +484,7 @@
    "Weight": "0.6124",
    "Market Value": "2814091.67",
    "Shares Held": "1458450",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -495,7 +495,7 @@
    "Weight": "0.597",
    "Market Value": "2743314",
    "Shares Held": "90300",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -506,7 +506,7 @@
    "Weight": "0.5936",
    "Market Value": "2728068",
    "Shares Held": "98700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -517,7 +517,7 @@
    "Weight": "0.5601",
    "Market Value": "2573802",
    "Shares Held": "46200",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -528,7 +528,7 @@
    "Weight": "0.5551",
    "Market Value": "2550815.87",
    "Shares Held": "333900",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -550,7 +550,7 @@
    "Weight": "0.5354",
    "Market Value": "2460613.5",
    "Shares Held": "69450",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -561,7 +561,7 @@
    "Weight": "0.4998",
    "Market Value": "2296635",
    "Shares Held": "134700",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -572,7 +572,7 @@
    "Weight": "0.4922",
    "Market Value": "2262055.5",
    "Shares Held": "67950",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -583,7 +583,7 @@
    "Weight": "0.4895",
    "Market Value": "2249672.92",
    "Shares Held": "14250",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -594,7 +594,7 @@
    "Weight": "0.4853",
    "Market Value": "2230401.71",
    "Shares Held": "9600",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -605,7 +605,7 @@
    "Weight": "0.4752",
    "Market Value": "2183841",
    "Shares Held": "62700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -616,7 +616,7 @@
    "Weight": "0.4743",
    "Market Value": "2179842",
    "Shares Held": "35700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -627,7 +627,7 @@
    "Weight": "0.4678",
    "Market Value": "2149763.82",
    "Shares Held": "105800",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -638,7 +638,7 @@
    "Weight": "0.4668",
    "Market Value": "2145060",
    "Shares Held": "38250",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -649,7 +649,7 @@
    "Weight": "0.4607",
    "Market Value": "2117191.16",
    "Shares Held": "2580",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -660,7 +660,7 @@
    "Weight": "0.4563",
    "Market Value": "2096734.5",
    "Shares Held": "115650",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -671,7 +671,7 @@
    "Weight": "0.4553",
    "Market Value": "2092500",
    "Shares Held": "93000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -682,7 +682,7 @@
    "Weight": "0.4475",
    "Market Value": "2056517.78",
    "Shares Held": "9000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -693,7 +693,7 @@
    "Weight": "0.4366",
    "Market Value": "2006265.43",
    "Shares Held": "40700",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -704,7 +704,7 @@
    "Weight": "0.4243",
    "Market Value": "1949643",
    "Shares Held": "66450",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -715,7 +715,7 @@
    "Weight": "0.4129",
    "Market Value": "1897267.5",
    "Shares Held": "119250",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -726,7 +726,7 @@
    "Weight": "0.4066",
    "Market Value": "1868643.7",
    "Shares Held": "14400",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -737,7 +737,7 @@
    "Weight": "0.4024",
    "Market Value": "1849212",
    "Shares Held": "27900",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -748,7 +748,7 @@
    "Weight": "0.3966",
    "Market Value": "1822464.38",
    "Shares Held": "333900",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -759,7 +759,7 @@
    "Weight": "0.3857",
    "Market Value": "1772320.02",
    "Shares Held": "2575",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -770,7 +770,7 @@
    "Weight": "0.3837",
    "Market Value": "1763263.45",
    "Shares Held": "4350",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -781,7 +781,7 @@
    "Weight": "0.3793",
    "Market Value": "1743282",
    "Shares Held": "91800",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -792,7 +792,7 @@
    "Weight": "0.3656",
    "Market Value": "1680153.58",
    "Shares Held": "891750",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -803,7 +803,7 @@
    "Weight": "0.3631",
    "Market Value": "1668777",
    "Shares Held": "124350",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -814,7 +814,7 @@
    "Weight": "0.3615",
    "Market Value": "1661164.15",
    "Shares Held": "279200",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -825,7 +825,7 @@
    "Weight": "0.3305",
    "Market Value": "1518702",
    "Shares Held": "22200",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -836,7 +836,7 @@
    "Weight": "0.33",
    "Market Value": "1516375.43",
    "Shares Held": "275500",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -847,7 +847,7 @@
    "Weight": "0.3223",
    "Market Value": "1481236.89",
    "Shares Held": "29700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -858,7 +858,7 @@
    "Weight": "0.3222",
    "Market Value": "1480752",
    "Shares Held": "33900",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -869,7 +869,7 @@
    "Weight": "0.3116",
    "Market Value": "1431888",
    "Shares Held": "4800",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -880,7 +880,7 @@
    "Weight": "0.3054",
    "Market Value": "1403629.5",
    "Shares Held": "118650",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -891,7 +891,7 @@
    "Weight": "0.2976",
    "Market Value": "1367642.3",
    "Shares Held": "113550",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -902,7 +902,7 @@
    "Weight": "0.2954",
    "Market Value": "1357570.92",
    "Shares Held": "25800",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -913,7 +913,7 @@
    "Weight": "0.2937",
    "Market Value": "1349758.5",
    "Shares Held": "19650",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -924,7 +924,7 @@
    "Weight": "0.2906",
    "Market Value": "1335407.9",
    "Shares Held": "90000",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -935,7 +935,7 @@
    "Weight": "0.2825",
    "Market Value": "1298106.76",
    "Shares Held": "95000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -946,7 +946,7 @@
    "Weight": "0.2794",
    "Market Value": "1284132",
    "Shares Held": "67800",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -957,7 +957,7 @@
    "Weight": "0.2779",
    "Market Value": "1277119.74",
    "Shares Held": "1980000",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -968,7 +968,7 @@
    "Weight": "0.2745",
    "Market Value": "1261502.17",
    "Shares Held": "76950",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -979,7 +979,7 @@
    "Weight": "0.2733",
    "Market Value": "1255988.1",
    "Shares Held": "2022",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -990,7 +990,7 @@
    "Weight": "0.2726",
    "Market Value": "1252664.17",
    "Shares Held": "20550",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1001,7 +1001,7 @@
    "Weight": "0.272",
    "Market Value": "1249846.69",
    "Shares Held": "815550",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1012,7 +1012,7 @@
    "Weight": "0.2696",
    "Market Value": "1238977.5",
    "Shares Held": "106350",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1023,7 +1023,7 @@
    "Weight": "0.2688",
    "Market Value": "1235167.19",
    "Shares Held": "142200",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1034,7 +1034,7 @@
    "Weight": "0.2682",
    "Market Value": "1232402.96",
    "Shares Held": "1370700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1045,7 +1045,7 @@
    "Weight": "0.2672",
    "Market Value": "1227920.52",
    "Shares Held": "988800",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1056,7 +1056,7 @@
    "Weight": "0.2639",
    "Market Value": "1212689.17",
    "Shares Held": "2850",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1067,7 +1067,7 @@
    "Weight": "0.2599",
    "Market Value": "1194492",
    "Shares Held": "22800",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1078,7 +1078,7 @@
    "Weight": "0.2519",
    "Market Value": "1157819.21",
    "Shares Held": "470850",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1089,7 +1089,7 @@
    "Weight": "0.251",
    "Market Value": "1153647",
    "Shares Held": "40650",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1100,7 +1100,7 @@
    "Weight": "0.2488",
    "Market Value": "1143238.32",
    "Shares Held": "499000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1111,7 +1111,7 @@
    "Weight": "0.2481",
    "Market Value": "1139957.36",
    "Shares Held": "64500",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1122,7 +1122,7 @@
    "Weight": "0.2472",
    "Market Value": "1135795.5",
    "Shares Held": "124950",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1133,7 +1133,7 @@
    "Weight": "0.2471",
    "Market Value": "1135542.28",
    "Shares Held": "72000",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1144,7 +1144,7 @@
    "Weight": "0.2471",
    "Market Value": "1135542.28",
    "Shares Held": "60000",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1155,7 +1155,7 @@
    "Weight": "0.2445",
    "Market Value": "1123550.16",
    "Shares Held": "38550",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1166,7 +1166,7 @@
    "Weight": "0.244",
    "Market Value": "1121509.53",
    "Shares Held": "2400",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1177,7 +1177,7 @@
    "Weight": "0.2418",
    "Market Value": "1111410.81",
    "Shares Held": "1755000",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1188,7 +1188,7 @@
    "Weight": "0.2408",
    "Market Value": "1106721.33",
    "Shares Held": "963",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1199,7 +1199,7 @@
    "Weight": "0.2406",
    "Market Value": "1105569.64",
    "Shares Held": "545000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1210,7 +1210,7 @@
    "Weight": "0.2393",
    "Market Value": "1099569.43",
    "Shares Held": "51000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1221,7 +1221,7 @@
    "Weight": "0.2389",
    "Market Value": "1098048",
    "Shares Held": "51600",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1232,7 +1232,7 @@
    "Weight": "0.2363",
    "Market Value": "1086067.05",
    "Shares Held": "118950",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1243,7 +1243,7 @@
    "Weight": "0.2307",
    "Market Value": "1059969.55",
    "Shares Held": "547350",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1254,7 +1254,7 @@
    "Weight": "0.2304",
    "Market Value": "1058679.62",
    "Shares Held": "1413750",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1265,7 +1265,7 @@
    "Weight": "0.2276",
    "Market Value": "1046019.66",
    "Shares Held": "149850",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1276,7 +1276,7 @@
    "Weight": "0.2264",
    "Market Value": "1040486.14",
    "Shares Held": "14700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1287,7 +1287,7 @@
    "Weight": "0.2255",
    "Market Value": "1036254.5",
    "Shares Held": "428700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1298,7 +1298,7 @@
    "Weight": "0.224",
    "Market Value": "1029364.73",
    "Shares Held": "164250",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1309,7 +1309,7 @@
    "Weight": "0.2197",
    "Market Value": "1009808.34",
    "Shares Held": "81450",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1320,7 +1320,7 @@
    "Weight": "0.2134",
    "Market Value": "980658",
    "Shares Held": "325800",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1331,7 +1331,7 @@
    "Weight": "0.2134",
    "Market Value": "980634.47",
    "Shares Held": "676800",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1342,7 +1342,7 @@
    "Weight": "0.2067",
    "Market Value": "950096.42",
    "Shares Held": "57750",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1353,7 +1353,7 @@
    "Weight": "0.2022",
    "Market Value": "929195.55",
    "Shares Held": "133950",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1364,7 +1364,7 @@
    "Weight": "0.1983",
    "Market Value": "911274",
    "Shares Held": "3900",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1375,7 +1375,7 @@
    "Weight": "0.1954",
    "Market Value": "898158.2",
    "Shares Held": "12750",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1386,7 +1386,7 @@
    "Weight": "0.1948",
    "Market Value": "895099.09",
    "Shares Held": "1130",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1397,7 +1397,7 @@
    "Weight": "0.191",
    "Market Value": "877723.94",
    "Shares Held": "370950",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1408,7 +1408,7 @@
    "Weight": "0.1834",
    "Market Value": "842725.92",
    "Shares Held": "31800",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1419,7 +1419,7 @@
    "Weight": "0.1762",
    "Market Value": "809676",
    "Shares Held": "71400",
-   "Asset Category": "-",
+   "Asset Category": "Diversified REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1430,7 +1430,7 @@
    "Weight": "0.1707",
    "Market Value": "784332.12",
    "Shares Held": "1140000",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1441,7 +1441,7 @@
    "Weight": "0.1601",
    "Market Value": "735566.24",
    "Shares Held": "460650",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1474,7 +1474,7 @@
    "Weight": "0.1126",
    "Market Value": "517573.45",
    "Shares Held": "175650",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1529,7 +1529,7 @@
    "Weight": "0.0507",
    "Market Value": "232801.13",
    "Shares Held": "150000",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1540,7 +1540,7 @@
    "Weight": "0.047",
    "Market Value": "215870.24",
    "Shares Held": "38100",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1562,7 +1562,7 @@
    "Weight": "0.045",
    "Market Value": "206605.08",
    "Shares Held": "2700",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1617,7 +1617,7 @@
    "Weight": "0.0428",
    "Market Value": "196536.01",
    "Shares Held": "1050",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1672,7 +1672,7 @@
    "Weight": "0.0321",
    "Market Value": "147459.31",
    "Shares Held": "2100",
-   "Asset Category": "-",
+   "Asset Category": "Commercial REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1705,7 +1705,7 @@
    "Weight": "0.029",
    "Market Value": "133406.26",
    "Shares Held": "49",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1793,7 +1793,7 @@
    "Weight": "0.0213",
    "Market Value": "97711.88",
    "Shares Held": "7200",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1815,7 +1815,7 @@
    "Weight": "0.0198",
    "Market Value": "90943.45",
    "Shares Held": "900",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1826,7 +1826,7 @@
    "Weight": "0.0196",
    "Market Value": "90153",
    "Shares Held": "1050",
-   "Asset Category": "-",
+   "Asset Category": "Specialized REITs",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1848,7 +1848,7 @@
    "Weight": "0.0182",
    "Market Value": "83485.87",
    "Shares Held": "477",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
@@ -1870,7 +1870,7 @@
    "Weight": "0.0172",
    "Market Value": "78932.02",
    "Shares Held": "35300",
-   "Asset Category": "-",
+   "Asset Category": "Real Estate Development & Operations",
    "Coupon": "0",
    "Maturity": ""
   },
