@@ -2,7 +2,7 @@
  "ticker": "LKOR",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 2782,
+ "totalRows": 2784,
  "headers": [
   "Date",
   "NAV",

@@ -2,7 +2,7 @@
  "ticker": "TILT",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3789,
+ "totalRows": 3791,
  "headers": [
   "Date",
   "NAV",
@@ -4743,6 +4743,18 @@
    "NAV": "278.37",
    "Market Price": "278.32",
    "Premium/Discount": "-0.04"
+  },
+  {
+   "Date": "Oct 19 2026",
+   "NAV": "278.94",
+   "Market Price": "278.87",
+   "Premium/Discount": "-0.07"
+  },
+  {
+   "Date": "Oct 20 2026",
+   "NAV": "280.74",
+   "Market Price": "280.63",
+   "Premium/Discount": "-0.11"
   }
  ]
 }

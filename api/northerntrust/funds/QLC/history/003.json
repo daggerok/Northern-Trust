@@ -2,7 +2,7 @@
  "ticker": "QLC",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2782,
+ "totalRows": 2784,
  "headers": [
   "Date",
   "NAV",
@@ -4701,6 +4701,18 @@
    "NAV": "90.73",
    "Market Price": "90.75",
    "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 19 2026",
+   "NAV": "90.86",
+   "Market Price": "90.85",
+   "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Oct 20 2026",
+   "NAV": "91.24",
+   "Market Price": "91.21",
+   "Premium/Discount": "-0.03"
   }
  ]
 }

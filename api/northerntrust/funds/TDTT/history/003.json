@@ -2,7 +2,7 @@
  "ticker": "TDTT",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 3788,
+ "totalRows": 3790,
  "headers": [
   "Date",
   "NAV",

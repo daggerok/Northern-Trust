@@ -33,21 +33,21 @@
  "nav": {
   "display": "$50.18",
   "value": 50.18,
-  "asOfDate": "Oct 16 2026"
+  "asOfDate": "Oct 20 2026"
  },
  "marketPrice": {
-  "display": "$50.23",
-  "value": 50.23,
-  "asOfDate": "Oct 16 2026"
+  "display": "$50.21",
+  "value": 50.21,
+  "asOfDate": "Oct 20 2026"
  },
  "premiumDiscount": {
-  "display": "0.08%",
-  "value": 0.0821
+  "display": "0.05%",
+  "value": 0.0502
  },
  "aum": {
   "display": "$7.53 M",
-  "value": 7527567.79,
-  "asOfDate": "Oct 16 2026",
+  "value": 7527724.52,
+  "asOfDate": "Oct 20 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
@@ -64,8 +64,8 @@
  "returns": {
   "derivedFrom": "derived from the official daily NAV history with published distributions reinvested (NAV total return), not official published returns",
   "monthEnd": {
-   "asOfDate": "Oct 16 2026",
-   "priceReturnsAsOf": "Oct 16 2026",
+   "asOfDate": "Oct 20 2026",
+   "priceReturnsAsOf": "Oct 20 2026",
    "mo1": null,
    "mo1Text": "—",
    "qtd": 1.05,
@@ -109,8 +109,8 @@
   ],
   "pageSize": 250,
   "totalRows": 197,
-  "asOfDate": "2026-10-16",
-  "asOf": "Oct 16 2026",
+  "asOfDate": "2026-10-20",
+  "asOf": "Oct 20 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -118,8 +118,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 18,
-  "asOf": "Oct 16 2026",
+  "totalRows": 20,
+  "asOf": "Oct 20 2026",
   "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
  },
  "metrics": {
