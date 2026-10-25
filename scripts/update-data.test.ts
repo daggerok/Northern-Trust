@@ -28,6 +28,7 @@ import {
   yieldBasisFromKind,
   indicatedYield,
   inferDistributionFrequency,
+  holdingsGuard,
   installSystemCa,
   isCertError,
   isoToEpoch,
@@ -190,7 +191,7 @@ const ETFCHARTS = { Ticker: 'QLC', AsOfDate: '09/25/2026', FundName: 'Northern T
 
 const HOLDINGS_HEADER = 'Date,CUSIP,ISIN,SEDOL,Name,Ticker,Market Value-Local,Market Value-Base,Fund Weight %,Shares Held,Coupon,Maturity,Sector Type,Country';
 const EQUITY_HOLDINGS_CSV = `${HOLDINGS_HEADER}
-09/25/2026,67066G104,US67066G1040,2379504,NVIDIA CORP COMMON STOCK USD 0.001,NVDA,89170033.16,89170033.16,7.8138,396188,.000,,Information Technology,United States
+09/25/2026,67066G104,US67066G1040,2379504,NVIDIA CORP COMMON STOCK USD 0.001,NVDA,89170033.16,89170033.16,98.1140,396188,.000,,Information Technology,United States
 09/25/2026,46625H100,US46625H1005,2190385,JPMORGAN CHASE &#38; CO COMMON STOCK USD 1,JPM,21522898.28,21522898.28,1.8860,62738,.000,,Financials,United States`;
 const BOND_HOLDINGS_CSV = `${HOLDINGS_HEADER}
 09/25/2026,USD_CCASH,,,CASH,,22393826.03,22393826.03,2.4820,22393826,.000,,,
@@ -375,11 +376,11 @@ describe('parsing', () => {
     expect(equity.headers).not.toContain('Coupon');
     expect(equity).toMatchObject({ asOfDate: '2026-09-25', container: 'holdings.csv' });
     expect(equity.rows[0]).toEqual({
-      Name: 'NVIDIA CORP COMMON STOCK USD 0.001', Ticker: 'NVDA', Identifier: '67066G104', Weight: '7.8138',
+      Name: 'NVIDIA CORP COMMON STOCK USD 0.001', Ticker: 'NVDA', Identifier: '67066G104', Weight: '98.114',
       'Market Value': '89170033.16', 'Shares Held': '396188', 'Asset Category': 'Information Technology',
     });
     expect(equity.rows[1].Name).toBe('JPMORGAN CHASE & CO COMMON STOCK USD 1');
-    expect(weightsSum(equity.rows)).toBe(9.6998);
+    expect(weightsSum(equity.rows)).toBe(100);
     const bonds = parseNorthernTrustHoldings(BOND_HOLDINGS_CSV, 'SKOR')!;
     expect(bonds.headers).toEqual(BOND_SHEET_HEADERS);
     expect(bonds.rows[0]).toMatchObject({ Name: 'CASH', Ticker: '-', Identifier: 'USD_CCASH' });
@@ -388,6 +389,21 @@ describe('parsing', () => {
     expect(compareHoldingRows({ Weight: '1', 'Market Value': '1', Name: 'A' }, { Weight: '1', 'Market Value': '1', Name: 'B' })).toBeLessThan(0);
     expect(parseNorthernTrustHoldings('Date,CUSIP,Name,Ticker,Market Value-Local,Market Value-Base,Fund Weight %,Shares Held', 'QLC')).toBeNull();
     expect(() => parseNorthernTrustHoldings('Fund Name,Price\nX,1', 'QLC')).toThrow(/header row not found/);
+  });
+
+  test('holdings guard: header-only, renamed weight column, broken weights, a bad weight sum and a halved sheet are rejected', () => {
+    const headers = ['Name', 'Ticker', 'Weight'];
+    const rows = [{ Name: 'A', Ticker: 'A', Weight: '60%' }, { Name: 'B', Ticker: 'B', Weight: '40%' }];
+    expect(holdingsGuard(headers, rows, 2)).toBeNull();
+    expect(holdingsGuard(headers, [['A', 'A', '60'], ['B', 'B', '40']], null)).toBeNull();
+    expect(holdingsGuard([], [], 0)).toBeNull(); // nothing published before: an empty sheet is honest
+    expect(holdingsGuard(headers, [], 505)).toContain('no holdings rows');
+    expect(holdingsGuard(['Name', 'Ticker', 'Wt'], rows, 2)).toContain('no weight column');
+    expect(holdingsGuard(headers, rows.map((row) => ({ ...row, Weight: '6​0' })), 2)).toContain('numeric weight');
+    const allocation = [{ Name: 'Cash&Collateral', Ticker: '-', Weight: '100' }, { Name: 'Equities', Ticker: '-', Weight: '476' }];
+    expect(holdingsGuard(headers, allocation, 2)).toContain('outside 50..150');
+    expect(holdingsGuard(headers, allocation, 2, ['sum'])).toBeNull();
+    expect(holdingsGuard(headers, rows, 5)).toContain('less than half');
   });
 
   test('pricing and distributions: ascending, last duplicate wins, future and zero rows skipped', () => {
@@ -866,6 +882,31 @@ describe('pipeline', () => {
       globalThis.fetch = asFetch(async () => new Response('', { status: 404 }));
       await expect(runUpdater(pipelineControls())).rejects.toThrow(/every examined fund failed/);
       expect((await readIndex(root)).funds.length).toBe(3);
+    });
+  });
+
+  test('holdings that fail the guard keep the fund exactly as published and report it failed', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const dir = fileURLToPath(root);
+      const summary = join(dir, 'step-summary.md');
+      const feedFiles = () => Object.fromEntries(Object.entries(snapshot(dir)).filter(([name]) => name !== summary));
+      const first = feedFiles();
+      // the BBB download keeps its header but every weight cell turns into "--"
+      const broken = EQUITY_HOLDINGS_CSV.replace(/,(98\.1140|1\.8860),/g, ',--,');
+      const good = installMockFetch();
+      const mocked = globalThis.fetch;
+      globalThis.fetch = asFetch(async (input: unknown, init?: RequestInit) => (String(input).endsWith('/bbb/bbb-holdings.csv') ? new Response(broken) : mocked(input as string, init)));
+      process.env.GITHUB_STEP_SUMMARY = summary;
+      try {
+        await runUpdater(pipelineControls());
+        expect(feedFiles()).toEqual(first);
+        expect(good.urls.some((url) => url.includes('/bbb/bbb-all.csv'))).toBe(true);
+        expect(await Bun.file(summary).text()).toContain('- failed: 1\n');
+      } finally {
+        delete process.env.GITHUB_STEP_SUMMARY;
+      }
     });
   });
 
