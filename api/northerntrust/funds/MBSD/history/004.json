@@ -2,7 +2,7 @@
  "ticker": "MBSD",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3050,
+ "totalRows": 3053,
  "headers": [
   "Date",
   "NAV",
@@ -309,6 +309,24 @@
    "NAV": "20",
    "Market Price": "20",
    "Premium/Discount": "0"
+  },
+  {
+   "Date": "Oct 21 2026",
+   "NAV": "19.99",
+   "Market Price": "20",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 22 2026",
+   "NAV": "20.12",
+   "Market Price": "20.15",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 23 2026",
+   "NAV": "20.1",
+   "Market Price": "20.12",
+   "Premium/Discount": "0.02"
   }
  ]
 }

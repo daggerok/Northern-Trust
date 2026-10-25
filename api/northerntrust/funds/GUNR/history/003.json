@@ -2,7 +2,7 @@
  "ticker": "GUNR",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 3791,
+ "totalRows": 3794,
  "headers": [
   "Date",
   "NAV",

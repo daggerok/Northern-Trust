@@ -2,7 +2,7 @@
  "ticker": "QLV",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1827,
+ "totalRows": 1830,
  "headers": [
   "Date",
   "NAV",
@@ -4970,6 +4970,24 @@
    "Date": "Oct 20 2026",
    "NAV": "81.32",
    "Market Price": "81.34",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 21 2026",
+   "NAV": "81.53",
+   "Market Price": "81.57",
+   "Premium/Discount": "0.04"
+  },
+  {
+   "Date": "Oct 22 2026",
+   "NAV": "82",
+   "Market Price": "82.02",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 23 2026",
+   "NAV": "81.6",
+   "Market Price": "81.62",
    "Premium/Discount": "0.02"
   }
  ]

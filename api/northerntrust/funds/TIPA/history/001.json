@@ -2,7 +2,7 @@
  "ticker": "TIPA",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 295,
+ "totalRows": 298,
  "headers": [
   "Date",
   "NAV",
@@ -1779,6 +1779,24 @@
    "NAV": "98.64",
    "Market Price": "98.69",
    "Premium/Discount": "0.06"
+  },
+  {
+   "Date": "Oct 21 2026",
+   "NAV": "98.66",
+   "Market Price": "98.72",
+   "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Oct 22 2026",
+   "NAV": "98.9",
+   "Market Price": "98.95",
+   "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Oct 23 2026",
+   "NAV": "98.92",
+   "Market Price": "99",
+   "Premium/Discount": "0.08"
   }
  ]
 }

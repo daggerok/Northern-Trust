@@ -31,45 +31,45 @@
   "net": 0.45
  },
  "nav": {
-  "display": "$59.93",
-  "value": 59.93,
-  "asOfDate": "Oct 20 2026"
+  "display": "$60.37",
+  "value": 60.37,
+  "asOfDate": "Oct 23 2026"
  },
  "marketPrice": {
-  "display": "$59.91",
-  "value": 59.91,
-  "asOfDate": "Oct 20 2026"
+  "display": "$60.38",
+  "value": 60.38,
+  "asOfDate": "Oct 23 2026"
  },
  "premiumDiscount": {
-  "display": "-0.02%",
-  "value": -0.0249
+  "display": "0.01%",
+  "value": 0.0088
  },
  "aum": {
-  "display": "$419.49 M",
-  "value": 419485707.43,
-  "asOfDate": "Oct 20 2026",
+  "display": "$422.62 M",
+  "value": 422622928.32,
+  "asOfDate": "Oct 23 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 4.42,
-  "dividendYieldText": "4.42%",
+  "dividendYield": 4.39,
+  "dividendYieldText": "4.39%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Oct 20 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Oct 23 2026",
   "distributionRate": null,
   "secYield": 3.7,
   "secYieldText": "3.70%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Oct 20 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Oct 23 2026",
   "unsubsidizedSecYield": 3.69
  },
  "returns": {
   "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Sep 30 2026",
-   "priceReturnsAsOf": "Oct 20 2026",
+   "priceReturnsAsOf": "Oct 23 2026",
    "mo1": -4.83,
    "mo1Text": "-4.83%",
-   "qtd": 1.61,
-   "qtdText": "1.61%",
+   "qtd": 2.36,
+   "qtdText": "2.36%",
    "ytd": 2.85,
    "ytdText": "2.85%",
    "yr1": 1.82,
@@ -313,9 +313,9 @@
    "holdings/001.json"
   ],
   "pageSize": 250,
-  "totalRows": 203,
-  "asOfDate": "2026-10-20",
-  "asOf": "Oct 20 2026",
+  "totalRows": 201,
+  "asOfDate": "2026-10-23",
+  "asOf": "Oct 23 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -326,8 +326,8 @@
    "history/004.json"
   ],
   "pageSize": 1000,
-  "totalRows": 3257,
-  "asOf": "Oct 20 2026",
+  "totalRows": 3260,
+  "asOf": "Oct 23 2026",
   "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
  },
  "metrics": {
@@ -340,8 +340,8 @@
   "cagr5y": 1.4,
   "cagr10y": 3.13,
   "siAnn": 4.49,
-  "dividendYield": 4.42,
-  "dividendYieldText": "4.42%",
+  "dividendYield": 4.39,
+  "dividendYieldText": "4.39%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 3.7,
   "secYieldText": "3.70%",

@@ -2,7 +2,7 @@
  "ticker": "GUNR",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3791,
+ "totalRows": 3794,
  "headers": [
   "Date",
   "NAV",
@@ -4755,6 +4755,24 @@
    "NAV": "54.24",
    "Market Price": "54.29",
    "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Oct 21 2026",
+   "NAV": "54.16",
+   "Market Price": "54.17",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 22 2026",
+   "NAV": "53.47",
+   "Market Price": "53.53",
+   "Premium/Discount": "0.06"
+  },
+  {
+   "Date": "Oct 23 2026",
+   "NAV": "53.9",
+   "Market Price": "53.98",
+   "Premium/Discount": "0.08"
   }
  ]
 }

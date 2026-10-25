@@ -2,7 +2,7 @@
  "ticker": "IQDF",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3400,
+ "totalRows": 3403,
  "headers": [
   "Date",
   "NAV",
@@ -2409,6 +2409,24 @@
    "NAV": "33.85",
    "Market Price": "33.95",
    "Premium/Discount": "0.1"
+  },
+  {
+   "Date": "Oct 21 2026",
+   "NAV": "34.04",
+   "Market Price": "34.04",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Oct 22 2026",
+   "NAV": "33.54",
+   "Market Price": "33.51",
+   "Premium/Discount": "-0.03"
+  },
+  {
+   "Date": "Oct 23 2026",
+   "NAV": "33.56",
+   "Market Price": "33.51",
+   "Premium/Discount": "-0.05"
   }
  ]
 }
