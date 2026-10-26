@@ -237,7 +237,7 @@
   },
   {
    "Name": "S&P500 EMINI FUT EQUITY INDEX 18/DEC/2026 ESZ6",
-   "Ticker": "ESZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "1.0259",
    "Market Value": "22596262.5",
@@ -1161,7 +1161,7 @@
   },
   {
    "Name": "S&P MID 400 EMINI EQUITY INDEX 18/DEC/2026 FAZ6",
-   "Ticker": "FAZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "0.2637",
    "Market Value": "5807840",
@@ -1348,7 +1348,7 @@
   },
   {
    "Name": "ANGLOGOLD ASHANTI PLC ZAR",
-   "Ticker": "AU",
+   "Ticker": "-",
    "Identifier": "G0378L100",
    "Weight": "0.1351",
    "Market Value": "2975302.46",
