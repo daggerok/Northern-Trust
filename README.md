@@ -105,7 +105,7 @@ Caveats:
 | `HISTORY_RANGE` | `max` | `max` or `Ny` (for example `5y`): how far back the Yahoo fallback history reaches, sent as explicit `period1`/`period2`; anything else is an error. The official Northern Trust history always covers the fund's whole life. |
 | `EDGAR_FALLBACK` | `true` | SEC EDGAR Form N-PORT-P fallback for funds whose holdings CSV lists no holdings. |
 | `SKIP_YAHOO` | `false` | Never call the Yahoo chart API; previously published history rows are kept. |
-| `SKIP_NORTHERNTRUST` | `false` | Keep the previously published Northern Trust catalog, holdings and returns; only run the fallbacks. |
+| `SKIP_NORTHERNTRUST` | `false` | Skip every Northern Trust download: a fund with published data keeps it unchanged (reported `kept`), a fund without it gets only the fallbacks (SEC N-PORT-P holdings, Yahoo history). |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the source downloads under `api/northerntrust/raw`. In Actions the optional repository variable `STORE_RAW_DOWNLOADS` overrides it when nonblank. |
 | `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent with the declared contact SEC policy requires; redacted in config logs. The protected repository variable `SEC_UA` wins over every other layer when nonblank. |
 | `CATALOG_URL` | empty (official funds list) | Override the catalog page URL (`https`, or `http` for localhost). |

@@ -1046,7 +1046,7 @@ describe('pipeline 2', () => {
       await runUpdater(pipelineControls());
       // the SEC fund ticker table lists AAA and a Northern Funds mutual fund class of the same registrant
       const secTable = { fields: ['cik', 'seriesId', 'classId', 'symbol'], data: [[916620, 'S000001', 'C000001', 'AAA'], [916620, 'S000002', 'C000002', 'NOSIX']] };
-      // a failed catalog download refreshes the published funds; SKIP_NORTHERNTRUST has no fresh source in this mock and fails the run
+      // a failed catalog download refreshes the published funds; SKIP_NORTHERNTRUST keeps them as published
       const variants: Array<Record<string, string>> = [{}, { SKIP_NORTHERNTRUST: 'true' }];
       for (const extra of variants) {
         const run = () => runUpdater(pipelineControls({ EDGAR_FALLBACK: 'true', MAX_RETRIES: '1', ...extra }));
@@ -1058,8 +1058,7 @@ describe('pipeline 2', () => {
           if (url.endsWith('company_tickers_mf.json')) return new Response(JSON.stringify(secTable), { headers: { 'content-type': 'application/json' } });
           return mocked(input as string, init);
         });
-        if ('SKIP_NORTHERNTRUST' in extra) await expect(run()).rejects.toThrow(/every examined fund failed/);
-        else await run();
+        await run();
         expect(mock.urls.some((url) => /nosix/i.test(url))).toBe(false);
         expect((await readIndex(root)).funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC']);
         expect(readdirSync(fileURLToPath(new URL('funds/', root))).sort()).toEqual(['AAA', 'BBB', 'CCC']);
@@ -1182,6 +1181,24 @@ describe('pipeline 3', () => {
       configureFetchForTests({ deadlineMs: 25 * 60_000 });
       await runUpdater(pipelineControls());
       expect(await readJson(root, 'update-state.json')).toMatchObject({ partial: false, cursor: null });
+    });
+  });
+
+  test('SKIP_NORTHERNTRUST keeps a published fund exactly as published and the run passes', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const dir = fileURLToPath(root);
+      const first = snapshot(dir);
+      // the published meta carries fields the index row lacks: they must survive the skip run
+      const meta = await readJson(root, 'funds/BBB/meta.json');
+      expect(meta.distributions.rows.length).toBeGreaterThan(0);
+      expect(meta.expenseRatio.net).not.toBeNull();
+      const mock = installMockFetch({ yahoo: true });
+      // Yahoo stays on and EDGAR off, as in the reported MUNA run: no fresh source, so nothing may change
+      await runUpdater(pipelineControls({ SKIP_NORTHERNTRUST: 'true', SKIP_YAHOO: 'false', TICKERS: 'BBB' }));
+      expect(snapshot(dir)).toEqual(first);
+      expect(mock.urls).toEqual([]);
     });
   });
 });
