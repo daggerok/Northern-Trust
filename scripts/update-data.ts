@@ -644,9 +644,10 @@ Controls (environment variables):
   SKIP_YAHOO           1/true to never call the Yahoo chart API, even when the
                        official Northern Trust history is unavailable for a fund
                        (previously published history rows are kept instead).
-  SKIP_NORTHERNTRUST   1/true to keep the previously published catalog values,
-                       holdings and official returns; only the fallbacks
-                       (SEC N-PORT-P holdings, Yahoo history) run.
+  SKIP_NORTHERNTRUST   1/true to skip every Northern Trust download: a fund with
+                       published data keeps it unchanged (reported kept), a
+                       fund without it gets only the fallbacks (SEC N-PORT-P
+                       holdings, Yahoo history).
 
 AUM, TER, yield and return filters are evaluated against the freshly
 downloaded catalog values (or the previously published catalog) before the
@@ -2676,7 +2677,7 @@ async function processFund(
   fund: CatalogFund,
   config: UpdaterConfig,
   previous: JsonRecord,
-): Promise<JsonRecord | null> {
+): Promise<JsonRecord | 'kept' | null> {
   const ticker = fund.ticker;
 
   // Filters run against fresh catalog values (or the previous catalog when
@@ -2700,6 +2701,10 @@ async function processFund(
 
   const fundDir = new URL(`funds/${ticker}/`, API_ROOT);
   const previousMeta = await readPreviousMeta(ticker);
+  // SKIP_NORTHERNTRUST: a fund with a published state keeps it as a whole (files and index row untouched). Rebuilding
+  // it without the Northern Trust downloads would mix the index row's subset (no net TER, no distribution rows, no
+  // inception) into meta.json; the SEC/Yahoo fallbacks are only for funds without published data.
+  if (config.skipNorthernTrust && previousMeta) return 'kept';
 
   const catalogCusip = fund.cusip || String((previous as JsonRecord).cusip ?? '');
 
@@ -3303,6 +3308,10 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
         // a catalog-only row (dataFile null) is no published data: the fund is processed like a new one
         const previousRow = previousIndex.get(item.fund.ticker);
         const row = await processFund(item.fund, config, previousRow && previousRow.dataFile ? previousRow : {});
+        if (row === 'kept') {
+          await output.result(item.fund.ticker, before, 'kept', 'SKIP_NORTHERNTRUST: published state kept');
+          continue;
+        }
         if (row) {
           results.push(row);
           passed += 1;
