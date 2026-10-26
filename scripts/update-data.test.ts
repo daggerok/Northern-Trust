@@ -57,6 +57,7 @@ import {
   parseNorthernTrustDistributionsCsv,
   parseNorthernTrustFacts,
   parseNorthernTrustHoldings,
+  parseUsListings,
   parseNorthernTrustPricing,
   parseRange,
   priceReturns,
@@ -469,6 +470,16 @@ describe('parsing 2', () => {
     expect(parseNorthernTrustHoldings(EQUITY_HOLDINGS_CSV, 'QLC')!.rows.map((row) => row.Ticker)).toEqual(['NVDA', 'JPM']);
     expect(holdingTickerFor({ Ticker: 'MSFT', ISIN: 'US5949181045', Country: 'United States' })).toBe('MSFT');
     expect(holdingTickerFor({ Ticker: 'BHP', ISIN: 'AU000000BHP4', Country: 'Australia' })).toBe('-');
+    // Q33: a U.S.-listed foreign issuer keeps its ticker when the Nasdaq Trader directories list it for the same company; the
+    // Toronto line of Shopify (CAD) and Telenor's local TEL (TE Connectivity in the U.S.) never get one
+    const foreign = [HOLDINGS_HEADER,
+      '10/23/2026,N6596X109,NL0009538784,B505PN7,NXP SEMICONDUCTORS NV COMMON STOCK USD 0.2,NXPI,239618.40,239618.40,.1747,1020,.000,,Information Technology,Netherlands',
+      '10/23/2026,82509L107,CA82509L1076,BX865C7,SHOPIFY INC COMMON STOCK,SHOP,1400.00,1000.00,.0100,10,.000,,Information Technology,Canada',
+      '10/23/2026,R21882106,NO0010063308,4732495,TELENOR ASA COMMON STOCK NOK 6,TEL,1000.00,1000.00,.0100,10,.000,,Communication Services,Norway',
+    ].join('\n');
+    const listings = parseUsListings(['Symbol|Security Name|Test Issue|ETF\nNXPI|NXP Semiconductors N.V. - Common Stock|N|N\nSHOP|Shopify Inc. - Class A Subordinate Voting Shares|N|N\nFile Creation Time: 1026202614:01|||', 'ACT Symbol|Security Name|Exchange|ETF|Test Issue\nTEL|TE Connectivity plc Ordinary Shares|N|N|N\nFile Creation Time: 1026202614:01||||']);
+    expect(parseNorthernTrustHoldings(foreign, 'TLTE', listings)!.rows.map((row) => row.Ticker)).toEqual(['NXPI', '-', '-']);
+    expect(parseNorthernTrustHoldings(foreign, 'TLTE')!.rows.map((row) => row.Ticker)).toEqual(['-', '-', '-']);
   });
 
   test('frequency decoding and download URLs', () => {
