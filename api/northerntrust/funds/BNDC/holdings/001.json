@@ -72,7 +72,7 @@
   },
   {
    "Name": "US LONG BOND(CBT) BOND 21/DEC/2026 USZ6 COMDTY",
-   "Ticker": "USZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "7.0299",
    "Market Value": "15122250",
@@ -83,7 +83,7 @@
   },
   {
    "Name": "US ULTRA BOND CBT BOND 21/DEC/2026 WNZ6 COMDTY",
-   "Ticker": "WNZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "4.3058",
    "Market Value": "9262343.75",
@@ -94,7 +94,7 @@
   },
   {
    "Name": "US 10YR ULTRA FUT BOND 21/DEC/2026 UXYZ6 COMDTY",
-   "Ticker": "UXYZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "3.9514",
    "Market Value": "8499906.25",
@@ -127,7 +127,7 @@
   },
   {
    "Name": "US 5YR NOTE (CBT) BOND 31/DEC/2026 FVZ6 COMDTY",
-   "Ticker": "FVZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "1.4575",
    "Market Value": "3135234.39",
@@ -138,7 +138,7 @@
   },
   {
    "Name": "US 10YR NOTE (CBT) BOND 21/DEC/2026 TYZ6 COMDTY",
-   "Ticker": "TYZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "1.4311",
    "Market Value": "3078531.25",
@@ -182,7 +182,7 @@
   },
   {
    "Name": "US 2YR NOTE (CBT) BOND 31/DEC/2026 TUZ6 COMDTY",
-   "Ticker": "TUZ6",
+   "Ticker": "-",
    "Identifier": "-",
    "Weight": "-3.4169",
    "Market Value": "-7350187.54",
