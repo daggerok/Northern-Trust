@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T03:33:37Z",
+ "generatedAt": "2026-10-26T01:19:02Z",
  "source": {
   "provider": "Northern Trust Asset Management (US ETFs)",
   "market": "us",
@@ -3808,8 +3808,8 @@
     "monthEnd": {
      "asOfDate": "Oct 23 2026",
      "priceReturnsAsOf": "Oct 23 2026",
-     "mo1": 2.07,
-     "mo1Text": "2.07%",
+     "mo1": 2.55,
+     "mo1Text": "2.55%",
      "qtd": 2.09,
      "qtdText": "2.09%",
      "ytd": null,
@@ -3888,8 +3888,8 @@
     "monthEnd": {
      "asOfDate": "Oct 23 2026",
      "priceReturnsAsOf": "Oct 23 2026",
-     "mo1": 2.52,
-     "mo1Text": "2.52%",
+     "mo1": 2.96,
+     "mo1Text": "2.96%",
      "qtd": 2.26,
      "qtdText": "2.26%",
      "ytd": null,
