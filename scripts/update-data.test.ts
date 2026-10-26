@@ -71,6 +71,7 @@ import {
   toIsoDate,
   totalToAnnualized,
   weightsSum,
+  weightsAsPercent,
   cleanHoldingTicker,
   lastCompletedQuarterEnd,
   CLOSED_FUNDS,
@@ -370,6 +371,9 @@ describe('parsing', () => {
     expect(young.monthEnd.ytd).toBeNull();
     expect(young.quarterEnd.asOfDate).toBeNull();
     expect(() => parseNorthernTrustFacts('', null, 'QLC')).toThrow(/full-data CSV is empty/);
+    // a 200 error page or a download without filled facts is a failed source, never an all-null fund
+    expect(() => parseNorthernTrustFacts('<html><body>Service unavailable, please try again</body></html>', ETFCHARTS, 'QLC')).toThrow(/no Fund Facts/);
+    expect(() => parseNorthernTrustFacts('Data as of 09/25/2026\nFund Facts\nCUSIP,""\nSector (%)\n"Information Technology","36.20"', ETFCHARTS, 'QLC')).toThrow(/no Fund Facts/);
   });
 
   test('holdings: equity columns, bond columns, canonical order, missing header', () => {
@@ -383,6 +387,13 @@ describe('parsing', () => {
     });
     expect(equity.rows[1].Name).toBe('JPMORGAN CHASE & CO COMMON STOCK USD 1');
     expect(weightsSum(equity.rows)).toBe(100);
+    // fractions near 1 become percent, percent sheets stay, a broken total is left for the guard to reject
+    const weights = (values: string[]) => weightsAsPercent(values.map((Weight) => ({ Name: 'X', Weight }))).map((row) => row.Weight);
+    expect(weights(['0.6', '0.400006'])).toEqual(['60', '40.0006']);
+    expect(weights(['0.55', '0.4'])).toEqual(['55', '40']);
+    expect(weights(['60', '40.0006'])).toEqual(['60', '40.0006']);
+    expect(weights(['0.004', '0.003'])).toEqual(['0.004', '0.003']);
+    expect(holdingsGuard(['Name', 'Weight'], weightsAsPercent([{ Name: 'X', Weight: '0.004' }, { Name: 'Y', Weight: '0.003' }]), 2)).toContain('outside 50..150');
     const bonds = parseNorthernTrustHoldings(BOND_HOLDINGS_CSV, 'SKOR')!;
     expect(bonds.headers).toEqual(BOND_SHEET_HEADERS);
     expect(bonds.rows[0]).toMatchObject({ Name: 'CASH', Ticker: '-', Identifier: 'USD_CCASH' });
@@ -878,6 +889,12 @@ describe('pipeline', () => {
         await expect(runUpdater(pipelineControls({ TICKERS: 'CCC', MAX_RETRIES: '1' }))).rejects.toThrow(/every examined fund failed/);
         expect(await readText(root, 'funds/CCC/meta.json')).toBe(ccc);
       }
+      // a 200 HTML error page instead of the full-data CSV keeps the fund too (no null yields next to fresh holdings)
+      installMockFetch();
+      const mocked = globalThis.fetch;
+      globalThis.fetch = asFetch(async (input: unknown, init?: RequestInit) => (String(input).endsWith('/ccc/ccc-all.csv') ? new Response('<html><body>Error</body></html>') : mocked(input as string, init)));
+      await expect(runUpdater(pipelineControls({ TICKERS: 'CCC' }))).rejects.toThrow(/every examined fund failed/);
+      expect(await readText(root, 'funds/CCC/meta.json')).toBe(ccc);
       installMockFetch({ failDistributions: { CCC: 404 } });
       await runUpdater(pipelineControls({ TICKERS: 'CCC' }));
       expect((await readJson(root, 'funds/CCC/meta.json')).ticker).toBe('CCC');
@@ -1019,6 +1036,33 @@ describe('pipeline 2', () => {
         expect(snapshot(dir)).toEqual(closed);
       } finally {
         CLOSED_FUNDS.splice(CLOSED_FUNDS.indexOf(entry), 1);
+      }
+    });
+  });
+
+  test('without the Northern Trust catalog the run covers only the published feed, never the mutual funds of the SEC registrants', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      // the SEC fund ticker table lists AAA and a Northern Funds mutual fund class of the same registrant
+      const secTable = { fields: ['cik', 'seriesId', 'classId', 'symbol'], data: [[916620, 'S000001', 'C000001', 'AAA'], [916620, 'S000002', 'C000002', 'NOSIX']] };
+      // a failed catalog download refreshes the published funds; SKIP_NORTHERNTRUST has no fresh source in this mock and fails the run
+      const variants: Array<Record<string, string>> = [{}, { SKIP_NORTHERNTRUST: 'true' }];
+      for (const extra of variants) {
+        const run = () => runUpdater(pipelineControls({ EDGAR_FALLBACK: 'true', MAX_RETRIES: '1', ...extra }));
+        const mock = installMockFetch();
+        const mocked = globalThis.fetch;
+        globalThis.fetch = asFetch(async (input: unknown, init?: RequestInit) => {
+          const url = String(input);
+          if (/\/individual\/funds$/.test(url)) return new Response('down', { status: 503 });
+          if (url.endsWith('company_tickers_mf.json')) return new Response(JSON.stringify(secTable), { headers: { 'content-type': 'application/json' } });
+          return mocked(input as string, init);
+        });
+        if ('SKIP_NORTHERNTRUST' in extra) await expect(run()).rejects.toThrow(/every examined fund failed/);
+        else await run();
+        expect(mock.urls.some((url) => /nosix/i.test(url))).toBe(false);
+        expect((await readIndex(root)).funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC']);
+        expect(readdirSync(fileURLToPath(new URL('funds/', root))).sort()).toEqual(['AAA', 'BBB', 'CCC']);
       }
     });
   });

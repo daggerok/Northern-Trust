@@ -1269,6 +1269,18 @@ export function weightsSum(rows: JsonRecord[]): number {
   return round(rows.reduce((sum, row) => sum + (numberOrNull(row.Weight) || 0), 0), 4);
 }
 
+/**
+ * Holdings weights in percent. Only a sheet whose weights add up to about 1 (0.5..1.5) carries fractions and is
+ * scaled by 100 once (0.6 + 0.400006 -> 60 + 40.0006); a percent sheet (about 100) stays as is, and any other total
+ * stays untouched so the holdings guard rejects it and the fund keeps its published state (a broken percent file
+ * summing to 0.007 is never turned into 0.7).
+ */
+export function weightsAsPercent(rows: JsonRecord[]): JsonRecord[] {
+  const sum = weightsSum(rows);
+  if (!(sum > 0.5 && sum < 1.5)) return rows;
+  return rows.map((row) => ({ ...row, Weight: String(round((numberOrNull(row.Weight) || 0) * 100, 6)) }));
+}
+
 export type NorthernTrustFacts = ProductData & {
   quarterEnd: OfficialReturns;
   quarterEndMarket: OfficialReturns;
@@ -1361,6 +1373,9 @@ export function parseNorthernTrustFacts(allCsv: string, etfCharts: JsonRecord | 
     }
   }
   flush();
+  // A 200 error page (HTML) or a download without a filled Fund Facts or Pricing section is a failed source, never
+  // an all-null fund: the caller keeps the previous complete state instead of publishing nulls next to fresh holdings.
+  if (!Array.from(facts.values()).some((value) => value !== '')) throw new Error(`${ticker}: full-data CSV has no Fund Facts or Pricing values`);
   const get = (key: string): string => facts.get(key) ?? '';
   const prefixed = (prefix: string): string => {
     for (const [key, value] of facts) if (key.startsWith(prefix)) return value;
@@ -2731,13 +2746,8 @@ async function processFund(
   let holdings: ParsedHoldings | null = product?.holdings ?? null;
   let holdingsSource = 'etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)';
   let holdingsEdgar: ParsedNport | null = null;
-  if (holdings) {
-    const sum = weightsSum(holdings.rows);
-    if (sum > 0 && sum < 1) {
-      // Weights arrived as fractions instead of percent: normalize once.
-      holdings.rows = holdings.rows.map((row) => ({ ...row, Weight: String(round((numberOrNull(row.Weight) || 0) * 100, 6)) }));
-    }
-  }
+  // Weights that arrived as fractions instead of percent are normalized once.
+  if (holdings) holdings.rows = weightsAsPercent(holdings.rows);
 
   if (!holdings && config.edgarFallback) {
     try {
@@ -3228,29 +3238,9 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
     }
   }
 
-  // When etfs.ntam.northerntrust.com is unreachable the SEC registrant tables
-  // still list every share class of FlexShares Trust and Northern Funds, so a
-  // no-argument full pass keeps covering the complete product line instead of
-  // only the published feed.
-  if (catalogSource !== 'etfs.ntam.northerntrust.com ETF funds-list JSON' && config.edgarFallback) {
-    const table = await loadFundTickerMap(config);
-    const registrantCiks = new Set<string>();
-    for (const ticker of catalog.keys()) {
-      const ref = table.get(ticker);
-      if (ref) registrantCiks.add(ref.cik);
-    }
-    if (!registrantCiks.size) registrantCiks.add(FLEXSHARES_TRUST_CIK.replace(/^0+/, '')).add(NORTHERN_FUNDS_CIK.replace(/^0+/, ''));
-    let discovered = 0;
-    for (const [ticker, ref] of table) {
-      if (!registrantCiks.has(ref.cik) || catalog.has(ticker)) continue;
-      catalog.set(ticker, { ...catalogFundFromIndex(ticker, {}), source: 'seed' });
-      discovered += 1;
-    }
-    if (discovered) {
-      console.log(`[ catalog  ] +${discovered} funds discovered through the SEC registrant tables`);
-      catalogSource = `${catalogSource} + SEC registrant tables`;
-    }
-  }
+  // Without the Northern Trust catalog (a failed download or SKIP_NORTHERNTRUST) the run covers only the published
+  // feed: the SEC registrant tables also list every Northern Funds mutual fund class, which must never enter the ETF
+  // feed. New ETFs arrive with the next good catalog.
 
   const universe = [...catalog.values()].sort((a, b) => (a.ticker < b.ticker ? -1 : a.ticker > b.ticker ? 1 : 0));
   if (!universe.length) {
