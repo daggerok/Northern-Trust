@@ -73,6 +73,8 @@ import {
   weightsSum,
   cleanHoldingTicker,
   lastCompletedQuarterEnd,
+  CLOSED_FUNDS,
+  closedFund,
 } from './update-data';
 
 // ---------------------------------------------------------------------------
@@ -419,7 +421,9 @@ describe('parsing', () => {
     expect(dividends[1].amount).toBe(0.224696);
     expect(() => parseNorthernTrustDistributionsCsv('Fund Name,Price\nX,1', 'QLC')).toThrow(/header row not found/);
   });
+});
 
+describe('parsing 2', () => {
   test('csv and number helpers: quotes, CRLF, BOM, placeholders become null, never 0', () => {
     expect(parseCsv('﻿a,"b,c","d ""e"""\r\n1,2,3\r\n\r\n')).toEqual([['a', 'b,c', 'd "e"'], ['1', '2', '3']]);
     for (const placeholder of ['--', '-', 'N/A', 'NA', '', '  ', null, undefined]) expect(numberOrNull(placeholder)).toBeNull();
@@ -910,6 +914,115 @@ describe('pipeline', () => {
     });
   });
 
+  test('a new fund whose holdings fail the guard is reported failed and gets a catalog-only row that the next run does not treat as published', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const dir = fileURLToPath(root);
+      const summary = join(dir, 'step-summary.md');
+      const feedFiles = () => Object.fromEntries(Object.entries(snapshot(dir)).filter(([name]) => name !== summary));
+      // DDD is new in the catalog (young, no pricing rows) and its download keeps the header but every weight cell turns into "--"
+      const broken = EQUITY_HOLDINGS_CSV.replace(/,(98\.1140|1\.8860),/g, ',--,');
+      const withNewFund = (holdings: string) => {
+        installMockFetch({ funds: [...MOCK_FUNDS, { ticker: 'DDD', young: true }], emptyPricing: ['DDD'] });
+        const mocked = globalThis.fetch;
+        globalThis.fetch = asFetch(async (input: unknown, init?: RequestInit) => (String(input).endsWith('/ddd/ddd-holdings.csv') ? new Response(holdings) : mocked(input as string, init)));
+      };
+      const lines: string[] = [];
+      console.log = (...args: unknown[]) => { lines.push(args.join(' ')); };
+      process.env.GITHUB_STEP_SUMMARY = summary;
+      try {
+        withNewFund(broken);
+        await runUpdater(pipelineControls());
+        expect(lines.some((line) => /\] DDD\s+failed\b/.test(line))).toBe(true);
+        expect(await Bun.file(summary).text()).toContain('- failed: 1\n');
+        const index = await readIndex(root);
+        expect(index.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD']);
+        const row = index.funds.find((fund) => fund.ticker === 'DDD')!;
+        expect(row).toMatchObject({ dataFile: null, holdings: 0, history: 0, navValue: null, aumValue: null });
+        expect(row.metrics).toEqual(emptyMetrics());
+        expect(readdirSync(join(dir, 'funds')).sort()).toEqual(['AAA', 'BBB', 'CCC']);
+        // the next run reads the catalog-only row as no published data: still failed, same row, zero diff
+        const first = feedFiles();
+        withNewFund(broken);
+        await runUpdater(pipelineControls());
+        expect(feedFiles()).toEqual(first);
+        // a one-ticker run of only that fund fails the run (exit code 1 in the CLI) and keeps the row
+        withNewFund(broken);
+        await expect(runUpdater(pipelineControls({ TICKERS: 'DDD' }))).rejects.toThrow(/every examined fund failed/);
+        expect(feedFiles()).toEqual(first);
+        // good holdings publish the fund in full
+        withNewFund(EQUITY_HOLDINGS_CSV);
+        await runUpdater(pipelineControls({ TICKERS: 'DDD' }));
+        const published = (await readIndex(root)).funds.find((fund) => fund.ticker === 'DDD')!;
+        expect(published.dataFile).toBe('./funds/DDD/meta.json');
+        expect(published.holdings).toBeGreaterThan(0);
+        // nothing of the catalog-only row is carried over as published data (DDD is young: no returns at all)
+        expect((await readJson(root, 'funds/DDD/meta.json')).returns).toBeNull();
+      } finally {
+        delete process.env.GITHUB_STEP_SUMMARY;
+      }
+    });
+  });
+});
+
+describe('pipeline 2', () => {
+  test('a new fund that no source answers is reported failed with a catalog-only row and no files', async () => {
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const lines: string[] = [];
+      console.log = (...args: unknown[]) => { lines.push(args.join(' ')); };
+      installMockFetch({ funds: [...MOCK_FUNDS, { ticker: 'DDD' }] });
+      const mocked = globalThis.fetch;
+      globalThis.fetch = asFetch(async (input: unknown, init?: RequestInit) => (String(input).includes('/ddd/') ? new Response('gone', { status: 404 }) : mocked(input as string, init)));
+      await runUpdater(pipelineControls());
+      expect(lines.some((line) => /\] DDD\s+failed\b/.test(line))).toBe(true);
+      const row = (await readIndex(root)).funds.find((fund) => fund.ticker === 'DDD')!;
+      expect(row).toMatchObject({ dataFile: null, holdings: 0, history: 0 });
+      expect(row.metrics).toEqual(emptyMetrics());
+      expect(readdirSync(fileURLToPath(new URL('funds/', root))).sort()).toEqual(['AAA', 'BBB', 'CCC']);
+    });
+  });
+
+  test('a closed fund is never fetched or reported failed: its files stay as published, its index row says closed, a rerun writes nothing', async () => {
+    const entry = { ticker: 'BBB', closed: '2026-10-01', source: 'https://www.sec.gov/Archives/edgar/data/1/notice.htm' };
+    expect(() => closedFund([{ ...entry, closed: 'soon' }], 'BBB')).toThrow('CLOSED_FUNDS');
+    expect(closedFund([entry], 'bbb')).toEqual(entry);
+    installMockFetch();
+    await withTempFeed(async (root) => {
+      await runUpdater(pipelineControls());
+      const dir = fileURLToPath(root);
+      const first = snapshot(dir);
+      const before = (await readIndex(root)).funds.find((fund) => fund.ticker === 'BBB')!;
+      // the BBB holdings would now fail the guard
+      const broken = EQUITY_HOLDINGS_CSV.replace(/,(98\.1140|1\.8860),/g, ',--,');
+      const mock = installMockFetch();
+      const mocked = globalThis.fetch;
+      globalThis.fetch = asFetch(async (input: unknown, init?: RequestInit) => (String(input).endsWith('/bbb/bbb-holdings.csv') ? new Response(broken) : mocked(input as string, init)));
+      CLOSED_FUNDS.push(entry);
+      try {
+        await runUpdater(pipelineControls({ TICKERS: 'BBB' }));
+        expect(mock.urls.filter((url) => /\/bbb\//.test(url))).toEqual([]);
+        expect(process.exitCode).not.toBe(1);
+        const closed = snapshot(dir);
+        for (const path of Object.keys(first)) if (!path.endsWith('index.json')) expect([path, closed[path]]).toEqual([path, first[path]]);
+        const rows = (await readIndex(root)).funds;
+        expect(rows.map((row) => row.ticker)).toEqual(['AAA', 'BBB', 'CCC']);
+        expect(rows.find((row) => row.ticker === 'BBB')).toEqual({ ...before, status: 'closed', closedDate: '2026-10-01', closedSource: entry.source });
+        expect(rows.filter((row) => row.status === 'closed')).toHaveLength(1);
+        // a full rerun writes nothing, also when the live catalog no longer lists the closed fund
+        await runUpdater(pipelineControls());
+        expect(snapshot(dir)).toEqual(closed);
+        installMockFetch({ funds: [{ ticker: 'AAA' }, { ticker: 'CCC' }] });
+        await runUpdater(pipelineControls());
+        expect(snapshot(dir)).toEqual(closed);
+      } finally {
+        CLOSED_FUNDS.splice(CLOSED_FUNDS.indexOf(entry), 1);
+      }
+    });
+  });
+
   test('an official NAV history is never replaced by the Yahoo schema', async () => {
     installMockFetch();
     await withTempFeed(async (root) => {
@@ -943,7 +1056,9 @@ describe('pipeline', () => {
       expect((await readJson(root, 'funds/AAA/history/001.json')).rows.map((row: Record<string, string>) => row['Adj Close'])).toEqual(['49.9', '50.97']);
     });
   });
+});
 
+describe('pipeline 3', () => {
   test('a lost index row is rebuilt from meta.json; a row without meta has dataFile null and full metrics', async () => {
     installMockFetch();
     await withTempFeed(async (root) => {
