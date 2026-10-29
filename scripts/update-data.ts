@@ -132,7 +132,7 @@ function outputFundLine(index: number, total: number, ticker: string, status: st
     field('sec', outputPercent(data.secYield ?? data.yields?.secYield ?? metrics.secYield)),
     field('wp', data.workplaceRaw),
   ].filter(part => part !== '').join(' ');
-  return `[ ${String(index).padStart(width)}/${String(total).padEnd(width)}  ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
+  return `[ ${`${String(index).padStart(width)}/${total}`.padEnd(8)} ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
 }
 function outputCreateReporter(root: URL | string, total: number) {
   let completed = 0;
@@ -2857,7 +2857,7 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
 
   if (!config.skipNorthernTrust) {
     try {
-      const page = await fetchText(config.catalogUrl, '[catalog ] funds list', northernTrustHeaders(), config);
+      const page = await fetchText(config.catalogUrl, '[ catalog  ] funds list', northernTrustHeaders(), config);
       for (const fund of parseNorthernTrustCatalog(page)) catalog.set(fund.ticker, fund);
       if (config.storeRawDownloads) {
         const rawDir = new URL('raw/', API_ROOT);
@@ -2891,7 +2891,7 @@ export async function runUpdater(config: UpdaterConfig): Promise<void> {
   const universe = [...catalog.values()].sort((a, b) => (a.ticker < b.ticker ? -1 : a.ticker > b.ticker ? 1 : 0));
   if (!universe.length) {
     console.log(
-      '[done    ] nothing to do: etfs.ntam.northerntrust.com is unreachable and the published ' +
+      '[ done     ] nothing to do: etfs.ntam.northerntrust.com is unreachable and the published ' +
         'api/northerntrust/index.json is empty or missing — run this where etfs.ntam.northerntrust.com resolves, e.g. ' +
         'the "Update Northern Trust ETF data" GitHub Actions workflow',
     );
