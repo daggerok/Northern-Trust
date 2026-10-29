@@ -2,7 +2,7 @@
  "ticker": "GQRE",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 3260,
+ "totalRows": 3263,
  "headers": [
   "Date",
   "NAV",

@@ -2,7 +2,7 @@
  "ticker": "MUNG",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 42,
+ "totalRows": 45,
  "headers": [
   "Date",
   "NAV",
@@ -261,6 +261,24 @@
    "NAV": "98.66",
    "Market Price": "98.68",
    "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 26 2026",
+   "NAV": "99.02",
+   "Market Price": "99",
+   "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Oct 27 2026",
+   "NAV": "99.07",
+   "Market Price": "99.04",
+   "Premium/Discount": "-0.03"
+  },
+  {
+   "Date": "Oct 28 2026",
+   "NAV": "99.03",
+   "Market Price": "98.99",
+   "Premium/Discount": "-0.04"
   }
  ]
 }

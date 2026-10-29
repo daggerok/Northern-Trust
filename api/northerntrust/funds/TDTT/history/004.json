@@ -2,7 +2,7 @@
  "ticker": "TDTT",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3793,
+ "totalRows": 3796,
  "headers": [
   "Date",
   "NAV",
@@ -4767,6 +4767,24 @@
    "NAV": "23.51",
    "Market Price": "23.53",
    "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 26 2026",
+   "NAV": "23.51",
+   "Market Price": "23.52",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 27 2026",
+   "NAV": "23.5",
+   "Market Price": "23.51",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 28 2026",
+   "NAV": "23.51",
+   "Market Price": "23.55",
+   "Premium/Discount": "0.04"
   }
  ]
 }

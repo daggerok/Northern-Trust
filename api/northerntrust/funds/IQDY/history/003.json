@@ -2,7 +2,7 @@
  "ticker": "IQDY",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 3403,
+ "totalRows": 3406,
  "headers": [
   "Date",
   "NAV",

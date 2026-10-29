@@ -2,7 +2,7 @@
  "ticker": "MUNH",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 42,
+ "totalRows": 45,
  "headers": [
   "Date",
   "NAV",
@@ -261,6 +261,24 @@
    "NAV": "97.72",
    "Market Price": "97.79",
    "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Oct 26 2026",
+   "NAV": "98.06",
+   "Market Price": "98.08",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 27 2026",
+   "NAV": "98.11",
+   "Market Price": "98.13",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 28 2026",
+   "NAV": "98.06",
+   "Market Price": "98.08",
+   "Premium/Discount": "0.01"
   }
  ]
 }
