@@ -82,6 +82,11 @@ import {
 // ---------------------------------------------------------------------------
 
 const realFetch = globalThis.fetch;
+// the seven 52-week keys withRange52w puts into every index row in front of returnsBasis and performanceAsOf (range-52w block)
+const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
+const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, key] : [key]));
+const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key)));
+const emptyIndexMetrics = (): Record<string, unknown> => ({ ...emptyMetrics(), ...Object.fromEntries(RANGE_KEYS.map((key) => [key, null])) });
 // test doubles implement only the call signature, not fetch's extra members (preconnect)
 const asFetch = (stub: unknown) => stub as typeof fetch;
 const realLog = console.log;
@@ -831,7 +836,7 @@ describe('metrics 2', () => {
       const { funds } = await readIndex(root);
       expect(funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC']);
       for (const fund of funds) {
-        expect(Object.keys(fund.metrics)).toEqual(Object.keys(emptyMetrics()));
+        expect(Object.keys(fund.metrics)).toEqual(withRangeKeys(Object.keys(emptyMetrics())));
         expect(Object.values(fund.metrics).includes(0)).toBe(false);
         expect(fund.metrics.returnsBasis).toBeTruthy();
       }
@@ -892,6 +897,7 @@ describe('pipeline', () => {
       const index = await readIndex(root);
       expect(index.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC']);
       expect(index.counts.funds).toBe(3);
+      for (const fund of index.funds) expect(Object.keys(fund.metrics)).toEqual(expect.arrayContaining(RANGE_KEYS));
       expect(mock.urls.some((url) => url.includes('/ccc/'))).toBe(true);
       expect(mock.urls.some((url) => url.includes('/aaa/'))).toBe(false);
       expect(readdirSync(fileURLToPath(new URL('funds/', root))).sort()).toEqual(['AAA', 'BBB', 'CCC']);
@@ -996,7 +1002,7 @@ describe('pipeline', () => {
         expect(index.funds.map((fund) => fund.ticker)).toEqual(['AAA', 'BBB', 'CCC', 'DDD']);
         const row = index.funds.find((fund) => fund.ticker === 'DDD')!;
         expect(row).toMatchObject({ dataFile: null, holdings: 0, history: 0, navValue: null, aumValue: null });
-        expect(row.metrics).toEqual(emptyMetrics());
+        expect(row.metrics).toEqual(emptyIndexMetrics());
         expect(readdirSync(join(dir, 'funds')).sort()).toEqual(['AAA', 'BBB', 'CCC']);
         // the next run reads the catalog-only row as no published data: still failed, same row, zero diff
         const first = feedFiles();
@@ -1036,7 +1042,7 @@ describe('pipeline 2', () => {
       expect(lines.some((line) => /\] DDD\s+failed\b/.test(line))).toBe(true);
       const row = (await readIndex(root)).funds.find((fund) => fund.ticker === 'DDD')!;
       expect(row).toMatchObject({ dataFile: null, holdings: 0, history: 0 });
-      expect(row.metrics).toEqual(emptyMetrics());
+      expect(row.metrics).toEqual(emptyIndexMetrics());
       expect(readdirSync(fileURLToPath(new URL('funds/', root))).sort()).toEqual(['AAA', 'BBB', 'CCC']);
     });
   });
@@ -1163,13 +1169,13 @@ describe('pipeline 3', () => {
       expect(rebuilt.holdings).toBeGreaterThan(0);
       const ghost = after.funds.find((fund) => fund.ticker === 'ZZZ')!;
       expect(ghost.dataFile).toBeNull();
-      expect(Object.keys(ghost.metrics)).toEqual(Object.keys(emptyMetrics()));
+      expect(Object.keys(ghost.metrics)).toEqual(withRangeKeys(Object.keys(emptyMetrics())));
       expect(ghost.metrics.returnsBasis).toBeTruthy();
       expect(ghost.metrics.dividendYieldBasis).toBeNull();
-      // the offline rebuild equals the row the updater wrote
+      // the offline rebuild equals the row the updater wrote (the 52-week keys are added later, from the history pages)
       const written = after.funds[0];
       const again = indexRowFromMeta(await readJson(root, 'funds/AAA/meta.json'));
-      expect(again.metrics).toEqual(written.metrics);
+      expect(again.metrics).toEqual(rangeless(written.metrics));
       for (const key of ['ticker', 'name', 'cusip', 'ter', 'terValue', 'terGrossValue', 'navValue', 'aumValue', 'holdings', 'history', 'dataFile', 'asOfDate', 'inceptionDate']) {
         expect(again[key]).toEqual(written[key]);
       }
