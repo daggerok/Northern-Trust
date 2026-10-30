@@ -1252,6 +1252,7 @@ describe('pipeline 3', () => {
 describe('pipeline 4', () => {
   test('a HISTORY_RANGE run after a full Yahoo run keeps the older history and writes nothing (Q25)', async () => {
     const start = Date.UTC(2024, 0, 2) / 1000;
+    let shape: "full" | "short" | "lone" = "full";
     const yahoo = (): void => {
       installMockFetch({ funds: [{ ticker: 'AAA' }], emptyPricing: ['AAA'] });
       const mocked = globalThis.fetch;
@@ -1260,7 +1261,9 @@ describe('pipeline 4', () => {
         if (!url.hostname.includes('yahoo')) return mocked(input as string, init);
         const all = Array.from({ length: 500 }, (_, day) => start + day * 86_400);
         // a window answers only its last days
-        const timestamp = Number(url.searchParams.get('period1')) > 0 ? all.slice(-200) : all;
+        let timestamp = Number(url.searchParams.get('period1')) > 0 ? all.slice(-200) : all;
+        if (shape === 'short') timestamp = all.slice(-2);
+        if (shape === 'lone') timestamp = [start + 600 * 86_400];
         const close = timestamp.map((epoch) => 50 + ((epoch - start) / 86_400) * 0.01);
         return Response.json({ chart: { result: [{ meta: { exchangeName: 'PCX', regularMarketPrice: 55 }, timestamp, indicators: { quote: [{ close, volume: close.map(() => 100) }], adjclose: [{ adjclose: close }] } }] } });
       });
@@ -1274,6 +1277,16 @@ describe('pipeline 4', () => {
       yahoo();
       await runUpdater(pipelineControls({ SKIP_YAHOO: 'false', HISTORY_RANGE: '1y' }));
       expect(snapshot(dir)).toEqual(first);
+      // a truncated `max` answer (Yahoo served 2 bars for some funds on 2026-10-29) never shrinks the history either:
+      // one that joins the published days keeps them all, one that does not join keeps the fund as published
+      shape = 'short';
+      yahoo();
+      await runUpdater(pipelineControls({ SKIP_YAHOO: 'false' }));
+      expect(snapshot(dir)).toEqual(first);
+      shape = 'lone';
+      yahoo();
+      await runUpdater(pipelineControls({ SKIP_YAHOO: 'false' }));
+      expect((await readJson(root, 'funds/AAA/meta.json')).history.totalRows).toBe(500);
     });
   });
 
