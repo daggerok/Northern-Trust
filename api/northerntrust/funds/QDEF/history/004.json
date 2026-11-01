@@ -2,7 +2,7 @@
  "ticker": "QDEF",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3485,
+ "totalRows": 3487,
  "headers": [
   "Date",
   "NAV",
@@ -2919,6 +2919,18 @@
    "NAV": "91.12",
    "Market Price": "91.1",
    "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Oct 29 2026",
+   "NAV": "91.53",
+   "Market Price": "91.54",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Oct 30 2026",
+   "NAV": "90.71",
+   "Market Price": "90.66",
+   "Premium/Discount": "-0.05"
   }
  ]
 }

@@ -31,23 +31,23 @@
   "net": 0.09
  },
  "nav": {
-  "display": "$50.94",
-  "value": 50.94,
-  "asOfDate": "Oct 28 2026"
+  "display": "$51.07",
+  "value": 51.07,
+  "asOfDate": "Oct 30 2026"
  },
  "marketPrice": {
-  "display": "$50.97",
-  "value": 50.97,
-  "asOfDate": "Oct 28 2026"
+  "display": "$51.10",
+  "value": 51.1,
+  "asOfDate": "Oct 30 2026"
  },
  "premiumDiscount": {
-  "display": "0.05%",
-  "value": 0.0514
+  "display": "0.06%",
+  "value": 0.0562
  },
  "aum": {
-  "display": "$7.64 M",
-  "value": 7641564.87,
-  "asOfDate": "Oct 28 2026",
+  "display": "$7.66 M",
+  "value": 7660701.96,
+  "asOfDate": "Oct 30 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
@@ -64,12 +64,12 @@
  "returns": {
   "derivedFrom": "derived from the official daily NAV history with published distributions reinvested (NAV total return), not official published returns",
   "monthEnd": {
-   "asOfDate": "Oct 28 2026",
-   "priceReturnsAsOf": "Oct 28 2026",
-   "mo1": 3.94,
-   "mo1Text": "3.94%",
-   "qtd": 2.58,
-   "qtdText": "2.58%",
+   "asOfDate": "Oct 30 2026",
+   "priceReturnsAsOf": "Oct 30 2026",
+   "mo1": 2.84,
+   "mo1Text": "2.84%",
+   "qtd": 2.84,
+   "qtdText": "2.84%",
    "ytd": null,
    "ytdText": "—",
    "yr1": null,
@@ -105,12 +105,13 @@
  },
  "holdings": {
   "pages": [
-   "holdings/001.json"
+   "holdings/001.json",
+   "holdings/002.json"
   ],
   "pageSize": 250,
-  "totalRows": 197,
-  "asOfDate": "2026-10-28",
-  "asOf": "Oct 28 2026",
+  "totalRows": 311,
+  "asOfDate": "2026-10-30",
+  "asOf": "Oct 30 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -118,8 +119,8 @@
    "history/001.json"
   ],
   "pageSize": 1000,
-  "totalRows": 26,
-  "asOf": "Oct 28 2026",
+  "totalRows": 28,
+  "asOf": "Oct 30 2026",
   "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
  },
  "metrics": {

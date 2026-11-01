@@ -2,7 +2,7 @@
  "ticker": "IQDY",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3406,
+ "totalRows": 3408,
  "headers": [
   "Date",
   "NAV",
@@ -2445,6 +2445,18 @@
    "NAV": "40.85",
    "Market Price": "40.92",
    "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Oct 29 2026",
+   "NAV": "40.84",
+   "Market Price": "40.75",
+   "Premium/Discount": "-0.09"
+  },
+  {
+   "Date": "Oct 30 2026",
+   "NAV": "40.39",
+   "Market Price": "40.08",
+   "Premium/Discount": "-0.31"
   }
  ]
 }

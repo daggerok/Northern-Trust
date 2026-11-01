@@ -2,7 +2,7 @@
  "ticker": "TLTE",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3540,
+ "totalRows": 3542,
  "headers": [
   "Date",
   "NAV",
@@ -3249,6 +3249,18 @@
    "NAV": "72.09",
    "Market Price": "72.58",
    "Premium/Discount": "0.49"
+  },
+  {
+   "Date": "Oct 29 2026",
+   "NAV": "71.5",
+   "Market Price": "71.75",
+   "Premium/Discount": "0.26"
+  },
+  {
+   "Date": "Oct 30 2026",
+   "NAV": "70.4",
+   "Market Price": "69.97",
+   "Premium/Discount": "-0.43"
   }
  ]
 }

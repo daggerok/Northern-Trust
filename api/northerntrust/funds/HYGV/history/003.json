@@ -2,7 +2,7 @@
  "ticker": "HYGV",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2082,
+ "totalRows": 2084,
  "headers": [
   "Date",
   "NAV",
@@ -501,6 +501,18 @@
    "NAV": "38.73",
    "Market Price": "38.77",
    "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 29 2026",
+   "NAV": "38.64",
+   "Market Price": "38.69",
+   "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Oct 30 2026",
+   "NAV": "38.51",
+   "Market Price": "38.6",
+   "Premium/Discount": "0.09"
   }
  ]
 }

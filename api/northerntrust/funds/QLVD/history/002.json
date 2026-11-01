@@ -2,7 +2,7 @@
  "ticker": "QLVD",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1833,
+ "totalRows": 1835,
  "headers": [
   "Date",
   "NAV",
@@ -5007,6 +5007,18 @@
    "NAV": "34.34",
    "Market Price": "34.39",
    "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Oct 29 2026",
+   "NAV": "34.63",
+   "Market Price": "34.62",
+   "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Oct 30 2026",
+   "NAV": "34.85",
+   "Market Price": "34.71",
+   "Premium/Discount": "-0.14"
   }
  ]
 }

@@ -1,0 +1,261 @@
+{
+ "ticker": "TAXI",
+ "page": 20,
+ "pageSize": 250,
+ "totalRows": 4772,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "LOWER COLO RIV AUTH TEX REV BDS 2026A 01/JUN/2026",
+   "Ticker": "-",
+   "Identifier": "54811GT67",
+   "Weight": "0.0015",
+   "Market Value": "5059.16",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "May 15 2027"
+  },
+  {
+   "Name": "LOWER COLO RIV AUTH TEX TRANSMISSION CONTRACT REV",
+   "Ticker": "-",
+   "Identifier": "54811BWF4",
+   "Weight": "0.0015",
+   "Market Value": "5059.16",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "May 15 2027"
+  },
+  {
+   "Name": "NEW JERSEY ST TRANSN TR FD AUTH PROG BDS 2023AA",
+   "Ticker": "-",
+   "Identifier": "64613CDA3",
+   "Weight": "0.0015",
+   "Market Value": "5058.71",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Jun 15 2027"
+  },
+  {
+   "Name": "OHIO ST HIGHER ED GO BDS 2025 A 24/FEB/2025",
+   "Ticker": "-",
+   "Identifier": "677523JA1",
+   "Weight": "0.0015",
+   "Market Value": "5057.2",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "May 01 2027"
+  },
+  {
+   "Name": "HAWAII ST GO BDS FK 24/MAY/2017 01/MAY/2028 5%",
+   "Ticker": "-",
+   "Identifier": "419792RH1",
+   "Weight": "0.0015",
+   "Market Value": "5056.65",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "May 01 2028"
+  },
+  {
+   "Name": "LOUISIANA ST GO REF BDS 2025-A 25/MAR/2025",
+   "Ticker": "-",
+   "Identifier": "5464154F4",
+   "Weight": "0.0015",
+   "Market Value": "5055.96",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "May 01 2027"
+  },
+  {
+   "Name": "CALIFORNIA ST UNIV REV SYSTEMWIDE REVENUE BONDS",
+   "Ticker": "-",
+   "Identifier": "13077DAM4",
+   "Weight": "0.0015",
+   "Market Value": "5054.61",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Nov 01 2028"
+  },
+  {
+   "Name": "MT DIABLO CALIF UNI SCH DIST GO REF BDS 2022 B",
+   "Ticker": "-",
+   "Identifier": "621196M84",
+   "Weight": "0.0015",
+   "Market Value": "5054.01",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Aug 01 2027"
+  },
+  {
+   "Name": "CONNECTICUT ST GO BDS A 19/APR/2017 15/APR/2032 5%",
+   "Ticker": "-",
+   "Identifier": "20772J6S6",
+   "Weight": "0.0015",
+   "Market Value": "5049.54",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Apr 15 2032"
+  },
+  {
+   "Name": "WASHINGTON ST MVFT GO REF BDS R-2022D 11/MAY/2022",
+   "Ticker": "-",
+   "Identifier": "93974EWN2",
+   "Weight": "0.0015",
+   "Market Value": "5045.25",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Jul 01 2027"
+  },
+  {
+   "Name": "DELAWARE VALLEY PA REGL FIN AUTH LOC GOVT REV BDS",
+   "Ticker": "-",
+   "Identifier": "246579LV6",
+   "Weight": "0.0015",
+   "Market Value": "5045.06",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Mar 01 2035"
+  },
+  {
+   "Name": "LOS ANGELES CALIF DEPT WTR & PWR WTRWKS REV SYS",
+   "Ticker": "-",
+   "Identifier": "544525ZM3",
+   "Weight": "0.0015",
+   "Market Value": "5036.18",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Jul 01 2027"
+  },
+  {
+   "Name": "CLEVELAND CNTY OKLA EDL FACS AUTH EDL FACS LEASE",
+   "Ticker": "-",
+   "Identifier": "18604TEB0",
+   "Weight": "0.0015",
+   "Market Value": "5033.67",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Jun 01 2027"
+  },
+  {
+   "Name": "UNIVERSITY VT & ST AGRIC COLLEGE GEN OBLIG BDS",
+   "Ticker": "-",
+   "Identifier": "915200C80",
+   "Weight": "0.0015",
+   "Market Value": "5013.01",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Oct 01 2036"
+  },
+  {
+   "Name": "NEW YORK ST ENERGY RESH & DEV AUTH POLLUTN CTL REV",
+   "Ticker": "-",
+   "Identifier": "649845HY3",
+   "Weight": "0.0015",
+   "Market Value": "5010.14",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Apr 01 2034"
+  },
+  {
+   "Name": "UNIVERSITY HOUSTON TEX UNIV REVS CONSOLIDATED REV",
+   "Ticker": "-",
+   "Identifier": "914302CE2",
+   "Weight": "0.0015",
+   "Market Value": "5008.16",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 15 2028"
+  },
+  {
+   "Name": "UNIVERSITY HOUSTON TEX UNIV REVS CONSOLIDATED REV",
+   "Ticker": "-",
+   "Identifier": "914302CN2",
+   "Weight": "0.0015",
+   "Market Value": "5004.57",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "5",
+   "Maturity": "Feb 15 2036"
+  },
+  {
+   "Name": "CLARK CNTY NEV SCH DIST GO LTD TAX BLDG BDS 2018A",
+   "Ticker": "-",
+   "Identifier": "181059ZW9",
+   "Weight": "0.0014",
+   "Market Value": "4802.76",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Jun 15 2037"
+  },
+  {
+   "Name": "MIAMI-DADE CNTY FLA WTR & SWR REV SYS BDS 2021",
+   "Ticker": "-",
+   "Identifier": "59334DMJ0",
+   "Weight": "0.0014",
+   "Market Value": "4785.17",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Oct 01 2039"
+  },
+  {
+   "Name": "LOS ANGELES CNTY CALIF REDEV AUTH TAX ALLOCATION",
+   "Ticker": "-",
+   "Identifier": "54465AGG1",
+   "Weight": "0.0014",
+   "Market Value": "4653.18",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Aug 01 2040"
+  },
+  {
+   "Name": "TEXAS PRIVATE ACTIVITY BD SURFACE TRANSN CORP REV",
+   "Ticker": "-",
+   "Identifier": "882667BS6",
+   "Weight": "0.0014",
+   "Market Value": "4613.24",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Dec 31 2038"
+  },
+  {
+   "Name": "LAS VEGAS VY NEV WTR DIST GO LTD TAX REF BDS 2022C",
+   "Ticker": "-",
+   "Identifier": "517845PV9",
+   "Weight": "0.0014",
+   "Market Value": "4573.75",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Jun 01 2041"
+  }
+ ]
+}

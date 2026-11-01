@@ -2,7 +2,7 @@
  "ticker": "SKOR",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3006,
+ "totalRows": 3008,
  "headers": [
   "Date",
   "NAV",
@@ -45,6 +45,18 @@
    "NAV": "47.19",
    "Market Price": "47.22",
    "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Oct 29 2026",
+   "NAV": "47.26",
+   "Market Price": "47.28",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Oct 30 2026",
+   "NAV": "47.34",
+   "Market Price": "47.34",
+   "Premium/Discount": "0.01"
   }
  ]
 }

@@ -2,7 +2,7 @@
  "ticker": "TAXS",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 301,
+ "totalRows": 303,
  "headers": [
   "Date",
   "NAV",
@@ -1814,6 +1814,18 @@
    "Date": "Oct 28 2026",
    "NAV": "50.06",
    "Market Price": "50.15",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Oct 29 2026",
+   "NAV": "50.07",
+   "Market Price": "50.17",
+   "Premium/Discount": "0.1"
+  },
+  {
+   "Date": "Oct 30 2026",
+   "NAV": "50.11",
+   "Market Price": "50.2",
    "Premium/Discount": "0.09"
   }
  ]
