@@ -2,7 +2,7 @@
  "ticker": "BNDC",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2499,
+ "totalRows": 2504,
  "headers": [
   "Date",
   "NAV",
@@ -3003,6 +3003,36 @@
    "NAV": "21.5",
    "Market Price": "21.5",
    "Premium/Discount": "0"
+  },
+  {
+   "Date": "Nov 02 2026",
+   "NAV": "21.52",
+   "Market Price": "21.52",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Nov 03 2026",
+   "NAV": "21.47",
+   "Market Price": "21.47",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Nov 04 2026",
+   "NAV": "21.56",
+   "Market Price": "21.56",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Nov 05 2026",
+   "NAV": "21.61",
+   "Market Price": "21.6",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Nov 06 2026",
+   "NAV": "21.5",
+   "Market Price": "21.51",
+   "Premium/Discount": "0.01"
   }
  ]
 }

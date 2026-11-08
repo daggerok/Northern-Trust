@@ -2,7 +2,7 @@
  "ticker": "TIPH",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 47,
+ "totalRows": 52,
  "headers": [
   "Date",
   "NAV",
@@ -291,6 +291,36 @@
    "NAV": "98.14",
    "Market Price": "98.07",
    "Premium/Discount": "-0.07"
+  },
+  {
+   "Date": "Nov 02 2026",
+   "NAV": "97.51",
+   "Market Price": "97.63",
+   "Premium/Discount": "0.12"
+  },
+  {
+   "Date": "Nov 03 2026",
+   "NAV": "97.03",
+   "Market Price": "97.15",
+   "Premium/Discount": "0.12"
+  },
+  {
+   "Date": "Nov 04 2026",
+   "NAV": "97.25",
+   "Market Price": "97.34",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Nov 05 2026",
+   "NAV": "97.42",
+   "Market Price": "97.49",
+   "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Nov 06 2026",
+   "NAV": "97.4",
+   "Market Price": "97.55",
+   "Premium/Discount": "0.16"
   }
  ]
 }

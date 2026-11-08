@@ -2,7 +2,7 @@
  "ticker": "MUNB",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 303,
+ "totalRows": 308,
  "headers": [
   "Date",
   "NAV",
@@ -1827,6 +1827,36 @@
    "NAV": "99.59",
    "Market Price": "99.69",
    "Premium/Discount": "0.1"
+  },
+  {
+   "Date": "Nov 02 2026",
+   "NAV": "99.46",
+   "Market Price": "99.54",
+   "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Nov 03 2026",
+   "NAV": "99.48",
+   "Market Price": "99.57",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Nov 04 2026",
+   "NAV": "99.66",
+   "Market Price": "99.75",
+   "Premium/Discount": "0.08"
+  },
+  {
+   "Date": "Nov 05 2026",
+   "NAV": "99.86",
+   "Market Price": "99.95",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Nov 06 2026",
+   "NAV": "99.99",
+   "Market Price": "100.11",
+   "Premium/Discount": "0.11"
   }
  ]
 }

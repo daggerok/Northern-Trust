@@ -2,7 +2,7 @@
  "ticker": "TILT",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3799,
+ "totalRows": 3804,
  "headers": [
   "Date",
   "NAV",
@@ -4803,6 +4803,36 @@
    "NAV": "278.66",
    "Market Price": "278.37",
    "Premium/Discount": "-0.3"
+  },
+  {
+   "Date": "Nov 02 2026",
+   "NAV": "278.27",
+   "Market Price": "278",
+   "Premium/Discount": "-0.27"
+  },
+  {
+   "Date": "Nov 03 2026",
+   "NAV": "278.54",
+   "Market Price": "278.37",
+   "Premium/Discount": "-0.17"
+  },
+  {
+   "Date": "Nov 04 2026",
+   "NAV": "283.11",
+   "Market Price": "282.94",
+   "Premium/Discount": "-0.17"
+  },
+  {
+   "Date": "Nov 05 2026",
+   "NAV": "271.72",
+   "Market Price": "271.77",
+   "Premium/Discount": "0.05"
+  },
+  {
+   "Date": "Nov 06 2026",
+   "NAV": "272.05",
+   "Market Price": "271.94",
+   "Premium/Discount": "-0.12"
   }
  ]
 }

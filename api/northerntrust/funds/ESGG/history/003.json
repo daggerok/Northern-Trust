@@ -2,7 +2,7 @@
  "ticker": "ESGG",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2590,
+ "totalRows": 2595,
  "headers": [
   "Date",
   "NAV",
@@ -3549,6 +3549,36 @@
    "NAV": "237.59",
    "Market Price": "237.25",
    "Premium/Discount": "-0.34"
+  },
+  {
+   "Date": "Nov 02 2026",
+   "NAV": "235.88",
+   "Market Price": "235.98",
+   "Premium/Discount": "0.1"
+  },
+  {
+   "Date": "Nov 03 2026",
+   "NAV": "236.09",
+   "Market Price": "235.9",
+   "Premium/Discount": "-0.19"
+  },
+  {
+   "Date": "Nov 04 2026",
+   "NAV": "239.31",
+   "Market Price": "239.98",
+   "Premium/Discount": "0.67"
+  },
+  {
+   "Date": "Nov 05 2026",
+   "NAV": "230.72",
+   "Market Price": "229.82",
+   "Premium/Discount": "-0.9"
+  },
+  {
+   "Date": "Nov 06 2026",
+   "NAV": "229.64",
+   "Market Price": "229.7",
+   "Premium/Discount": "0.06"
   }
  ]
 }

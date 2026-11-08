@@ -2,7 +2,7 @@
  "ticker": "TIPD",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 303,
+ "totalRows": 308,
  "headers": [
   "Date",
   "NAV",
@@ -1827,6 +1827,36 @@
    "NAV": "93.9",
    "Market Price": "93.84",
    "Premium/Discount": "-0.06"
+  },
+  {
+   "Date": "Nov 02 2026",
+   "NAV": "93.54",
+   "Market Price": "93.65",
+   "Premium/Discount": "0.11"
+  },
+  {
+   "Date": "Nov 03 2026",
+   "NAV": "93.11",
+   "Market Price": "93.22",
+   "Premium/Discount": "0.11"
+  },
+  {
+   "Date": "Nov 04 2026",
+   "NAV": "93.3",
+   "Market Price": "93.39",
+   "Premium/Discount": "0.08"
+  },
+  {
+   "Date": "Nov 05 2026",
+   "NAV": "93.47",
+   "Market Price": "93.53",
+   "Premium/Discount": "0.06"
+  },
+  {
+   "Date": "Nov 06 2026",
+   "NAV": "93.44",
+   "Market Price": "93.59",
+   "Premium/Discount": "0.14"
   }
  ]
 }

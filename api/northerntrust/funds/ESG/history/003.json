@@ -2,7 +2,7 @@
  "ticker": "ESG",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2590,
+ "totalRows": 2595,
  "headers": [
   "Date",
   "NAV",
@@ -3549,6 +3549,36 @@
    "NAV": "182.44",
    "Market Price": "182.38",
    "Premium/Discount": "-0.06"
+  },
+  {
+   "Date": "Nov 02 2026",
+   "NAV": "181.75",
+   "Market Price": "181.84",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Nov 03 2026",
+   "NAV": "181.68",
+   "Market Price": "181.6",
+   "Premium/Discount": "-0.07"
+  },
+  {
+   "Date": "Nov 04 2026",
+   "NAV": "184.93",
+   "Market Price": "184.91",
+   "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Nov 05 2026",
+   "NAV": "177.33",
+   "Market Price": "177.52",
+   "Premium/Discount": "0.19"
+  },
+  {
+   "Date": "Nov 06 2026",
+   "NAV": "177.3",
+   "Market Price": "177.34",
+   "Premium/Discount": "0.04"
   }
  ]
 }
