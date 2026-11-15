@@ -2,7 +2,7 @@
  "ticker": "SKOR",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3013,
+ "totalRows": 3018,
  "headers": [
   "Date",
   "NAV",
@@ -87,6 +87,36 @@
    "NAV": "47.3",
    "Market Price": "47.33",
    "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Nov 09 2026",
+   "NAV": "47.33",
+   "Market Price": "47.35",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Nov 10 2026",
+   "NAV": "47.09",
+   "Market Price": "47.13",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Nov 11 2026",
+   "NAV": "47.05",
+   "Market Price": "47.09",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Nov 12 2026",
+   "NAV": "46.87",
+   "Market Price": "46.91",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Nov 13 2026",
+   "NAV": "46.84",
+   "Market Price": "46.85",
+   "Premium/Discount": "0"
   }
  ]
 }

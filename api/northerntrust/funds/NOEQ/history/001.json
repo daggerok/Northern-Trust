@@ -2,7 +2,7 @@
  "ticker": "NOEQ",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 160,
+ "totalRows": 165,
  "headers": [
   "Date",
   "NAV",
@@ -969,6 +969,36 @@
    "NAV": "28.12",
    "Market Price": "28.13",
    "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Nov 09 2026",
+   "NAV": "28.78",
+   "Market Price": "28.79",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Nov 10 2026",
+   "NAV": "28.67",
+   "Market Price": "28.68",
+   "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Nov 11 2026",
+   "NAV": "29.04",
+   "Market Price": "29.04",
+   "Premium/Discount": "0"
+  },
+  {
+   "Date": "Nov 12 2026",
+   "NAV": "28.97",
+   "Market Price": "28.96",
+   "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Nov 13 2026",
+   "NAV": "28.87",
+   "Market Price": "28.86",
+   "Premium/Discount": "-0.01"
   }
  ]
 }

@@ -2,7 +2,7 @@
  "ticker": "TLTE",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3547,
+ "totalRows": 3552,
  "headers": [
   "Date",
   "NAV",
@@ -3291,6 +3291,36 @@
    "NAV": "67.89",
    "Market Price": "68.14",
    "Premium/Discount": "0.25"
+  },
+  {
+   "Date": "Nov 09 2026",
+   "NAV": "68.67",
+   "Market Price": "70.02",
+   "Premium/Discount": "1.35"
+  },
+  {
+   "Date": "Nov 10 2026",
+   "NAV": "69.48",
+   "Market Price": "69.3",
+   "Premium/Discount": "-0.18"
+  },
+  {
+   "Date": "Nov 11 2026",
+   "NAV": "70.43",
+   "Market Price": "70.98",
+   "Premium/Discount": "0.55"
+  },
+  {
+   "Date": "Nov 12 2026",
+   "NAV": "69.66",
+   "Market Price": "69.91",
+   "Premium/Discount": "0.25"
+  },
+  {
+   "Date": "Nov 13 2026",
+   "NAV": "69.51",
+   "Market Price": "69.62",
+   "Premium/Discount": "0.11"
   }
  ]
 }

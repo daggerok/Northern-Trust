@@ -31,57 +31,57 @@
   "net": 0.15
  },
  "nav": {
-  "display": "$47.30",
-  "value": 47.3,
-  "asOfDate": "Nov 06 2026"
+  "display": "$46.84",
+  "value": 46.84,
+  "asOfDate": "Nov 13 2026"
  },
  "marketPrice": {
-  "display": "$47.33",
-  "value": 47.33,
-  "asOfDate": "Nov 06 2026"
+  "display": "$46.85",
+  "value": 46.85,
+  "asOfDate": "Nov 13 2026"
  },
  "premiumDiscount": {
-  "display": "0.06%",
-  "value": 0.0617
+  "display": "0.01%",
+  "value": 0.0105
  },
  "aum": {
-  "display": "$1,071.25 M",
-  "value": 1071249046.02,
-  "asOfDate": "Nov 06 2026",
+  "display": "$1,063.27 M",
+  "value": 1063270408.27,
+  "asOfDate": "Nov 13 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 4.78,
-  "dividendYieldText": "4.78%",
+  "dividendYield": 4.83,
+  "dividendYieldText": "4.83%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 06 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 13 2026",
   "distributionRate": null,
   "secYield": 5.59,
   "secYieldText": "5.59%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 06 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 13 2026",
   "unsubsidizedSecYield": 5.59
  },
  "returns": {
   "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Sep 30 2026",
-   "priceReturnsAsOf": "Nov 06 2026",
-   "mo1": -1.95,
-   "mo1Text": "-1.95%",
-   "qtd": 1.7,
-   "qtdText": "1.70%",
-   "ytd": -1.7,
-   "ytdText": "-1.70%",
-   "yr1": -0.38,
-   "yr1Text": "-0.38%",
-   "yr3": 5.54,
-   "yr3Text": "5.54%",
-   "yr5": 1.31,
-   "yr5Text": "1.31%",
-   "yr10": 2.53,
-   "yr10Text": "2.53%",
-   "sinceInception": 2.79,
-   "sinceInceptionText": "2.79%"
+   "asOfDate": "Oct 31 2026",
+   "priceReturnsAsOf": "Nov 13 2026",
+   "mo1": 1.52,
+   "mo1Text": "1.52%",
+   "qtd": 0.71,
+   "qtdText": "0.71%",
+   "ytd": -0.2,
+   "ytdText": "-0.20%",
+   "yr1": 0.75,
+   "yr1Text": "0.75%",
+   "yr3": 6.37,
+   "yr3Text": "6.37%",
+   "yr5": 1.73,
+   "yr5Text": "1.73%",
+   "yr10": 2.74,
+   "yr10Text": "2.74%",
+   "sinceInception": 2.9,
+   "sinceInceptionText": "2.90%"
   },
   "quarterEnd": {
    "asOfDate": "Sep 30 2026",
@@ -690,9 +690,9 @@
    "holdings/006.json"
   ],
   "pageSize": 250,
-  "totalRows": 1344,
-  "asOfDate": "2026-11-06",
-  "asOf": "Nov 06 2026",
+  "totalRows": 1348,
+  "asOfDate": "2026-11-13",
+  "asOf": "Nov 13 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -703,26 +703,26 @@
    "history/004.json"
   ],
   "pageSize": 1000,
-  "totalRows": 3013,
-  "asOf": "Nov 06 2026",
+  "totalRows": 3018,
+  "asOf": "Nov 13 2026",
   "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
  },
  "metrics": {
-  "ytd": -1.7,
-  "tr1y": -0.38,
-  "tr3y": 17.56,
-  "tr5y": 6.72,
-  "tr10y": 28.38,
-  "cagr3y": 5.54,
-  "cagr5y": 1.31,
-  "cagr10y": 2.53,
-  "siAnn": 2.79,
-  "dividendYield": 4.78,
-  "dividendYieldText": "4.78%",
+  "ytd": -0.2,
+  "tr1y": 0.75,
+  "tr3y": 20.35,
+  "tr5y": 8.95,
+  "tr10y": 31.04,
+  "cagr3y": 6.37,
+  "cagr5y": 1.73,
+  "cagr10y": 2.74,
+  "siAnn": 2.9,
+  "dividendYield": 4.83,
+  "dividendYieldText": "4.83%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 5.59,
   "secYieldText": "5.59%",
   "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested (performanceAsOf is the official month-end table date, filled periods end at returns.monthEnd.priceReturnsAsOf)",
-  "performanceAsOf": "2026-09-30"
+  "performanceAsOf": "2026-10-31"
  }
 }

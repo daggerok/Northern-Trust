@@ -2,7 +2,7 @@
  "ticker": "TAXS",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 308,
+ "totalRows": 313,
  "headers": [
   "Date",
   "NAV",
@@ -1857,6 +1857,36 @@
    "NAV": "50.18",
    "Market Price": "50.18",
    "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Nov 09 2026",
+   "NAV": "50.21",
+   "Market Price": "50.24",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Nov 10 2026",
+   "NAV": "50.15",
+   "Market Price": "50.13",
+   "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Nov 11 2026",
+   "NAV": "50.16",
+   "Market Price": "50.18",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Nov 12 2026",
+   "NAV": "50.06",
+   "Market Price": "50.1",
+   "Premium/Discount": "0.04"
+  },
+  {
+   "Date": "Nov 13 2026",
+   "NAV": "50",
+   "Market Price": "50.06",
+   "Premium/Discount": "0.06"
   }
  ]
 }

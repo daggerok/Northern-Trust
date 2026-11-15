@@ -31,57 +31,57 @@
   "net": 0.18
  },
  "nav": {
-  "display": "$23.05",
-  "value": 23.05,
-  "asOfDate": "Nov 06 2026"
+  "display": "$22.73",
+  "value": 22.73,
+  "asOfDate": "Nov 13 2026"
  },
  "marketPrice": {
-  "display": "$23.08",
-  "value": 23.08,
-  "asOfDate": "Nov 06 2026"
+  "display": "$22.75",
+  "value": 22.75,
+  "asOfDate": "Nov 13 2026"
  },
  "premiumDiscount": {
-  "display": "0.13%",
-  "value": 0.1293
+  "display": "0.09%",
+  "value": 0.0898
  },
  "aum": {
-  "display": "$1,163.78 M",
-  "value": 1163780682.87,
-  "asOfDate": "Nov 06 2026",
+  "display": "$1,150.12 M",
+  "value": 1150119150.61,
+  "asOfDate": "Nov 13 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 5.03,
-  "dividendYieldText": "5.03%",
+  "dividendYield": 5.1,
+  "dividendYieldText": "5.10%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 06 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 13 2026",
   "distributionRate": null,
   "secYield": 6.31,
   "secYieldText": "6.31%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 06 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 13 2026",
   "unsubsidizedSecYield": 6.31
  },
  "returns": {
   "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
-   "asOfDate": "Sep 30 2026",
-   "priceReturnsAsOf": "Nov 06 2026",
-   "mo1": -2.41,
-   "mo1Text": "-2.41%",
-   "qtd": 1.69,
-   "qtdText": "1.69%",
-   "ytd": -1.69,
-   "ytdText": "-1.69%",
-   "yr1": -1.54,
-   "yr1Text": "-1.54%",
-   "yr3": 4.24,
-   "yr3Text": "4.24%",
-   "yr5": 0.72,
-   "yr5Text": "0.72%",
-   "yr10": 2.46,
-   "yr10Text": "2.46%",
-   "sinceInception": 2.05,
-   "sinceInceptionText": "2.05%"
+   "asOfDate": "Oct 31 2026",
+   "priceReturnsAsOf": "Nov 13 2026",
+   "mo1": 2.38,
+   "mo1Text": "2.38%",
+   "qtd": 0.28,
+   "qtdText": "0.28%",
+   "ytd": 0.65,
+   "ytdText": "0.65%",
+   "yr1": 0.73,
+   "yr1Text": "0.73%",
+   "yr3": 5.21,
+   "yr3Text": "5.21%",
+   "yr5": 1.05,
+   "yr5Text": "1.05%",
+   "yr10": 2.7,
+   "yr10Text": "2.70%",
+   "sinceInception": 2.19,
+   "sinceInceptionText": "2.19%"
   },
   "quarterEnd": {
    "asOfDate": "Sep 30 2026",
@@ -558,8 +558,8 @@
   ],
   "pageSize": 250,
   "totalRows": 17,
-  "asOfDate": "2026-11-06",
-  "asOf": "Nov 06 2026",
+  "asOfDate": "2026-11-13",
+  "asOf": "Nov 13 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -570,26 +570,26 @@
    "history/004.json"
   ],
   "pageSize": 1000,
-  "totalRows": 3804,
-  "asOf": "Nov 06 2026",
+  "totalRows": 3809,
+  "asOf": "Nov 13 2026",
   "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
  },
  "metrics": {
-  "ytd": -1.69,
-  "tr1y": -1.54,
-  "tr3y": 13.27,
-  "tr5y": 3.65,
-  "tr10y": 27.51,
-  "cagr3y": 4.24,
-  "cagr5y": 0.72,
-  "cagr10y": 2.46,
-  "siAnn": 2.05,
-  "dividendYield": 5.03,
-  "dividendYieldText": "5.03%",
+  "ytd": 0.65,
+  "tr1y": 0.73,
+  "tr3y": 16.46,
+  "tr5y": 5.36,
+  "tr10y": 30.53,
+  "cagr3y": 5.21,
+  "cagr5y": 1.05,
+  "cagr10y": 2.7,
+  "siAnn": 2.19,
+  "dividendYield": 5.1,
+  "dividendYieldText": "5.10%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 6.31,
   "secYieldText": "6.31%",
   "returnsBasis": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV), any missing figure filled from the daily NAV history with distributions reinvested (performanceAsOf is the official month-end table date, filled periods end at returns.monthEnd.priceReturnsAsOf)",
-  "performanceAsOf": "2026-09-30"
+  "performanceAsOf": "2026-10-31"
  }
 }
