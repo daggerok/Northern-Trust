@@ -86,9 +86,10 @@ const realFetch = globalThis.fetch;
 const RANGE_KEYS = ['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis'];
 // the swing block puts its keys after the range keys, in front of returnsBasis and performanceAsOf
 const SWING_KEYS = ['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d'];
-const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, ...SWING_KEYS, key] : [key]));
-const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key) && !SWING_KEYS.includes(key)));
-const emptyIndexMetrics = (): Record<string, unknown> => ({ ...emptyMetrics(), ...Object.fromEntries([...RANGE_KEYS, ...SWING_KEYS].map((key) => [key, null])) });
+const DIVIDEND_KEYS = ['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y'];
+const withRangeKeys = (keys: string[]): string[] => keys.flatMap((key) => (key === 'returnsBasis' ? [...RANGE_KEYS, ...SWING_KEYS, ...DIVIDEND_KEYS, key] : [key]));
+const rangeless = (metrics: Record<string, unknown>): Record<string, unknown> => Object.fromEntries(Object.entries(metrics).filter(([key]) => !RANGE_KEYS.includes(key) && !SWING_KEYS.includes(key) && !DIVIDEND_KEYS.includes(key)));
+const emptyIndexMetrics = (): Record<string, unknown> => ({ ...emptyMetrics(), ...Object.fromEntries([...RANGE_KEYS, ...SWING_KEYS, ...DIVIDEND_KEYS].map((key) => [key, null])) });
 // test doubles implement only the call signature, not fetch's extra members (preconnect)
 const asFetch = (stub: unknown) => stub as typeof fetch;
 const realLog = console.log;
@@ -612,7 +613,7 @@ type MockOptions = { delayMs?: number; failAll?: string[]; failPricing?: string[
 
 // the swing block's daily chart (period1=0): 300 closes rising 0.1 a day from 2025-01-02
 const SWING_CHART_URL = /query1\.finance\.yahoo\.com\/v8\/finance\/chart\/[^?]+\?period1=0&period2=\d+&interval=1d&includePrePost=false/;
-const swingChart = () => ({ chart: { result: [{ meta: { dataGranularity: '1d' }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 0, 2) / 1000 + i * 86_400), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => Math.round((40 + i / 10) * 100) / 100) }] } }] } });
+const swingChart = () => ({ chart: { result: [{ meta: { dataGranularity: '1d', firstTradeDate: Date.UTC(2025, 0, 2) / 1000 }, events: { dividends: { [Date.UTC(2025, 9, 20) / 1000]: { amount: 0.25, date: Date.UTC(2025, 9, 20) / 1000 } } }, timestamp: Array.from({ length: 300 }, (_, i) => Date.UTC(2025, 0, 2) / 1000 + i * 86_400), indicators: { quote: [{ close: Array.from({ length: 300 }, (_, i) => Math.round((40 + i / 10) * 100) / 100) }] } }] } });
 
 function installMockFetch(options: MockOptions = {}): { urls: string[]; peak: () => number } {
   const urls: string[] = [];
@@ -906,9 +907,13 @@ describe('pipeline', () => {
       expect(index.counts.funds).toBe(3);
       for (const fund of index.funds) expect(Object.keys(fund.metrics)).toEqual(expect.arrayContaining(RANGE_KEYS));
       // the swing keys from the Yahoo daily closes (period1=0) of the fund the run updated (swing block); the kept ones stay null
-      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-11, -2)).toEqual(SWING_KEYS);
+      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-17, -8)).toEqual(SWING_KEYS);
+      for (const fund of index.funds) expect(Object.keys(fund.metrics).slice(-8, -2)).toEqual(['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y']);
       expect(mock.urls.filter((url) => SWING_CHART_URL.test(url)).map((url) => /chart\/([^?]+)/.exec(url)?.[1])).toEqual(['CCC']);
       expect([index.funds[2].metrics.athBasis, index.funds[2].metrics.athPrice, index.funds[2].metrics.high60d, index.funds[2].metrics.volatility1y, index.funds[0].metrics.athPrice]).toEqual(['daily closes since 2025-01-02', 69.9, 69.9, expect.any(Number), null]);
+      // the dividend keys of the updated fund: 0.25 in the last year, the rest null; the kept funds stay null
+      expect(DIVIDEND_KEYS.map((key) => index.funds[2].metrics[key])).toEqual([0.25, null, null, null, null, null]);
+      expect(DIVIDEND_KEYS.map((key) => index.funds[0].metrics[key])).toEqual(DIVIDEND_KEYS.map(() => null));
       expect(mock.urls.some((url) => url.includes('/ccc/'))).toBe(true);
       expect(mock.urls.some((url) => url.includes('/aaa/'))).toBe(false);
       expect(readdirSync(fileURLToPath(new URL('funds/', root))).sort()).toEqual(['AAA', 'BBB', 'CCC']);
