@@ -2,7 +2,7 @@
  "ticker": "FEDM",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1294,
+ "totalRows": 1297,
  "headers": [
   "Date",
   "NAV",
@@ -1773,6 +1773,24 @@
    "NAV": "65.36",
    "Market Price": "65.29",
    "Premium/Discount": "-0.07"
+  },
+  {
+   "Date": "Nov 16 2026",
+   "NAV": "64.95",
+   "Market Price": "64.52",
+   "Premium/Discount": "-0.43"
+  },
+  {
+   "Date": "Nov 17 2026",
+   "NAV": "64.01",
+   "Market Price": "63.61",
+   "Premium/Discount": "-0.4"
+  },
+  {
+   "Date": "Nov 18 2026",
+   "NAV": "63.26",
+   "Market Price": "63.09",
+   "Premium/Discount": "-0.17"
   }
  ]
 }

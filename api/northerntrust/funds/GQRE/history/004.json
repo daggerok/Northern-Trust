@@ -2,7 +2,7 @@
  "ticker": "GQRE",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3275,
+ "totalRows": 3278,
  "headers": [
   "Date",
   "NAV",
@@ -1658,6 +1658,24 @@
    "Date": "Nov 13 2026",
    "NAV": "62.25",
    "Market Price": "62.36",
+   "Premium/Discount": "0.11"
+  },
+  {
+   "Date": "Nov 16 2026",
+   "NAV": "62.23",
+   "Market Price": "62.26",
+   "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Nov 17 2026",
+   "NAV": "61.62",
+   "Market Price": "61.68",
+   "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Nov 18 2026",
+   "NAV": "61.63",
+   "Market Price": "61.74",
    "Premium/Discount": "0.11"
   }
  ]

@@ -2,7 +2,7 @@
  "ticker": "QDF",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3497,
+ "totalRows": 3500,
  "headers": [
   "Date",
   "NAV",
@@ -2991,6 +2991,24 @@
    "NAV": "90.18",
    "Market Price": "90.17",
    "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Nov 16 2026",
+   "NAV": "88.63",
+   "Market Price": "88.58",
+   "Premium/Discount": "-0.05"
+  },
+  {
+   "Date": "Nov 17 2026",
+   "NAV": "87.74",
+   "Market Price": "87.66",
+   "Premium/Discount": "-0.08"
+  },
+  {
+   "Date": "Nov 18 2026",
+   "NAV": "87.34",
+   "Market Price": "87.37",
+   "Premium/Discount": "0.03"
   }
  ]
 }

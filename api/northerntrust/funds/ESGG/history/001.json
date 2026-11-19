@@ -2,7 +2,7 @@
  "ticker": "ESGG",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 2600,
+ "totalRows": 2603,
  "headers": [
   "Date",
   "NAV",

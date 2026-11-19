@@ -2,7 +2,7 @@
  "ticker": "FEDM",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 1294,
+ "totalRows": 1297,
  "headers": [
   "Date",
   "NAV",

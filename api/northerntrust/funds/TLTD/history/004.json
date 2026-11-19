@@ -2,7 +2,7 @@
  "ticker": "TLTD",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3552,
+ "totalRows": 3555,
  "headers": [
   "Date",
   "NAV",
@@ -3321,6 +3321,24 @@
    "NAV": "100.56",
    "Market Price": "100.58",
    "Premium/Discount": "0.03"
+  },
+  {
+   "Date": "Nov 16 2026",
+   "NAV": "99.76",
+   "Market Price": "99.12",
+   "Premium/Discount": "-0.64"
+  },
+  {
+   "Date": "Nov 17 2026",
+   "NAV": "98.4",
+   "Market Price": "97.86",
+   "Premium/Discount": "-0.54"
+  },
+  {
+   "Date": "Nov 18 2026",
+   "NAV": "97.13",
+   "Market Price": "96.6",
+   "Premium/Discount": "-0.53"
   }
  ]
 }

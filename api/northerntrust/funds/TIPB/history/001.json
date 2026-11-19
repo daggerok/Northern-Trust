@@ -2,7 +2,7 @@
  "ticker": "TIPB",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 313,
+ "totalRows": 316,
  "headers": [
   "Date",
   "NAV",
@@ -1887,6 +1887,24 @@
    "NAV": "95.87",
    "Market Price": "95.94",
    "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Nov 16 2026",
+   "NAV": "95.88",
+   "Market Price": "95.97",
+   "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Nov 17 2026",
+   "NAV": "96.08",
+   "Market Price": "96.12",
+   "Premium/Discount": "0.04"
+  },
+  {
+   "Date": "Nov 18 2026",
+   "NAV": "96.08",
+   "Market Price": "96.11",
+   "Premium/Discount": "0.04"
   }
  ]
 }

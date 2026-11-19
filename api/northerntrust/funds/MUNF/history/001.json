@@ -2,7 +2,7 @@
  "ticker": "MUNF",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 57,
+ "totalRows": 60,
  "headers": [
   "Date",
   "NAV",
@@ -351,6 +351,24 @@
    "NAV": "99.47",
    "Market Price": "99.54",
    "Premium/Discount": "0.06"
+  },
+  {
+   "Date": "Nov 16 2026",
+   "NAV": "99.39",
+   "Market Price": "99.41",
+   "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Nov 17 2026",
+   "NAV": "99.03",
+   "Market Price": "99.1",
+   "Premium/Discount": "0.07"
+  },
+  {
+   "Date": "Nov 18 2026",
+   "NAV": "99.02",
+   "Market Price": "99",
+   "Premium/Discount": "-0.02"
   }
  ]
 }

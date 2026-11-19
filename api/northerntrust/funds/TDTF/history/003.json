@@ -2,7 +2,7 @@
  "ticker": "TDTF",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 3809,
+ "totalRows": 3812,
  "headers": [
   "Date",
   "NAV",
