@@ -2,7 +2,7 @@
  "ticker": "IQDF",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 3421,
+ "totalRows": 3422,
  "headers": [
   "Date",
   "NAV",

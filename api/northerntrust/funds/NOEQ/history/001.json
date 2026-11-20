@@ -2,7 +2,7 @@
  "ticker": "NOEQ",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 168,
+ "totalRows": 169,
  "headers": [
   "Date",
   "NAV",
@@ -1017,6 +1017,12 @@
    "NAV": "27.86",
    "Market Price": "27.88",
    "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "27.28",
+   "Market Price": "27.31",
+   "Premium/Discount": "0.03"
   }
  ]
 }

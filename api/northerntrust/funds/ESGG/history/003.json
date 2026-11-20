@@ -2,7 +2,7 @@
  "ticker": "ESGG",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2603,
+ "totalRows": 2604,
  "headers": [
   "Date",
   "NAV",
@@ -3627,6 +3627,12 @@
    "NAV": "228.04",
    "Market Price": "228.19",
    "Premium/Discount": "0.15"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "224.74",
+   "Market Price": "224.4",
+   "Premium/Discount": "-0.34"
   }
  ]
 }

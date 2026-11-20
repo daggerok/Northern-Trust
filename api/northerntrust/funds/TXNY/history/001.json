@@ -2,7 +2,7 @@
  "ticker": "TXNY",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 41,
+ "totalRows": 42,
  "headers": [
   "Date",
   "NAV",
@@ -254,6 +254,12 @@
    "Date": "Nov 18 2026",
    "NAV": "51.02",
    "Market Price": "51.02",
+   "Premium/Discount": "-0.01"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "51",
+   "Market Price": "51",
    "Premium/Discount": "-0.01"
   }
  ]

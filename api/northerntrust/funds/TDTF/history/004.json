@@ -2,7 +2,7 @@
  "ticker": "TDTF",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3812,
+ "totalRows": 3813,
  "headers": [
   "Date",
   "NAV",
@@ -4881,6 +4881,12 @@
    "NAV": "22.79",
    "Market Price": "22.8",
    "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "22.82",
+   "Market Price": "22.84",
+   "Premium/Discount": "0.02"
   }
  ]
 }

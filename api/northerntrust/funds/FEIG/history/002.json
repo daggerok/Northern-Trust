@@ -2,7 +2,7 @@
  "ticker": "FEIG",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1297,
+ "totalRows": 1298,
  "headers": [
   "Date",
   "NAV",
@@ -1791,6 +1791,12 @@
    "NAV": "38.92",
    "Market Price": "38.9",
    "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "38.94",
+   "Market Price": "38.88",
+   "Premium/Discount": "-0.06"
   }
  ]
 }

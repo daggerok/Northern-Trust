@@ -2,7 +2,7 @@
  "ticker": "MUNC",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 316,
+ "totalRows": 317,
  "headers": [
   "Date",
   "NAV",
@@ -1905,6 +1905,12 @@
    "NAV": "99.43",
    "Market Price": "99.31",
    "Premium/Discount": "-0.13"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "99.41",
+   "Market Price": "99.29",
+   "Premium/Discount": "-0.12"
   }
  ]
 }

@@ -2,7 +2,7 @@
  "ticker": "MUNH",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 60,
+ "totalRows": 61,
  "headers": [
   "Date",
   "NAV",
@@ -369,6 +369,12 @@
    "NAV": "97.74",
    "Market Price": "97.76",
    "Premium/Discount": "0.02"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "97.72",
+   "Market Price": "97.74",
+   "Premium/Discount": "0.01"
   }
  ]
 }

@@ -2,7 +2,7 @@
  "ticker": "MUNF",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 60,
+ "totalRows": 61,
  "headers": [
   "Date",
   "NAV",
@@ -368,6 +368,12 @@
    "Date": "Nov 18 2026",
    "NAV": "99.02",
    "Market Price": "99",
+   "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "99",
+   "Market Price": "98.98",
    "Premium/Discount": "-0.02"
   }
  ]

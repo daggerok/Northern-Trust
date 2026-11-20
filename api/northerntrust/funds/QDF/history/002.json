@@ -2,7 +2,7 @@
  "ticker": "QDF",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 3500,
+ "totalRows": 3501,
  "headers": [
   "Date",
   "NAV",

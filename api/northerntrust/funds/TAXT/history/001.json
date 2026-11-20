@@ -2,7 +2,7 @@
  "ticker": "TAXT",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 316,
+ "totalRows": 317,
  "headers": [
   "Date",
   "NAV",
@@ -1905,6 +1905,12 @@
    "NAV": "50.55",
    "Market Price": "50.62",
    "Premium/Discount": "0.06"
+  },
+  {
+   "Date": "Nov 19 2026",
+   "NAV": "50.54",
+   "Market Price": "50.55",
+   "Premium/Discount": "0.01"
   }
  ]
 }
