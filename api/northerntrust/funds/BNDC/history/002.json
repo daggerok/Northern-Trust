@@ -2,7 +2,7 @@
  "ticker": "BNDC",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 2513,
+ "totalRows": 2515,
  "headers": [
   "Date",
   "NAV",

@@ -1,0 +1,52 @@
+{
+ "ticker": "TAXI",
+ "page": 23,
+ "pageSize": 250,
+ "totalRows": 5503,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "TEXAS PRIVATE ACTIVITY BD SURFACE TRANSN CORP REV",
+   "Ticker": "-",
+   "Identifier": "882667BS6",
+   "Weight": "0.0012",
+   "Market Value": "4617.23",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Dec 31 2038"
+  },
+  {
+   "Name": "PHILADELPHIA PA GO BDS 2021 A 11/AUG/2021",
+   "Ticker": "-",
+   "Identifier": "717813ZC6",
+   "Weight": "0.0012",
+   "Market Value": "4604.8",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "May 01 2041"
+  },
+  {
+   "Name": "LAS VEGAS VY NEV WTR DIST GO LTD TAX REF BDS 2022C",
+   "Ticker": "-",
+   "Identifier": "517845PV9",
+   "Weight": "0.0012",
+   "Market Value": "4604.19",
+   "Shares Held": "5000",
+   "Asset Category": "-",
+   "Coupon": "4",
+   "Maturity": "Jun 01 2041"
+  }
+ ]
+}

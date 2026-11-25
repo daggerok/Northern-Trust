@@ -2,7 +2,7 @@
  "ticker": "TLTD",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 3556,
+ "totalRows": 3558,
  "headers": [
   "Date",
   "NAV",

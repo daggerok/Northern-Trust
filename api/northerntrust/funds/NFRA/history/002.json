@@ -2,7 +2,7 @@
  "ticker": "NFRA",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 3299,
+ "totalRows": 3301,
  "headers": [
   "Date",
   "NAV",

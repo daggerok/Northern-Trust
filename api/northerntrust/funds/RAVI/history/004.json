@@ -2,7 +2,7 @@
  "ticker": "RAVI",
  "page": 4,
  "pageSize": 1000,
- "totalRows": 3547,
+ "totalRows": 3549,
  "headers": [
   "Date",
   "NAV",
@@ -3291,6 +3291,18 @@
    "NAV": "75.13",
    "Market Price": "75.11",
    "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Nov 20 2026",
+   "NAV": "75.16",
+   "Market Price": "75.14",
+   "Premium/Discount": "-0.02"
+  },
+  {
+   "Date": "Nov 23 2026",
+   "NAV": "75.18",
+   "Market Price": "75.18",
+   "Premium/Discount": "0"
   }
  ]
 }

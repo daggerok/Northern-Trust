@@ -2,7 +2,7 @@
  "ticker": "TIPC",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 317,
+ "totalRows": 319,
  "headers": [
   "Date",
   "NAV",
@@ -1910,6 +1910,18 @@
    "Date": "Nov 19 2026",
    "NAV": "93.46",
    "Market Price": "93.52",
+   "Premium/Discount": "0.06"
+  },
+  {
+   "Date": "Nov 20 2026",
+   "NAV": "94.14",
+   "Market Price": "94.3",
+   "Premium/Discount": "0.16"
+  },
+  {
+   "Date": "Nov 23 2026",
+   "NAV": "94.09",
+   "Market Price": "94.15",
    "Premium/Discount": "0.06"
   }
  ]

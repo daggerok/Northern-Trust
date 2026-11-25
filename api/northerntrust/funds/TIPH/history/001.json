@@ -2,7 +2,7 @@
  "ticker": "TIPH",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 61,
+ "totalRows": 63,
  "headers": [
   "Date",
   "NAV",
@@ -374,6 +374,18 @@
    "Date": "Nov 19 2026",
    "NAV": "95.47",
    "Market Price": "95.55",
+   "Premium/Discount": "0.08"
+  },
+  {
+   "Date": "Nov 20 2026",
+   "NAV": "96.42",
+   "Market Price": "96.62",
+   "Premium/Discount": "0.21"
+  },
+  {
+   "Date": "Nov 23 2026",
+   "NAV": "96.39",
+   "Market Price": "96.48",
    "Premium/Discount": "0.08"
   }
  ]

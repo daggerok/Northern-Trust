@@ -2,7 +2,7 @@
  "ticker": "TIPE",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 61,
+ "totalRows": 63,
  "headers": [
   "Date",
   "NAV",
@@ -375,6 +375,18 @@
    "NAV": "98.47",
    "Market Price": "98.52",
    "Premium/Discount": "0.04"
+  },
+  {
+   "Date": "Nov 20 2026",
+   "NAV": "98.73",
+   "Market Price": "98.85",
+   "Premium/Discount": "0.12"
+  },
+  {
+   "Date": "Nov 23 2026",
+   "NAV": "98.64",
+   "Market Price": "98.67",
+   "Premium/Discount": "0.03"
   }
  ]
 }

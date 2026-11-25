@@ -2,7 +2,7 @@
  "ticker": "SKOR",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 3022,
+ "totalRows": 3024,
  "headers": [
   "Date",
   "NAV",

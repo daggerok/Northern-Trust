@@ -2,7 +2,7 @@
  "ticker": "TILT",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 3813,
+ "totalRows": 3815,
  "headers": [
   "Date",
   "NAV",
