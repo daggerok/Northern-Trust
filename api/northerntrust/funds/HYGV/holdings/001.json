@@ -1111,7 +1111,7 @@
    "Weight": "0.2116",
    "Market Value": "2120400",
    "Shares Held": "2480000",
-   "Asset Category": "-",
+   "Asset Category": "Industrial",
    "Coupon": "8",
    "Maturity": "Jan 15 2032"
   },
@@ -1463,7 +1463,7 @@
    "Weight": "0.1865",
    "Market Value": "1869000",
    "Shares Held": "2100000",
-   "Asset Category": "-",
+   "Asset Category": "Industrial",
    "Coupon": "7.5",
    "Maturity": "Mar 15 2031"
   },
