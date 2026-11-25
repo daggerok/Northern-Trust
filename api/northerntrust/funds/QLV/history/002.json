@@ -2,7 +2,7 @@
  "ticker": "QLV",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1851,
+ "totalRows": 1852,
  "headers": [
   "Date",
   "NAV",
@@ -5115,6 +5115,12 @@
    "NAV": "79.99",
    "Market Price": "80",
    "Premium/Discount": "0.01"
+  },
+  {
+   "Date": "Nov 24 2026",
+   "NAV": "80.49",
+   "Market Price": "80.49",
+   "Premium/Discount": "0"
   }
  ]
 }

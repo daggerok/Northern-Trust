@@ -31,45 +31,45 @@
   "net": 0.2
  },
  "nav": {
-  "display": "$20.17",
-  "value": 20.17,
-  "asOfDate": "Nov 23 2026"
+  "display": "$20.18",
+  "value": 20.18,
+  "asOfDate": "Nov 24 2026"
  },
  "marketPrice": {
-  "display": "$20.14",
-  "value": 20.14,
-  "asOfDate": "Nov 23 2026"
+  "display": "$20.16",
+  "value": 20.16,
+  "asOfDate": "Nov 24 2026"
  },
  "premiumDiscount": {
-  "display": "-0.18%",
-  "value": -0.1809
+  "display": "-0.10%",
+  "value": -0.0976
  },
  "aum": {
-  "display": "$87.75 M",
-  "value": 87745966.13,
-  "asOfDate": "Nov 23 2026",
+  "display": "$82.74 M",
+  "value": 82736642.21,
+  "asOfDate": "Nov 24 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
   "dividendYield": 4.14,
   "dividendYieldText": "4.14%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 23 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 24 2026",
   "distributionRate": null,
   "secYield": 3.43,
   "secYieldText": "3.43%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 23 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 24 2026",
   "unsubsidizedSecYield": 3.43
  },
  "returns": {
   "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Oct 31 2026",
-   "priceReturnsAsOf": "Nov 23 2026",
+   "priceReturnsAsOf": "Nov 24 2026",
    "mo1": 2.17,
    "mo1Text": "2.17%",
-   "qtd": 2.02,
-   "qtdText": "2.02%",
+   "qtd": 2.07,
+   "qtdText": "2.07%",
    "ytd": -0.03,
    "ytdText": "-0.03%",
    "yr1": 0.81,
@@ -695,8 +695,8 @@
   ],
   "pageSize": 250,
   "totalRows": 456,
-  "asOfDate": "2026-11-23",
-  "asOf": "Nov 23 2026",
+  "asOfDate": "2026-11-24",
+  "asOf": "Nov 24 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -707,8 +707,8 @@
    "history/004.json"
   ],
   "pageSize": 1000,
-  "totalRows": 3074,
-  "asOf": "Nov 23 2026",
+  "totalRows": 3075,
+  "asOf": "Nov 24 2026",
   "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
  },
  "metrics": {
