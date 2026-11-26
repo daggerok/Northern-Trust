@@ -1,0 +1,30 @@
+{
+ "ticker": "IQDY",
+ "page": 2,
+ "pageSize": 250,
+ "totalRows": 251,
+ "headers": [
+  "Name",
+  "Ticker",
+  "Identifier",
+  "Weight",
+  "Market Value",
+  "Shares Held",
+  "Asset Category",
+  "Coupon",
+  "Maturity"
+ ],
+ "rows": [
+  {
+   "Name": "U.S. DOLLAR",
+   "Ticker": "-",
+   "Identifier": "-",
+   "Weight": "-0.1452",
+   "Market Value": "-144897.6",
+   "Shares Held": "-23031000",
+   "Asset Category": "Cash/and or Derivatives",
+   "Coupon": "0",
+   "Maturity": ""
+  }
+ ]
+}

@@ -31,34 +31,34 @@
   "net": 0.18
  },
  "nav": {
-  "display": "$99.97",
-  "value": 99.97,
-  "asOfDate": "Nov 24 2026"
+  "display": "$100.28",
+  "value": 100.28,
+  "asOfDate": "Nov 25 2026"
  },
  "marketPrice": {
-  "display": "$99.86",
-  "value": 99.86,
-  "asOfDate": "Nov 24 2026"
+  "display": "$100.19",
+  "value": 100.19,
+  "asOfDate": "Nov 25 2026"
  },
  "premiumDiscount": {
-  "display": "-0.11%",
-  "value": -0.1105
+  "display": "-0.09%",
+  "value": -0.0913
  },
  "aum": {
-  "display": "$8.00 M",
-  "value": 7997643.12,
-  "asOfDate": "Nov 24 2026",
+  "display": "$8.02 M",
+  "value": 8022128.82,
+  "asOfDate": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 3.31,
-  "dividendYieldText": "3.31%",
+  "dividendYield": 3.3,
+  "dividendYieldText": "3.30%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "distributionRate": null,
   "secYield": 3.7,
   "secYieldText": "3.70%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "unsubsidizedSecYield": 3.7
  },
  "returns": {
@@ -170,8 +170,8 @@
   ],
   "pageSize": 250,
   "totalRows": 172,
-  "asOfDate": "2026-11-24",
-  "asOf": "Nov 24 2026",
+  "asOfDate": "2026-11-25",
+  "asOf": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -193,8 +193,8 @@
   "cagr5y": null,
   "cagr10y": null,
   "siAnn": 2.99,
-  "dividendYield": 3.31,
-  "dividendYieldText": "3.31%",
+  "dividendYield": 3.3,
+  "dividendYieldText": "3.30%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 3.7,
   "secYieldText": "3.70%",

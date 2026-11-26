@@ -31,34 +31,34 @@
   "net": 0.05
  },
  "nav": {
-  "display": "$50.70",
-  "value": 50.7,
-  "asOfDate": "Nov 24 2026"
+  "display": "$50.84",
+  "value": 50.84,
+  "asOfDate": "Nov 25 2026"
  },
  "marketPrice": {
-  "display": "$50.75",
-  "value": 50.75,
-  "asOfDate": "Nov 24 2026"
+  "display": "$50.90",
+  "value": 50.9,
+  "asOfDate": "Nov 25 2026"
  },
  "premiumDiscount": {
-  "display": "0.10%",
-  "value": 0.1037
+  "display": "0.11%",
+  "value": 0.1113
  },
  "aum": {
-  "display": "$377.22 M",
-  "value": 377217569.41,
-  "asOfDate": "Nov 24 2026",
+  "display": "$380.27 M",
+  "value": 380271095.92,
+  "asOfDate": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 2.59,
-  "dividendYieldText": "2.59%",
+  "dividendYield": 2.58,
+  "dividendYieldText": "2.58%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "distributionRate": null,
   "secYield": 3.65,
   "secYieldText": "3.65%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "unsubsidizedSecYield": 3.65
  },
  "returns": {
@@ -191,9 +191,9 @@
    "holdings/023.json"
   ],
   "pageSize": 250,
-  "totalRows": 5510,
-  "asOfDate": "2026-11-24",
-  "asOf": "Nov 24 2026",
+  "totalRows": 5555,
+  "asOfDate": "2026-11-25",
+  "asOf": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -215,8 +215,8 @@
   "cagr5y": null,
   "cagr10y": null,
   "siAnn": 3.67,
-  "dividendYield": 2.59,
-  "dividendYieldText": "2.59%",
+  "dividendYield": 2.58,
+  "dividendYieldText": "2.58%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 3.65,
   "secYieldText": "3.65%",

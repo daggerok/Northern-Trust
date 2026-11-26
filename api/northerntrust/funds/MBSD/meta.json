@@ -31,34 +31,34 @@
   "net": 0.2
  },
  "nav": {
-  "display": "$20.18",
-  "value": 20.18,
-  "asOfDate": "Nov 24 2026"
+  "display": "$20.23",
+  "value": 20.23,
+  "asOfDate": "Nov 25 2026"
  },
  "marketPrice": {
-  "display": "$20.16",
-  "value": 20.16,
-  "asOfDate": "Nov 24 2026"
+  "display": "$20.22",
+  "value": 20.22,
+  "asOfDate": "Nov 25 2026"
  },
  "premiumDiscount": {
-  "display": "-0.10%",
-  "value": -0.0976
+  "display": "-0.03%",
+  "value": -0.0272
  },
  "aum": {
-  "display": "$82.74 M",
-  "value": 82736642.21,
-  "asOfDate": "Nov 24 2026",
+  "display": "$82.92 M",
+  "value": 82924421.71,
+  "asOfDate": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 4.14,
-  "dividendYieldText": "4.14%",
+  "dividendYield": 4.13,
+  "dividendYieldText": "4.13%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "distributionRate": null,
   "secYield": 3.43,
   "secYieldText": "3.43%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "unsubsidizedSecYield": 3.43
  },
  "returns": {
@@ -695,8 +695,8 @@
   ],
   "pageSize": 250,
   "totalRows": 456,
-  "asOfDate": "2026-11-24",
-  "asOf": "Nov 24 2026",
+  "asOfDate": "2026-11-25",
+  "asOf": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -721,8 +721,8 @@
   "cagr5y": 0.59,
   "cagr10y": 1.28,
   "siAnn": 1.5,
-  "dividendYield": 4.14,
-  "dividendYieldText": "4.14%",
+  "dividendYield": 4.13,
+  "dividendYieldText": "4.13%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 3.43,
   "secYieldText": "3.43%",

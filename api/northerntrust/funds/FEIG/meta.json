@@ -31,34 +31,34 @@
   "net": 0.12
  },
  "nav": {
-  "display": "$39.12",
-  "value": 39.12,
-  "asOfDate": "Nov 24 2026"
+  "display": "$39.25",
+  "value": 39.25,
+  "asOfDate": "Nov 25 2026"
  },
  "marketPrice": {
-  "display": "$39.13",
-  "value": 39.13,
-  "asOfDate": "Nov 24 2026"
+  "display": "$39.26",
+  "value": 39.26,
+  "asOfDate": "Nov 25 2026"
  },
  "premiumDiscount": {
   "display": "0.04%",
-  "value": 0.0391
+  "value": 0.0438
  },
  "aum": {
-  "display": "$48.89 M",
-  "value": 48894395.59,
-  "asOfDate": "Nov 24 2026",
+  "display": "$49.06 M",
+  "value": 49058049.64,
+  "asOfDate": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 4.98,
-  "dividendYieldText": "4.98%",
+  "dividendYield": 4.97,
+  "dividendYieldText": "4.97%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "distributionRate": null,
   "secYield": 5.64,
   "secYieldText": "5.64%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "unsubsidizedSecYield": 5.63
  },
  "returns": {
@@ -357,8 +357,8 @@
   ],
   "pageSize": 250,
   "totalRows": 794,
-  "asOfDate": "2026-11-24",
-  "asOf": "Nov 24 2026",
+  "asOfDate": "2026-11-25",
+  "asOf": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -381,8 +381,8 @@
   "cagr5y": -0.37,
   "cagr10y": null,
   "siAnn": -0.62,
-  "dividendYield": 4.98,
-  "dividendYieldText": "4.98%",
+  "dividendYield": 4.97,
+  "dividendYieldText": "4.97%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 5.64,
   "secYieldText": "5.64%",

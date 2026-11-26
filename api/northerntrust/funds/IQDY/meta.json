@@ -31,34 +31,34 @@
   "net": 0.47
  },
  "nav": {
-  "display": "$38.22",
-  "value": 38.22,
-  "asOfDate": "Nov 24 2026"
+  "display": "$37.37",
+  "value": 37.37,
+  "asOfDate": "Nov 25 2026"
  },
  "marketPrice": {
-  "display": "$37.98",
-  "value": 37.98,
-  "asOfDate": "Nov 24 2026"
+  "display": "$37.95",
+  "value": 37.95,
+  "asOfDate": "Nov 25 2026"
  },
  "premiumDiscount": {
-  "display": "-0.61%",
-  "value": -0.6136
+  "display": "1.55%",
+  "value": 1.5454
  },
  "aum": {
-  "display": "$99.36 M",
-  "value": 99361159.65,
-  "asOfDate": "Nov 24 2026",
+  "display": "$97.16 M",
+  "value": 97160163.01,
+  "asOfDate": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com full-data CSV total net assets"
  },
  "yields": {
-  "dividendYield": 3.65,
-  "dividendYieldText": "3.65%",
+  "dividendYield": 3.74,
+  "dividendYieldText": "3.74%",
   "dividendYieldBasis": "official-trailing-12m",
-  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "dividendYieldKind": "12-month dividend yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "distributionRate": null,
   "secYield": 3.91,
   "secYieldText": "3.91%",
-  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 24 2026",
+  "secYieldKind": "SEC subsidized yield (official Northern Trust full-data CSV), as of Nov 25 2026",
   "unsubsidizedSecYield": 3.9
  },
  "returns": {
@@ -318,12 +318,13 @@
  },
  "holdings": {
   "pages": [
-   "holdings/001.json"
+   "holdings/001.json",
+   "holdings/002.json"
   ],
   "pageSize": 250,
-  "totalRows": 250,
-  "asOfDate": "2026-11-24",
-  "asOf": "Nov 24 2026",
+  "totalRows": 251,
+  "asOfDate": "2026-11-25",
+  "asOf": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com daily holdings CSV (full positions with CUSIP/ISIN/SEDOL identifiers)"
  },
  "history": {
@@ -348,8 +349,8 @@
   "cagr5y": 11.64,
   "cagr10y": 10.54,
   "siAnn": 8.27,
-  "dividendYield": 3.65,
-  "dividendYieldText": "3.65%",
+  "dividendYield": 3.74,
+  "dividendYieldText": "3.74%",
   "dividendYieldBasis": "official-trailing-12m",
   "secYield": 3.91,
   "secYieldText": "3.91%",
