@@ -2,7 +2,7 @@
  "ticker": "QLC",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 2809,
+ "totalRows": 2810,
  "headers": [
   "Date",
   "NAV",

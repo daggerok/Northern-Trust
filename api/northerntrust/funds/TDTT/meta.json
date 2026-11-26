@@ -65,11 +65,11 @@
   "derivedFrom": "official Northern Trust NAV total returns (funds-list JSON + full-data CSV); qtd derived from the daily NAV history with published distributions reinvested",
   "monthEnd": {
    "asOfDate": "Oct 31 2026",
-   "priceReturnsAsOf": "Nov 24 2026",
+   "priceReturnsAsOf": "Nov 25 2026",
    "mo1": 1.59,
    "mo1Text": "1.59%",
-   "qtd": 0.59,
-   "qtdText": "0.59%",
+   "qtd": 0.72,
+   "qtdText": "0.72%",
    "ytd": 1.81,
    "ytdText": "1.81%",
    "yr1": 2.06,
@@ -562,8 +562,8 @@
    "history/004.json"
   ],
   "pageSize": 1000,
-  "totalRows": 3815,
-  "asOf": "Nov 24 2026",
+  "totalRows": 3816,
+  "asOf": "Nov 25 2026",
   "source": "etfs.ntam.northerntrust.com daily pricing JSON (NAV, market price and premium/discount since inception)"
  },
  "metrics": {

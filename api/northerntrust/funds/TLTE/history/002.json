@@ -2,7 +2,7 @@
  "ticker": "TLTE",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 3559,
+ "totalRows": 3560,
  "headers": [
   "Date",
   "NAV",

@@ -2,7 +2,7 @@
  "ticker": "TXCA",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 45,
+ "totalRows": 46,
  "headers": [
   "Date",
   "NAV",
@@ -279,6 +279,12 @@
    "NAV": "51.03",
    "Market Price": "51.04",
    "Premium/Discount": "0"
+  },
+  {
+   "Date": "Nov 25 2026",
+   "NAV": "51.19",
+   "Market Price": "51.23",
+   "Premium/Discount": "0.03"
   }
  ]
 }

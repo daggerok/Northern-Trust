@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T05:48:05Z",
+ "generatedAt": "2026-11-26T09:35:09Z",
  "source": {
   "provider": "Northern Trust Asset Management (US ETFs)",
   "market": "us",
@@ -13,7 +13,7 @@
  "counts": {
   "funds": 49,
   "holdings": 29990,
-  "history": 81679
+  "history": 81724
  },
  "funds": [
   {
@@ -591,11 +591,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 2.08,
      "mo1Text": "2.08%",
-     "qtd": 1.81,
-     "qtdText": "1.81%",
+     "qtd": 2.15,
+     "qtdText": "2.15%",
      "ytd": -1.41,
      "ytdText": "-1.41%",
      "yr1": -1.01,
@@ -636,9 +636,9 @@
     "secYieldText": "5.64%",
     "week52Low": 38.51,
     "week52High": 41.87,
-    "range52w": 18.45,
-    "range52wClose": 39.13,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 22.32,
+    "range52wClose": 39.26,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -6.22,
@@ -694,7 +694,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 794,
-   "history": 1301
+   "history": 1302
   },
   {
    "ticker": "FEUS",
@@ -727,11 +727,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -0.5,
      "mo1Text": "-0.50%",
-     "qtd": -5.27,
-     "qtdText": "-5.27%",
+     "qtd": -5.38,
+     "qtdText": "-5.38%",
      "ytd": 11.55,
      "ytdText": "11.55%",
      "yr1": 12.44,
@@ -772,9 +772,9 @@
     "secYieldText": "1.09%",
     "week52Low": 67.95,
     "week52High": 85.01,
-    "range52w": 62.02,
-    "range52wClose": 78.53,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 62.31,
+    "range52wClose": 78.58,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -7.57,
@@ -830,7 +830,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 132,
-   "history": 1301
+   "history": 1302
   },
   {
    "ticker": "GQRE",
@@ -863,11 +863,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 2.32,
      "mo1Text": "2.32%",
-     "qtd": 3.87,
-     "qtdText": "3.87%",
+     "qtd": 4.54,
+     "qtdText": "4.54%",
      "ytd": 5.24,
      "ytdText": "5.24%",
      "yr1": 7.31,
@@ -908,9 +908,9 @@
     "secYieldText": "3.64%",
     "week52Low": 58.23,
     "week52High": 66.67,
-    "range52w": 37.2,
-    "range52wClose": 61.37,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 43.36,
+    "range52wClose": 61.89,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -7.17,
@@ -966,7 +966,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 200,
-   "history": 3282
+   "history": 3283
   },
   {
    "ticker": "GUNR",
@@ -999,11 +999,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.5,
      "mo1Text": "1.50%",
-     "qtd": -7.77,
-     "qtdText": "-7.77%",
+     "qtd": -7.21,
+     "qtdText": "-7.21%",
      "ytd": 18.71,
      "ytdText": "18.71%",
      "yr1": 26.41,
@@ -1042,11 +1042,11 @@
     "dividendYieldBasis": "official-trailing-12m",
     "secYield": 2.35,
     "secYieldText": "2.35%",
-    "week52Low": 43.88,
+    "week52Low": 44.54,
     "week52High": 57.59,
-    "range52w": 33.7,
-    "range52wClose": 48.5,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 35.02,
+    "range52wClose": 49.11,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -14.72,
@@ -1102,7 +1102,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 183,
-   "history": 3816
+   "history": 3817
   },
   {
    "ticker": "HYGV",
@@ -1135,11 +1135,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -0.34,
      "mo1Text": "-0.34%",
-     "qtd": -0.79,
-     "qtdText": "-0.79%",
+     "qtd": -0.9,
+     "qtdText": "-0.90%",
      "ytd": -0.02,
      "ytdText": "-0.02%",
      "yr1": 1.25,
@@ -1180,9 +1180,9 @@
     "secYieldText": "8.83%",
     "week52Low": 37.89,
     "week52High": 41.08,
-    "range52w": 2.19,
-    "range52wClose": 37.96,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 2.82,
+    "range52wClose": 37.98,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -7.55,
@@ -1238,7 +1238,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 954,
-   "history": 2101
+   "history": 2102
   },
   {
    "ticker": "IQDF",
@@ -1271,11 +1271,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -2.12,
      "mo1Text": "-2.12%",
-     "qtd": -6.66,
-     "qtdText": "-6.66%",
+     "qtd": -8.3,
+     "qtdText": "-8.30%",
      "ytd": 14.38,
      "ytdText": "14.38%",
      "yr1": 20.72,
@@ -1314,11 +1314,11 @@
     "dividendYieldBasis": "official-trailing-12m",
     "secYield": 4.09,
     "secYieldText": "4.09%",
-    "week52Low": 29.23,
+    "week52Low": 29.51,
     "week52High": 36.39,
-    "range52w": 34.5,
-    "range52wClose": 31.7,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 32.12,
+    "range52wClose": 31.72,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -12.83,
@@ -1374,7 +1374,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 256,
-   "history": 3425
+   "history": 3426
   },
   {
    "ticker": "IQDY",
@@ -1407,11 +1407,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -4.33,
      "mo1Text": "-4.33%",
-     "qtd": -8.8,
-     "qtdText": "-8.80%",
+     "qtd": -10.83,
+     "qtdText": "-10.83%",
      "ytd": 13.68,
      "ytdText": "13.68%",
      "yr1": 18.76,
@@ -1450,11 +1450,11 @@
     "dividendYieldBasis": "official-trailing-12m",
     "secYield": 3.91,
     "secYieldText": "3.91%",
-    "week52Low": 35.1,
+    "week52Low": 35.39,
     "week52High": 44.22,
-    "range52w": 31.58,
-    "range52wClose": 37.98,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 28.99,
+    "range52wClose": 37.95,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -14.18,
@@ -1510,7 +1510,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 251,
-   "history": 3425
+   "history": 3426
   },
   {
    "ticker": "LKOR",
@@ -1543,11 +1543,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.29,
      "mo1Text": "3.29%",
-     "qtd": 2.95,
-     "qtdText": "2.95%",
+     "qtd": 3.62,
+     "qtdText": "3.62%",
      "ytd": -3.66,
      "ytdText": "-3.66%",
      "yr1": -4.18,
@@ -1588,9 +1588,9 @@
     "secYieldText": "6.30%",
     "week52Low": 37.89,
     "week52High": 43.62,
-    "range52w": 19.55,
-    "range52wClose": 39.01,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 23.21,
+    "range52wClose": 39.22,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -10.1,
@@ -1646,7 +1646,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 765,
-   "history": 2809
+   "history": 2810
   },
   {
    "ticker": "MBSD",
@@ -1679,11 +1679,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 2.17,
      "mo1Text": "2.17%",
-     "qtd": 2.07,
-     "qtdText": "2.07%",
+     "qtd": 2.32,
+     "qtdText": "2.32%",
      "ytd": -0.03,
      "ytdText": "-0.03%",
      "yr1": 0.81,
@@ -1724,9 +1724,9 @@
     "secYieldText": "3.43%",
     "week52Low": 19.74,
     "week52High": 21.05,
-    "range52w": 32.06,
-    "range52wClose": 20.16,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 36.64,
+    "range52wClose": 20.22,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -3.94,
@@ -1782,7 +1782,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 456,
-   "history": 3075
+   "history": 3076
   },
   {
    "ticker": "MUNA",
@@ -1815,11 +1815,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.47,
      "mo1Text": "1.47%",
-     "qtd": 1.18,
-     "qtdText": "1.18%",
+     "qtd": 1.24,
+     "qtdText": "1.24%",
      "ytd": 1.58,
      "ytdText": "1.58%",
      "yr1": 2.23,
@@ -1860,9 +1860,9 @@
     "secYieldText": "3.00%",
     "week52Low": 98.34,
     "week52High": 101.04,
-    "range52w": 51.48,
-    "range52wClose": 99.73,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 55.19,
+    "range52wClose": 99.83,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -1.2,
@@ -1918,7 +1918,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 225,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "MUNB",
@@ -1951,11 +1951,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 2.84,
      "mo1Text": "2.84%",
-     "qtd": 2.25,
-     "qtdText": "2.25%",
+     "qtd": 2.45,
+     "qtdText": "2.45%",
      "ytd": 0.26,
      "ytdText": "0.26%",
      "yr1": 0.79,
@@ -1996,9 +1996,9 @@
     "secYieldText": "3.17%",
     "week52Low": 96.52,
     "week52High": 102.72,
-    "range52w": 46.61,
-    "range52wClose": 99.41,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 47.26,
+    "range52wClose": 99.45,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -3.18,
@@ -2054,7 +2054,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 258,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "MUNC",
@@ -2087,11 +2087,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.62,
      "mo1Text": "3.62%",
-     "qtd": 3.25,
-     "qtdText": "3.25%",
+     "qtd": 3.57,
+     "qtdText": "3.57%",
      "ytd": -0.32,
      "ytdText": "-0.32%",
      "yr1": 0.24,
@@ -2132,9 +2132,9 @@
     "secYieldText": "3.70%",
     "week52Low": 95.88,
     "week52High": 104.81,
-    "range52w": 44.57,
-    "range52wClose": 99.86,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 48.26,
+    "range52wClose": 100.19,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -4.41,
@@ -2190,7 +2190,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 172,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "MUND",
@@ -2223,11 +2223,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 4.06,
      "mo1Text": "4.06%",
-     "qtd": 3.9,
-     "qtdText": "3.90%",
+     "qtd": 4.24,
+     "qtdText": "4.24%",
      "ytd": 0.24,
      "ytdText": "0.24%",
      "yr1": 0.62,
@@ -2268,9 +2268,9 @@
     "secYieldText": "3.97%",
     "week52Low": 95.57,
     "week52High": 104.6,
-    "range52w": 57.7,
-    "range52wClose": 100.78,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 60.47,
+    "range52wClose": 101.03,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -3.41,
@@ -2326,7 +2326,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 190,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "MUNF",
@@ -2359,11 +2359,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.35,
      "mo1Text": "3.35%",
-     "qtd": 2.66,
-     "qtdText": "2.66%",
+     "qtd": 2.9,
+     "qtdText": "2.90%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -2404,9 +2404,9 @@
     "secYieldText": "3.23%",
     "week52Low": 95.99,
     "week52High": 100.29,
-    "range52w": 80,
-    "range52wClose": 99.43,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 86.05,
+    "range52wClose": 99.69,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.6,
@@ -2462,7 +2462,7 @@
     "performanceAsOf": null
    },
    "holdings": 130,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "MUNG",
@@ -2495,11 +2495,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.9,
      "mo1Text": "3.90%",
-     "qtd": 3.46,
-     "qtdText": "3.46%",
+     "qtd": 3.79,
+     "qtdText": "3.79%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -2540,9 +2540,9 @@
     "secYieldText": "3.77%",
     "week52Low": 95.09,
     "week52High": 100.26,
-    "range52w": 82.21,
-    "range52wClose": 99.34,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 89.36,
+    "range52wClose": 99.71,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.55,
@@ -2598,7 +2598,7 @@
     "performanceAsOf": null
    },
    "holdings": 183,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "MUNH",
@@ -2631,11 +2631,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.8,
      "mo1Text": "3.80%",
-     "qtd": 3.37,
-     "qtdText": "3.37%",
+     "qtd": 3.71,
+     "qtdText": "3.71%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -2676,9 +2676,9 @@
     "secYieldText": "4.16%",
     "week52Low": 94.38,
     "week52High": 99.98,
-    "range52w": 71.07,
-    "range52wClose": 98.36,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 78.21,
+    "range52wClose": 98.76,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.74,
@@ -2734,7 +2734,7 @@
     "performanceAsOf": null
    },
    "holdings": 138,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "MUNJ",
@@ -2767,11 +2767,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 2.12,
      "mo1Text": "2.12%",
-     "qtd": 1.58,
-     "qtdText": "1.58%",
+     "qtd": 1.68,
+     "qtdText": "1.68%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -2812,9 +2812,9 @@
     "secYieldText": "3.02%",
     "week52Low": 97.59,
     "week52High": 100.42,
-    "range52w": 64.31,
-    "range52wClose": 99.41,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 68.9,
+    "range52wClose": 99.54,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.38,
@@ -2870,7 +2870,7 @@
     "performanceAsOf": null
    },
    "holdings": 170,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "NFRA",
@@ -2903,11 +2903,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.31,
      "mo1Text": "3.31%",
-     "qtd": 2.07,
-     "qtdText": "2.07%",
+     "qtd": 2.41,
+     "qtdText": "2.41%",
      "ytd": 8.83,
      "ytdText": "8.83%",
      "yr1": 9.47,
@@ -2948,9 +2948,9 @@
     "secYieldText": "2.22%",
     "week52Low": 59.68,
     "week52High": 67.36,
-    "range52w": 50.26,
-    "range52wClose": 63.54,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 58.59,
+    "range52wClose": 64.18,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -4.72,
@@ -2993,7 +2993,7 @@
     "vsQqq1y": 4.96,
     "vsQqq3y": -6.15,
     "vsQqq5y": -4.59,
-    "vsQqq10y": -11.69,
+    "vsQqq10y": -11.7,
     "beta1yQqq": 0.18,
     "corr1yQqq": 0.37,
     "upCapture3yQqq": 29.22,
@@ -3006,7 +3006,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 220,
-   "history": 3302
+   "history": 3303
   },
   {
    "ticker": "NOEQ",
@@ -3039,11 +3039,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -2,
      "mo1Text": "-2.00%",
-     "qtd": -7.05,
-     "qtdText": "-7.05%",
+     "qtd": -7.52,
+     "qtdText": "-7.52%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -3084,9 +3084,9 @@
     "secYieldText": "0.87%",
     "week52Low": 24.64,
     "week52High": 29.99,
-    "range52w": 52.15,
-    "range52wClose": 27.43,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 50.47,
+    "range52wClose": 27.34,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-03-23",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -8.84,
@@ -3142,7 +3142,7 @@
     "performanceAsOf": null
    },
    "holdings": 481,
-   "history": 172
+   "history": 173
   },
   {
    "ticker": "QDEF",
@@ -3175,11 +3175,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.9,
      "mo1Text": "1.90%",
-     "qtd": -3.14,
-     "qtdText": "-3.14%",
+     "qtd": -2.94,
+     "qtdText": "-2.94%",
      "ytd": 13.28,
      "ytdText": "13.28%",
      "yr1": 15.09,
@@ -3220,9 +3220,9 @@
     "secYieldText": "1.45%",
     "week52Low": 78.21,
     "week52High": 91.9,
-    "range52w": 60.85,
-    "range52wClose": 86.54,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 63.04,
+    "range52wClose": 86.84,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -5.51,
@@ -3278,7 +3278,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 156,
-   "history": 3504
+   "history": 3505
   },
   {
    "ticker": "QDF",
@@ -3311,11 +3311,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 0.35,
      "mo1Text": "0.35%",
-     "qtd": -5.19,
-     "qtdText": "-5.19%",
+     "qtd": -5.15,
+     "qtdText": "-5.15%",
      "ytd": 13.15,
      "ytdText": "13.15%",
      "yr1": 14.57,
@@ -3356,9 +3356,9 @@
     "secYieldText": "1.47%",
     "week52Low": 77.21,
     "week52High": 93.51,
-    "range52w": 53.5,
-    "range52wClose": 85.93,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 53.8,
+    "range52wClose": 85.98,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -8.05,
@@ -3414,7 +3414,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 142,
-   "history": 3504
+   "history": 3505
   },
   {
    "ticker": "QLC",
@@ -3447,11 +3447,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -1.69,
      "mo1Text": "-1.69%",
-     "qtd": -7.51,
-     "qtdText": "-7.51%",
+     "qtd": -7.75,
+     "qtdText": "-7.75%",
      "ytd": 11.14,
      "ytdText": "11.14%",
      "yr1": 13.12,
@@ -3492,9 +3492,9 @@
     "secYieldText": "1.11%",
     "week52Low": 75.97,
     "week52High": 93.79,
-    "range52w": 47.03,
-    "range52wClose": 84.35,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 46.41,
+    "range52wClose": 84.24,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -10.18,
@@ -3550,7 +3550,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 162,
-   "history": 2809
+   "history": 2810
   },
   {
    "ticker": "QLV",
@@ -3583,11 +3583,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 5.06,
      "mo1Text": "5.06%",
-     "qtd": 2.78,
-     "qtdText": "2.78%",
+     "qtd": 2.95,
+     "qtdText": "2.95%",
      "ytd": 15.35,
      "ytdText": "15.35%",
      "yr1": 17.07,
@@ -3628,9 +3628,9 @@
     "secYieldText": "1.40%",
     "week52Low": 70.46,
     "week52High": 83.09,
-    "range52w": 79.41,
-    "range52wClose": 80.49,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 80.76,
+    "range52wClose": 80.66,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -2.92,
@@ -3686,7 +3686,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 123,
-   "history": 1852
+   "history": 1853
   },
   {
    "ticker": "QLVD",
@@ -3719,11 +3719,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 5.06,
      "mo1Text": "5.06%",
-     "qtd": 3.86,
-     "qtdText": "3.86%",
+     "qtd": 4.41,
+     "qtdText": "4.41%",
      "ytd": 12,
      "ytdText": "12.00%",
      "yr1": 16.56,
@@ -3762,11 +3762,11 @@
     "dividendYieldBasis": "official-trailing-12m",
     "secYield": 2.78,
     "secYieldText": "2.78%",
-    "week52Low": 31.24,
+    "week52Low": 31.3,
     "week52High": 35.47,
-    "range52w": 69.5,
-    "range52wClose": 34.18,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 76.98,
+    "range52wClose": 34.51,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -2.72,
@@ -3822,7 +3822,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 213,
-   "history": 1852
+   "history": 1853
   },
   {
    "ticker": "QLVE",
@@ -3855,11 +3855,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -3.76,
      "mo1Text": "-3.76%",
-     "qtd": -9.43,
-     "qtdText": "-9.43%",
+     "qtd": -11.14,
+     "qtdText": "-11.14%",
      "ytd": 11.79,
      "ytdText": "11.79%",
      "yr1": 12.07,
@@ -3900,9 +3900,9 @@
     "secYieldText": "2.71%",
     "week52Low": 28.7,
     "week52High": 35.16,
-    "range52w": 22.91,
-    "range52wClose": 30.18,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 23.07,
+    "range52wClose": 30.19,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -14.14,
@@ -3958,7 +3958,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 166,
-   "history": 1852
+   "history": 1853
   },
   {
    "ticker": "RAVI",
@@ -3991,11 +3991,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 0.41,
      "mo1Text": "0.41%",
-     "qtd": 0.62,
-     "qtdText": "0.62%",
+     "qtd": 0.64,
+     "qtdText": "0.64%",
      "ytd": 3,
      "ytdText": "3.00%",
      "yr1": 3.79,
@@ -4036,9 +4036,9 @@
     "secYieldText": "4.42%",
     "week52Low": 74.96,
     "week52High": 75.63,
-    "range52w": 34.33,
-    "range52wClose": 75.19,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 32.84,
+    "range52wClose": 75.18,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.59,
@@ -4074,7 +4074,7 @@
     "beta1ySpy": 0,
     "corr1ySpy": 0.04,
     "upCapture3ySpy": 12.72,
-    "downCapture3ySpy": -14.42,
+    "downCapture3ySpy": -14.43,
     "relStrength3mSpy": 6.79,
     "stressReturnSpy": 0.53,
     "stressBasisSpy": "SPY -11% 2026-10-06 to 2026-11-20",
@@ -4094,7 +4094,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 292,
-   "history": 3550
+   "history": 3551
   },
   {
    "ticker": "SKOR",
@@ -4127,11 +4127,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.52,
      "mo1Text": "1.52%",
-     "qtd": 1.4,
-     "qtdText": "1.40%",
+     "qtd": 1.59,
+     "qtdText": "1.59%",
      "ytd": -0.2,
      "ytdText": "-0.20%",
      "yr1": 0.75,
@@ -4172,9 +4172,9 @@
     "secYieldText": "5.59%",
     "week52Low": 46.64,
     "week52High": 49.48,
-    "range52w": 19.37,
-    "range52wClose": 47.19,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 24.3,
+    "range52wClose": 47.33,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -4.36,
@@ -4230,7 +4230,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 1339,
-   "history": 3025
+   "history": 3026
   },
   {
    "ticker": "TAXI",
@@ -4263,11 +4263,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.47,
      "mo1Text": "3.47%",
-     "qtd": 3.16,
-     "qtdText": "3.16%",
+     "qtd": 3.44,
+     "qtdText": "3.44%",
      "ytd": 1,
      "ytdText": "1.00%",
      "yr1": 2.12,
@@ -4308,9 +4308,9 @@
     "secYieldText": "3.65%",
     "week52Low": 48.85,
     "week52High": 52.1,
-    "range52w": 58.46,
-    "range52wClose": 50.75,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 63.08,
+    "range52wClose": 50.9,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -2.31,
@@ -4366,7 +4366,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 5555,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "TAXS",
@@ -4399,11 +4399,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.9,
      "mo1Text": "1.90%",
-     "qtd": 1.59,
-     "qtdText": "1.59%",
+     "qtd": 1.68,
+     "qtdText": "1.68%",
      "ytd": 1.66,
      "ytdText": "1.66%",
      "yr1": 2.64,
@@ -4444,9 +4444,9 @@
     "secYieldText": "3.28%",
     "week52Low": 49.2,
     "week52High": 50.74,
-    "range52w": 53.25,
-    "range52wClose": 50.02,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 56.49,
+    "range52wClose": 50.07,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -1.32,
@@ -4502,7 +4502,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 2777,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "TAXT",
@@ -4535,11 +4535,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 4.49,
      "mo1Text": "4.49%",
-     "qtd": 3.79,
-     "qtdText": "3.79%",
+     "qtd": 4.16,
+     "qtdText": "4.16%",
      "ytd": 1.52,
      "ytdText": "1.52%",
      "yr1": 2.19,
@@ -4580,9 +4580,9 @@
     "secYieldText": "3.93%",
     "week52Low": 48.61,
     "week52High": 52.37,
-    "range52w": 62.77,
-    "range52wClose": 50.97,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 65.96,
+    "range52wClose": 51.09,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -2.44,
@@ -4638,7 +4638,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 3493,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "TDTF",
@@ -4671,11 +4671,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 2.38,
      "mo1Text": "2.38%",
-     "qtd": 1.07,
-     "qtdText": "1.07%",
+     "qtd": 1.34,
+     "qtdText": "1.34%",
      "ytd": 0.65,
      "ytdText": "0.65%",
      "yr1": 0.73,
@@ -4716,9 +4716,9 @@
     "secYieldText": "6.31%",
     "week52Low": 22.68,
     "week52High": 24.39,
-    "range52w": 14.62,
-    "range52wClose": 22.93,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 18.71,
+    "range52wClose": 23,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -5.7,
@@ -4774,7 +4774,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 17,
-   "history": 3816
+   "history": 3817
   },
   {
    "ticker": "TDTT",
@@ -4807,11 +4807,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.59,
      "mo1Text": "1.59%",
-     "qtd": 0.59,
-     "qtdText": "0.59%",
+     "qtd": 0.72,
+     "qtdText": "0.72%",
      "ytd": 1.81,
      "ytdText": "1.81%",
      "yr1": 2.06,
@@ -4852,9 +4852,9 @@
     "secYieldText": "6.06%",
     "week52Low": 23.21,
     "week52High": 24.46,
-    "range52w": 11.2,
-    "range52wClose": 23.35,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 14.4,
+    "range52wClose": 23.39,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -4.37,
@@ -4910,7 +4910,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 23,
-   "history": 3815
+   "history": 3816
   },
   {
    "ticker": "TILT",
@@ -4943,11 +4943,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 0.62,
      "mo1Text": "0.62%",
-     "qtd": -4.22,
-     "qtdText": "-4.22%",
+     "qtd": -4.07,
+     "qtdText": "-4.07%",
      "ytd": 13,
      "ytdText": "13.00%",
      "yr1": 14.44,
@@ -4988,9 +4988,9 @@
     "secYieldText": "1.06%",
     "week52Low": 235.15,
     "week52High": 287.68,
-    "range52w": 58.86,
-    "range52wClose": 266.07,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 60.27,
+    "range52wClose": 266.81,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -7.25,
@@ -5046,7 +5046,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 1898,
-   "history": 3816
+   "history": 3817
   },
   {
    "ticker": "TIPA",
@@ -5079,11 +5079,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.19,
      "mo1Text": "1.19%",
-     "qtd": 0.57,
-     "qtdText": "0.57%",
+     "qtd": 0.66,
+     "qtdText": "0.66%",
      "ytd": 2.48,
      "ytdText": "2.48%",
      "yr1": 2.74,
@@ -5124,9 +5124,9 @@
     "secYieldText": "5.43%",
     "week52Low": 97.92,
     "week52High": 101.66,
-    "range52w": 17.65,
-    "range52wClose": 98.58,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 20.86,
+    "range52wClose": 98.7,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -2.91,
@@ -5182,7 +5182,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 6,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "TIPB",
@@ -5215,11 +5215,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.97,
      "mo1Text": "1.97%",
-     "qtd": 0.94,
-     "qtdText": "0.94%",
+     "qtd": 1.18,
+     "qtdText": "1.18%",
      "ytd": 1.3,
      "ytdText": "1.30%",
      "yr1": 1.41,
@@ -5260,9 +5260,9 @@
     "secYieldText": "5.95%",
     "week52Low": 95.58,
     "week52High": 101.56,
-    "range52w": 15.05,
-    "range52wClose": 96.48,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 19.23,
+    "range52wClose": 96.73,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -4.75,
@@ -5318,7 +5318,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 11,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "TIPC",
@@ -5351,11 +5351,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.13,
      "mo1Text": "3.13%",
-     "qtd": 1.77,
-     "qtdText": "1.77%",
+     "qtd": 2.24,
+     "qtdText": "2.24%",
      "ytd": -0.61,
      "ytdText": "-0.61%",
      "yr1": -1.24,
@@ -5396,9 +5396,9 @@
     "secYieldText": "6.66%",
     "week52Low": 92.43,
     "week52High": 102.62,
-    "range52w": 15.51,
-    "range52wClose": 94.01,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 18.84,
+    "range52wClose": 94.35,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -8.06,
@@ -5454,7 +5454,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 18,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "TIPD",
@@ -5487,11 +5487,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.98,
      "mo1Text": "3.98%",
-     "qtd": 2.38,
-     "qtdText": "2.38%",
+     "qtd": 2.99,
+     "qtdText": "2.99%",
      "ytd": -1.41,
      "ytdText": "-1.41%",
      "yr1": -2.64,
@@ -5532,9 +5532,9 @@
     "secYieldText": "7.14%",
     "week52Low": 89.95,
     "week52High": 103.2,
-    "range52w": 18.26,
-    "range52wClose": 92.37,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 22.64,
+    "range52wClose": 92.95,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -9.93,
@@ -5590,7 +5590,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 28,
-   "history": 320
+   "history": 321
   },
   {
    "ticker": "TIPE",
@@ -5623,11 +5623,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 1.61,
      "mo1Text": "1.61%",
-     "qtd": 0.66,
-     "qtdText": "0.66%",
+     "qtd": 0.8,
+     "qtdText": "0.80%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -5668,9 +5668,9 @@
     "secYieldText": "5.98%",
     "week52Low": 98.21,
     "week52High": 99.93,
-    "range52w": 27.91,
-    "range52wClose": 98.69,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 38.37,
+    "range52wClose": 98.87,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.95,
@@ -5726,7 +5726,7 @@
     "performanceAsOf": null
    },
    "holdings": 6,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "TIPF",
@@ -5759,11 +5759,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 2.28,
      "mo1Text": "2.28%",
-     "qtd": 1.06,
-     "qtdText": "1.06%",
+     "qtd": 1.35,
+     "qtdText": "1.35%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -5804,9 +5804,9 @@
     "secYieldText": "6.18%",
     "week52Low": 97,
     "week52High": 99.88,
-    "range52w": 27.43,
-    "range52wClose": 97.79,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 38.54,
+    "range52wClose": 98.11,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -1.03,
@@ -5862,7 +5862,7 @@
     "performanceAsOf": null
    },
    "holdings": 11,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "TIPG",
@@ -5895,11 +5895,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.38,
      "mo1Text": "3.38%",
-     "qtd": 1.89,
-     "qtdText": "1.89%",
+     "qtd": 2.41,
+     "qtdText": "2.41%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -5940,9 +5940,9 @@
     "secYieldText": "6.85%",
     "week52Low": 94.95,
     "week52High": 99.92,
-    "range52w": 35.61,
-    "range52wClose": 96.72,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 46.08,
+    "range52wClose": 97.24,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -1.13,
@@ -5998,7 +5998,7 @@
     "performanceAsOf": null
    },
    "holdings": 18,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "TIPH",
@@ -6031,11 +6031,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 4.04,
      "mo1Text": "4.04%",
-     "qtd": 2.36,
-     "qtdText": "2.36%",
+     "qtd": 2.99,
+     "qtdText": "2.99%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -6076,9 +6076,9 @@
     "secYieldText": "7.33%",
     "week52Low": 93.91,
     "week52High": 99.94,
-    "range52w": 37.98,
-    "range52wClose": 96.2,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 48.76,
+    "range52wClose": 96.85,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-08-26",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -1.24,
@@ -6134,7 +6134,7 @@
     "performanceAsOf": null
    },
    "holdings": 28,
-   "history": 64
+   "history": 65
   },
   {
    "ticker": "TLTD",
@@ -6167,11 +6167,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -1.53,
      "mo1Text": "-1.53%",
-     "qtd": -5.11,
-     "qtdText": "-5.11%",
+     "qtd": -5.72,
+     "qtdText": "-5.72%",
      "ytd": 10.42,
      "ytdText": "10.42%",
      "yr1": 16.6,
@@ -6210,11 +6210,11 @@
     "dividendYieldBasis": "official-trailing-12m",
     "secYield": 2.58,
     "secYieldText": "2.58%",
-    "week52Low": 89.37,
+    "week52Low": 90.39,
     "week52High": 105.56,
-    "range52w": 34.77,
-    "range52wClose": 95,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 32.83,
+    "range52wClose": 95.37,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -9.65,
@@ -6270,7 +6270,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 2299,
-   "history": 3559
+   "history": 3560
   },
   {
    "ticker": "TLTE",
@@ -6303,11 +6303,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": -7.8,
      "mo1Text": "-7.80%",
-     "qtd": -13.78,
-     "qtdText": "-13.78%",
+     "qtd": -15.92,
+     "qtdText": "-15.92%",
      "ytd": 10.73,
      "ytdText": "10.73%",
      "yr1": 11.73,
@@ -6348,9 +6348,9 @@
     "secYieldText": "2.39%",
     "week52Low": 62.4,
     "week52High": 80.51,
-    "range52w": 15.13,
-    "range52wClose": 65.14,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 14.19,
+    "range52wClose": 64.97,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": null,
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -19.3,
@@ -6406,7 +6406,7 @@
     "performanceAsOf": "2026-10-31"
    },
    "holdings": 3041,
-   "history": 3559
+   "history": 3560
   },
   {
    "ticker": "TXCA",
@@ -6439,11 +6439,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.39,
      "mo1Text": "3.39%",
-     "qtd": 3.1,
-     "qtdText": "3.10%",
+     "qtd": 3.43,
+     "qtdText": "3.43%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -6484,9 +6484,9 @@
     "secYieldText": "3.46%",
     "week52Low": 49.08,
     "week52High": 51.54,
-    "range52w": 79.67,
-    "range52wClose": 51.04,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 87.4,
+    "range52wClose": 51.23,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-09-23",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.6,
@@ -6542,7 +6542,7 @@
     "performanceAsOf": null
    },
    "holdings": 306,
-   "history": 45
+   "history": 46
   },
   {
    "ticker": "TXNY",
@@ -6575,11 +6575,11 @@
    "returns": {
     "monthEnd": {
      "asOfDate": "Oct 31 2026",
-     "priceReturnsAsOf": "Nov 24 2026",
+     "priceReturnsAsOf": "Nov 25 2026",
      "mo1": 3.6,
      "mo1Text": "3.60%",
-     "qtd": 3.47,
-     "qtdText": "3.47%",
+     "qtd": 3.77,
+     "qtdText": "3.77%",
      "ytd": null,
      "ytdText": "—",
      "yr1": null,
@@ -6620,9 +6620,9 @@
     "secYieldText": "3.58%",
     "week52Low": 48.94,
     "week52High": 51.83,
-    "range52w": 81.66,
-    "range52wClose": 51.3,
-    "range52wAsOf": "2026-11-24",
+    "range52w": 87.54,
+    "range52wClose": 51.47,
+    "range52wAsOf": "2026-11-25",
     "range52wSince": "2026-09-23",
     "range52wBasis": "Market Price",
     "pctFrom52wHigh": -0.69,
@@ -6678,7 +6678,7 @@
     "performanceAsOf": null
    },
    "holdings": 437,
-   "history": 45
+   "history": 46
   }
  ]
 }
