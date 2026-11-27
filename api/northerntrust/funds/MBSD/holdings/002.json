@@ -2167,7 +2167,7 @@
    "Weight": "0.0009",
    "Market Value": "773.36",
    "Shares Held": "776",
-   "Asset Category": "-",
+   "Asset Category": "Mortgage Backed",
    "Coupon": "3",
    "Maturity": "Jan 01 2027"
   },
@@ -2178,7 +2178,7 @@
    "Weight": "0.0009",
    "Market Value": "770.62",
    "Shares Held": "773",
-   "Asset Category": "-",
+   "Asset Category": "Mortgage Backed",
    "Coupon": "3",
    "Maturity": "Feb 01 2027"
   },
@@ -2189,7 +2189,7 @@
    "Weight": "0.0007",
    "Market Value": "614.7",
    "Shares Held": "617",
-   "Asset Category": "-",
+   "Asset Category": "Mortgage Backed",
    "Coupon": "3",
    "Maturity": "Jan 01 2027"
   },
@@ -2200,7 +2200,7 @@
    "Weight": "0.0001",
    "Market Value": "99.78",
    "Shares Held": "100",
-   "Asset Category": "-",
+   "Asset Category": "Mortgage Backed",
    "Coupon": "3",
    "Maturity": "Dec 01 2026"
   },
@@ -2211,7 +2211,7 @@
    "Weight": "0.0001",
    "Market Value": "98.28",
    "Shares Held": "99",
-   "Asset Category": "-",
+   "Asset Category": "Mortgage Backed",
    "Coupon": "3",
    "Maturity": "Dec 01 2026"
   },
@@ -2222,7 +2222,7 @@
    "Weight": "0.0001",
    "Market Value": "50.36",
    "Shares Held": "51",
-   "Asset Category": "-",
+   "Asset Category": "Mortgage Backed",
    "Coupon": "3",
    "Maturity": "Dec 01 2026"
   },
