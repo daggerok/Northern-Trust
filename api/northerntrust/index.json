@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T23:19:25Z",
+ "generatedAt": "2026-11-27T09:44:28Z",
  "source": {
   "provider": "Northern Trust Asset Management (US ETFs)",
   "market": "us",
@@ -265,7 +265,7 @@
     "vsSpy10y": 0.66,
     "beta1ySpy": 0.87,
     "corr1ySpy": 0.96,
-    "upCapture3ySpy": 95.63,
+    "upCapture3ySpy": 95.62,
     "downCapture3ySpy": 93.61,
     "relStrength3mSpy": 2.79,
     "stressReturnSpy": -7.7,
@@ -4074,7 +4074,7 @@
     "beta1ySpy": 0,
     "corr1ySpy": 0.04,
     "upCapture3ySpy": 12.72,
-    "downCapture3ySpy": -14.43,
+    "downCapture3ySpy": -14.42,
     "relStrength3mSpy": 6.79,
     "stressReturnSpy": 0.53,
     "stressBasisSpy": "SPY -11% 2026-10-06 to 2026-11-20",
