@@ -2,7 +2,7 @@
  "ticker": "ESG",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2608,
+ "totalRows": 2609,
  "headers": [
   "Date",
   "NAV",
@@ -3657,6 +3657,12 @@
    "NAV": "174.14",
    "Market Price": "174.38",
    "Premium/Discount": "0.24"
+  },
+  {
+   "Date": "Nov 27 2026",
+   "NAV": "176.54",
+   "Market Price": "176.29",
+   "Premium/Discount": "-0.25"
   }
  ]
 }

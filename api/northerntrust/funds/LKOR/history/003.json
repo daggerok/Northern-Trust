@@ -2,7 +2,7 @@
  "ticker": "LKOR",
  "page": 3,
  "pageSize": 1000,
- "totalRows": 2810,
+ "totalRows": 2811,
  "headers": [
   "Date",
   "NAV",
@@ -4869,6 +4869,12 @@
    "NAV": "39.14",
    "Market Price": "39.22",
    "Premium/Discount": "0.08"
+  },
+  {
+   "Date": "Nov 27 2026",
+   "NAV": "38.88",
+   "Market Price": "39.02",
+   "Premium/Discount": "0.14"
   }
  ]
 }

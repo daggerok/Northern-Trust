@@ -2,7 +2,7 @@
  "ticker": "FEIG",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 1302,
+ "totalRows": 1303,
  "headers": [
   "Date",
   "NAV",

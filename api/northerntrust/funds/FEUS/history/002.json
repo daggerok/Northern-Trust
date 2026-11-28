@@ -2,7 +2,7 @@
  "ticker": "FEUS",
  "page": 2,
  "pageSize": 1000,
- "totalRows": 1302,
+ "totalRows": 1303,
  "headers": [
   "Date",
   "NAV",
@@ -1821,6 +1821,12 @@
    "NAV": "78.48",
    "Market Price": "78.58",
    "Premium/Discount": "0.09"
+  },
+  {
+   "Date": "Nov 27 2026",
+   "NAV": "79.66",
+   "Market Price": "79.52",
+   "Premium/Discount": "-0.14"
   }
  ]
 }

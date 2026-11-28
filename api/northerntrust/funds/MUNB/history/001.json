@@ -2,7 +2,7 @@
  "ticker": "MUNB",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 321,
+ "totalRows": 322,
  "headers": [
   "Date",
   "NAV",
@@ -1935,6 +1935,12 @@
    "NAV": "99.51",
    "Market Price": "99.45",
    "Premium/Discount": "-0.06"
+  },
+  {
+   "Date": "Nov 27 2026",
+   "NAV": "99.46",
+   "Market Price": "99.58",
+   "Premium/Discount": "0.12"
   }
  ]
 }

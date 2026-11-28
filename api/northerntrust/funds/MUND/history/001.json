@@ -2,7 +2,7 @@
  "ticker": "MUND",
  "page": 1,
  "pageSize": 1000,
- "totalRows": 321,
+ "totalRows": 322,
  "headers": [
   "Date",
   "NAV",
@@ -1935,6 +1935,12 @@
    "NAV": "100.89",
    "Market Price": "101.03",
    "Premium/Discount": "0.14"
+  },
+  {
+   "Date": "Nov 27 2026",
+   "NAV": "100.87",
+   "Market Price": "101.08",
+   "Premium/Discount": "0.21"
   }
  ]
 }
